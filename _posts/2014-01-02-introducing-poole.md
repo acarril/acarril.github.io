@@ -12,8 +12,9 @@ Empecemos de un lugar sencillo: el número $1$. Si lo pensamos, todos los númer
 Extendamos ahora esta analogía al círculo. Gracias a Arquímides sabemos que el área $A$ de una circunferencia es
 
 $$
-	A=\pi r^2,
+	A=\pi r^2\;,
 $$
+
 por lo que una circunferencia de radio 1 tiene un área igual a $\pi$. Otras circunferencias también pueden ser consideradas como versiones a escala de ésta *circunferencia base*. Por ejemplo, un círculo de radio 2 tiene un área igual a $4\pi$ y es, por lo tanto, "4 veces $\pi$" o cuatro veces la circunferencia base.
 
 Así como $1$ es la unidad base de los números y $\pi$ es la unidad base de las circunferencias, $e$ es la unidad base que comparten todos los procesos de crecimiento continuo. Es decir, todos los sistemas de crecimiento continuo son versiones escaladas de una tasa común $e$.
