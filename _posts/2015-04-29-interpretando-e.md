@@ -64,10 +64,10 @@ $$
 
 Notar que este crecimiento compuesto es mayor que el caso anterior. Si descomponemos este crecimiento de $2,25$ tenemos que
 
-- Hay \$ 1 que corresponde al dólar inicial. Llamémoslo $A$.
-- Hay \$ 1 que corresponde al retorno de $A$. Llamémoslo $B$.
+- Hay $\$1$ que corresponde al dólar inicial. Llamémoslo $A$.
+- Hay $\$1$ que corresponde al retorno de $A$. Llamémoslo $B$.
 - Hay 25 centavos que corresponden al retorno de $B$. Llamémoslo $C$.
 
 -----
 
-¿Por qué detenernos en dos períodos? Claramente podemos considerar tres períodos con un retorno de $33,\overline{3\%}$.
+¿Por qué detenernos en dos períodos? Claramente podemos considerar tres períodos con un retorno de $33,\overline{3}\%$.
