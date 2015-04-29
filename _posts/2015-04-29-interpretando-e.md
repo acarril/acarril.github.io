@@ -7,37 +7,47 @@ Cualquier ciencia que estudie el crecimiento de alguna variable debe, en algún 
 
 -----
 
+## Una analogía
+
 Empecemos de un lugar sencillo: el número $1$. Si lo pensamos, todos los números pueden ser considerados como una versión "a escala" del $1$. Por ejemplo, el número 5 es "5 veces 1" o, matemáticamente, $5\cdot 1$. El $0,\overline{3}$ es "un tercio de 1" o $\frac{1}{3}\cdot 1$. Por lo tanto podemos considerar al $1$ como el *número base*.
 
 Extendamos ahora esta analogía al círculo. Gracias a Arquímides sabemos que el área $A$ de una circunferencia es
 
 $$
-	A=\pi r^2\;,
+	A=\pi r^2,
 $$
 
 por lo que una circunferencia de radio 1 tiene un área igual a $\pi$. Otras circunferencias también pueden ser consideradas como versiones a escala de ésta *circunferencia base*. Por ejemplo, un círculo de radio 2 tiene un área igual a $4\pi$ y es, por lo tanto, "4 veces $\pi$" o cuatro veces la circunferencia base.
 
 Así como $1$ es la unidad base de los números y $\pi$ es la unidad base de las circunferencias, $e$ es la unidad base que comparten todos los procesos de crecimiento continuo. Es decir, todos los sistemas de crecimiento continuo son versiones escaladas de una tasa común $e$.
 
-### What's included
+## Crecimiento exponencial
 
-Poole is a streamlined Jekyll site designed and built as a foundation for building more meaningful themes. Poole, and every theme built on it, includes the following:
+Entonces $e$ tiene que ver con crecimiento y, en realidad, aparece en cada situación donde hay crecimiento exponencial y continuo. Incluso en situaciones donde el crecimiento no es continuo, dicho crecimiento puede ser aproximado usando $e$.
 
-* Complete Jekyll setup included (layouts, config, [404]({{ site.baseurl }}/404.html), [RSS feed]({{ site.baseurl }}/atom.xml), posts, and [example page]({{ site.baseurl }}/about))
-* Mobile friendly design and development
-* Easily scalable text and component sizing with `rem` units in the CSS
-* Support for a wide gamut of HTML elements
-* Related posts (time-based, because Jekyll) below each post
-* Syntax highlighting, courtesy Pygments (the Python-based code snippet highlighter)
+### Tiempo discreto
 
-Additional features are available in individual themes.
+Consideremos primero un sistema simple que se duplica después de una cantidad dada de tiempo. Esto significa que al finalizar un período tendremos 2 veces más, al segundo 4 veces más, al tercero 8 veces más... En forma general, el factor de crecimiento será
 
-### Browser support
+$$
+	2^t,
+$$
+donde $t$ son los períodos transcurridos. Este factor de crecimiento simplemente significa que debemos duplicar la cantidad inicial $t$ veces.
 
-Poole and its themes are by preference a forward-thinking project. In addition to the latest versions of Chrome, Safari (mobile and desktop), and Firefox, it is only compatible with Internet Explorer 9 and above.
+Conviene pensar en <<$2$>> como un aumento del $100\%$, es decir,
 
-### Download
+$$
+	(1+100\%)^t.
+$$
 
-Poole is developed on and hosted with GitHub. Head to the <a href="https://github.com/poole/poole">GitHub repository</a> for downloads, bug reports, and features requests.
+Esto es lo mismo que la primera ecuación, pero ganamos en valor interpretativo: descompusimos la duplicación (<<2>>) en su valor original (<<1>>) más su *retorno* ($100\%$).
 
-Thanks!
+Ahora podríamos pensar en tasas de retorno distintas del $100\%$ y, por tanto, generalizar nuestro factor de crecimiento a:
+
+$$
+	(1+\text{retorno})^t.
+$$
+
+### Tiempo continuo
+
+El problema con el factor de crecimiento anterior es que asume que no existe crecimiento entre un período y otro.
