@@ -59,13 +59,13 @@ Vamos de a poco. Si comenzamos con un dólar y el retorno es $100\%$ entonces cl
 De esta forma, el factor de crecimiento para dos períodos de medio año es
 
 $$
-	\left(1+\frac{100\%}{2}\right)^2=2,25.
+	\left(1+\frac{100\%}{2}\right)^2=2.25.
 $$
 
-Notar que este crecimiento compuesto es mayor que el caso anterior. Si descomponemos este crecimiento de $2,25$ tenemos que
+Notar que este crecimiento compuesto es mayor que el caso anterior. Si descomponemos este crecimiento de $2.25$ tenemos que
 
-- Hay \$1 que corresponde al dólar inicial. Llamémoslo $A$.
-- Hay \$1 que corresponde al retorno de $A$. Llamémoslo $B$.
+- Hay <span class="tex2jax_ignore">$1</span> que corresponde al dólar inicial. Llamémoslo $A$.
+- Hay <span class="tex2jax_ignore">$1</span> que corresponde al retorno de $A$. Llamémoslo $B$.
 - Hay 25 centavos que corresponden al retorno de $B$. Llamémoslo $C$.
 
 -----
