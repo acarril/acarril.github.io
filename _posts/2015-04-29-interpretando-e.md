@@ -32,6 +32,7 @@ Consideremos primero un sistema simple que se duplica después de una cantidad d
 $$
 	2^t,
 $$
+
 donde $t$ son los períodos transcurridos. Este factor de crecimiento simplemente significa que debemos duplicar la cantidad inicial $t$ veces.
 
 Conviene pensar en <<$2$>> como un aumento del $100\%$, es decir,
