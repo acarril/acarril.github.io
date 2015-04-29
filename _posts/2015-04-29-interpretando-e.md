@@ -7,7 +7,7 @@ Cualquier ciencia que estudie el crecimiento de alguna variable debe, en algún 
 
 -----
 
-# Una analogía
+## Una analogía
 
 Empecemos de un lugar sencillo: el número $1$. Si lo pensamos, todos los números pueden ser considerados como una versión "a escala" del $1$. Por ejemplo, el número 5 es "5 veces 1" o, matemáticamente, $5\cdot 1$. El $0,\overline{3}$ es "un tercio de 1" o $\frac{1}{3}\cdot 1$. Por lo tanto podemos considerar al $1$ como el *número base*.
 
@@ -21,11 +21,11 @@ por lo que una circunferencia de radio 1 tiene un área igual a $\pi$. Otras cir
 
 Así como $1$ es la unidad base de los números y $\pi$ es la unidad base de las circunferencias, $e$ es la unidad base que comparten todos los procesos de crecimiento continuo. Es decir, todos los sistemas de crecimiento continuo son versiones escaladas de una tasa común $e$.
 
-# Crecimiento exponencial
+## Crecimiento exponencial
 
 Entonces $e$ tiene que ver con crecimiento y, en realidad, aparece en cada situación donde hay crecimiento exponencial y continuo. Incluso en situaciones donde el crecimiento no es continuo, dicho crecimiento puede ser aproximado usando $e$.
 
-## Tiempo discreto
+### Tiempo discreto
 
 Consideremos primero un sistema simple que se duplica después de una cantidad dada de tiempo. Esto significa que al finalizar un período tendremos 2 veces más, al segundo 4 veces más, al tercero 8 veces más... En forma general, el factor de crecimiento será
 
@@ -48,7 +48,7 @@ $$
 	(1+\text{retorno})^t.
 $$
 
-## Tiempo continuo
+### Tiempo continuo
 
 El problema con el factor de crecimiento anterior es que asume que no existe crecimiento entre un período y otro. En algunos casos este supuesto es válido y se ajusta mejor a la realidad.
 
@@ -66,8 +66,16 @@ Notar que este crecimiento compuesto es mayor que el caso anterior. Si descompon
 
 - Hay <span class="tex2jax_ignore">$1</span> que corresponde al dólar inicial. Llamémoslo $A$.
 - Hay <span class="tex2jax_ignore">$1</span> que corresponde al retorno de $A$. Llamémoslo $B$.
-- Hay 25 centavos que corresponden al retorno de $B$. Llamémoslo $C$.
+- Hay 25$\cent$ que corresponden al retorno de $B$. Llamémoslo $C$.
 
 -----
 
-¿Por qué detenernos en dos períodos? Claramente podemos considerar tres períodos con un retorno de $33,\overline{3}\%$.
+¿Por qué detenernos en dos períodos? Claramente podemos considerar tres períodos cuatrimestrales, cada uno con un retorno de $33,\overline{3}\%$. En este caso la fórmula sería
+
+$$
+	\left(1+\frac{100\%}{3}\right)^3 \approx 2.37.
+$$
+
+¿Cómo ocurrió esto? En el mes 4 $A$ genera un retorno de $33,\overline{3}\%$, es decir, 33 centavos que llamamos $B$. En el mes 8 $A$ genera otros 33 centavos que se agregan a $B$. Sin embargo, antes de esto $B$ a su vez ya había generado un retorno de $33,\overline{3}\%$, es decir, 11 centavos ($33,\overline{3}\% \cdot 33 centavos)$. A estos 11 centavos les llamaremos $C$.
+
+Afírmate, porque aquí se complica. En el mes 12 $A$ vuelve a generar 33c
