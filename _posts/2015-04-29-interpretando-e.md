@@ -50,4 +50,13 @@ $$
 
 ### Tiempo continuo
 
-El problema con el factor de crecimiento anterior es que asume que no existe crecimiento entre un período y otro.
+El problema con el factor de crecimiento anterior es que asume que no existe crecimiento entre un período y otro. En algunos casos este supuesto es válido y se ajusta mejor a la realidad.
+
+Sin embargo, el dinero claramente no sigue este patrón de crecimiento discreto. Si pensamos en nuestra fórmula de crecimiento como un interés compuesto, entonces estaríamos equivocados asumiendo que durante un año completo la cantidad de dinero no aumenta y luego al cabo de dicho año éste se duplica instantáneamente.
+
+Vamos de a poco. Si al cabo de un año el retorno es $100\%$ entonces el factor de crecimiento para dos períodos es
+
+$$
+	(1+\frac{100\%}{2})^2.
+$$
+
