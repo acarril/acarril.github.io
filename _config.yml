@@ -5,9 +5,9 @@ permalink:           pretty
 relative_permalinks: true
 
 # Setup
-title:               Poole
-tagline:             The Jekyll Butler
-url:                 http://getpoole.com
+title:               acarril
+tagline:             econ blog
+url:                 http://acarril.github.io
 paginate:            1
 baseurl:             ""
 
