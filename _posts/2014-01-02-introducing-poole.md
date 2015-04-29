@@ -1,20 +1,22 @@
 ---
 layout: post
-title: Interpretando $e$.
+title: Interpretando $e$
 ---
 
-*The Strange Case of Dr. Jekyll and Mr. Hyde* tells the story of a lawyer investigating the connection of two persons, Dr. Henry Jekyll and Mr. Edward Hyde. Chief among the novel's supporting cast is a man by the name of Mr. Poole, Dr. Jekyll's loyal butler.
+Cualquier ciencia que estudie el crecimiento de alguna variable debe, en algún momento, encontrarse con $e$. ¿De dónde sale? ¿Por qué tiene ese valor en particular? ¿Para qué sirve? Intentaré responder a estas preguntas de la manera más clara posible.
 
 -----
 
-Poole is the butler for [Jekyll](http://jekyllrb.com), the static site generator. It's designed and developed by [@mdo](https://twitter.com/mdo) to provide a clear and concise foundational setup for any Jekyll site. It does so by furnishing a full vanilla Jekyll install with example templates, pages, posts, and styles.
+Empecemos de un lugar sencillo: el número $1$. Si lo pensamos, todos los números pueden ser considerados como una versión "a escala" del $1$. Por ejemplo, el número 5 es "5 veces 1" o, matemáticamente, $5\cdot 1$. El $0,\overline{3}$ es "un tercio de 1" o $\frac{1}{3}\cdot 1$. Por lo tanto podemos considerar al $1$ como el *número base*.
 
-There are currently two themes built on Poole:
+Extendamos ahora esta analogía al círculo. Gracias a Arquímides sabemos que el área $A$ de una circunferencia es
 
-* [Hyde](http://hyde.getpoole.com)
-* [Lanyon](http://lanyon.getpoole.com)
+$$
+	A=\pi r^2,
+$$
+por lo que una circunferencia de radio 1 tiene un área igual a $\pi$. Otras circunferencias también pueden ser consideradas como versiones a escala de ésta *circunferencia base*. Por ejemplo, un círculo de radio 2 tiene un área igual a $4\pi$ y es, por lo tanto, "4 veces $\pi$" o cuatro veces la circunferencia base.
 
-Learn more and contribute on [GitHub](https://github.com/poole).
+Así como $1$ es la unidad base de los números y $\pi$ es la unidad base de las circunferencias, $e$ es la unidad base que comparten todos los procesos de crecimiento continuo. Es decir, todos los sistemas de crecimiento continuo son versiones escaladas de una tasa común $e$.
 
 ### What's included
 
