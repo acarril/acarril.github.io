@@ -54,7 +54,7 @@ El problema con el factor de crecimiento anterior es que asume que no existe cre
 
 Sin embargo, el dinero claramente no sigue este patrón de crecimiento discreto. Si pensamos en nuestra fórmula de crecimiento como un interés compuesto, entonces estaríamos equivocados asumiendo que durante un año completo la cantidad de dinero no aumenta y luego al cabo de dicho año éste se duplica instantáneamente.
 
-Vamos de a poco. Si comenzamos con un dólar y el retorno es $100\%$ entonces claramente al cabo de un año tendremos $2$ dólares, es decir, habremos ganado $1$ dólar. Sin embargo, a la mitad del año ése dólar inicial ya había generado un retorno del $50\%$, es decir, ya había generado $50$ centavos. Y esos $50$ centavos deberían también haber generado un retorno en el segundo semestre, es decir, generar otros $25$ centavos.
+Vamos de a poco. Si comenzamos con un dólar y el retorno es $100\%$ entonces claramente al cabo de un año tendremos $2$ dólares, es decir, habremos ganado $1$ dólar. Sin embargo, a la mitad del año ése dólar inicial ya había generado un retorno del $50\%$, es decir, ya había generado $50$ centavos ($50$&#162;). Y esos $50$&#162; deberían también haber generado un retorno en el segundo semestre, es decir, generar otros $25$&#162;.
 
 De esta forma, el factor de crecimiento para dos períodos de medio año es
 
@@ -66,7 +66,7 @@ Notar que este crecimiento compuesto es mayor que el caso anterior. Si descompon
 
 - Hay <span class="tex2jax_ignore">$1</span> que corresponde al dólar inicial. Llamémoslo $A$.
 - Hay <span class="tex2jax_ignore">$1</span> que corresponde al retorno de $A$. Llamémoslo $B$.
-- Hay 25 &#162; que corresponden al retorno de $B$. Llamémoslo $C$.
+- Hay 25&#162; que corresponden al retorno de $B$. Llamémoslo $C$.
 
 -----
 
@@ -76,6 +76,6 @@ $$
 	\left(1+\frac{100\%}{3}\right)^3 \approx 2.37.
 $$
 
-¿Cómo ocurrió esto? En el mes 4 $A$ genera un retorno de $33,\overline{3}\%$, es decir, 33 centavos que llamamos $B$. En el mes 8 $A$ genera otros 33 centavos que se agregan a $B$. Sin embargo, antes de esto $B$ a su vez ya había generado un retorno de $33,\overline{3}\%$, es decir, 11 centavos ($33,\overline{3}\% \cdot 33 centavos)$. A estos 11 centavos les llamaremos $C$.
+¿Cómo ocurrió esto? En el mes 4 $A$ genera un retorno de $33,\overline{3}\%$, es decir, 33&#162; que llamamos $B$. En el mes 8 $A$ genera otros 33&#162; que se agregan a $B$. Sin embargo, antes de esto $B$ a su vez ya había generado un retorno de $33,\overline{3}\%$, es decir, 11&#162; ($33,\overline{3}\% \cdot 33$&#162;). A estos 11&#162; les llamaremos $C$.
 
-Afírmate, porque aquí se complica. En el mes 12 $A$ vuelve a generar 33c
+Afírmate, porque aquí se complica. En el mes 12 $A$ vuelve a generar 33&#162;
