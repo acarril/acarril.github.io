@@ -11,6 +11,12 @@ url:                 http://getpoole.com
 paginate:            1
 baseurl:             ""
 
+# Menu bar
+pages_list:       
+  About: '/about'
+  Archive: '/archive'
+  Feed: '/atom.xml'
+
 # Assets
 #
 # We specify the directory for Jekyll so we can use @imports.
@@ -20,11 +26,11 @@ sass:
 
 # About/contact
 author:
-  name:              Mark Otto
-  url:               https://twitter.com/mdo
-  email:             markdotto@gmail.com
+  name:              Alvaro Carril
+  url:               https://twitter.com/alvcarril
+  email:             acarril@fen.uchile.cl
 
 # Custom vars
-version:             1.0.0
+version:             0.9.0
 github:
-  repo:              https://github.com/poole/poole
+  repo:              https://github.com/acarril
