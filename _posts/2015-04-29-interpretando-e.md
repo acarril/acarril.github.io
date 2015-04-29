@@ -66,7 +66,7 @@ Notar que este crecimiento compuesto es mayor que el caso anterior. Si descompon
 
 - Hay <span class="tex2jax_ignore">$1</span> que corresponde al dólar inicial. Llamémoslo $A$.
 - Hay <span class="tex2jax_ignore">$1</span> que corresponde al retorno de $A$. Llamémoslo $B$.
-- Hay 25$\cent$ que corresponden al retorno de $B$. Llamémoslo $C$.
+- Hay 25 &#162; que corresponden al retorno de $B$. Llamémoslo $C$.
 
 -----
 
