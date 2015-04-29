@@ -54,9 +54,12 @@ El problema con el factor de crecimiento anterior es que asume que no existe cre
 
 Sin embargo, el dinero claramente no sigue este patrón de crecimiento discreto. Si pensamos en nuestra fórmula de crecimiento como un interés compuesto, entonces estaríamos equivocados asumiendo que durante un año completo la cantidad de dinero no aumenta y luego al cabo de dicho año éste se duplica instantáneamente.
 
-Vamos de a poco. Si al cabo de un año el retorno es $100\%$ entonces el factor de crecimiento para dos períodos es
+Vamos de a poco. Si comenzamos con un dólar y el retorno es $100\%$ entonces claramente al cabo de un año tendremos $2$ dólares, es decir, habremos ganado $1$ dólar. Sin embargo, a la mitad del año ése dólar inicial ya había generado un retorno del $50\%$, es decir, ya había generado $50$ centavos. Y esos $50$ centavos deberían también haber generado un retorno en el segundo semestre, es decir, generar otros $25$ centavos.
+
+De esta forma, el factor de crecimiento para dos períodos de medio año es
 
 $$
-	(1+\frac{100\%}{2})^2.
+	\left(1+\frac{100\%}{2}\right)^2.
 $$
 
+Detengámonos acá y pensemos en esta fórmula.
