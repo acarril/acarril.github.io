@@ -8,7 +8,7 @@
     <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
     {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
     <meta name="author" content="{{ site.author }}">
-    <link href="http://feeds.feedburner.com/janmr-blog" rel="alternate" title="{{ site.title }}" type="application/rss+xml">
+    <link href="http://feeds.feedburner.com/acarril" rel="alternate" title="{{ site.title }}" type="application/rss+xml">
     <link rel="stylesheet" href="{{ site.baseurl }}css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ site.baseurl }}css/main.css">
@@ -36,16 +36,16 @@
           <div class="col-md-3">
             <h4>About</h4>
 
-            <p>A blog about mathematics and computer programming by <a href="http://janmr.com">Jan Marthedal Rasmussen</a>.</p>
+            <p>Un blog de economía, matemáticas y otras cosas.</p>
 
             <h4>Links</h4>
 
             <p><i class="fa fa-list fa-fw"></i> <a href="{{ site.baseurl }}">All posts</a></p>
-            <p><i class="fa fa-twitter fa-fw"></i> <a href="https://twitter.com/janmarthedal">Twitter profile</a></p>
-            <p><i class="fa fa-github fa-fw"></i> <a href="https://github.com/janmarthedal/">GitHub profile</a></p>
-            <p><i class="fa fa-rss fa-fw"></i> <a href="http://feeds.feedburner.com/janmr-blog">Subscribe in a reader</a></p>
+            <p><i class="fa fa-twitter fa-fw"></i> <a href="https://twitter.com/alvcarril">Twitter profile</a></p>
+            <p><i class="fa fa-github fa-fw"></i> <a href="https://github.com/acarril/">GitHub profile</a></p>
+            <p><i class="fa fa-rss fa-fw"></i> <a href="http://feeds.feedburner.com/acarril">Subscribe in a reader</a></p>
 
-            <footer><p class="text-muted">Copyright Jan Marthedal Rasmussen &copy; {{ site.time | date: '%Y' }}</p></footer>
+            <footer><p class="text-muted">Copyright Alvaro Carril &copy; {{ site.time | date: '%Y' }}</p></footer>
           </div>
         </div>
       </div>
@@ -59,7 +59,9 @@
     <!-- Mathjax -->
     <script type="text/x-mathjax-config">
       MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']],
+          processEscapes: true
+        }
       });
     </script>
 <script type="text/javascript" src="path-to-mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
