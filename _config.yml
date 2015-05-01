@@ -1,6 +1,6 @@
-name: acarril blog prueba6
+name: acarril blog prueba7
 markdown: kramdown
-# highlighter: rouge >> caca
+highlighter: pygments
 encoding: utf-8
 # Permalinks
 #
