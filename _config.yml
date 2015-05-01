@@ -1,6 +1,4 @@
-markdown: kramdown #redcarpet
-highlighter: rouge #pygments
-encoding: utf-8
+name: acarril blog
 # Permalinks
 #
 # Use of `relative_permalinks` ensures post links from the index work properly.
@@ -31,7 +29,7 @@ sass:
 author:
   name:              Alvaro Carril
   url:               https://twitter.com/alvcarril
-  email:             acarril@fen.uchile.cl prueba1
+  email:             acarril@fen.uchile.cl prueba2
 
 # Custom vars
 version:             0.9.0
