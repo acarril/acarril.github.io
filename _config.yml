@@ -1,6 +1,10 @@
 permalink:           pretty
 relative_permalinks: true
 highlighter: rouge
+rss_name: blogfeed.xml
+markdown: kramdown
+encoding: utf-8
+excerpt_separator: <span></span>
 
 # Setup
 title:               acarril
