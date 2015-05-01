@@ -1,17 +1,11 @@
-name: acarril blog prueba8
+name: acarril blog prueba9
 markdown: kramdown
 highlighter: pygments
 encoding: utf-8
 url: http://acarril.github.io
 title: acarril econ blog
-# tagline: econ blog
 permalink: /:year/:month/:title.html
 relative_permalinks: true
-
-# Setup
-
-
-paginate:            1
 baseurl:             ""
 
 # Menu bar
