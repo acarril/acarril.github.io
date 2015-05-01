@@ -1,32 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
-
-  {% include head.html %}
-
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+    <meta name="author" content="{{ site.author }}">
+    <link href="http://feeds.feedburner.com/janmr-blog" rel="alternate" title="{{ site.title }}" type="application/rss+xml">
+    <link rel="stylesheet" href="{{ site.baseurl }}css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}css/main.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}css/syntax.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}css/katex.min.css">
+    {% if page.inhead %}{{page.inhead}}{% endif %}
+    <!-- nomj -->
+    <script>
+      if (location.hostname !== 'localhost') {
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-46471633-2', 'auto');ga('send', 'pageview');
+      } else
+        console.log('Disabling analytics');
+    </script>
+  </head>
   <body>
+    <div id="wrapper">
+      <div class="container-fluid">
+        <div class="page-header">
+          <h1><a href="{{ site.baseurl }}">{{ site.name }}</a></h1>
+        </div>
+        <div class="row">
+          <div class="col-md-9">
+            {{ content | convert_raw }}
+          </div>
+          <div class="col-md-3">
+            <h4>About</h4>
 
-    <div class="container content">
-      <header class="masthead">
-        <h3 class="masthead-title">
-        <a href="/" title="Home">{{ site.title }}</a>
-        
-        {% for page in site.pages_list %}
-          &nbsp;&nbsp;&nbsp;
-          <small><a href="{{ page[1]  }}">{{ page[0] }}</a></small>
-        {% endfor %}
-        </h3>
-      </header>
+            <p>A blog about mathematics and computer programming by <a href="http://janmr.com">Jan Marthedal Rasmussen</a>.</p>
 
-      <main>
-        {{ content }}
-      </main>
+            <h4>Links</h4>
 
-      <footer class="footer">
-        <small>
-          &copy; <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time>. All rights reserved.
-        </small>
-      </footer>
+            <p><i class="fa fa-list fa-fw"></i> <a href="{{ site.baseurl }}">All posts</a></p>
+            <p><i class="fa fa-twitter fa-fw"></i> <a href="https://twitter.com/janmarthedal">Twitter profile</a></p>
+            <p><i class="fa fa-github fa-fw"></i> <a href="https://github.com/janmarthedal/">GitHub profile</a></p>
+            <p><i class="fa fa-rss fa-fw"></i> <a href="http://feeds.feedburner.com/janmr-blog">Subscribe in a reader</a></p>
+
+            <footer><p class="text-muted">Copyright Jan Marthedal Rasmussen &copy; {{ site.time | date: '%Y' }}</p></footer>
+          </div>
+        </div>
+      </div>
     </div>
-
+    <script>
+      function togglevis(id) {
+        var e = document.getElementById(id);
+        e.style.display = e.style.display === 'none' ? 'block' : 'none';
+       }
+    </script>
   </body>
 </html>
