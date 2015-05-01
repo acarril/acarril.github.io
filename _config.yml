@@ -1,17 +1,16 @@
-name: acarril blog prueba7
+name: acarril blog prueba8
 markdown: kramdown
 highlighter: pygments
 encoding: utf-8
-# Permalinks
-#
-# Use of `relative_permalinks` ensures post links from the index work properly.
-permalink:           pretty
+url: http://acarril.github.io
+title: acarril econ blog
+# tagline: econ blog
+permalink: /:year/:month/:title.html
 relative_permalinks: true
 
 # Setup
-title:               acarril
-tagline:             econ blog
-url:                 http://acarril.github.io
+
+
 paginate:            1
 baseurl:             ""
 
