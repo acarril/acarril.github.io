@@ -1,4 +1,4 @@
-name: acarril blog prueba10
+name: acarril blog
 markdown: kramdown
 highlighter: pygments
 encoding: utf-8
@@ -7,6 +7,7 @@ title: acarril econ blog
 permalink: /:year/:month/:title.html
 relative_permalinks: true
 baseurl: /
+excerpt_separator: <span></span>
 
 # Menu bar
 pages_list:       
