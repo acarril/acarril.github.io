@@ -1,13 +1,36 @@
-name: acarril blog
-markdown: kramdown #redcarpet
-highlighter: rouge #pygments
-encoding: utf-8
-url: http://acarril.github.io
-excerpt_separator: <span></span>
-permalink: /:year/:month/:title.html
-baseurl: /
-author: Alvaro Carril 
-title: acarril blog
-rss_name: blogfeed.xml
-exclude: [mathstats.py]
-disqus: false
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink:           pretty
+relative_permalinks: true
+
+# Setup
+title:               acarril
+tagline:             econ blog
+url:                 http://acarril.github.io
+paginate:            1
+baseurl:             ""
+
+# Menu bar
+pages_list:       
+  About: '/about'
+  Archive: '/archive'
+  Feed: '/atom.xml'
+
+# Assets
+#
+# We specify the directory for Jekyll so we can use @imports.
+sass:
+  sass_dir:          _sass
+  style:            :compressed
+
+# About/contact
+author:
+  name:              Alvaro Carril
+  url:               https://twitter.com/alvcarril
+  email:             acarril@fen.uchile.cl lala
+
+# Custom vars
+version:             0.9.0
+github:
+  repo:              https://github.com/acarril
