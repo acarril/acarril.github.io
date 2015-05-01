@@ -1,15 +1,14 @@
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
 permalink:           pretty
 relative_permalinks: true
-highlighter: rouge
-rss_name: blogfeed.xml
-markdown: kramdown
-encoding: utf-8
-excerpt_separator: <span></span>
-author: Alvaro Carril
 
 # Setup
 title:               acarril
+tagline:             econ blog
 url:                 http://acarril.github.io
+paginate:            1
 baseurl:             ""
 
 # Menu bar
@@ -24,3 +23,14 @@ pages_list:
 sass:
   sass_dir:          _sass
   style:            :compressed
+
+# About/contact
+author:
+  name:              Alvaro Carril
+  url:               https://twitter.com/alvcarril
+  email:             acarril@fen.uchile.cl lala
+
+# Custom vars
+version:             0.9.0
+github:
+  repo:              https://github.com/acarril
