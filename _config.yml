@@ -1,9 +1,9 @@
-name: acarril blog
+name: alvaro carril blog
 markdown: kramdown
 highlighter: pygments
 encoding: utf-8
 url: http://acarril.github.io
-title: acarril econ blog
+title: alvaro carril blog
 permalink: /:year/:month/:title.html
 relative_permalinks: true
 baseurl: /
