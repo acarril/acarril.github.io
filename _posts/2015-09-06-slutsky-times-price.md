@@ -1,3 +1,7 @@
+---
+layout: post
+title: Slutsky matrix times price vector
+---
 From microeconomic theory we know that$$ S(p, w) \cdot p = 0, $$ where $S$ is the Slutsky matrix and $p$ is the price vector.
 
 Why?
