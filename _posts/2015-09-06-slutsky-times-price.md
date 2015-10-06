@@ -8,7 +8,7 @@ where $S$ is the Slutsky matrix and $p$ is the price vector.
 
 Why?
 
-It is a general mathematical result that the Hessian matrix of a multivariate function is homogeneous of degree one.
+It is a general mathematical result that the [Hessian matrix](https://en.wikipedia.org/wiki/Hessian_matrix) of a multivariate function is homogeneous of degree one.
 
 We know that the **expenditure function** $E$  is homogeneous of degree one in prices. Intuitively, if all prices change in the same proportion relative prices stay constant. And if relative prices stay unchanged, the minimum-cost compensated bundle for a given utility level also stays unchanged. That is, budget shares remain constant. So we have that the *expenditure* (expressed by $E$)  needed to achieve the same utility level as before rises equally with prices, and so we have homogeneity of degree one.
 
@@ -32,7 +32,7 @@ So it follows that when $H=0$,
 
 $$\frac{dH}{dp}\cdot p = 0.$$
 
-We know that the Jacobian matrix of the Hicksian demand is the Hessian matrix of the expenditure function, that is, 
+We know that the [Jacobian matrix](https://en.wikipedia.org/wiki/Jacobian_matrix_and_determinant) of the Hicksian demand is the Hessian matrix of the expenditure function, that is, 
 
 $$\frac{dH}{dp}=\frac{d^2E}{dp^2}=S(p,w).$$
 
