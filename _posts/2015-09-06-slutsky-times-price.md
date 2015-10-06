@@ -10,7 +10,9 @@ Why?
 
 It is a general mathematical result that the [Hessian matrix](https://en.wikipedia.org/wiki/Hessian_matrix) of a multivariate function is homogeneous of degree one.
 
-We know that the **expenditure function** $E$  is homogeneous of degree one in prices. Intuitively, if all prices change in the same proportion relative prices stay constant. And if relative prices stay unchanged, the minimum-cost compensated bundle for a given utility level also stays unchanged. That is, budget shares remain constant. So we have that the *expenditure* (expressed by $E$)  needed to achieve the same utility level as before rises equally with prices, and so we have homogeneity of degree one.
+But really, *why*?
+
+We know that the **expenditure function** $E$  is homogeneous of degree one in prices. Intuitively, if all prices change in the same proportion then relative prices stay constant. And if relative prices stay constant, the minimum-cost compensated bundle for a given utility level also remains unchanged. That is, budget shares stay the same. So the *expenditure* (expressed by $E$)  needed to achieve the same utility level as before changes in the same proportion as prices, and so we have homogeneity of degree one.
 
 By duality, the **Hicksian demand** vector is the gradient of the expenditure function on prices,
 
