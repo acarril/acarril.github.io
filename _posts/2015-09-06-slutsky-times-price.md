@@ -12,7 +12,7 @@ It is a general mathematical result that the Hessian matrix of a multivariate fu
 
 We know that the **expenditure function** $E$  is homogeneous of degree one in prices. Intuitively, if all prices change in the same proportion relative prices stay constant. And if relative prices stay unchanged, the minimum-cost compensated bundle for a given utility level also stays unchanged. That is, budget shares remain constant. So we have that the *expenditure* (expressed by $E$)  needed to achieve the same utility level as before rises equally with prices, and so we have homogeneity of degree one.
 
-By duality, the Hicksian demand vector is the gradient of the expenditure function on prices,
+By duality, the **Hicksian demand** vector is the gradient of the expenditure function on prices,
 $$H= \frac{d E}{d p}.$$
 Intuitively, $H$ gives the minimum-cost demanded quantities. Due to the homogeneity of degree one of the expenditure function, the inner product of the Hicksian demand vector times the price vector equals the expenditure function:
 $$H\cdot p=E.$$
