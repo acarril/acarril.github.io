@@ -19,8 +19,8 @@ $$H\cdot p=E.$$
 This is because we are just multiplying the (minimum-cost) demanded quantities by their unit price and then summing up, which is total expenditure.
 
 Combining these two results we have that 
-$$\frac{d (H\cdot p)}{dp}=H \\
-H + \frac{d H}{dp}\cdot p = H.$$
+$$\frac{d (H\cdot p)}{dp}=H$$
+$$H + \frac{d H}{dp}\cdot p = H.$$
 So it follows that when $H=0$,
 $$\frac{dH}{dp}\cdot p = 0.$$
 
