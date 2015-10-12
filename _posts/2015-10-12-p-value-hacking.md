@@ -12,7 +12,7 @@ $$ p_i = \Pr(|w_i|\geq w(\alpha)|H_0),$$
 
 where $H_0$ is the null hypothesis of equal means of the control and treatment groups.
 
-The above probability can be expressed in terms of the corresponding cumulative distribution function, so $\Pr(\cdot)=1-F(|w_i|)$. Therefore we have that
+The above probability can be expressed in terms of the corresponding cumulative distribution function, so $\Pr()=1-F(|w_i|)$. Therefore we have that
 
 $$ F(|w_i|)=1-p_i .$$
 
