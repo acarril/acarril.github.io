@@ -12,9 +12,9 @@ $$ p_i = \Pr(|w_i|\geq w(\alpha)|H_0),$$
 
 where $H_0$ is the null hypothesis of equal means of the control and treatment groups.
 
-The above probability can be expressed in terms of the corresponding cumulative distribution function, so $\Pr()=1-F(|w_i|)$. Therefore we have that
+The above probability can be expressed in terms of the corresponding cumulative distribution function, so . Therefore we have that
 
-$$ F(|w_i|)=1-p_i .$$
+$$F(|w_i|)=1-p_i .$$
 
 The key here is thinking of $p$-values as random variables and, because of the magic of [probability integral transform](https://en.wikipedia.org/wiki/Probability_integral_transform), we know that $(1-p_i)$ is distributes uniformly, and so we have that
 
