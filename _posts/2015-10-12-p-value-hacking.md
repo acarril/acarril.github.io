@@ -22,4 +22,6 @@ $$ p_i\sim U(0,1). $$
 
 Now we have a sample size of $k$ independent uniform distributions. The probability that at least one of them is smaller than a specific value $\overline p$ is equal to the probability that the minimum of them is lower than that threshold:
 
-$$ \Pr(a<b) $$
+$$ \Pr(\text{At least one }p_i \leq \overline p) = 1- \Pr (\text{All }p_i > \overline p ) = 1- \prod_{i=1}^k \Pr (p_i > p^*).$$
+
+Since all $p_i$ are identically distributed, we have that
