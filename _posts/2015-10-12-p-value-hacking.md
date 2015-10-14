@@ -25,3 +25,11 @@ Now we have a sample size of $k$ independent uniform distributions. The probabil
 $$ \Pr(\text{At least one }p_i \leq \overline p) = 1- \Pr (\text{All }p_i > \overline p ) = 1- \prod_{i=1}^k \Pr (p_i > p^*).$$
 
 Since all $p_i$ are identically distributed, we have that
+
+$$ \Pr(\text{At least one }p_i \leq \overline p) = 1-[1-\Pr(p_i\leq\overline p)]^k = 1-[1-F_U(\overline p)]^k,$$
+
+which is the [cumulative distribution function](https://en.wikipedia.org/wiki/Cumulative_distribution_function) (CDF) of the minimum of $k$ i.i.d. random variables.
+
+Let's say this minimum is $p_{min}$, then the CDF of the minimum of $k$ independent $U(0,1)$ variables is
+
+$$ F_{p_{min}} $$
