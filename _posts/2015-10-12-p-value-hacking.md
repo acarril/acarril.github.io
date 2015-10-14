@@ -32,4 +32,8 @@ which is the [cumulative distribution function](https://en.wikipedia.org/wiki/Cu
 
 Let's say this minimum is $p_{min}$, then the CDF of the minimum of $k$ independent $U(0,1)$ variables is
 
-$$ F_{p_{min}} $$
+$$ F_{p_{min}}(p_{min}) = 1- [1-p_{min}]^k.$$
+
+And so we want the probability:
+
+$$ \Pr (p_{min}\leq \overline p) = 1-[1-p_{min}]^k. $$
