@@ -28,6 +28,8 @@ Since all $p_i$ are identically distributed, we have that
 
 $$ \Pr(\text{At least one }p_i \leq \overline p) = 1-[1-\Pr(p_i\leq\overline p)]^k = 1-[1-F_U(\overline p)]^k,$$
 
+![Hola](http://i60.tinypic.com/347b48h.png)
+
 which is the [cumulative distribution function](https://en.wikipedia.org/wiki/Cumulative_distribution_function) (CDF) of the minimum of $k$ i.i.d. random variables.
 
 Let's say this minimum is $p_{min}$, then the CDF of the minimum of $k$ independent $U(0,1)$ variables is
