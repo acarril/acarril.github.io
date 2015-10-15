@@ -4,7 +4,7 @@ title: $p$-value hacking
 ---
 Whenever we do regression analysis, we know that there is the chance of getting false positives. Suppose you have $k$ outcome variables and are targeting a $p$-value of $p$. Now, is there a way to compute -ex ante- the exact probability of getting at least one false positive significant result under $p$?
 
-This question arose during a discussion with a J-PAL colleague. Since we were talking about randomized control trials, he also noted we could assume a treatment group of size $t$ and a control group of size $c$.
+This question arose during a discussion with a J-PAL colleague. Since we were talking about randomized control trials, he also noted we could assume a treatment group of size $m$ and a control group of size $n$.
 
 But does it matter?
 
@@ -46,10 +46,10 @@ To get an idea of some typical values of our last formula, here is a table:
 
 ![Hola](http://i60.tinypic.com/347b48h.png)
 
-\* Of course, the values of $t$ and $c$ do enter the test-statistic. For example, if we assume that the underlying data is normally distributed i.i.d., with mean $\mu$ and variance $\sigma$ for both treatment and control groups, then it can be proven we can get the [Student's $t$-statistic](https://en.wikipedia.org/wiki/Student%27s_t-test):
+\* Of course, the values of $m$ and $n$ do enter the test-statistic. For example, if we assume that the underlying data is normally distributed i.i.d., with mean $\mu$ and variance $\sigma$ for both treatment and control groups, then it can be proven we can get the [Student's $t$-statistic](https://en.wikipedia.org/wiki/Student%27s_t-test):
 
-$$t = \frac{\overline {X}_1 - \overline{X}_2}{s_{X_1 X_2} \cdot \sqrt{\frac{1}{t}+\frac{1}{c}}},$$
+$$t = \frac{\overline {X}_1 - \overline{X}_2}{s_{X_1 X_2} \cdot \sqrt{\frac{1}{m}+\frac{1}{n}}},$$
 
 where
 
-$$s_{X_1X_2} = \sqrt{\frac{(t-1)s_{X_1}^2+(c-1)s_{X_2}^2}{t+c}}.$$
+$$s_{X_1X_2} = \sqrt{\frac{(m-1)s_{X_1}^2+(n-1)s_{X_2}^2}{m+n}}.$$
