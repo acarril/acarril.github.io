@@ -2,9 +2,11 @@
 layout: post
 title: $p$-value hacking
 ---
-The dubious art of testing different specifications until one gets a $p$-value under .05 (or other [magic number](https://en.wikipedia.org/wiki/Magic_number_%28programming%29#Unnamed_numerical_constants)) is known as "$p$-value hacking" or simply "$p$-hacking".
+Whenever we do regression analysis, we know that there is the chance of getting false positives. Suppose you have $k$ outcome variables and are targeting a $p$-value of $p$. Now, is there a way to compute -ex ante- the exact probability of getting at least one false positive significant result under $p$?
 
-Suppose there is a control group of size $m$ and a treatment group of size $n$, with $k$ outcome variables.
+This question arose during a discussion with a J-PAL colleague. Since we were talking about randomized control trials, he also noted we could assume a treatment group of size $t$ and a control group of size $c$.
+
+But does it matter?
 
 Assuming i.i.d. Normal characteristics we can use separate [Welch's $t$-tests](https://en.wikipedia.org/wiki/Welch%27s_t_test), which account for different variances and sample sizes. If the statistics of these tests are $w_i$ ($i=1,..., k$), the $p$-value of each one is
 
@@ -28,8 +30,6 @@ Since all $p_i$ are identically distributed, we have that
 
 $$ \Pr(\text{At least one }p_i \leq \overline p) = 1-[1-\Pr(p_i\leq\overline p)]^k = 1-[1-F_U(\overline p)]^k,$$
 
-![Hola](http://i60.tinypic.com/347b48h.png)
-
 which is the [cumulative distribution function](https://en.wikipedia.org/wiki/Cumulative_distribution_function) (CDF) of the minimum of $k$ i.i.d. random variables.
 
 Let's say this minimum is $p_{min}$, then the CDF of the minimum of $k$ independent $U(0,1)$ variables is
@@ -39,3 +39,7 @@ $$ F_{p_{min}}(p_{min}) = 1- [1-p_{min}]^k.$$
 And so we want the probability:
 
 $$ \Pr (p_{min}\leq \overline p) = 1-[1-p_{min}]^k. $$
+
+So it is interesting to note that the probability of getting at least one false positive significant result under $p$ doesn't depend on the size of treatment nor control groups (in an impact evaluation setting), or even on sample size.
+
+![Hola](http://i60.tinypic.com/347b48h.png)
