@@ -40,6 +40,16 @@ And so we want the probability:
 
 $$ \Pr (p_{min}\leq \overline p) = 1-[1-p_{min}]^k. $$
 
-So it is interesting to note that the probability of getting at least one false positive significant result under $p$ doesn't depend on the size of treatment nor control groups (in an impact evaluation setting), or even on sample size.
+So it is interesting to note that the probability of getting at least one false positive significant result under $p$ doesn't depend on the size of treatment nor control groups (in an impact evaluation setting), or even on sample size. Because $p$-values are random variables, they are uniformly distributed (0,1) regardless of sample size.*
+
+To get an idea of some typical values of our last formula, here is a table:
 
 ![Hola](http://i60.tinypic.com/347b48h.png)
+
+* Of course, the values of $t$ and $c$ do enter the test-statistic. For example, if we assume that the underlying data is normally distributed i.i.d., with mean $\mu$ and variance $\sigma$ for both treatment and control groups, then it can be proven we can get the $t$-statistic
+
+$$t = \frac{\bar {X}_1 - \bar{X}_2}{s_{X_1 X_2} \cdot \sqrt{\frac{1}{n}+\frac{1}{m}}},$$
+
+where
+
+$$s_{X_1X_2} = \sqrt{\frac{(n-1)s_{X_1}^2+(m-1)s_{X_2}^2}{n+m}}.$$
