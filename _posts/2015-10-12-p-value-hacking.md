@@ -46,7 +46,7 @@ To get an idea of some typical values of our last formula, here is a table:
 
 ![Hola](http://i60.tinypic.com/347b48h.png)
 
-* Of course, the values of $t$ and $c$ do enter the test-statistic. For example, if we assume that the underlying data is normally distributed i.i.d., with mean $\mu$ and variance $\sigma$ for both treatment and control groups, then it can be proven we can get the [Student's $t$-statistic](https://en.wikipedia.org/wiki/Student%27s_t-test):
+\* Of course, the values of $t$ and $c$ do enter the test-statistic. For example, if we assume that the underlying data is normally distributed i.i.d., with mean $\mu$ and variance $\sigma$ for both treatment and control groups, then it can be proven we can get the [Student's $t$-statistic](https://en.wikipedia.org/wiki/Student%27s_t-test):
 
 $$t = \frac{\overline {X}_1 - \overline{X}_2}{s_{X_1 X_2} \cdot \sqrt{\frac{1}{n}+\frac{1}{m}}},$$
 
