@@ -48,8 +48,8 @@ To get an idea of some typical values of our last formula, here is a table:
 
 \* Of course, the values of $t$ and $c$ do enter the test-statistic. For example, if we assume that the underlying data is normally distributed i.i.d., with mean $\mu$ and variance $\sigma$ for both treatment and control groups, then it can be proven we can get the [Student's $t$-statistic](https://en.wikipedia.org/wiki/Student%27s_t-test):
 
-$$t = \frac{\overline {X}_1 - \overline{X}_2}{s_{X_1 X_2} \cdot \sqrt{\frac{1}{n}+\frac{1}{m}}},$$
+$$t = \frac{\overline {X}_1 - \overline{X}_2}{s_{X_1 X_2} \cdot \sqrt{\frac{1}{t}+\frac{1}{c}}},$$
 
 where
 
-$$s_{X_1X_2} = \sqrt{\frac{(n-1)s_{X_1}^2+(m-1)s_{X_2}^2}{n+m}}.$$
+$$s_{X_1X_2} = \sqrt{\frac{(t-1)s_{X_1}^2+(c-1)s_{X_2}^2}{t+c}}.$$
