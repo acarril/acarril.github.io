@@ -10,7 +10,7 @@ But does it matter?
 
 Assuming i.i.d. Normal characteristics we can use separate [Welch's $t$-tests](https://en.wikipedia.org/wiki/Welch%27s_t_test), which account for different variances and sample sizes. If the statistics of these tests are $w_i$ ($i=1,..., k$), the $p$-value of each one is
 
-$$ p_i = \Pr(|w_i|\geq w(\alpha)|H_0),$$
+$$ p_i = \Pr(|w_i|\geq w(\alpha)\mid H_0),$$
 
 where $H_0$ is the null hypothesis of equal means of the control and treatment groups.
 
