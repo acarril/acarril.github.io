@@ -4,7 +4,7 @@ title: On the probability of false positives
 ---
 Whenever we do regression analysis, we know that there is the chance of getting false positives. Suppose you have $k$ outcome variables and are targeting a $p$-value of $p$. Now, is there a way to compute *ex ante* the exact probability of getting at least one false positive significant result under $p$?
 
-This question arose during a discussion with a J-PAL colleague. Since we were talking about randomized control trials, he also noted we could assume a treatment group of size $m$ and a control group of size $n$.
+This question arose during a discussion with a J-PAL colleague. Since we were talking about randomized control trials, he also posed to consider a treatment group of size $m$ and a control group of size $n$.
 
 But does it matter?
 
