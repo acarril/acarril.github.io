@@ -1,6 +1,6 @@
 name: alvaro carril
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
 encoding: utf-8
 url: http://acarril.github.io
 title: alvaro carril blog
