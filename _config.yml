@@ -5,12 +5,11 @@ encoding: utf-8
 url: http://acarril.github.io
 title: alvaro carril blog
 permalink: /:year/:month/:title.html
-relative_permalinks: true
 baseurl: /
 excerpt_separator: <span></span>
 
 # Menu bar
-pages_list:       
+pages_list:
   About: '/about'
   Archive: '/archive'
   Feed: '/atom.xml'
