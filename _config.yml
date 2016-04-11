@@ -1,5 +1,5 @@
 # Site settings
-title: Alvaro Carril
+title: alvaro carril blog
 url: http://acarril.github.io    # the protocol and hostname of your site, eg. `http://laobubu.github.io`
 baseurl:  # the prefix of your site uri, eg. `/jekyll-theme-EasyBook` or just one slash `/`
 #timezone: Asia/Chongqing
@@ -11,15 +11,15 @@ email: acarril@fe.uchile.cl
 author: Alvaro Carril
 avatar: "https://avatars3.githubusercontent.com/u/9773292?v=3&s=460"
 profile: Economist,
-#twitter_username: alvcarril
-#github_username:  acarril
+twitter_username: alvcarril
+github_username:  acarril
 
 # Comment Service (Disqus or 多说)
 #  choose one and un-comment the line to active it
-#disqus_shortname: xxx   # get one: https://disqus.com/admin/signup/
+disqus_shortname: alvarocarril   # get one: https://disqus.com/admin/signup/
 #duoshuo_shortname: xxx  # get one: http://duoshuo.com/create-site/
 
-permalink: /archivers/:title
+permalink: /posts/:title
 gems:
  - jekyll-paginate
  - jekyll-gist
