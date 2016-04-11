@@ -106,7 +106,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 50px 0; }
   .page-content .wrapper {
     position: relative;
-    background: #e0e0e3;
+    background: #FAFAFA;
     box-shadow: 0 0px 0px #999;
     outline: 0px solid #CCC; }
     .page-content .wrapper:after {
