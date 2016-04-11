@@ -6,8 +6,8 @@
 </description>
     <link>http://acarril.github.io/</link>
     <atom:link href="http://acarril.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 11 Apr 2016 01:00:58 -0300</pubDate>
-    <lastBuildDate>Mon, 11 Apr 2016 01:00:58 -0300</lastBuildDate>
+    <pubDate>Mon, 11 Apr 2016 01:02:56 -0300</pubDate>
+    <lastBuildDate>Mon, 11 Apr 2016 01:02:56 -0300</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -95,22 +95,22 @@ print_hi(&#39;Tom&#39;)
 
 &lt;h2 id=&quot;duis-a-nibh-in&quot;&gt;Duis a nibh in&lt;/h2&gt;
 
-&lt;p&gt;Consectetur ultrices. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. &lt;/p&gt;
+&lt;p&gt;Consectetur ultrices. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Vivamus placerat, tortor et aliquam porttitor, risus mi dapibus neque, vitae vulputate urna.
 – Lorem&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Apurus vel sapien. Fusce at condimentum nibh. &lt;/p&gt;
+&lt;p&gt;Apurus vel sapien. Fusce at condimentum nibh.&lt;/p&gt;
 
 &lt;h3 id=&quot;donec-ut-urna&quot;&gt;Donec ut urna&lt;/h3&gt;
 
-&lt;p&gt;A dolor rhoncus posuere vel porttitor tortor. Integer ex lacus, sagittis ac tellus et, laoreet condimentum massa. &lt;/p&gt;
+&lt;p&gt;A dolor rhoncus posuere vel porttitor tortor. Integer ex lacus, sagittis ac tellus et, laoreet condimentum massa.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://lorempixel.com/400/400/&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Aliquam tempor pharetra lacus, vel bibendum purus dapibus nec. Integer hendrerit massa ut libero euismod, id gravida neque facilisis. &lt;/p&gt;
+&lt;p&gt;Aliquam tempor pharetra lacus, vel bibendum purus dapibus nec. Integer hendrerit massa ut libero euismod, id gravida neque facilisis.&lt;/p&gt;
 
 &lt;h2 id=&quot;nunc-nec&quot;&gt;Nunc nec&lt;/h2&gt;
 
@@ -118,20 +118,20 @@ print_hi(&#39;Tom&#39;)
 
 &lt;ol&gt;
   &lt;li&gt;Etiam bibendum purus tincidunt&lt;/li&gt;
-  &lt;li&gt;As dapibus enim et, porta ligula. &lt;/li&gt;
-  &lt;li&gt;Morbi tempus, mauris sed sodales auctor, nulla erat fringilla purus, vel sodales nulla nunc sit amet purus. &lt;/li&gt;
-  &lt;li&gt;Praesent pellentesque urna et leo eleifend molestie ac ac ex. &lt;/li&gt;
-  &lt;li&gt;Ut eu sagittis metus, et malesuada libero. &lt;/li&gt;
+  &lt;li&gt;As dapibus enim et, porta ligula.&lt;/li&gt;
+  &lt;li&gt;Morbi tempus, mauris sed sodales auctor, nulla erat fringilla purus, vel sodales nulla nunc sit amet purus.&lt;/li&gt;
+  &lt;li&gt;Praesent pellentesque urna et leo eleifend molestie ac ac ex.&lt;/li&gt;
+  &lt;li&gt;Ut eu sagittis metus, et malesuada libero.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam placerat mauris a libero tempus facilisis. Maecenas ut augue lacinia, ornare mi in, lobortis arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis justo elit, blandit vel tincidunt ac, imperdiet ut neque. &lt;/p&gt;
+&lt;p&gt;Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam placerat mauris a libero tempus facilisis. Maecenas ut augue lacinia, ornare mi in, lobortis arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis justo elit, blandit vel tincidunt ac, imperdiet ut neque.&lt;/p&gt;
 
 &lt;h1 id=&quot;class-aptent&quot;&gt;Class aptent&lt;/h1&gt;
 
 &lt;p&gt;taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam erat volutpat. Sed at semper sem. Morbi in finibus tellus. Pellentesque nec dapibus risus.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;  #include &amp;lt;iostream&amp;gt;
- 
+
   int main () {
     std::cout &amp;lt;&amp;lt; &quot;Hello world!&quot; &amp;lt;&amp;lt; std::endl;
   }
@@ -175,11 +175,10 @@ print_hi(&#39;Tom&#39;)
 &lt;/table&gt;
 
 &lt;p&gt;maximus malesuada est rutrum ac. Sed blandit semper faucibus. Nam venenatis consectetur malesuada. Nulla lacus purus, ultrices ac eros porttitor, finibus sodales augue. Suspendisse tincidunt, felis in placerat euismod, libero nulla interdum nisl, commodo efficitur felis dui in libero. Integer lobortis sapien sit amet orci tristique auctor a sit amet neque. Nunc tincidunt iaculis purus eget maximus. Fusce risus justo, rutrum at magna sed, rhoncus lacinia lectus. Vivamus lobortis odio ex, ac vehicula nunc facilisis non. Aliquam fermentum diam massa. Sed cursus, nisi varius laoreet aliquet, tortor urna porta turpis, in dictum urna enim vel leo. Etiam at lacus lorem. Vivamus ornare vitae nisl vel malesuada.&lt;/p&gt;
-
 </description>
         <pubDate>Thu, 01 Jan 1970 08:00:00 -0300</pubDate>
-        <link>http://acarril.github.io/archivers/test</link>
-        <guid isPermaLink="true">http://acarril.github.io/archivers/test</guid>
+        <link>http://acarril.github.io/posts/test</link>
+        <guid isPermaLink="true">http://acarril.github.io/posts/test</guid>
         
         
         <category>jekyll</category>
