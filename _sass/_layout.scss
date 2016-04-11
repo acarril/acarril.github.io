@@ -50,6 +50,7 @@
 .page-content {
 	background:#e0e0e3;
 	padding: 50px 0;
+	height: 100%;
 
 	.wrapper {
 		position: relative;
@@ -66,7 +67,7 @@
 			display:block;
 			position: absolute;
 			width: 300px;
-			height: $base-line-height;
+			height: 100%;
 			left: 800px;
 			top: 0;
 			background: #EEE;
