@@ -193,17 +193,21 @@ h1, h2, h3, h4, h5, h6 {
   .col-box-author .name {
     font-size: 16px; }
   .col-box-author .contact {
-    margin-top: 10px; }
-    .col-box-author .contact a {
-      background: #999;
-      color: #eee;
-      padding: 5px 10px;
-      text-decoration: none;
-      border-radius: 5px;
-      white-space: nowrap; }
-      .col-box-author .contact a:hover {
-        transition: background 0.3s ease;
-        background: #666; }
+    margin-top: 10px;
+    /*		a {
+    			background: #999;
+    			color: #eee;
+    			padding: 5px 10px;
+    			text-decoration: none;
+    			border-radius: 5px;
+        		white-space: nowrap;
+    
+    			&:hover {
+    				transition: background 0.3s ease;
+    				background: #666;
+    			}
+    		}
+    */ }
 
 .footer {
   padding: 60px 0;
