@@ -90,9 +90,10 @@ h1, h2, h3, h4, h5, h6 {
     color: #FFF;
     text-decoration: none;
     font-size: 16px;
-    line-height: 32px; }
+    line-height: 32px;
+    padding-right: 529px; }
   .header .site-nav {
-    text-align: right; }
+    text-align: left; }
     .header .site-nav a {
       text-decoration: none;
       color: #CFD8DC;
