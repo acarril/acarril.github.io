@@ -31,7 +31,7 @@ code {
 
 pre {
   overflow-x: auto;
-  padding: 20px 50px; }
+  padding: 20px 00px; }
 
 pre, pre code {
   color: #fafafa;
@@ -201,7 +201,7 @@ h1, h2, h3, h4, h5, h6 {
     			text-decoration: none;
     			border-radius: 5px;
         		white-space: nowrap;
-    
+
     			&:hover {
     				transition: background 0.3s ease;
     				background: #666;
