@@ -16,4 +16,4 @@
  pre.sh_sourceCode .sh_number           { color: #0333FF; }     /* Numbers               */
  pre.sh_sourceCode .sh_symbol           { color: black;   }     /* Operators and signs   */
  pre.sh_sourceCode .sh_cbracket         { color: #FF0182; }     /* Braces                */
-pre.sh_stata{font-family: 'menlo-regular', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'sans-serif','Trebuchet MS';background-color:#DDE1E8;color: black}
+pre.sh_stata{font-family: 'menlo-regular', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'sans-serif','Trebuchet MS';background-color:#607D8B;color: black}
