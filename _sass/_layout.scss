@@ -29,9 +29,10 @@
 		text-decoration: none;
 		font-size: $base-font-size;
 		line-height: $base-font-size * 2;
+		margin-right: 50px;
 	}
 	.site-nav {
-		text-align:right;
+		text-align:left;
 
 		a {
 			text-decoration: none;
