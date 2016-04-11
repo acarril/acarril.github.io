@@ -1,0 +1,70 @@
+#wrapper {
+  max-width: 60em;
+  margin: 0 auto 4em;
+}
+
+figure > img {
+  margin: 1em auto;
+  display: block;
+}
+
+figure {
+  margin: 1em 0em;
+}
+
+figcaption {
+  margin: 0em 1em 1em;
+}
+
+.page-header a {
+  color: #333;
+}
+
+.post h2 {
+  margin-bottom: 1em;
+}
+
+.page-navigation {
+  margin: 2em 0;
+}
+
+.h_iframe {
+  position: relative;
+}
+
+.h_iframe img.ratio {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0px;
+}
+
+.h_iframe iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.proof {
+  display: block;
+  border-left: 4px solid #888;
+  padding-left: 0.5em;
+  margin: 0.5em 0em 1em 0.1em;
+}
+
+div.math-item {
+  text-align: center;
+  margin: 0 0 11px;
+}
+
+.prev-post {
+  float: left;
+}
+
+.next-post {
+  float: right;
+  margin-left: 2em;
+}
