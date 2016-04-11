@@ -1,9 +1,13 @@
 ---
 layout: post
-title: Slutsky matrix times price vector
+title:  "Slutsky matrix times price vector"
+date:   2015-09-06 09:00:13
+categories: jekyll update
+permalink: /posts/slutsky
 ---
-From microeconomic theory we know that 
-$$ S(p, w) \cdot p = 0,$$ 
+
+From microeconomic theory we know that
+$$ S(p, w) \cdot p = 0,$$
 where $S$ is the Slutsky matrix and $p$ is the price vector.
 
 Why?
@@ -24,7 +28,7 @@ $$H\cdot p=E.$$
 
 This is because we are just multiplying the (minimum-cost) demanded quantities by their unit price and then summing up, which is total expenditure.
 
-Combining these two results we have that 
+Combining these two results we have that
 
 $$\frac{d (H\cdot p)}{dp}=H$$
 
@@ -34,14 +38,12 @@ So it follows that when $H=0$,
 
 $$\frac{dH}{dp}\cdot p = 0.$$
 
-We know that the [Jacobian matrix](https://en.wikipedia.org/wiki/Jacobian_matrix_and_determinant) of the Hicksian demand is the Hessian matrix of the expenditure function, that is, 
+We know that the [Jacobian matrix](https://en.wikipedia.org/wiki/Jacobian_matrix_and_determinant) of the Hicksian demand is the Hessian matrix of the expenditure function, that is,
 
 $$\frac{dH}{dp}=\frac{d^2E}{dp^2}=S(p,w).$$
 
-So combining these las two results gives us that 
+So combining these las two results gives us that
 
 $$S(p, w) \cdot p = 0.$$
 
 This means that compensated demanded quantities are not affected by changes in price if relative prices remain constant.
-
-
