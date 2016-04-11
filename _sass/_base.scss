@@ -3,6 +3,7 @@ body {
 	font-family: $base-font-family;
 	font-size: $base-font-size;
 	line-height: $base-line-height;
+	height: 100%;
 }
 a {
 	text-decoration: none;
@@ -37,7 +38,7 @@ pre, pre code {
 	background-color: #223;
 }
 pre code {
-	padding: 0;	
+	padding: 0;
 }
 .hide {
     display: none;
@@ -56,14 +57,14 @@ table {
 		padding: 5px 15px;
 		margin: 0;
 	}
-	
+
 	th {
 		border-color: #555;
 		background: #555;
 		color: #eee;
 		font-weight:normal;
 	}
-	
+
 	tr:hover {
 		background: rgba(255,255,0,0.2);
 	}
