@@ -7,17 +7,15 @@ description: >
   I'm an economist working at J-PAL LAC.
 
 # Your information
-email: acarril@fe.uchile.cl
+email: acarril@fen.uchile.cl
 author: Alvaro Carril
 avatar: "https://avatars3.githubusercontent.com/u/9773292?v=3&s=460"
-profile: Economist,
+profile: Economist / Research analyst at J-PAL LAC
 twitter_username: alvcarril
 github_username:  acarril
 
-# Comment Service (Disqus or 多说)
-#  choose one and un-comment the line to active it
+# Comment Service
 disqus_shortname: acarril   # get one: https://disqus.com/admin/signup/
-#duoshuo_shortname: xxx  # get one: http://duoshuo.com/create-site/
 
 permalink: /posts/:title
 gems:
