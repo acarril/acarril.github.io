@@ -51,11 +51,11 @@ include('https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js', fun
 //********************************************************
 
 var imported = document.createElement('script');
-imported.src = 'http://haghish.com/statax/StataxSource.js';
+imported.src = '/js/StataxSource.js';
 document.head.appendChild(imported);
 
 var imported2 = document.createElement('script');
-imported2.src = 'http://haghish.com/statax/sh_main.js';
+imported2.src = '/js/sh_main.js';
 document.head.appendChild(imported2);
 
 
@@ -70,7 +70,7 @@ if (!document.getElementById(cssId))
     link.id   = cssId;
     link.rel  = 'stylesheet';
     link.type = 'text/css';
-    link.href = 'http://haghish.com/statax/Statax.css';
+    link.href = '/js/Statax.css';
     link.media = 'all';
     head.appendChild(link);
 
