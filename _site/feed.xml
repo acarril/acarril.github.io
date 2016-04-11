@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Another Blog</title>
+    <description>One or more sentences introducing this blog.
+</description>
+    <link>http://laobubu.github.io/jekyll-theme-EasyBook/</link>
+    <atom:link href="http://laobubu.github.io/jekyll-theme-EasyBook/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 10 Apr 2016 23:50:18 -0300</pubDate>
+    <lastBuildDate>Sun, 10 Apr 2016 23:50:18 -0300</lastBuildDate>
+    <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>Welcome to Jekyll and EasyBook</title>
+        <description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;GitHub Flavored Markdown is supported.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-ruby&quot;&gt;def print_hi(name)
+  puts &quot;Hi, #{name}&quot;
+end
+print_hi(&#39;Tom&#39;)
+#=&amp;gt; prints &#39;Hi, Tom&#39; to STDOUT.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;easybook-advanced-functions&quot;&gt;EasyBook Advanced Functions&lt;/h2&gt;
+
+&lt;p&gt;You are using &lt;a href=&quot;https://github.com/laobubu/jekyll-theme-EasyBook&quot;&gt;EasyBook&lt;/a&gt; the template from &lt;a href=&quot;http://laobubu.net&quot;&gt;laobubu.net&lt;/a&gt;. Therefore some features are supported now:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Pagination&lt;/strong&gt; is enabled.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Disqus&lt;/strong&gt; or &lt;strong&gt;多说&lt;/strong&gt; is ready.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;TOC&lt;/strong&gt; for posts is enabled.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Profile&lt;/strong&gt; including your links and avatar on the sidebar.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;And more…&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Tips:&lt;/strong&gt; You can disable Disqus or 多说 on posts/pages by adding &lt;code&gt;nocomments: true&lt;/code&gt; into &lt;a href=&quot;http://jekyllrb.com/docs/frontmatter/&quot;&gt;YAML Front Matter&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;EasyBook uses upaiyun CDN to make everyone lncluding Chinese visitors feel speedy. You can find it in &lt;code&gt;_includes/footer.html&lt;/code&gt; and change it to your favorite CDN like Google CDN.&lt;/p&gt;
+
+&lt;h2 id=&quot;support-me-by&quot;&gt;Support me by…&lt;/h2&gt;
+
+&lt;h3 id=&quot;add-a-link&quot;&gt;Add a link&lt;/h3&gt;
+
+&lt;p&gt;EasyBook does not make the footer heavy; the link to theme could be on &lt;code&gt;about.md&lt;/code&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;This website is using &lt;a href=&quot;http://laobubu.net&quot;&gt;laobubu&lt;/a&gt;’s theme: &lt;a href=&quot;https://github.com/laobubu/jekyll-theme-EasyBook&quot;&gt;EasyBook&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;donate-paypal-or-&quot;&gt;Donate (PayPal or 支付宝)&lt;/h3&gt;
+
+&lt;p&gt;That’s the best &lt;img class=&quot;emoji&quot; title=&quot;:smile:&quot; alt=&quot;:smile:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f604.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt; &lt;/p&gt;
+
+&lt;p&gt;Please visit &lt;a href=&quot;http://laobubu.net/donate.html&quot;&gt;http://laobubu.net/donate.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;star-and-fork-on-github-free&quot;&gt;Star and Fork on GitHub (free)&lt;/h3&gt;
+
+&lt;p&gt;Not going to donate? That’s okay. You can also send out your precious star &lt;a href=&quot;https://github.com/laobubu/jekyll-theme-EasyBook&quot;&gt;on GitHub&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;and-here-we-go&quot;&gt;And Here We Go&lt;/h2&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://github.com/jekyll/jekyll-help&quot;&gt;Jekyll’s dedicated Help repository&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 30 Dec 2014 06:00:13 -0300</pubDate>
+        <link>http://laobubu.github.io/jekyll-theme-EasyBook/archivers/hello</link>
+        <guid isPermaLink="true">http://laobubu.github.io/jekyll-theme-EasyBook/archivers/hello</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Style Test</title>
+        <description>&lt;p&gt;This is just a style test post, filled with LoremIpsue. Feel free to delete the file.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://lorempixel.com/400/200/&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;lorem-ipsum-dolor&quot;&gt;Lorem ipsum dolor&lt;/h1&gt;
+
+&lt;p&gt;Sit amet, consectetur adipiscing elit. Phasellus nisi odio, scelerisque vitae volutpat non, facilisis non erat. In gravida placerat pulvinar. Maecenas ac pretium sem. In consectetur nulla leo, ut maximus nisi volutpat eget. Vestibulum vitae malesuada risus, egestas placerat felis. In sed sollicitudin elit. Sed bibendum porttitor dui.&lt;/p&gt;
+
+&lt;h2 id=&quot;condimentum-mauris-accumsan&quot;&gt;Condimentum mauris Accumsan&lt;/h2&gt;
+
+&lt;p&gt;Eu. Suspendisse scelerisque, orci vel elementum accumsan, sem turpis congue justo, et vulputate lacus orci vel felis. Pellentesque at gravida felis, vitae pretium erat. Pellentesque convallis mi vitae lectus semper, quis pellentesque lectus tristique.&lt;/p&gt;
+
+&lt;h2 id=&quot;duis-a-nibh-in&quot;&gt;Duis a nibh in&lt;/h2&gt;
+
+&lt;p&gt;Consectetur ultrices. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. &lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Vivamus placerat, tortor et aliquam porttitor, risus mi dapibus neque, vitae vulputate urna.
+– Lorem&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Apurus vel sapien. Fusce at condimentum nibh. &lt;/p&gt;
+
+&lt;h3 id=&quot;donec-ut-urna&quot;&gt;Donec ut urna&lt;/h3&gt;
+
+&lt;p&gt;A dolor rhoncus posuere vel porttitor tortor. Integer ex lacus, sagittis ac tellus et, laoreet condimentum massa. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://lorempixel.com/400/400/&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Aliquam tempor pharetra lacus, vel bibendum purus dapibus nec. Integer hendrerit massa ut libero euismod, id gravida neque facilisis. &lt;/p&gt;
+
+&lt;h2 id=&quot;nunc-nec&quot;&gt;Nunc nec&lt;/h2&gt;
+
+&lt;p&gt;Karan justo id turpis auctor pharetra. Fusce pretium ornare facilisis. Aliquam eget scelerisque ex, eu volutpat leo. Proin pharetra est felis, sit amet suscipit orci mattis quis.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Etiam bibendum purus tincidunt&lt;/li&gt;
+  &lt;li&gt;As dapibus enim et, porta ligula. &lt;/li&gt;
+  &lt;li&gt;Morbi tempus, mauris sed sodales auctor, nulla erat fringilla purus, vel sodales nulla nunc sit amet purus. &lt;/li&gt;
+  &lt;li&gt;Praesent pellentesque urna et leo eleifend molestie ac ac ex. &lt;/li&gt;
+  &lt;li&gt;Ut eu sagittis metus, et malesuada libero. &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam placerat mauris a libero tempus facilisis. Maecenas ut augue lacinia, ornare mi in, lobortis arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis justo elit, blandit vel tincidunt ac, imperdiet ut neque. &lt;/p&gt;
+
+&lt;h1 id=&quot;class-aptent&quot;&gt;Class aptent&lt;/h1&gt;
+
+&lt;p&gt;taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam erat volutpat. Sed at semper sem. Morbi in finibus tellus. Pellentesque nec dapibus risus.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;  #include &amp;lt;iostream&amp;gt;
+ 
+  int main () {
+    std::cout &amp;lt;&amp;lt; &quot;Hello world!&quot; &amp;lt;&amp;lt; std::endl;
+  }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;vitae erat non congue. Proin sagittis vitae justo at cursus. Phasellus egestas bibendum urna vel condimentum.&lt;/p&gt;
+
+&lt;h2 id=&quot;fusce-a-ullamcorper-nisl&quot;&gt;Fusce a ullamcorper nisl&lt;/h2&gt;
+
+&lt;p&gt;Pellentesque vehicula faucibus nibh, &lt;strong&gt;a pharetra odio pretium ac.&lt;/strong&gt; Mauris eget gravida orci, vitae tincidunt urna. Integer pharetra ante in porta maximus. Morbi ac arcu lacinia, posuere mauris vitae, lobortis dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae metus nibh. Cras quis malesuada nisi. Ut porttitor, ipsum vel suscipit posuere, elit purus egestas velit, ac lobortis urna orci nec mi.&lt;/p&gt;
+
+&lt;h2 id=&quot;maecenas-bibendum-nisi&quot;&gt;Maecenas bibendum nisi&lt;/h2&gt;
+
+&lt;p&gt;Aleo facilisis porttitor ac ac metus. &lt;strong&gt;Vivamus faucibus faucibus bibendum.&lt;/strong&gt; Donec efficitur consectetur erat quis porttitor. Ut id euismod nunc. Sed venenatis eleifend suscipit. Donec magna purus, porta eget enim a, ornare porttitor nibh. Cras nisl nibh, viverra vitae magna quis, hendrerit facilisis sem.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;table&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;test&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;lorem&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Praesent ultrices&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;convallis lorem&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;at sollicitudin enim&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Mauris&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;tristique cursus&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;arcu ac&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;facilisis&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Proin&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;vulputate neque lectus&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;maximus malesuada est rutrum ac. Sed blandit semper faucibus. Nam venenatis consectetur malesuada. Nulla lacus purus, ultrices ac eros porttitor, finibus sodales augue. Suspendisse tincidunt, felis in placerat euismod, libero nulla interdum nisl, commodo efficitur felis dui in libero. Integer lobortis sapien sit amet orci tristique auctor a sit amet neque. Nunc tincidunt iaculis purus eget maximus. Fusce risus justo, rutrum at magna sed, rhoncus lacinia lectus. Vivamus lobortis odio ex, ac vehicula nunc facilisis non. Aliquam fermentum diam massa. Sed cursus, nisi varius laoreet aliquet, tortor urna porta turpis, in dictum urna enim vel leo. Etiam at lacus lorem. Vivamus ornare vitae nisl vel malesuada.&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 01 Jan 1970 08:00:00 -0300</pubDate>
+        <link>http://laobubu.github.io/jekyll-theme-EasyBook/archivers/test</link>
+        <guid isPermaLink="true">http://laobubu.github.io/jekyll-theme-EasyBook/archivers/test</guid>
+        
+        
+        <category>jekyll</category>
+        
+      </item>
+    
+  </channel>
+</rss>
