@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Adding column percentages to "`tabstat`
+title:  "Adding column percentages to tabstat"
 date:   2015-04-11
 categories: stata
 permalink: /posts/column-percentages-tabstat
