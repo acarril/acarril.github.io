@@ -3,7 +3,7 @@ layout: post
 title:  "Welcome to Jekyll and EasyBook"
 date:   2014-12-30 09:00:13
 categories: jekyll update
-permalink: /archivers/hello
+permalink: /
 ---
 
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
@@ -44,7 +44,7 @@ EasyBook does not make the footer heavy; the link to theme could be on `about.md
 
 ### Donate (PayPal or 支付宝) ###
 
-That's the best :smile: 
+That's the best :smile:
 
 Please visit [http://laobubu.net/donate.html](http://laobubu.net/donate.html)
 
