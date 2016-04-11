@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About
+title: about
 permalink: /about/
 public: true
 nocomments: true
@@ -8,6 +8,4 @@ nocomments: true
 
 Welcome to my website!
 
-I'm Alvaro Carril, an economist working at J-PAL LAC.
-
-> This website is using [laobubu](http://laobubu.net)'s theme: [EasyBook](https://github.com/laobubu/jekyll-theme-EasyBook)
+I'm Alvaro Carril, an economist working as a research analysit at [J-PAL LAC](https://www.povertyactionlab.org/lac).
