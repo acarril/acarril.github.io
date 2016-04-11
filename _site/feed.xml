@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Another Blog</title>
-    <description>One or more sentences introducing this blog.
+    <title>Alvaro Carril</title>
+    <description>I&#39;m an economist working at J-PAL LAC.
 </description>
-    <link>http://laobubu.github.io/jekyll-theme-EasyBook/</link>
-    <atom:link href="http://laobubu.github.io/jekyll-theme-EasyBook/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 10 Apr 2016 23:50:18 -0300</pubDate>
-    <lastBuildDate>Sun, 10 Apr 2016 23:50:18 -0300</lastBuildDate>
+    <link>http://acarril.github.io/</link>
+    <atom:link href="http://acarril.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 11 Apr 2016 00:39:33 -0300</pubDate>
+    <lastBuildDate>Mon, 11 Apr 2016 00:39:33 -0300</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -55,7 +55,7 @@ print_hi(&#39;Tom&#39;)
 
 &lt;h3 id=&quot;donate-paypal-or-&quot;&gt;Donate (PayPal or 支付宝)&lt;/h3&gt;
 
-&lt;p&gt;That’s the best &lt;img class=&quot;emoji&quot; title=&quot;:smile:&quot; alt=&quot;:smile:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f604.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt; &lt;/p&gt;
+&lt;p&gt;That’s the best &lt;img class=&quot;emoji&quot; title=&quot;:smile:&quot; alt=&quot;:smile:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f604.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Please visit &lt;a href=&quot;http://laobubu.net/donate.html&quot;&gt;http://laobubu.net/donate.html&lt;/a&gt;&lt;/p&gt;
 
@@ -69,8 +69,8 @@ print_hi(&#39;Tom&#39;)
 
 </description>
         <pubDate>Tue, 30 Dec 2014 06:00:13 -0300</pubDate>
-        <link>http://laobubu.github.io/jekyll-theme-EasyBook/archivers/hello</link>
-        <guid isPermaLink="true">http://laobubu.github.io/jekyll-theme-EasyBook/archivers/hello</guid>
+        <link>http://acarril.github.io/</link>
+        <guid isPermaLink="true">http://acarril.github.io/</guid>
         
         
         <category>jekyll</category>
@@ -178,8 +178,8 @@ print_hi(&#39;Tom&#39;)
 
 </description>
         <pubDate>Thu, 01 Jan 1970 08:00:00 -0300</pubDate>
-        <link>http://laobubu.github.io/jekyll-theme-EasyBook/archivers/test</link>
-        <guid isPermaLink="true">http://laobubu.github.io/jekyll-theme-EasyBook/archivers/test</guid>
+        <link>http://acarril.github.io/archivers/test</link>
+        <guid isPermaLink="true">http://acarril.github.io/archivers/test</guid>
         
         
         <category>jekyll</category>
