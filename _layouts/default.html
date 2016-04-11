@@ -1,81 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link href="data:image/x-icon;base64,AAABAAEAEBACAAAAAACwAAAAFgAAACgAAAAQAAAAIAAAAAEAAQAAAAAAQAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB/wAAAf8AAAH/AAAB/wAAAf8AAAH/AAAB/wAA//8AAP//AAABgAAAAYAAAAGAAAABgAAAAYAAAAGAAAABgAAA" rel="icon" type="image/x-icon" />
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
-    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
-    <meta name="author" content="{{ site.author }}">
-    <link href="http://feeds.feedburner.com/acarril" rel="alternate" title="{{ site.title }}" type="application/rss+xml">
-    <link rel="stylesheet" href="{{ site.baseurl }}css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{{ site.baseurl }}css/main.css">
-    <link rel="stylesheet" href="{{ site.baseurl }}css/syntax.css">
-    <link rel="stylesheet" href="{{ site.baseurl }}css/katex.min.css">
-    {% if page.inhead %}{{page.inhead}}{% endif %}
-    <!-- nomj -->
-    <script>
-      if (location.hostname !== 'localhost') {
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-46471633-2', 'auto');ga('send', 'pageview');
-      } else
-        console.log('Disabling analytics');
-    </script>
-  </head>
+
+  {% include head.html %}
+
   <body>
-    <div id="wrapper">
-      <div class="container-fluid">
-        <div class="page-header">
-          <h1><a href="{{ site.baseurl }}">{{ site.name }}</a></h1>
+
+    {% include header.html %}
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="col-main">
+          {{ content }}
         </div>
-        <div class="row">
-          <div class="col-md-9">
-            {{ content | convert_raw }}
-          </div>
-          <div class="col-md-3">
-            <h4>About</h4>
-
-            <p>Some random posts on economics, econometrics and statistics.</p>
-
-            <h4>Links</h4>
-
-            <p><i class="fa fa-list fa-fw"></i> <a href="{{ site.baseurl }}">Posts</a></p>
-            <p><i class="fa fa-twitter fa-fw"></i> <a href="https://twitter.com/alvcarril">Twitter</a></p>
-            <p><i class="fa fa-github fa-fw"></i> <a href="https://github.com/acarril/">GitHub</a></p>
-            <p><i class="fa fa-file-text-o fa-fw"></i> <a href="https://www.dropbox.com/s/oow36pf0wyevnc4/CV_acarril.pdf?dl=0">CV</a></p>
-
-            <footer><p class="text-muted">Copyright Alvaro Carril &copy; {{ site.time | date: '%Y' }}</p></footer>
-          </div>
+        <div class="col-second">
+          {% include sidebar.html %}
         </div>
       </div>
     </div>
-    <script>
-      function togglevis(id) {
-        var e = document.getElementById(id);
-        e.style.display = e.style.display === 'none' ? 'block' : 'none';
-       }
-    </script>
-    <!-- Mathjax -->
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        MatchWebFonts: {
-    matchFor: {
-      "HTML-CSS": true,
-      NativeMML: true,
-      SVG: true
-    },
-    fontCheckDelay: 2000,
-    fontCheckTimeout: 30 * 1000
-  },
-        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']],
-          processEscapes: true
-        }
-      });
-    </script>
-<script type="text/javascript" src="path-to-mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/javascript"
-  src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
+
+    {% include footer.html %}
+
   </body>
+
 </html>

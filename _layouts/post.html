@@ -3,51 +3,15 @@ layout: default
 ---
 <div class="post">
 
-<h2>
-    {{ page.title }}<br>
-    <small><time datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date_to_long_string }}</time></small>
-</h2>
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+  </header>
 
-<div class="post-body clearfix">
-{{ content }}
-</div>
-
-<div class="page-navigation clearfix"> 
-    <div class="prev-post"> 
-        {% if page.previous.url %}<a href="{{page.previous.url}}" title="Previous post: {{page.previous.title}}">&laquo; {{page.previous.title}}</a>{% endif %} 
-    </div> 
-    <div class="next-post"> 
-        {% if page.next.url %}<a href="{{page.next.url}}" title="Next post: {{page.next.title}}">{{page.next.title}} &raquo; </a>{% endif %} 
-    </div>
-</div> 
-
-{% if site.postrace %}
-<script>
-  (function (query) {
-    if (/^\?race=(\d+)$/.test(query)) {
-      function redirect() {
-        window.location = {% if page.next %}'{{page.next.url}}'{% else %}'{{ site.baseurl }}postrace.html'{% endif %} + query;
-      }
-      if (typeof MathJax === 'object')
-        MathJax.Hub.Register.StartupHook('End', redirect);
-      else
-        window.onload = redirect;
-    }
-  })(window.location.search);
-</script>
-{% endif %}
-
-{% if site.disqus %}
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'janmr-blog';
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-{% endif %}
+  <article class="post-content">
+    {{ content }}
+  </article>
+  
+  {% include comment.html %}
 
 </div>
