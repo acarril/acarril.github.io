@@ -16,9 +16,9 @@ $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
 Stata code:
 
 <pre class="sh_stata">
-	. sysuse bpwide, clear
-	. reg bp_after bp_before sex
-	...
+. sysuse bpwide, clear
+. local controls sex agegrp
+. reg bp_after bp_before `controls'
 </pre>
 
 To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
