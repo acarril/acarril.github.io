@@ -7,13 +7,13 @@
  */ 
 	
 pre.sh_sourceCode .sh_keyword          { color: #FFFFFF; }     /* Stata Commands        */
-pre.sh_sourceCode .sh_string           { color: #73C935; }     /* strings               */
-pre.sh_sourceCode .sh_macro            { color: #95A99F; }     /* local & global macros */
-pre.sh_sourceCode .sh_string .sh_macro { color: #73C935; }     /* macro in string       */
-pre.sh_sourceCode .sh_comment          { color: #CC8C3C; }     /* Comment               */
+pre.sh_sourceCode .sh_string           { color: #FFFFFF; }     /* strings               */
+pre.sh_sourceCode .sh_macro            { color: #FFFFFF; }     /* local & global macros */
+pre.sh_sourceCode .sh_string .sh_macro { color: #FFFFFF; }     /* macro in string       */
+pre.sh_sourceCode .sh_comment          { color: #FFFFFF; }     /* Comment               */
 pre.sh_sourceCode .sh_predef_func      { color: #FFFFFF; }     /* Stata Functions       */
 pre.sh_sourceCode .sh_function         { color: #FFFFFF; }     /* Any Function()        */
-pre.sh_sourceCode .sh_number           { color: #FFDC33; }     /* Numbers               */
-pre.sh_sourceCode .sh_symbol           { color: #FFDC33; }     /* Operators and signs   */
-pre.sh_sourceCode .sh_cbracket         { color: #906   ; }     /* Braces                */
+pre.sh_sourceCode .sh_number           { color: #FFFFFF; }     /* Numbers               */
+pre.sh_sourceCode .sh_symbol           { color: #FFFFFF; }     /* Operators and signs   */
+pre.sh_sourceCode .sh_cbracket         { color: #FFFFFF   ; }     /* Braces                */
 pre.sh_stata{font-family: 'menlo-regular', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'sans-serif','Trebuchet MS';background-color:#282828;color:#F4F4FF}
