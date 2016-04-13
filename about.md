@@ -18,4 +18,4 @@ My personal interests include development economics, econometrics and computatio
 - "What's the Value of the Teacher? Mechanisms and effects of teacher absenteeism on
 student achievement" with Valentina Paredes (in progress)
 
-![alt text](files\photo_cv.jpg "Me")
+![alt text](..\files\photo_cv.jpg "Me")
