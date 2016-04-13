@@ -6,7 +6,7 @@ public: true
 nocomments: true
 ---
 
-# Welcome to my website! <img style="float: right;" src="..\files\photo_cv.jpg">
+# Welcome to my website! <img style="float: left;" src="..\files\photo_cv.jpg" hspace="20">
 
 I'm Alvaro Carril, an economist working as a research analysit at [J-PAL LAC](https://www.povertyactionlab.org/lac). In J-PAL I'm involved in projects related to tax policy and procurement, working as research assistant of professors [Dina Pomeranz](http://www.hbs.edu/faculty/Pages/profile.aspx?facId=603214) (Harvard) and [Gabriel Zucman](http://gabriel-zucman.eu/) (UC Berkeley).
 
