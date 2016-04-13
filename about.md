@@ -11,7 +11,7 @@ nocomments: true
 <img style="float: left;" src="..\files\photo_cv.jpg" hspace="20">
 I'm Alvaro Carril, an economist working as a research analysit at [J-PAL LAC](https://www.povertyactionlab.org/lac). In J-PAL I'm involved in projects related to tax policy and procurement, working as research assistant of professors [Dina Pomeranz](http://www.hbs.edu/faculty/Pages/profile.aspx?facId=603214) (Harvard) and [Gabriel Zucman](http://gabriel-zucman.eu/) (UC Berkeley).
 
-My personal interests include development economics, econometrics and computational tools for economics. I have developed several Stata commands, most of which are freely available in my [GitHub Repo](http://www.github.com/acarril) or at the [SSC Archive](https://ideas.repec.org/f/pca1141.html).
+My personal interests include development economics, econometrics and computational tools for economics. I have developed several Stata commands, all of which are available in my [Git repo](http://www.github.com/acarril) or at the [SSC Archive](https://ideas.repec.org/f/pca1141.html).
 
 ## Working papers and work in progress
 
