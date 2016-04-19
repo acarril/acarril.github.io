@@ -11,11 +11,11 @@ Submitting a job in batch mode is extremely useful for running long processes in
 
 # What do I need?
 
-## A `do-file` for submission
+### A do-file for submission
 
 First of all you need a do-file to submit. In this example we'll submit `mydofile.do`. This do-file hasn't have to have anything special, but make sure you know the path of the file.
 
-## A `submit file` to control submission parameters
+### A submit file to control submission parameters
 
 Once that directory structure is set up, you'll need a `submit file`, which is a simple text file with instructions on how the batch process should be run. This `submit file` has to be saved with a `*.submit` extension. So, for example, I'll name mine `mybatch.submit` (again, creative).
 
@@ -55,7 +55,7 @@ notify_user = your@email.com
 Queue 1
 ```
 
-## Directory structure
+### Directory structure
 
 Both the `do-file` and the `submit file` should be placed on a directory of your choosing, which we'll call the `root directory`. It is recommended to have a dedicated folder for the outputs produced by the batch processing system inside the `root directory`. In this example I've been exceedingly creative and named that folder `/output`.
 
@@ -75,7 +75,7 @@ $ condor_submit mybatch.submit
 
 It will then say that the job is submitted to a cluster number.
 
-# Check the process
+# Checking the process
 
 You can check at anytime how all your submitted processes are going by typing `condor_q <username>`. For example,
 
