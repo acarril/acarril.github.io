@@ -13,7 +13,7 @@ Submitting a job in batch mode is extremely useful for running long processes in
 
 ## `do-file`
 
-First of all you need a do-file to submit. In this example we'll submit `mydofile.do`. This do-file hasn't have to have anything special, but make sure you know the path of the file. It is also recommended to have a dedicated folder for the outputs produced by the batch processing system. In this example I've been exceedingly creative and named that folder `/output`.
+First of all you need a do-file to submit. In this example we'll submit `mydofile.do`. This do-file hasn't have to have anything special, but make sure you know the path of the file.
 
 ## `submit file`
 
@@ -42,9 +42,9 @@ error = output/mydofile.err
 # Specify where to save the log file.
 Log = output/mydofile.log
 
-# Request processors (Stata maxes out at 4) and memory (in MB)
+# Request processors (Stata maxes out at 4) and memory (in GB)
 Request_Cpus = 4
-Request_Memory = 8192
+Request_Memory = 8GB
 
 # Notifications settings
 notification = Always
@@ -55,4 +55,33 @@ notify_user = your@email.com
 Queue 1
 ```
 
+## Directory structure
+
+Both the `do-file` and the `submit file` should be placed on a directory of your choosing, which we'll call the `root directory`. It is recommended to have a dedicated folder for the outputs produced by the batch processing system inside the `root directory`. In this example I've been exceedingly creative and named that folder `/output`.
+
 # Submitting a batch job
+
+Now that everything is set up, the process is really easy. You'll need to start the command line and change directory to the `root directory`. For example,
+
+````
+$ cd /nfs/projects/t/tpricing
+````
+
+Once there, the process is submitted with the `condor_submit <submit file>.submit` command. For example,
+
+````
+$ condor_submit mybatch.submit
+````
+
+It will then say that the job is submitted to a cluster number.
+
+# Check the process
+
+You can check at anytime how all your submitted processes are going by typing `condor_q <username>`. For example,
+
+````
+$ condor_q acarril2
+````
+The most important column in there is `ST`, shorthand for "Status". If it says `R`, then it is running. **If you don't see your process, then that means it has finished.** If that is the case, go to your `/output` folder and check your results in the `*.out` file.
+
+Better than checking incessantly, make sure you add your email address to the `submit file`, so you get notified in your inbox when your job completes (or crashes)!
