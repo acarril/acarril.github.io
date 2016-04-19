@@ -5,7 +5,13 @@ categories: jekyll
 permalink: /posts/batch-jobs
 ---
 
-Submitting a job in batch mode is extremely useful for running long processes in the background, while freeing the GUI interface for other tasks. Although it is common to use batch mode for speed, it doesn't actually run any faster (except for a negligible amount of speed increase because of lack of GUI).
+### Why use batch mode?
+
+Submitting a job in batch mode is extremely useful for running long processes in the background, while freeing the GUI interface for other tasks. Although it is common to use batch mode for speed, **batch mode doesn't actually run any faster** (except for a negligible amount of speed increase because of lack of GUI).
+
+## What do I need?
+
+First of all you need a do-file to submit. In this example we'll submit `mydofile.do`. This do-file hasn't have to have anything special. It is also recommended to have a dedicated folder for the outputs produced by the batch processing system. In this example I've been exceedingly creative and named that folder `/output`.
 
 ```
 # Universe whould always be 'vanilla'. This line MUST be
