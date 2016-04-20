@@ -17,7 +17,11 @@ then
 
 2. Correct small portion of code
 3. **Select section of code in large do-file and run it**
+
 (rinse and repeat)
 
+This post is all about step **3.**, which is can be very graphically appreciated in the following gif:
 
 ![Long selection](../files/long_selection.gif)
+
+# Some solutions
