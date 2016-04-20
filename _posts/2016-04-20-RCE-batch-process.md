@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Running parallel processes in batch mode"
-categories: jekyll
-permalink: /posts/batch-jobs
+categories: RCE
+permalink: /posts/batch-jobs-processes
 ---
 
 One of the most powerful features of batch mode is the ability to run several processes in parallel. I'll explain how to easily use this feature  with Stata.

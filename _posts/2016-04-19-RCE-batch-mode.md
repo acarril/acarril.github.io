@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Running Batch Jobs"
-categories: jekyll
+categories: RCE
 permalink: /posts/batch-jobs
 ---
 

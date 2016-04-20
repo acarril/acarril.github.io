@@ -2,7 +2,7 @@
 layout: post
 title:  "Slutsky matrix times price vector"
 date:   2015-09-06 09:00:13
-categories: jekyll update
+categories: economics
 permalink: /posts/slutsky
 ---
 
