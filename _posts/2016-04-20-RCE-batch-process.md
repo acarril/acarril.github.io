@@ -58,7 +58,7 @@ The submit file is very similar to the basic template, but now we pass the `Proc
 
 How many process we are requesting is defined in the last line, `Queue`. In this example we're requesting 10 processes, which will make the `$(Process)` integer go from 0 to 9.
 
-````csharp
+````c
 Universe = vanilla
 Executable = /usr/local/bin/stata-mp
 
