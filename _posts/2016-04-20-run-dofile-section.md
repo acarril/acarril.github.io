@@ -15,8 +15,10 @@ We've all done it. It all starts with
 1. Error! `r(XXX);`
 
   then
-2. Correct small portion of code
-3. **Select section of code in large do-file and run it**
+  <ol start="2">
+    <li>Correct small portion of code</li>
+    <li>**Select section of code in large do-file and run it**</li>
+  </ol>
 
 (rinse and repeat)
 
