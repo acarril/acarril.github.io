@@ -11,6 +11,12 @@ One of the most powerful features of batch mode is the ability to run several pr
 
 We are going to need, as usual, a **do-file** and a **submit file**. We are also going to assume some basic **directory structure**.
 
+### Directory structure
+
+For this example we'll need to set everything up in a root folder which contains a `dofiles`, a `batch_output` folder and a `datasets` folder. The do-file to submit is going to be located inside the dofiles folder, while the submit file is located in the root folder. All this can be easily seen in the screenshot below.
+
+![batch_process_directory_structure](..\files\batch_process_directory_structure.png)
+
 ### Do-file
 
 The do-file we're using is going to
@@ -74,13 +80,6 @@ notify_user = your@email.com
 # Number of processes to request
 Queue 10
 ````
-
-### Directory structure
-
-For this example we'll need to set everything up in a root folder which contains a do-files, a batch_output folder and a datasets folder. The do-file to submit is going to be located inside the dofiles folder, while the submit file is located in the root folder. All this can be easily seen in the screenshot below.
-
-![batch_process_directory_structure](..\files\batch_process_directory_structure.png)
-
 
 # Running the processes
 
