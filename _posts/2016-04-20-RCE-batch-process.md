@@ -5,9 +5,11 @@ categories: jekyll
 permalink: /posts/batch-jobs
 ---
 
+One of the most powerful features of batch mode is the ability to run several processes in parallel. I'll explain how to easily use this feature  with Stata.
+
 # Stuff needed
 
-We are going to need, as usual, a do-file and a submit file. We are also going to assume some basic directory structure.
+We are going to need, as usual, a **do-file** and a **submit file**. We are also going to assume some basic **directory structure**.
 
 ### Do-file
 
