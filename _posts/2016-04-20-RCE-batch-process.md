@@ -13,7 +13,7 @@ We are going to need, as usual, a [**do-file**](#do-file) and a [**submit file**
 
 ### Directory structure
 
-For this example we'll need to set everything up in a root folder which contains a `dofiles`, a `batch_output` folder and a `datasets` folder. The do-file to submit is going to be located inside the dofiles folder, while the submit file is located in the root folder. All this can be easily seen in the screenshot below.
+For this example we'll need to set everything up in a root folder which contains a `dofiles` folder, a `batch_output` folder and a `datasets` folder. The do-file to submit is going to be located inside the dofiles folder, while the submit file is located in the root folder. All this can be easily seen in the screenshot below.
 
 ![batch_process_directory_structure](..\files\batch_process_directory_structure.png)
 
@@ -27,7 +27,7 @@ The do-file we're using is going to
 4. Compute the average value of a variable from the sampled observations for each process
 5. Save a different collapsed dataset for each process
 
-The key here is to collect `process`, an integer passed by the submit file (see below) onto the do-file. This will make each run of the do-file unique for each process.
+The key here is to collect `process`, an integer passed by the submit file (see the [submit file](#submit-file) below) onto the do-file. This will make each run of the do-file unique for each process.
 
 <pre class="sh_stata">
 // set more off so that the do-file runs without halting
@@ -58,7 +58,7 @@ The submit file is very similar to the basic template, but now we pass the `Proc
 
 How many process we are requesting is defined in the last line, `Queue`. In this example we're requesting 10 processes, which will make the `$(Process)` integer go from 0 to 9.
 
-````
+````c
 Universe = vanilla
 Executable = /usr/local/bin/stata-mp
 
