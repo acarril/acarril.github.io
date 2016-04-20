@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title:  "Adding column percentages of sums to tabstat"
 categories: stata
 permalink: /posts/column-percentages-tabstat

@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title:  "Running parallel processes in batch mode"
 categories: RCE
 permalink: /posts/batch-jobs-processes

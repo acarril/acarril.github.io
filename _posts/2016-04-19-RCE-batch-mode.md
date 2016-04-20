@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title:  "Running Batch Jobs"
 categories: RCE
 permalink: /posts/batch-jobs

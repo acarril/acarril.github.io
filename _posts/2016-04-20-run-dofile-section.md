@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title:  "Running sections of do-files"
 categories: stata
 permalink: /posts/run-dofile-section

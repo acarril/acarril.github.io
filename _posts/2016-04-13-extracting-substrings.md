@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title:  "Extracting substrings"
 categories: stata
 permalink: /posts/extracting-substrings
