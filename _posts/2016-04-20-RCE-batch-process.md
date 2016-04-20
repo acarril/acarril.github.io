@@ -58,7 +58,7 @@ The submit file is very similar to the basic template, but now we pass the `Proc
 
 How many process we are requesting is defined in the last line, `Queue`. In this example we're requesting 10 processes, which will make the `$(Process)` integer go from 0 to 9.
 
-````c
+```c
 Universe = vanilla
 Executable = /usr/local/bin/stata-mp
 
@@ -79,13 +79,13 @@ notify_user = your@email.com
 
 # Number of processes to request
 Queue 10
-````
+```
 
 # Running the processes
 
 To submit these parallel jobs we'll go to the command line and change the current directory to our root folder. For example, I have put all the files of this example in a folder called `batch`, located inside my personal directory in the RCE environment, so I use
 
-````
+```
 cd batch
 condor_submit stata_batch_process.submit
-````
+```

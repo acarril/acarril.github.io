@@ -8,15 +8,16 @@ permalink: /posts/batch-jobs
 Running a job in batch mode is extremely useful for performing long processes in the background, while freeing the GUI interface for other tasks. Even though a particular Stata task is not performed faster in batch mode, it allows to perform several tasks in parallel.
 
 # What do I need?
+
 ### A do-file
 First of all you need a do-file to submit. In this example we'll submit `mydofile.do`. The do-file hasn't have to have anything special (at least at first).
 
 ### A submit file
-You'll need a `submit file`, which is a simple text file with instructions on how the batch process should be run. **The `submit file` has to be saved with a `*.submit` extension.** So, for example, I'll name mine `mybatch.submit` (again, creative).
+You'll need a `submit file`, which is a simple text file with instructions on how the batch process should be run. **The submit file has to be saved with a `*.submit` extension.** So, for example, I'll name mine `mybatch.submit` (again, creative).
 
 The easiest way to get going is to copy the following text in any plain text editor and then make sure to save it with `*.submit` extension (not `*.submit.txt`!). All lines starting with a `#` are comments. Edit what you want and save the file in the same folder as your do-file.
 
-```
+```c
 # Universe whould always be 'vanilla'. This line MUST be
 #included in your submit file, exactly as shown below.
 Universe = vanilla
