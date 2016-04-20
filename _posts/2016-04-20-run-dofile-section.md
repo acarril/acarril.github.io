@@ -10,8 +10,11 @@ As do-files get larger and more complex, it is common to want to run only a port
 # The issue
 
 We've all done it. It all starts with
+
 1. Error! `r(XXX);`
+
 then
+
 2. Correct small portion of code
 3. **Select section of code in large do-file and run it**
 (rinse and repeat)
