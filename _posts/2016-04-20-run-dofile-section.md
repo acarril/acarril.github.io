@@ -17,7 +17,7 @@ We've all done it. It all starts with
   then
   <ol start="2">
     <li>Correct small portion of code</li>
-    <li>**Select section of code in large do-file and run it**</li>
+    <li><b>Select section of code in large do-file and run it</b></li>
   </ol>
 
 (rinse and repeat)
