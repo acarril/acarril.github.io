@@ -1,12 +1,14 @@
 ---
 layout: post
 comments: true
-title:  "Running parallel processes in batch mode"
+title:  "Parallel processes in batch mode"
 categories: RCE
-permalink: /posts/batch-jobs-processes
+permalink: /posts/batch-processes
 ---
 
 One of the most powerful features of batch mode is the ability to run several processes in parallel. I'll explain how to easily use this feature  with Stata.
+
+This is the second post regarding batch jobs in the RCE server. I also wrote a [first part](/batch-jobs) which deals with the basics of running batch jobs using Stata.
 
 # Stuff needed
 
