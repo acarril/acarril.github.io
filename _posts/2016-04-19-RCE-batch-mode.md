@@ -8,7 +8,7 @@ permalink: /posts/batch-jobs
 
 Running a job in batch mode is extremely useful for performing long processes in the background, while freeing the GUI interface for other tasks. Even though a particular Stata task is not performed faster in batch mode, it allows to perform several tasks in parallel.
 
-In this post I explain the basics of running batch jobs with Stata. I also wrote a [second part](/batch-processes) which deals with running multiple processes in parallel.
+In this post I explain the basics of running batch jobs with Stata. I also wrote a [second part](batch-processes) which deals with running multiple processes in parallel.
 
 # What do I need?
 
