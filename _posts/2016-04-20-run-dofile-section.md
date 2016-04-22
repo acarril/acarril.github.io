@@ -10,7 +10,7 @@ As do-files get larger and more complex, it is common to want to run only a port
 
 # The issue
 
-We've all done it. It all starts with
+We've all done it. It starts with
 
 1. Error! `r(XXX);`
 
