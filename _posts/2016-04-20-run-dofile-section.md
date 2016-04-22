@@ -3,7 +3,7 @@ layout: post
 comments: true
 title:  "Running sections of do-files"
 categories: stata
-permalink: /posts/dofile-section
+permalink: /posts/run-dofile-section
 ---
 
 As do-files get larger and more complex, it is common to want to run only a portion or section of the code. Over the years I've come to use extensively what I call **do-switches**, which are just handy devices for "turning on and off" some parts of the code.
@@ -20,8 +20,6 @@ We've all done it. It all starts with
     <li><b>Select section of code in large do-file and run it</b></li>
     <i>(rinse and repeat)</i>
   </ol>
-
-
 
 This post is all about step **3.**, which is can be very graphically appreciated in the following gif:
 
