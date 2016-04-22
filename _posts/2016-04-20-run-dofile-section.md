@@ -18,9 +18,10 @@ We've all done it. It all starts with
   <ol start="2">
     <li>Correct small portion of code</li>
     <li><b>Select section of code in large do-file and run it</b></li>
+    <i>(rinse and repeat)</i>
   </ol>
 
-(rinse and repeat)
+
 
 This post is all about step **3.**, which is can be very graphically appreciated in the following gif:
 
