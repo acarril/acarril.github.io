@@ -13,10 +13,10 @@ I'm Alvaro Carril, an economist working as a research analysit at [J-PAL LAC](ht
 
 I'm interested in development economics, econometrics and computational tools for economics. I have developed several Stata commands, all of which are available in my [Git repo](http://www.github.com/acarril) or at the [SSC Archive](https://ideas.repec.org/f/pca1141.html).
 
-You can find my CV [here](https://www.dropbox.com/s/oow36pf0wyevnc4/CV_acarril.pdf?dl=0). 
+You can find my CV [here](https://www.dropbox.com/s/oow36pf0wyevnc4/CV_acarril.pdf?dl=0).
 
 ## Working papers and work in progress
 
-- "Dealing with misfits in random treatment assignment", Stata Journal (under review)
+- ["Dealing with misfits in random treatment assignment"](https://www.researchgate.net/publication/292091060_Dealing_with_misfits_in_random_treatment_assignment), Stata Journal (under review)
 - "What's the Value of the Teacher? Mechanisms and effects of teacher absenteeism on
 student achievement" with Valentina Paredes (in progress)
