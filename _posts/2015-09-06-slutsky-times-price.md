@@ -2,8 +2,8 @@
 layout: post
 comments: true
 title:  "Slutsky matrix times price vector"
-date:   2015-09-06 09:00:13
-categories: economics
+date:   2015-09-06
+categories: econ
 permalink: /posts/slutsky
 ---
 
