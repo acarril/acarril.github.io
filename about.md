@@ -17,7 +17,7 @@ As my work (mainly) consists of performing economic analysis using Stata, most p
 <img style="float: left;margin-right:10px;" src="..\files\photo_cv.jpg">
 I'm Alvaro Carril, an economist working as a research analyst at [J-PAL LAC](https://www.povertyactionlab.org/lac). In J-PAL I'm involved in projects related to tax policy and procurement, working as research assistant of professors [Dina Pomeranz](http://www.hbs.edu/faculty/Pages/profile.aspx?facId=603214) (Harvard) and [Gabriel Zucman](http://gabriel-zucman.eu/) (UC Berkeley).
 
-I'm interested in development economics, econometrics and computational tools for economics. I have developed several Stata commands, most of which are available in my [Git repo](http://www.github.com/acarril) or at the [SSC Archive](https://ideas.repec.org/f/pca1141.html).
+I'm interested in development economics, econometrics and computational tools for economics. I've developed several Stata commands, most of which are available in my [Git repo](http://www.github.com/acarril) or at the [SSC Archive](https://ideas.repec.org/f/pca1141.html).
 
 You can find my CV [here](https://www.dropbox.com/s/oow36pf0wyevnc4/CV_acarril.pdf?dl=0).
 
