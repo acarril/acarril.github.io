@@ -49,7 +49,7 @@ So it is interesting to note that the probability of getting at least one false 
 To get an idea of some typical values of our last formula, here is a table:
 
 $$
-\begin{tabular}{lllllll}
+\begin{array}{lllllll}
     &    & \multicolumn{5}{c}{p}                 \\
     &    & 0,001 & 0,005 & 0,01  & 0,05  & 0,1   \\
     & 1  & 0,001 & 0,005 & 0,01  & 0,05  & 0,1   \\
@@ -63,7 +63,7 @@ $k$ & 10 & 0,010 & 0,049 & 0,096 & 0,401 & 0,651 \\
     & 30 & 0,030 & 0,140 & 0,260 & 0,785 & 0,958 \\
     & 40 & 0,039 & 0,182 & 0,331 & 0,871 & 0,985 \\
     & 50 & 0,049 & 0,222 & 0,395 & 0,923 & 0,995
-\end{tabular}
+\end{array}
 $$
 
 ![Probs table](http://i60.tinypic.com/347b48h.png)
