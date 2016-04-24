@@ -66,7 +66,7 @@ k & 10 & 0.010 & 0.049 & 0.096 & 0.401 & 0.651 \\
 \end{array}
 $$
 
-![Probs table](http://i60.tinypic.com/347b48h.png)
+<!--![Probs table](http://i60.tinypic.com/347b48h.png)-->
 
 \* Of course, the values of $$m$$ and $$n$$ do enter the test-statistic. For example, if we assume that the underlying data is normally distributed i.i.d., with mean $$\mu$$ and variance $$\sigma$$ for both treatment and control groups, then it can be proven we can get the [Student's $$t$$-statistic](https://en.wikipedia.org/wiki/Student%27s_t-test):
 
