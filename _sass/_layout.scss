@@ -196,6 +196,7 @@
 }
 @include media-query($on-palm) {
 	.header {
+		margin-bottom: 100px;
 		&, .site-nav{
 			text-align:right;
 		}
@@ -209,7 +210,6 @@
 	.col-box {
 		width: 100%;
 		float: none;
-		margin-top: 300px;
 		margin-bottom: 20px;
 	}
 	pre {
