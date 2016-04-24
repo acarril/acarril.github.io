@@ -49,6 +49,7 @@ So it is interesting to note that the probability of getting at least one false 
 To get an idea of some typical values of our last formula, here is a table:
 
 $$
+\[
 \begin{array}{rr|lllll}
   \multicolumn{6}{c}{p}      \\
   &    & 0.001 & 0.005 & 0.01  & 0.05  & 0.1   \\\hline
@@ -64,6 +65,7 @@ k & 10 & 0.010 & 0.049 & 0.096 & 0.401 & 0.651 \\
   & 40 & 0.039 & 0.182 & 0.331 & 0.871 & 0.985 \\
   & 50 & 0.049 & 0.222 & 0.395 & 0.923 & 0.995
 \end{array}
+\]
 $$
 
 <!--![Probs table](http://i60.tinypic.com/347b48h.png)-->
