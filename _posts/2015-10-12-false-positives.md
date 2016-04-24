@@ -14,11 +14,11 @@ But does it matter?
 
 Assuming i.i.d. Normal characteristics we can use separate [Welch's $$t$$-tests](https://en.wikipedia.org/wiki/Welch%27s_t_test), which account for different variances and sample sizes. If the statistics of these tests are $$w_i$$ ($$i=1,..., k$$), the $$p$$-value of each one is
 
-\$$ p_i = \Pr(|w_i|\geq w(\alpha)\mid H_0),$$
+$$ p_i = \Pr(|w_i|\geq w(\alpha)\mid H_0),$$
 
 where $$H_0$$ is the null hypothesis<!--- of equal means of the control and treatment groups-->.
 
-The above probability can be expressed in terms of the corresponding cumulative distribution function, so $$\Pr (\cdot)=1-F( \mid w_i \mid )$$ . Therefore we have that
+The above probability can be expressed in terms of the corresponding cumulative distribution function, that is, $$\Pr (\cdot)=1-F( \mid w_i \mid )$$ . Therefore we have that
 
 $$F(|w_i|)=1-p_i .$$
 
@@ -47,6 +47,24 @@ $$ \Pr (p_{min}\leq \overline p) = 1-[1-p_{min}]^k. $$
 So it is interesting to note that the probability of getting at least one false positive significant result under $$p$$ doesn't depend on the size of treatment nor control groups (in an impact evaluation setting), or even on sample size. Because $$p$$-values are random variables, they are uniformly distributed $$(0,1)$$ regardless of sample size.\*
 
 To get an idea of some typical values of our last formula, here is a table:
+
+$$
+\begin{tabular}{lllllll}
+    &    & \multicolumn{5}{c}{p}                 \\
+    &    & 0,001 & 0,005 & 0,01  & 0,05  & 0,1   \\
+    & 1  & 0,001 & 0,005 & 0,01  & 0,05  & 0,1   \\
+    & 2  & 0,002 & 0,010 & 0,020 & 0,098 & 0,190 \\
+    & 3  & 0,003 & 0,015 & 0,030 & 0,143 & 0,271 \\
+    & 4  & 0,004 & 0,020 & 0,039 & 0,185 & 0,344 \\
+    & 5  & 0,005 & 0,025 & 0,049 & 0,226 & 0,410 \\
+$k$ & 10 & 0,010 & 0,049 & 0,096 & 0,401 & 0,651 \\
+    & 15 & 0,015 & 0,072 & 0,140 & 0,537 & 0,794 \\
+    & 20 & 0,020 & 0,095 & 0,182 & 0,642 & 0,878 \\
+    & 30 & 0,030 & 0,140 & 0,260 & 0,785 & 0,958 \\
+    & 40 & 0,039 & 0,182 & 0,331 & 0,871 & 0,985 \\
+    & 50 & 0,049 & 0,222 & 0,395 & 0,923 & 0,995
+\end{tabular}
+$$
 
 ![Probs table](http://i60.tinypic.com/347b48h.png)
 
