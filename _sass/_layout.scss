@@ -49,7 +49,7 @@
 
 .page-content {
 	background:#e0e0e3;
-	padding: 10px 0;
+	padding: 20px 0;
 
 	.wrapper {
 		position: relative;
@@ -202,6 +202,9 @@
 		.site-title {
 			float: left;
 		}
+	}
+	.page-content {
+		padding-top: 20px;
 	}
 	.col-main {
 		padding: 10px;
