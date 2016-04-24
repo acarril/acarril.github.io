@@ -28,15 +28,15 @@ layout: default
   <!-- Pagination links -->
 <div class="pagination">
   {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="previous">< previous</a>
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="previous"><newer posts</a>
   {% else %}
-    <span class="previous">< previous</span>
+    <span class="previous"><newer posts</span>
   {% endif %}
   <span class="page_number ">{{ paginator.page }} of {{ paginator.total_pages }}</span>
   {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="next">next ></a>
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="next">older posts></a>
   {% else %}
-    <span class="next ">next ></span>
+    <span class="next ">older posts></span>
   {% endif %}
 </div>
 
