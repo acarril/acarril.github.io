@@ -50,7 +50,7 @@ To get an idea of some typical values of our last formula, here is a table:
 
 $$
 \begin{array}{rr|llrll}
-  &    &       &       & p     &       &       \\
+  \multicolumn{6}{c}{p}      \\
   &    & 0.001 & 0.005 & 0.01  & 0.05  & 0.1   \\\hline
   & 1  & 0.001 & 0.005 & 0.010 & 0.050 & 0.100   \\
   & 2  & 0.002 & 0.010 & 0.020 & 0.098 & 0.190 \\
