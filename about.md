@@ -10,7 +10,7 @@ nocomments: true
 
 This site is mainly a personal output channel, useful for writing down ideas I have in mind. As many times those ideas turned out to be useful for others, I thought of making brief, clear blog posts with them. I hope you find something useful.
 
-As my work (mainly) consists of performing economic analysis using Stata, most posts revolve around that topic. I'm very passionate about data analysis and computational tools, so hopefully you'll find something useful here.
+As my work (mainly) consists of performing economic analysis using Stata, most posts revolve around that topic. I'm very passionate about data analysis and computational tools, so please feel free to comment posts or contact me if you want to discuss further.
 
 # About me
 
