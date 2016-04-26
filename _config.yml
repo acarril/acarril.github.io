@@ -15,7 +15,7 @@ github_username:  acarril
 researchgate_username: Alvaro_Carril
 
 # Comment Service
-disqus_shortname: acarril   # get one: https://disqus.com/admin/signup/
+disqus_shortname: acarril
 
 permalink: /posts/:title
 gems:
@@ -33,3 +33,12 @@ markdown: kramdown
 kramdown:
   input: GFM
   syntax_highlighter: rouge
+
+defaults:
+  -
+    scope:
+      path: "posts" # an empty string here means all files in the project
+      type: "posts" # previously `post` in Jekyll 2.2.
+    values:
+      comments: true
+      published: false
