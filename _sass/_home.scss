@@ -16,7 +16,7 @@
     background: #fff;
     font-size: 0.7 * $base-font-size;
     padding: 1px 8px;
-    
+
     &:hover, &:focus {
         color: #666;
     }
@@ -87,6 +87,7 @@
     .previous,.next {
     	padding: 10px 20px;
     	white-space: nowrap;
+			color: #e0e0e3;
     }
     a.previous,a.next {
     	color: #333;
