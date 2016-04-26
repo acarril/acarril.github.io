@@ -4,7 +4,7 @@ comments: true
 title:  "Running sections of do-files"
 categories: stata
 permalink: /posts/dofile-section
-published: false
+published: true
 ---
 
 As do-files get larger and more complex, it is common to want to run only a portion or section of the code. Over the years I've come to use extensively what I call **do-switches**, which are just handy devices for "turning on and off" some parts of the code.
