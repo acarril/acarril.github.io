@@ -4,6 +4,7 @@ comments: true
 title:  "Extracting substrings"
 categories: stata
 permalink: /posts/extracting-substrings
+public: false
 ---
 
 Oftentimes we need to work with part of a string, or substring.
