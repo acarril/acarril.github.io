@@ -4,7 +4,7 @@ comments: true
 title:  "Running sections of do-files"
 categories: stata
 permalink: /posts/dofile-section
-published: false
+published: true
 ---
 
 As do-files get larger and more complex, it is common to want to run only a portion or section of the code. Over the years I've come to use extensively what I call **do-switches**, which are just handy devices for "turning on and off" some parts of the code.
@@ -26,4 +26,26 @@ This post is all about step **3.**, which is can be very graphically appreciated
 
 ![Long selection](../files/long_selection.gif)
 
-# Some solutions
+# Enter do-switches
+
+The idea is extremely simple: just set a local to 1 if you want to run some section of the code, and 0 (or anything else) otherwise. Then you can enclose the sections of codes you want to switch "on and off" with conditional blocks.
+
+For example, suppose we have a do-file that imports several datasets and then merges them. We could structure this with the following code:
+
+<pre class="sh_stata">
+local A     0
+local B     0
+local merge 0
+
+if `A' == 1 {
+  * Import and save A
+}
+
+if `B' == 1 {
+  * Import and save B
+}
+
+if `merge' == 1 {
+  * Merge A with B and save
+}
+</pre>
