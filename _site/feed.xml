@@ -1,187 +1,470 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Alvaro Carril</title>
-    <description>I&#39;m an economist working at J-PAL LAC.
-</description>
+    <title>alvaro carril blog</title>
+    <description>Blog on the tools of the trade of the econ research analyst.</description>
     <link>http://acarril.github.io/</link>
     <atom:link href="http://acarril.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 11 Apr 2016 02:43:44 -0300</pubDate>
-    <lastBuildDate>Mon, 11 Apr 2016 02:43:44 -0300</lastBuildDate>
+    <pubDate>Sun, 01 May 2016 10:46:23 -0300</pubDate>
+    <lastBuildDate>Sun, 01 May 2016 10:46:23 -0300</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
-        <title>Welcome to Jekyll and EasyBook</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+        <title>Parallel processes in batch mode</title>
+        <description>&lt;p&gt;One of the most powerful features of batch mode is the ability to run several processes in parallel. I’ll explain how to easily use this feature  with Stata.&lt;/p&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;p&gt;This is the second post regarding batch jobs in the RCE server. I also wrote a &lt;a href=&quot;batch-jobs&quot;&gt;first part&lt;/a&gt; which deals with the basics of running batch jobs using Stata.&lt;/p&gt;
 
-&lt;p&gt;GitHub Flavored Markdown is supported.&lt;/p&gt;
+&lt;h1 id=&quot;stuff-needed&quot;&gt;Stuff needed&lt;/h1&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-ruby&quot;&gt;def print_hi(name)
-  puts &quot;Hi, #{name}&quot;
-end
-print_hi(&#39;Tom&#39;)
-#=&amp;gt; prints &#39;Hi, Tom&#39; to STDOUT.
+&lt;p&gt;We are going to need, as usual, a &lt;a href=&quot;#do-file&quot;&gt;&lt;strong&gt;do-file&lt;/strong&gt;&lt;/a&gt; and a &lt;a href=&quot;#submit-file&quot;&gt;&lt;strong&gt;submit file&lt;/strong&gt;&lt;/a&gt;. We are also going to assume some basic &lt;a href=&quot;#directory-structure&quot;&gt;&lt;strong&gt;directory structure&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;directory-structure&quot;&gt;Directory structure&lt;/h3&gt;
+
+&lt;p&gt;For this example we’ll need to set everything up in a root folder which contains a &lt;code&gt;dofiles&lt;/code&gt; folder, a &lt;code&gt;batch_output&lt;/code&gt; folder and a &lt;code&gt;datasets&lt;/code&gt; folder. The do-file to submit is going to be located inside the dofiles folder, while the submit file is located in the root folder. All this can be easily seen in the screenshot below.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;..\files\batch_process_directory_structure.png&quot; alt=&quot;batch_process_directory_structure&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;do-file&quot;&gt;Do-file&lt;/h3&gt;
+
+&lt;p&gt;The do-file we’re using is going to&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Always read the same dataset&lt;/li&gt;
+  &lt;li&gt;Set a different seed for each process&lt;/li&gt;
+  &lt;li&gt;Extract a different sample with replacement for each process&lt;/li&gt;
+  &lt;li&gt;Compute the average value of a variable from the sampled observations for each process&lt;/li&gt;
+  &lt;li&gt;Save a different collapsed dataset for each process&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The key here is to collect &lt;code&gt;process&lt;/code&gt;, an integer passed by the submit file (see the &lt;a href=&quot;#submit-file&quot;&gt;submit file&lt;/a&gt; below) onto the do-file. This will make each run of the do-file unique for each process.&lt;/p&gt;
+
+&lt;pre class=&quot;sh_stata&quot;&gt;
+// set more off so that the do-file runs without halting
+set more off
+
+// collect the arguments passed by submit file
+args process
+
+// load example dataset
+sysuse bpwide, clear
+
+// set seed so it&#39;s different for every process
+set seed `process&#39;
+
+// sample with replacement
+bsample, cluster(patient) idcluster(idcluster)
+
+// calculate the mean and standard deviation
+collapse (mean) mean_bp_before = bp_before (sd) sd_bp_before = bp_before
+
+// save the result, appending the process number to the dataset name
+save &quot;datasets/output_`process&#39;.dta&quot;, replace
+&lt;/pre&gt;
+
+&lt;h3 id=&quot;submit-file&quot;&gt;Submit file&lt;/h3&gt;
+
+&lt;p&gt;The submit file is very similar to the basic template, but now we pass the &lt;code&gt;Process&lt;/code&gt; argument from the batch system onto Stata, by defining a global (remeber our do-file expects that?). The way to do that is by appending &lt;code&gt;$(Process)&lt;/code&gt; at the end of the &lt;code&gt;Arguments&lt;/code&gt; line. The process number should also be appended to the &lt;code&gt;ouptut&lt;/code&gt;, &lt;code&gt;error&lt;/code&gt; and &lt;code&gt;log&lt;/code&gt; files, like below.&lt;/p&gt;
+
+&lt;p&gt;How many process we are requesting is defined in the last line, &lt;code&gt;Queue&lt;/code&gt;. In this example we’re requesting 10 processes, which will make the &lt;code&gt;$(Process)&lt;/code&gt; integer go from 0 to 9.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-c&quot;&gt;Universe = vanilla
+Executable = /usr/local/bin/stata-mp
+
+# Pass the process number, which will be used
+# to append the process number to the output files.
+Arguments = -q do dofiles/batch_process.do $(Process)
+
+output = batch_output/mydofile$(Process).out
+error = batch_output/mydofile$(Process).err
+Log = batch_output/mydofile$(Process).log
+
+Request_Cpus = 2
+Request_Memory = 2GB
+
+# Notifications settings
+notification = Always
+notify_user = your@email.com
+
+# Number of processes to request
+Queue 10
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&quot;easybook-advanced-functions&quot;&gt;EasyBook Advanced Functions&lt;/h2&gt;
+&lt;h1 id=&quot;running-the-processes&quot;&gt;Running the processes&lt;/h1&gt;
 
-&lt;p&gt;You are using &lt;a href=&quot;https://github.com/laobubu/jekyll-theme-EasyBook&quot;&gt;EasyBook&lt;/a&gt; the template from &lt;a href=&quot;http://laobubu.net&quot;&gt;laobubu.net&lt;/a&gt;. Therefore some features are supported now:&lt;/p&gt;
+&lt;p&gt;To submit these parallel jobs we’ll go to the command line and change the current directory to our root folder. For example, I have put all the files of this example in a folder called &lt;code&gt;batch&lt;/code&gt;, located inside my personal directory in the RCE environment, so I use&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Pagination&lt;/strong&gt; is enabled.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Disqus&lt;/strong&gt; or &lt;strong&gt;多说&lt;/strong&gt; is ready.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;TOC&lt;/strong&gt; for posts is enabled.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Profile&lt;/strong&gt; including your links and avatar on the sidebar.&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;And more…&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;Tips:&lt;/strong&gt; You can disable Disqus or 多说 on posts/pages by adding &lt;code&gt;nocomments: true&lt;/code&gt; into &lt;a href=&quot;http://jekyllrb.com/docs/frontmatter/&quot;&gt;YAML Front Matter&lt;/a&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;EasyBook uses upaiyun CDN to make everyone lncluding Chinese visitors feel speedy. You can find it in &lt;code&gt;_includes/footer.html&lt;/code&gt; and change it to your favorite CDN like Google CDN.&lt;/p&gt;
-
-&lt;h2 id=&quot;support-me-by&quot;&gt;Support me by…&lt;/h2&gt;
-
-&lt;h3 id=&quot;add-a-link&quot;&gt;Add a link&lt;/h3&gt;
-
-&lt;p&gt;EasyBook does not make the footer heavy; the link to theme could be on &lt;code&gt;about.md&lt;/code&gt;:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;This website is using &lt;a href=&quot;http://laobubu.net&quot;&gt;laobubu&lt;/a&gt;’s theme: &lt;a href=&quot;https://github.com/laobubu/jekyll-theme-EasyBook&quot;&gt;EasyBook&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;donate-paypal-or-&quot;&gt;Donate (PayPal or 支付宝)&lt;/h3&gt;
-
-&lt;p&gt;That’s the best &lt;img class=&quot;emoji&quot; title=&quot;:smile:&quot; alt=&quot;:smile:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f604.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Please visit &lt;a href=&quot;http://laobubu.net/donate.html&quot;&gt;http://laobubu.net/donate.html&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;star-and-fork-on-github-free&quot;&gt;Star and Fork on GitHub (free)&lt;/h3&gt;
-
-&lt;p&gt;Not going to donate? That’s okay. You can also send out your precious star &lt;a href=&quot;https://github.com/laobubu/jekyll-theme-EasyBook&quot;&gt;on GitHub&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;and-here-we-go&quot;&gt;And Here We Go&lt;/h2&gt;
-
-&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://github.com/jekyll/jekyll-help&quot;&gt;Jekyll’s dedicated Help repository&lt;/a&gt;.&lt;/p&gt;
-
+&lt;pre&gt;&lt;code&gt;cd batch
+condor_submit stata_batch_process.submit
+&lt;/code&gt;&lt;/pre&gt;
 </description>
-        <pubDate>Tue, 30 Dec 2014 06:00:13 -0300</pubDate>
-        <link>http://acarril.github.io/</link>
-        <guid isPermaLink="true">http://acarril.github.io/</guid>
+        <pubDate>Wed, 20 Apr 2016 00:00:00 -0300</pubDate>
+        <link>http://acarril.github.io/posts/batch-processes</link>
+        <guid isPermaLink="true">http://acarril.github.io/posts/batch-processes</guid>
         
         
-        <category>jekyll</category>
-        
-        <category>update</category>
+        <category>rce</category>
         
       </item>
     
       <item>
-        <title>Style Test</title>
-        <description>&lt;p&gt;This is just a style test post, filled with LoremIpsue. Feel free to delete the file.&lt;/p&gt;
+        <title>Batch Jobs</title>
+        <description>&lt;p&gt;Running a job in batch mode is extremely useful for performing long processes in the background, while freeing the GUI interface for other tasks. Even though a particular Stata task is not performed faster in batch mode, it allows to perform several tasks in parallel.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://lorempixel.com/400/200/&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;In this post I explain the basics of running batch jobs with Stata. I also wrote a &lt;a href=&quot;batch-processes&quot;&gt;second part&lt;/a&gt; which deals with running multiple processes in parallel.&lt;/p&gt;
 
-&lt;h1 id=&quot;lorem-ipsum-dolor&quot;&gt;Lorem ipsum dolor&lt;/h1&gt;
+&lt;h1 id=&quot;what-do-i-need&quot;&gt;What do I need?&lt;/h1&gt;
 
-&lt;p&gt;Sit amet, consectetur adipiscing elit. Phasellus nisi odio, scelerisque vitae volutpat non, facilisis non erat. In gravida placerat pulvinar. Maecenas ac pretium sem. In consectetur nulla leo, ut maximus nisi volutpat eget. Vestibulum vitae malesuada risus, egestas placerat felis. In sed sollicitudin elit. Sed bibendum porttitor dui.&lt;/p&gt;
+&lt;h3 id=&quot;a-do-file&quot;&gt;A do-file&lt;/h3&gt;
+&lt;p&gt;First of all you need a do-file to submit. In this example we’ll submit &lt;code&gt;mydofile.do&lt;/code&gt;. The do-file hasn’t have to have anything special (at least at first).&lt;/p&gt;
 
-&lt;h2 id=&quot;condimentum-mauris-accumsan&quot;&gt;Condimentum mauris Accumsan&lt;/h2&gt;
+&lt;h3 id=&quot;a-submit-file&quot;&gt;A submit file&lt;/h3&gt;
+&lt;p&gt;You’ll need a &lt;code&gt;submit file&lt;/code&gt;, which is a simple text file with instructions on how the batch process should be run. &lt;strong&gt;The submit file has to be saved with a &lt;code&gt;*.submit&lt;/code&gt; extension.&lt;/strong&gt; So, for example, I’ll name mine &lt;code&gt;mybatch.submit&lt;/code&gt; (again, creative).&lt;/p&gt;
 
-&lt;p&gt;Eu. Suspendisse scelerisque, orci vel elementum accumsan, sem turpis congue justo, et vulputate lacus orci vel felis. Pellentesque at gravida felis, vitae pretium erat. Pellentesque convallis mi vitae lectus semper, quis pellentesque lectus tristique.&lt;/p&gt;
+&lt;p&gt;The easiest way to get going is to copy the following text in any plain text editor and then make sure to save it with &lt;code&gt;*.submit&lt;/code&gt; extension (not &lt;code&gt;*.submit.txt&lt;/code&gt;!). All lines starting with a &lt;code&gt;#&lt;/code&gt; are comments. Edit what you want and save the file in the same folder as your do-file.&lt;/p&gt;
 
-&lt;h2 id=&quot;duis-a-nibh-in&quot;&gt;Duis a nibh in&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&quot;language-c&quot;&gt;# Universe whould always be &#39;vanilla&#39;. This line MUST be
+#included in your submit file, exactly as shown below.
+Universe = vanilla
 
-&lt;p&gt;Consectetur ultrices. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.&lt;/p&gt;
+# The path to Stata (could be R or Matlab)
+Executable = /usr/local/bin/stata-mp
 
-&lt;blockquote&gt;
-  &lt;p&gt;Vivamus placerat, tortor et aliquam porttitor, risus mi dapibus neque, vitae vulputate urna.
-– Lorem&lt;/p&gt;
-&lt;/blockquote&gt;
+# Specify any arguments you want to pass to the executable.
+# Here we pass arguments to make Stata run the bootstrap.do
+# file. We also pass the process number, which will be used
+# to append the process number to the output files.
+Arguments = -q do mydofile.do
 
-&lt;p&gt;Apurus vel sapien. Fusce at condimentum nibh.&lt;/p&gt;
+# Specify where to output any results printed by your program.
+output = output/mydofile.out
+# Specify where to save any errors returned by your program.
+error = output/mydofile.err
+# Specify where to save the log file.
+Log = output/mydofile.log
 
-&lt;h3 id=&quot;donec-ut-urna&quot;&gt;Donec ut urna&lt;/h3&gt;
+# Request processors (Stata maxes out at 4) and memory (in GB)
+Request_Cpus = 4
+Request_Memory = 8GB
 
-&lt;p&gt;A dolor rhoncus posuere vel porttitor tortor. Integer ex lacus, sagittis ac tellus et, laoreet condimentum massa.&lt;/p&gt;
+# Notifications settings
+notification = Always
+notify_user = your@email.com
 
-&lt;p&gt;&lt;img src=&quot;http://lorempixel.com/400/400/&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Aliquam tempor pharetra lacus, vel bibendum purus dapibus nec. Integer hendrerit massa ut libero euismod, id gravida neque facilisis.&lt;/p&gt;
-
-&lt;h2 id=&quot;nunc-nec&quot;&gt;Nunc nec&lt;/h2&gt;
-
-&lt;p&gt;Karan justo id turpis auctor pharetra. Fusce pretium ornare facilisis. Aliquam eget scelerisque ex, eu volutpat leo. Proin pharetra est felis, sit amet suscipit orci mattis quis.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Etiam bibendum purus tincidunt&lt;/li&gt;
-  &lt;li&gt;As dapibus enim et, porta ligula.&lt;/li&gt;
-  &lt;li&gt;Morbi tempus, mauris sed sodales auctor, nulla erat fringilla purus, vel sodales nulla nunc sit amet purus.&lt;/li&gt;
-  &lt;li&gt;Praesent pellentesque urna et leo eleifend molestie ac ac ex.&lt;/li&gt;
-  &lt;li&gt;Ut eu sagittis metus, et malesuada libero.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam placerat mauris a libero tempus facilisis. Maecenas ut augue lacinia, ornare mi in, lobortis arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis justo elit, blandit vel tincidunt ac, imperdiet ut neque.&lt;/p&gt;
-
-&lt;h1 id=&quot;class-aptent&quot;&gt;Class aptent&lt;/h1&gt;
-
-&lt;p&gt;taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam erat volutpat. Sed at semper sem. Morbi in finibus tellus. Pellentesque nec dapibus risus.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;  #include &amp;lt;iostream&amp;gt;
-
-  int main () {
-    std::cout &amp;lt;&amp;lt; &quot;Hello world!&quot; &amp;lt;&amp;lt; std::endl;
-  }
+# Enter the number of processes to request.
+# This section should always come last.
+Queue 1
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;vitae erat non congue. Proin sagittis vitae justo at cursus. Phasellus egestas bibendum urna vel condimentum.&lt;/p&gt;
+&lt;h3 id=&quot;directory-structure&quot;&gt;Directory structure&lt;/h3&gt;
 
-&lt;h2 id=&quot;fusce-a-ullamcorper-nisl&quot;&gt;Fusce a ullamcorper nisl&lt;/h2&gt;
+&lt;p&gt;Both the &lt;code&gt;do-file&lt;/code&gt; and the &lt;code&gt;submit file&lt;/code&gt; should be placed on a directory of your choosing, which we’ll call the &lt;code&gt;root directory&lt;/code&gt;. It is recommended to have a dedicated folder for the outputs produced by the batch processing system inside the &lt;code&gt;root directory&lt;/code&gt;. In this example I’ve been exceedingly creative and named that folder &lt;code&gt;/output&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;Pellentesque vehicula faucibus nibh, &lt;strong&gt;a pharetra odio pretium ac.&lt;/strong&gt; Mauris eget gravida orci, vitae tincidunt urna. Integer pharetra ante in porta maximus. Morbi ac arcu lacinia, posuere mauris vitae, lobortis dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae metus nibh. Cras quis malesuada nisi. Ut porttitor, ipsum vel suscipit posuere, elit purus egestas velit, ac lobortis urna orci nec mi.&lt;/p&gt;
+&lt;h1 id=&quot;submitting-a-batch-job&quot;&gt;Submitting a batch job&lt;/h1&gt;
 
-&lt;h2 id=&quot;maecenas-bibendum-nisi&quot;&gt;Maecenas bibendum nisi&lt;/h2&gt;
+&lt;p&gt;Now that everything is set up, the process is really easy. You’ll need to start the command line and change directory to the &lt;code&gt;root directory&lt;/code&gt;. For example,&lt;/p&gt;
 
-&lt;p&gt;Aleo facilisis porttitor ac ac metus. &lt;strong&gt;Vivamus faucibus faucibus bibendum.&lt;/strong&gt; Donec efficitur consectetur erat quis porttitor. Ut id euismod nunc. Sed venenatis eleifend suscipit. Donec magna purus, porta eget enim a, ornare porttitor nibh. Cras nisl nibh, viverra vitae magna quis, hendrerit facilisis sem.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ cd /nfs/projects/t/tpricing
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Once there, the process is submitted with the &lt;code&gt;condor_submit &amp;lt;submit file&amp;gt;.submit&lt;/code&gt; command. For example,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ condor_submit mybatch.submit
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It will then say that the job is submitted to a cluster number.&lt;/p&gt;
+
+&lt;h1 id=&quot;checking-the-process&quot;&gt;Checking the process&lt;/h1&gt;
+
+&lt;p&gt;You can check at anytime how all your submitted processes are going by typing &lt;code&gt;condor_q &amp;lt;username&amp;gt;&lt;/code&gt;. For example,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ condor_q acarril2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The most important column in there is &lt;code&gt;ST&lt;/code&gt;, shorthand for “Status”. If it says &lt;code&gt;R&lt;/code&gt;, then it is running. &lt;strong&gt;If you don’t see your process, then that means it has finished.&lt;/strong&gt; If that is the case, go to your &lt;code&gt;/output&lt;/code&gt; folder and check your results in the &lt;code&gt;*.out&lt;/code&gt; file.&lt;/p&gt;
+
+&lt;p&gt;Better than checking incessantly, make sure you add your email address to the &lt;code&gt;submit file&lt;/code&gt;, so you get notified in your inbox when your job completes (or crashes)!&lt;/p&gt;
+</description>
+        <pubDate>Tue, 19 Apr 2016 00:00:00 -0300</pubDate>
+        <link>http://acarril.github.io/posts/batch-jobs</link>
+        <guid isPermaLink="true">http://acarril.github.io/posts/batch-jobs</guid>
+        
+        
+        <category>rce</category>
+        
+      </item>
+    
+      <item>
+        <title>Adding column percentages of sums to tabstat</title>
+        <description>&lt;p&gt;Tabstat is a very useful command to produce tables of various summary statistics. It also works seamlessly with estout, so this tables can be easily exported.&lt;/p&gt;
+
+&lt;p&gt;Suppose we have a dataset with information of 10 different companies over the a range of years. You can load this (fake) dataset using&lt;/p&gt;
+
+&lt;pre class=&quot;sh_stata&quot;&gt;
+. use http://www.stata-press.com/data/r14/grunfeld, clear
+&lt;/pre&gt;
+
+&lt;p&gt;We want to produce a table that sums all investments made so far by each firm and then export it. We can easily achieve that combining tabstat with estttab, producing the following result:&lt;/p&gt;
+
+&lt;pre class=&quot;sh_stata&quot;&gt;
+. estpost tabstat invest, by(company) stat(sum)
+. esttab, cell(sum)
+-------------------------
+                      (1)
+                      sum
+-------------------------
+1                 12160.4
+2                  8209.5
+3                  2045.8
+4                 1722.47
+5                 1236.05
+6                 1108.22
+7                  951.91
+8                  857.83
+9                  837.78
+10                  61.69
+Total            29191.65
+-------------------------
+N                     200
+-------------------------
+&lt;/pre&gt;
+
+&lt;p&gt;Now suppose we want column percentages of those sums. Unfortunately, tabstat doesn’t have an option for asking that statistic, but we can manually construct it and add it to our stored estimates using estadd:&lt;/p&gt;
+
+&lt;pre class=&quot;sh_stata&quot;&gt;
+. eststo: estpost tabstat invest, by(company) stat(sum)
+
+. matrix colupct = e(sum) // create matrix with sums
+. scalar c = colsof(colupct) // create scalar with number of rows of matrix
+. matrix colupct = 100*colupct/colupct[1,c] // transorm matrix values to percentages
+. estadd matrix colupct = colupct // add matrix &#39;colupct&#39; to stored estimates
+
+. esttab, cell(sum colupct)
+-------------------------
+                      (1)
+
+              sum/colupct
+-------------------------
+1                 12160.4
+                 41.65712
+2                  8209.5
+                 28.12277
+3                  2045.8
+                 7.008168
+4                 1722.47
+                 5.900557
+5                 1236.05
+                 4.234259
+6                 1108.22
+                  3.79636
+7                  951.91
+                 3.260898
+8                  857.83
+                 2.938614
+9                  837.78
+                  2.86993
+10                  61.69
+                 .2113276
+Total            29191.65
+                      100
+-------------------------
+N                     200
+-------------------------
+&lt;/pre&gt;
+
+&lt;p&gt;Finally, it is probably nicer to present those percentages with only one decimal and inside parenthesis. We can do this by adding the necessary options to esttab:&lt;/p&gt;
+
+&lt;pre class=&quot;sh_stata&quot;&gt;
+. eststo clear // clear previously stored estimates
+. esttab, cell(sum colupct(fmt(1) par))
+-------------------------
+                      (1)
+
+              sum/colupct
+-------------------------
+1                 12160.4
+                   (41.7)
+2                  8209.5
+                   (28.1)
+3                  2045.8
+                    (7.0)
+4                 1722.47
+                    (5.9)
+5                 1236.05
+                    (4.2)
+6                 1108.22
+                    (3.8)
+7                  951.91
+                    (3.3)
+8                  857.83
+                    (2.9)
+9                  837.78
+                    (2.9)
+10                  61.69
+                    (0.2)
+Total            29191.65
+                  (100.0)
+-------------------------
+N                     200
+-------------------------
+&lt;/pre&gt;
+</description>
+        <pubDate>Mon, 11 Apr 2016 00:00:00 -0300</pubDate>
+        <link>http://acarril.github.io/posts/column-percentages-tabstat</link>
+        <guid isPermaLink="true">http://acarril.github.io/posts/column-percentages-tabstat</guid>
+        
+        
+        <category>stata</category>
+        
+      </item>
+    
+      <item>
+        <title>On the probability of false positives</title>
+        <description>&lt;p&gt;Whenever we do regression analysis there is the chance of getting false positives. Suppose you have &lt;script type=&quot;math/tex&quot;&gt;k&lt;/script&gt; outcome variables and are targeting a &lt;script type=&quot;math/tex&quot;&gt;p&lt;/script&gt;-value of &lt;script type=&quot;math/tex&quot;&gt;p&lt;/script&gt;. Is there a way to compute &lt;em&gt;ex ante&lt;/em&gt; the exact probability of getting at least one false positive significant result under &lt;script type=&quot;math/tex&quot;&gt;p&lt;/script&gt;?&lt;/p&gt;
+
+&lt;p&gt;This question arose during a discussion with a J-PAL colleague. Since we were talking about randomized control trials, he also considered a treatment group of size &lt;script type=&quot;math/tex&quot;&gt;m&lt;/script&gt; and a control group of size &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;But does it matter?&lt;/p&gt;
+
+&lt;p&gt;Assuming i.i.d. Normal characteristics we can use separate &lt;a href=&quot;https://en.wikipedia.org/wiki/Welch%27s_t_test&quot;&gt;Welch’s &lt;script type=&quot;math/tex&quot;&gt;t&lt;/script&gt;-tests&lt;/a&gt;, which account for different variances and sample sizes. If the statistics of these tests are &lt;script type=&quot;math/tex&quot;&gt;w_i&lt;/script&gt; (&lt;script type=&quot;math/tex&quot;&gt;i=1,..., k&lt;/script&gt;), the &lt;script type=&quot;math/tex&quot;&gt;p&lt;/script&gt;-value of each one is&lt;/p&gt;
 
 &lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;table&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;test&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;lorem&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Praesent ultrices&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;convallis lorem&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;at sollicitudin enim&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Mauris&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;tristique cursus&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;arcu ac&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;facilisis&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Proin&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;vulputate neque lectus&lt;/td&gt;
+      &lt;td&gt;$$ p_i = \Pr(&lt;/td&gt;
+      &lt;td&gt;w_i&lt;/td&gt;
+      &lt;td&gt;\geq w(\alpha)\mid H_0),$$&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p&gt;maximus malesuada est rutrum ac. Sed blandit semper faucibus. Nam venenatis consectetur malesuada. Nulla lacus purus, ultrices ac eros porttitor, finibus sodales augue. Suspendisse tincidunt, felis in placerat euismod, libero nulla interdum nisl, commodo efficitur felis dui in libero. Integer lobortis sapien sit amet orci tristique auctor a sit amet neque. Nunc tincidunt iaculis purus eget maximus. Fusce risus justo, rutrum at magna sed, rhoncus lacinia lectus. Vivamus lobortis odio ex, ac vehicula nunc facilisis non. Aliquam fermentum diam massa. Sed cursus, nisi varius laoreet aliquet, tortor urna porta turpis, in dictum urna enim vel leo. Etiam at lacus lorem. Vivamus ornare vitae nisl vel malesuada.&lt;/p&gt;
+&lt;p&gt;where &lt;script type=&quot;math/tex&quot;&gt;H_0&lt;/script&gt; is the null hypothesis&lt;!--- of equal means of the control and treatment groups--&gt;.&lt;/p&gt;
+
+&lt;p&gt;The above probability can be expressed in terms of the corresponding cumulative distribution function, that is, &lt;script type=&quot;math/tex&quot;&gt;\Pr (\cdot)=1-F( \mid w_i \mid )&lt;/script&gt; . Therefore we have that&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;$$F(&lt;/td&gt;
+      &lt;td&gt;w_i&lt;/td&gt;
+      &lt;td&gt;)=1-p_i .$$&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;The key here is thinking of &lt;script type=&quot;math/tex&quot;&gt;p&lt;/script&gt;-values as random variables and, because of the magic of &lt;a href=&quot;https://en.wikipedia.org/wiki/Probability_integral_transform&quot;&gt;probability integral transform&lt;/a&gt;, we know that &lt;script type=&quot;math/tex&quot;&gt;(1-p_i)&lt;/script&gt; distributes uniformly, so we get&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt; p_i\sim U(0,1).&lt;/script&gt;
+
+&lt;p&gt;Now we have a sample size of &lt;script type=&quot;math/tex&quot;&gt;k&lt;/script&gt; independent uniform distributions. The probability that at least one of them is smaller than a specific value &lt;script type=&quot;math/tex&quot;&gt;\overline p&lt;/script&gt; is equal to the probability that the minimum of them is lower than that threshold, that is,&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt; \Pr(\text{At least one }p_i \leq \overline p) = 1- \Pr (\text{All }p_i &gt; \overline p ) = 1- \prod_{i=1}^k \Pr (p_i &gt; p^*).&lt;/script&gt;
+
+&lt;p&gt;Since all &lt;script type=&quot;math/tex&quot;&gt;p_i&lt;/script&gt; are identically distributed, we have that&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt; \Pr(\text{At least one }p_i \leq \overline p) = 1-[1-\Pr(p_i\leq\overline p)]^k = 1-[1-F_U(\overline p)]^k,&lt;/script&gt;
+
+&lt;p&gt;which is the &lt;a href=&quot;https://en.wikipedia.org/wiki/Cumulative_distribution_function&quot;&gt;cumulative distribution function&lt;/a&gt; (CDF) of the minimum of &lt;script type=&quot;math/tex&quot;&gt;k&lt;/script&gt; i.i.d. random variables.&lt;/p&gt;
+
+&lt;p&gt;Let’s say this minimum is &lt;script type=&quot;math/tex&quot;&gt;p_{min}&lt;/script&gt;, then the CDF of the minimum of &lt;script type=&quot;math/tex&quot;&gt;k&lt;/script&gt; independent &lt;script type=&quot;math/tex&quot;&gt;U(0,1)&lt;/script&gt; variables is&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt; F_{p_{min}}(p_{min}) = 1- [1-p_{min}]^k.&lt;/script&gt;
+
+&lt;p&gt;Therefore we want to know the probability&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt; \Pr (p_{min}\leq \overline p) = 1-[1-p_{min}]^k. &lt;/script&gt;
+
+&lt;p&gt;So it is interesting to note that the probability of getting at least one false positive significant result under &lt;script type=&quot;math/tex&quot;&gt;p&lt;/script&gt; doesn’t depend on the size of treatment nor control groups (in an impact evaluation setting), or even on sample size. Because &lt;script type=&quot;math/tex&quot;&gt;p&lt;/script&gt;-values are random variables, they are uniformly distributed &lt;script type=&quot;math/tex&quot;&gt;(0,1)&lt;/script&gt; regardless of sample size.*&lt;/p&gt;
+
+&lt;p&gt;To get an idea of some typical values of our last formula, here is a table:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\begin{array}{rr|lllll}
+  &amp;    &amp;       &amp;       &amp; p     &amp;       &amp;       \\
+  &amp;    &amp; 0.001 &amp; 0.005 &amp; 0.01  &amp; 0.05  &amp; 0.1   \\\hline
+  &amp; 1  &amp; 0.001 &amp; 0.005 &amp; 0.010 &amp; 0.050 &amp; 0.100 \\
+  &amp; 2  &amp; 0.002 &amp; 0.010 &amp; 0.020 &amp; 0.098 &amp; 0.190 \\
+  &amp; 3  &amp; 0.003 &amp; 0.015 &amp; 0.030 &amp; 0.143 &amp; 0.271 \\
+  &amp; 4  &amp; 0.004 &amp; 0.020 &amp; 0.039 &amp; 0.185 &amp; 0.344 \\
+  &amp; 5  &amp; 0.005 &amp; 0.025 &amp; 0.049 &amp; 0.226 &amp; 0.410 \\
+k &amp; 10 &amp; 0.010 &amp; 0.049 &amp; 0.096 &amp; 0.401 &amp; 0.651 \\
+  &amp; 15 &amp; 0.015 &amp; 0.072 &amp; 0.140 &amp; 0.537 &amp; 0.794 \\
+  &amp; 20 &amp; 0.020 &amp; 0.095 &amp; 0.182 &amp; 0.642 &amp; 0.878 \\
+  &amp; 30 &amp; 0.030 &amp; 0.140 &amp; 0.260 &amp; 0.785 &amp; 0.958 \\
+  &amp; 40 &amp; 0.039 &amp; 0.182 &amp; 0.331 &amp; 0.871 &amp; 0.985 \\
+  &amp; 50 &amp; 0.049 &amp; 0.222 &amp; 0.395 &amp; 0.923 &amp; 0.995
+\end{array}
+ %]]&gt;&lt;/script&gt;
+
+&lt;!--![Probs table](http://i60.tinypic.com/347b48h.png)--&gt;
+
+&lt;p&gt;* Of course, the values of &lt;script type=&quot;math/tex&quot;&gt;m&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; do enter the test-statistic. For example, if we assume that the underlying data is normally distributed i.i.d., with mean &lt;script type=&quot;math/tex&quot;&gt;\mu&lt;/script&gt; and variance &lt;script type=&quot;math/tex&quot;&gt;\sigma&lt;/script&gt; for both treatment and control groups, then it can be proven we can get the &lt;a href=&quot;https://en.wikipedia.org/wiki/Student%27s_t-test&quot;&gt;Student’s &lt;script type=&quot;math/tex&quot;&gt;t&lt;/script&gt;-statistic&lt;/a&gt;:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;t = \frac{\overline {X}_1 - \overline{X}_2}{s_{X_1 X_2} \cdot \sqrt{\frac{1}{m}+\frac{1}{n}}},&lt;/script&gt;
+
+&lt;p&gt;where&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;s_{X_1X_2} = \sqrt{\frac{(m-1)s_{X_1}^2+(n-1)s_{X_2}^2}{m+n}}.&lt;/script&gt;
 </description>
-        <pubDate>Thu, 01 Jan 1970 08:00:00 -0300</pubDate>
-        <link>http://acarril.github.io/posts/test</link>
-        <guid isPermaLink="true">http://acarril.github.io/posts/test</guid>
+        <pubDate>Mon, 12 Oct 2015 00:00:00 -0300</pubDate>
+        <link>http://acarril.github.io/posts/prob-false-positives</link>
+        <guid isPermaLink="true">http://acarril.github.io/posts/prob-false-positives</guid>
         
         
-        <category>jekyll</category>
+        <category>econ</category>
+        
+      </item>
+    
+      <item>
+        <title>Slutsky matrix times price vector</title>
+        <description>&lt;p&gt;From microeconomic theory we know that
+&lt;script type=&quot;math/tex&quot;&gt;S(p, w) \cdot p = 0,&lt;/script&gt;&lt;br /&gt;
+where &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is the Slutsky matrix and &lt;script type=&quot;math/tex&quot;&gt;p&lt;/script&gt; is the price vector.&lt;/p&gt;
+
+&lt;p&gt;Why?&lt;/p&gt;
+
+&lt;p&gt;It is a general mathematical result that the &lt;a href=&quot;https://en.wikipedia.org/wiki/Hessian_matrix&quot;&gt;Hessian matrix&lt;/a&gt; of a multivariate function is homogeneous of degree one.&lt;/p&gt;
+
+&lt;p&gt;But really, &lt;em&gt;why&lt;/em&gt;?&lt;/p&gt;
+
+&lt;p&gt;We know that the &lt;strong&gt;expenditure function&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;E&lt;/script&gt;  is homogeneous of degree one in prices. Intuitively, if all prices change in the same proportion then relative prices stay constant. And if relative prices stay constant, the minimum-cost compensated bundle for a given utility level also remains unchanged. That is, budget shares stay the same. So the &lt;em&gt;expenditure&lt;/em&gt; (expressed by &lt;script type=&quot;math/tex&quot;&gt;E&lt;/script&gt;)  needed to achieve the same utility level as before changes in the same proportion as prices, and so we have homogeneity of degree one.&lt;/p&gt;
+
+&lt;p&gt;By duality, the &lt;strong&gt;Hicksian demand&lt;/strong&gt; vector is the gradient of the expenditure function on prices,&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;H= \frac{d E}{d p}.&lt;/script&gt;
+
+&lt;p&gt;Intuitively, &lt;script type=&quot;math/tex&quot;&gt;H&lt;/script&gt; gives the minimum-cost demanded quantities. Due to the homogeneity of degree one of the expenditure function, the inner product of the Hicksian demand vector times the price vector equals the expenditure function:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;H\cdot p=E.&lt;/script&gt;
+
+&lt;p&gt;This is because we are just multiplying the (minimum-cost) demanded quantities by their unit price and then summing up, which is total expenditure.&lt;/p&gt;
+
+&lt;p&gt;Combining these two results we have that&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{d (H\cdot p)}{dp}=H&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;H + \frac{d H}{dp}\cdot p = H.&lt;/script&gt;
+
+&lt;p&gt;So it follows that when &lt;script type=&quot;math/tex&quot;&gt;H=0&lt;/script&gt;,&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{dH}{dp}\cdot p = 0.&lt;/script&gt;
+
+&lt;p&gt;We know that the &lt;a href=&quot;https://en.wikipedia.org/wiki/Jacobian_matrix_and_determinant&quot;&gt;Jacobian matrix&lt;/a&gt; of the Hicksian demand is the Hessian matrix of the expenditure function, that is,&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{dH}{dp}=\frac{d^2E}{dp^2}=S(p,w).&lt;/script&gt;
+
+&lt;p&gt;So using these last two results gives us that&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;S(p, w) \cdot p = 0.&lt;/script&gt;
+
+&lt;p&gt;This means that compensated demanded quantities are not affected by changes in price if relative prices remain constant.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 06 Sep 2015 00:00:00 -0300</pubDate>
+        <link>http://acarril.github.io/posts/slutsky</link>
+        <guid isPermaLink="true">http://acarril.github.io/posts/slutsky</guid>
+        
+        
+        <category>econ</category>
         
       </item>
     

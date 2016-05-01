@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Page Not Found « alvaro carril blog</title>
+  <title>Posts « alvaro carril blog</title>
   <meta name="description" content="Blog on the tools of the trade of the econ research analyst.">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://acarril.github.io/404.html">
+  <link rel="canonical" href="http://acarril.github.io/posts/categories">
   <link rel="alternate" type="application/rss+xml" title="alvaro carril blog" href="http://acarril.github.io/feed.xml" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="/css/academicons.css" />
@@ -63,19 +63,44 @@
     <div class="page-content">
       <div class="wrapper">
         <div class="col-main">
-          <div class="post">
+          <div class="home">
+  <h1 class="page-heading">Posts</h1>
 
-  <header class="post-header">
-    <h1 class="post-title">Page Not Found</h1>
-  </header>
+  <ul class="post-list">
 
-  <article class="post-content">
-    <p>Seems disappeared :(</p>
 
-  </article>
 
-  
 
+
+<h2 class="category" id="econ">ECON</h2>
+<ul>
+
+<li><span>Oct 12, 2015</span> » <a href="/posts/prob-false-positives">On the probability of false positives</a></li>
+
+<li><span>Sep 6, 2015</span> » <a href="/posts/slutsky">Slutsky matrix times price vector</a></li>
+
+</ul>
+
+
+<h2 class="category" id="stata">STATA</h2>
+<ul>
+
+<li><span>Apr 11, 2016</span> » <a href="/posts/column-percentages-tabstat">Adding column percentages of sums to tabstat</a></li>
+
+</ul>
+
+
+<h2 class="category" id="rce">RCE</h2>
+<ul>
+
+<li><span>Apr 20, 2016</span> » <a href="/posts/batch-processes">Parallel processes in batch mode</a></li>
+
+<li><span>Apr 19, 2016</span> » <a href="/posts/batch-jobs">Batch Jobs</a></li>
+
+</ul>
+
+
+  </ul>
 
 </div>
 

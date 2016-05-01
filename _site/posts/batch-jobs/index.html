@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Batch Jobs « alvaro carril blog</title>
+  <meta name="description" content="Running a job in batch mode is extremely useful for performing long processes in the background, while freeing the GUI interface for other tasks. Even though...">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://acarril.github.io/posts/batch-jobs">
+  <link rel="alternate" type="application/rss+xml" title="alvaro carril blog" href="http://acarril.github.io/feed.xml" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/academicons.css" />
+  <script type="text/javascript" src='/js/Statax.js'></script>
+  <!-- <script type="text/javascript" src='http://haghish.com/statax/Statax.js'></script> -->
+  <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54241026-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+
+  <body>
+
+    <header class="header">
+  <div class="wrapper">
+    <a class="site-title" href="/">alvaro carril blog</a>
+    <nav class="site-nav">
+      
+        
+      
+        
+        <a class="page-link" href="/about/">about</a>
+        
+      
+        
+        <a class="page-link" href="/posts/categories">posts</a>
+        
+      
+        
+      
+        
+      
+        
+      
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="col-main">
+          <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Batch Jobs</h1>
+    <p class="post-meta">Apr 19, 2016</p>
+  </header>
+
+  <article class="post-content">
+    <p>Running a job in batch mode is extremely useful for performing long processes in the background, while freeing the GUI interface for other tasks. Even though a particular Stata task is not performed faster in batch mode, it allows to perform several tasks in parallel.</p>
+
+<p>In this post I explain the basics of running batch jobs with Stata. I also wrote a <a href="batch-processes">second part</a> which deals with running multiple processes in parallel.</p>
+
+<h1 id="what-do-i-need">What do I need?</h1>
+
+<h3 id="a-do-file">A do-file</h3>
+<p>First of all you need a do-file to submit. In this example we’ll submit <code>mydofile.do</code>. The do-file hasn’t have to have anything special (at least at first).</p>
+
+<h3 id="a-submit-file">A submit file</h3>
+<p>You’ll need a <code>submit file</code>, which is a simple text file with instructions on how the batch process should be run. <strong>The submit file has to be saved with a <code>*.submit</code> extension.</strong> So, for example, I’ll name mine <code>mybatch.submit</code> (again, creative).</p>
+
+<p>The easiest way to get going is to copy the following text in any plain text editor and then make sure to save it with <code>*.submit</code> extension (not <code>*.submit.txt</code>!). All lines starting with a <code>#</code> are comments. Edit what you want and save the file in the same folder as your do-file.</p>
+
+<pre><code class="language-c"># Universe whould always be 'vanilla'. This line MUST be
+#included in your submit file, exactly as shown below.
+Universe = vanilla
+
+# The path to Stata (could be R or Matlab)
+Executable = /usr/local/bin/stata-mp
+
+# Specify any arguments you want to pass to the executable.
+# Here we pass arguments to make Stata run the bootstrap.do
+# file. We also pass the process number, which will be used
+# to append the process number to the output files.
+Arguments = -q do mydofile.do
+
+# Specify where to output any results printed by your program.
+output = output/mydofile.out
+# Specify where to save any errors returned by your program.
+error = output/mydofile.err
+# Specify where to save the log file.
+Log = output/mydofile.log
+
+# Request processors (Stata maxes out at 4) and memory (in GB)
+Request_Cpus = 4
+Request_Memory = 8GB
+
+# Notifications settings
+notification = Always
+notify_user = your@email.com
+
+# Enter the number of processes to request.
+# This section should always come last.
+Queue 1
+</code></pre>
+
+<h3 id="directory-structure">Directory structure</h3>
+
+<p>Both the <code>do-file</code> and the <code>submit file</code> should be placed on a directory of your choosing, which we’ll call the <code>root directory</code>. It is recommended to have a dedicated folder for the outputs produced by the batch processing system inside the <code>root directory</code>. In this example I’ve been exceedingly creative and named that folder <code>/output</code>.</p>
+
+<h1 id="submitting-a-batch-job">Submitting a batch job</h1>
+
+<p>Now that everything is set up, the process is really easy. You’ll need to start the command line and change directory to the <code>root directory</code>. For example,</p>
+
+<pre><code>$ cd /nfs/projects/t/tpricing
+</code></pre>
+
+<p>Once there, the process is submitted with the <code>condor_submit &lt;submit file&gt;.submit</code> command. For example,</p>
+
+<pre><code>$ condor_submit mybatch.submit
+</code></pre>
+
+<p>It will then say that the job is submitted to a cluster number.</p>
+
+<h1 id="checking-the-process">Checking the process</h1>
+
+<p>You can check at anytime how all your submitted processes are going by typing <code>condor_q &lt;username&gt;</code>. For example,</p>
+
+<pre><code>$ condor_q acarril2
+</code></pre>
+<p>The most important column in there is <code>ST</code>, shorthand for “Status”. If it says <code>R</code>, then it is running. <strong>If you don’t see your process, then that means it has finished.</strong> If that is the case, go to your <code>/output</code> folder and check your results in the <code>*.out</code> file.</p>
+
+<p>Better than checking incessantly, make sure you add your email address to the <code>submit file</code>, so you get notified in your inbox when your job completes (or crashes)!</p>
+
+  </article>
+  
+  
+
+<div class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'acarril'; // required: replace example with your forum shortname
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+</div>
+
+
+
+
+</div>
+
+        </div>
+        <div class="col-second">
+          <div class="col-box col-box-author">
+  <img class="avatar" src="https://avatars3.githubusercontent.com/u/9773292?v=3&s=460" alt="Alvaro Carril">
+  <div class="col-box-title name">Alvaro Carril</div>
+  <p>Economist / Research analyst at J-PAL</p>
+  <p class="contact">
+    
+    <a href="https://github.com/acarril"><i class="fa fa-github fa-2x"></i></a>
+    
+    
+    <a href="https://www.researchgate.net/profile/Alvaro_Carril"><i class="ai ai-researchgate-square ai-2x"></i></a>
+    
+    
+    <a href="http://twitter.com/alvcarril"><i class="fa fa-twitter fa-2x"></i></a>
+    
+    
+    <a href="mailto:acarril@fen.uchile.cl"><i class="fa fa-envelope fa-2x"></i></a>
+    
+  </p>
+</div>
+
+<div class="col-box">
+  <div class="col-box-title">Recent Posts</div>
+  <ul class="post-list">
+    
+      <li><a class="post-link" href="/posts/batch-processes">Parallel processes in batch mode</a></li>
+    
+      <li><a class="post-link" href="/posts/batch-jobs">Batch Jobs</a></li>
+    
+      <li><a class="post-link" href="/posts/column-percentages-tabstat">Adding column percentages of sums to tabstat</a></li>
+    
+      <li><a class="post-link" href="/posts/prob-false-positives">On the probability of false positives</a></li>
+    
+      <li><a class="post-link" href="/posts/slutsky">Slutsky matrix times price vector</a></li>
+    
+  </ul>
+</div>
+<!--
+<div class="col-box post-toc hide">
+  <div class="col-box-title">TOC</div>
+</div>
+-->
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+<div class="wrapper">
+&copy; 2016 Alvaro Carril
+</div>
+</footer>
+
+<script src="/js/easybook.js"></script>
+
+  </body>
+
+</html>

@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>About « alvaro carril blog</title>
-  <meta name="description" content="Blog on the tools of the trade of the econ research analyst.">
+  <title>Slutsky matrix times price vector « alvaro carril blog</title>
+  <meta name="description" content="From microeconomic theory we know thatwhere  is the Slutsky matrix and  is the price vector.">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://acarril.github.io/about/">
+  <link rel="canonical" href="http://acarril.github.io/posts/slutsky">
   <link rel="alternate" type="application/rss+xml" title="alvaro carril blog" href="http://acarril.github.io/feed.xml" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="/css/academicons.css" />
@@ -66,36 +66,70 @@
           <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">About</h1>
+    <h1 class="post-title">Slutsky matrix times price vector</h1>
+    <p class="post-meta">Sep 6, 2015</p>
   </header>
 
   <article class="post-content">
-    <h1 id="welcome-to-my-website">Welcome to my website!</h1>
+    <p>From microeconomic theory we know that
+<script type="math/tex">S(p, w) \cdot p = 0,</script><br />
+where <script type="math/tex">S</script> is the Slutsky matrix and <script type="math/tex">p</script> is the price vector.</p>
 
-<p>This site is mainly a personal output channel, useful for writing down ideas I have in mind. As many times those ideas turned out to be useful for others, I thought of making brief, clear blog posts with them. I hope you find something useful.</p>
+<p>Why?</p>
 
-<p>My work (mainly) consists of performing economic analysis using Stata and most posts revolve around that topic. I’m very passionate about data analysis and computer programs to conduct it, so please feel free to comment posts or contact me if you want to discuss further.</p>
+<p>It is a general mathematical result that the <a href="https://en.wikipedia.org/wiki/Hessian_matrix">Hessian matrix</a> of a multivariate function is homogeneous of degree one.</p>
 
-<h1 id="about-me">About me</h1>
+<p>But really, <em>why</em>?</p>
 
-<p><img style="float: right;margin-left:10px;" src="..\files\photo_cv.jpg" /><br />
-I’m Alvaro Carril, an economist working as a research analyst at <a href="https://www.povertyactionlab.org/lac">J-PAL LAC</a>. In J-PAL I’m involved in projects related to tax policy and procurement, working as research assistant of professors <a href="http://www.hbs.edu/faculty/Pages/profile.aspx?facId=603214">Dina Pomeranz</a> (Harvard) and <a href="http://gabriel-zucman.eu/">Gabriel Zucman</a> (UC Berkeley).</p>
+<p>We know that the <strong>expenditure function</strong> <script type="math/tex">E</script>  is homogeneous of degree one in prices. Intuitively, if all prices change in the same proportion then relative prices stay constant. And if relative prices stay constant, the minimum-cost compensated bundle for a given utility level also remains unchanged. That is, budget shares stay the same. So the <em>expenditure</em> (expressed by <script type="math/tex">E</script>)  needed to achieve the same utility level as before changes in the same proportion as prices, and so we have homogeneity of degree one.</p>
 
-<p>I’m interested in development economics, econometrics and computational tools for economics. I have developed several Stata programs, all of which are available in my <a href="http://www.github.com/acarril">Git repo</a> or at the <a href="https://ideas.repec.org/f/pca1141.html">SSC Archive</a>.</p>
+<p>By duality, the <strong>Hicksian demand</strong> vector is the gradient of the expenditure function on prices,</p>
 
-<p>You can find my CV <a href="https://www.dropbox.com/s/oow36pf0wyevnc4/CV_acarril.pdf?dl=0">here</a>.</p>
+<script type="math/tex; mode=display">H= \frac{d E}{d p}.</script>
 
-<h3 id="working-papers-and-work-in-progress">Working papers and work in progress</h3>
+<p>Intuitively, <script type="math/tex">H</script> gives the minimum-cost demanded quantities. Due to the homogeneity of degree one of the expenditure function, the inner product of the Hicksian demand vector times the price vector equals the expenditure function:</p>
 
-<ul>
-  <li><a href="https://www.researchgate.net/publication/292091060_Dealing_with_misfits_in_random_treatment_assignment">“Dealing with misfits in random treatment assignment”</a>, Stata Journal (under review)</li>
-  <li>“What’s the Value of the Teacher? Mechanisms and effects of teacher absenteeism on<br />
-student achievement” with Valentina Paredes (in progress)</li>
-</ul>
+<script type="math/tex; mode=display">H\cdot p=E.</script>
+
+<p>This is because we are just multiplying the (minimum-cost) demanded quantities by their unit price and then summing up, which is total expenditure.</p>
+
+<p>Combining these two results we have that</p>
+
+<script type="math/tex; mode=display">\frac{d (H\cdot p)}{dp}=H</script>
+
+<script type="math/tex; mode=display">H + \frac{d H}{dp}\cdot p = H.</script>
+
+<p>So it follows that when <script type="math/tex">H=0</script>,</p>
+
+<script type="math/tex; mode=display">\frac{dH}{dp}\cdot p = 0.</script>
+
+<p>We know that the <a href="https://en.wikipedia.org/wiki/Jacobian_matrix_and_determinant">Jacobian matrix</a> of the Hicksian demand is the Hessian matrix of the expenditure function, that is,</p>
+
+<script type="math/tex; mode=display">\frac{dH}{dp}=\frac{d^2E}{dp^2}=S(p,w).</script>
+
+<p>So using these last two results gives us that</p>
+
+<script type="math/tex; mode=display">S(p, w) \cdot p = 0.</script>
+
+<p>This means that compensated demanded quantities are not affected by changes in price if relative prices remain constant.</p>
 
   </article>
-
   
+  
+
+<div class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'acarril'; // required: replace example with your forum shortname
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+</div>
+
+
 
 
 </div>

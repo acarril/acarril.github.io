@@ -3,15 +3,17 @@ body {
   margin: 0;
   font-family: "Open Sans", "Helvetica Neue", "DejaVu Sans", Arial, "PingFang SC", "Noto Sans CJK SC", "Hiragino Sans GB", "微软雅黑", Helvetica, sans-serif;
   font-size: 16px;
-  line-height: 1.5; }
+  line-height: 1.5;
+  height: 100%;
+  background-color: #e0e0e3; }
 
 a {
   text-decoration: none;
-  color: #036; }
+  color: #069; }
 
 a:hover, a:focus {
   text-decoration: underline;
-  color: #069; }
+  color: #046; }
 
 blockquote {
   background: #FFF;
@@ -90,9 +92,10 @@ h1, h2, h3, h4, h5, h6 {
     color: #FFF;
     text-decoration: none;
     font-size: 16px;
-    line-height: 32px; }
+    line-height: 32px;
+    margin-right: 30px; }
   .header .site-nav {
-    text-align: right; }
+    text-align: left; }
     .header .site-nav a {
       text-decoration: none;
       color: #CFD8DC;
@@ -103,7 +106,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .page-content {
   background: #e0e0e3;
-  padding: 50px 0; }
+  padding: 40px 0; }
   .page-content .wrapper {
     position: relative;
     background: #FAFAFA;
@@ -201,7 +204,7 @@ h1, h2, h3, h4, h5, h6 {
     			text-decoration: none;
     			border-radius: 5px;
         		white-space: nowrap;
-
+    
     			&:hover {
     				transition: background 0.3s ease;
     				background: #666;
@@ -328,7 +331,8 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 30px; }
   .home .pagination .previous, .home .pagination .next {
     padding: 10px 20px;
-    white-space: nowrap; }
+    white-space: nowrap;
+    color: #e0e0e3; }
   .home .pagination a.previous, .home .pagination a.next {
     color: #333;
     border-radius: 20px;
@@ -346,9 +350,12 @@ h1, h2, h3, h4, h5, h6 {
     padding: 15px 0; } }
 @media screen and (max-width: 600px) {
   .header, .header .site-nav {
-    text-align: center; }
+    text-align: right; }
   .header .site-title {
-    float: none; }
+    float: left; }
+
+  .page-content {
+    padding-top: 50px; }
 
   .col-main {
     padding: 10px; }
@@ -359,7 +366,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 20px; }
 
   pre {
-    padding: 10px; } }
+    padding: 15px; } }
 /* Monokai Theme from https://github.com/richleland/pygments-css/blob/master/monokai.css */
 .highlight {
   /* Comment */

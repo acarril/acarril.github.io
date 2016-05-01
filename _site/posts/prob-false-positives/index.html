@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>On the probability of false positives « alvaro carril blog</title>
+  <meta name="description" content="Whenever we do regression analysis there is the chance of getting false positives. Suppose you have  outcome variables and are targeting a -value of . Is the...">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://acarril.github.io/posts/prob-false-positives">
+  <link rel="alternate" type="application/rss+xml" title="alvaro carril blog" href="http://acarril.github.io/feed.xml" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/academicons.css" />
+  <script type="text/javascript" src='/js/Statax.js'></script>
+  <!-- <script type="text/javascript" src='http://haghish.com/statax/Statax.js'></script> -->
+  <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54241026-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+
+  <body>
+
+    <header class="header">
+  <div class="wrapper">
+    <a class="site-title" href="/">alvaro carril blog</a>
+    <nav class="site-nav">
+      
+        
+      
+        
+        <a class="page-link" href="/about/">about</a>
+        
+      
+        
+        <a class="page-link" href="/posts/categories">posts</a>
+        
+      
+        
+      
+        
+      
+        
+      
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="col-main">
+          <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">On the probability of false positives</h1>
+    <p class="post-meta">Oct 12, 2015</p>
+  </header>
+
+  <article class="post-content">
+    <p>Whenever we do regression analysis there is the chance of getting false positives. Suppose you have <script type="math/tex">k</script> outcome variables and are targeting a <script type="math/tex">p</script>-value of <script type="math/tex">p</script>. Is there a way to compute <em>ex ante</em> the exact probability of getting at least one false positive significant result under <script type="math/tex">p</script>?</p>
+
+<p>This question arose during a discussion with a J-PAL colleague. Since we were talking about randomized control trials, he also considered a treatment group of size <script type="math/tex">m</script> and a control group of size <script type="math/tex">n</script>.</p>
+
+<p>But does it matter?</p>
+
+<p>Assuming i.i.d. Normal characteristics we can use separate <a href="https://en.wikipedia.org/wiki/Welch%27s_t_test">Welch’s <script type="math/tex">t</script>-tests</a>, which account for different variances and sample sizes. If the statistics of these tests are <script type="math/tex">w_i</script> (<script type="math/tex">i=1,..., k</script>), the <script type="math/tex">p</script>-value of each one is</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>$$ p_i = \Pr(</td>
+      <td>w_i</td>
+      <td>\geq w(\alpha)\mid H_0),$$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>where <script type="math/tex">H_0</script> is the null hypothesis<!--- of equal means of the control and treatment groups-->.</p>
+
+<p>The above probability can be expressed in terms of the corresponding cumulative distribution function, that is, <script type="math/tex">\Pr (\cdot)=1-F( \mid w_i \mid )</script> . Therefore we have that</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>$$F(</td>
+      <td>w_i</td>
+      <td>)=1-p_i .$$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The key here is thinking of <script type="math/tex">p</script>-values as random variables and, because of the magic of <a href="https://en.wikipedia.org/wiki/Probability_integral_transform">probability integral transform</a>, we know that <script type="math/tex">(1-p_i)</script> distributes uniformly, so we get</p>
+
+<script type="math/tex; mode=display"> p_i\sim U(0,1).</script>
+
+<p>Now we have a sample size of <script type="math/tex">k</script> independent uniform distributions. The probability that at least one of them is smaller than a specific value <script type="math/tex">\overline p</script> is equal to the probability that the minimum of them is lower than that threshold, that is,</p>
+
+<script type="math/tex; mode=display"> \Pr(\text{At least one }p_i \leq \overline p) = 1- \Pr (\text{All }p_i > \overline p ) = 1- \prod_{i=1}^k \Pr (p_i > p^*).</script>
+
+<p>Since all <script type="math/tex">p_i</script> are identically distributed, we have that</p>
+
+<script type="math/tex; mode=display"> \Pr(\text{At least one }p_i \leq \overline p) = 1-[1-\Pr(p_i\leq\overline p)]^k = 1-[1-F_U(\overline p)]^k,</script>
+
+<p>which is the <a href="https://en.wikipedia.org/wiki/Cumulative_distribution_function">cumulative distribution function</a> (CDF) of the minimum of <script type="math/tex">k</script> i.i.d. random variables.</p>
+
+<p>Let’s say this minimum is <script type="math/tex">p_{min}</script>, then the CDF of the minimum of <script type="math/tex">k</script> independent <script type="math/tex">U(0,1)</script> variables is</p>
+
+<script type="math/tex; mode=display"> F_{p_{min}}(p_{min}) = 1- [1-p_{min}]^k.</script>
+
+<p>Therefore we want to know the probability</p>
+
+<script type="math/tex; mode=display"> \Pr (p_{min}\leq \overline p) = 1-[1-p_{min}]^k. </script>
+
+<p>So it is interesting to note that the probability of getting at least one false positive significant result under <script type="math/tex">p</script> doesn’t depend on the size of treatment nor control groups (in an impact evaluation setting), or even on sample size. Because <script type="math/tex">p</script>-values are random variables, they are uniformly distributed <script type="math/tex">(0,1)</script> regardless of sample size.*</p>
+
+<p>To get an idea of some typical values of our last formula, here is a table:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+\begin{array}{rr|lllll}
+  &    &       &       & p     &       &       \\
+  &    & 0.001 & 0.005 & 0.01  & 0.05  & 0.1   \\\hline
+  & 1  & 0.001 & 0.005 & 0.010 & 0.050 & 0.100 \\
+  & 2  & 0.002 & 0.010 & 0.020 & 0.098 & 0.190 \\
+  & 3  & 0.003 & 0.015 & 0.030 & 0.143 & 0.271 \\
+  & 4  & 0.004 & 0.020 & 0.039 & 0.185 & 0.344 \\
+  & 5  & 0.005 & 0.025 & 0.049 & 0.226 & 0.410 \\
+k & 10 & 0.010 & 0.049 & 0.096 & 0.401 & 0.651 \\
+  & 15 & 0.015 & 0.072 & 0.140 & 0.537 & 0.794 \\
+  & 20 & 0.020 & 0.095 & 0.182 & 0.642 & 0.878 \\
+  & 30 & 0.030 & 0.140 & 0.260 & 0.785 & 0.958 \\
+  & 40 & 0.039 & 0.182 & 0.331 & 0.871 & 0.985 \\
+  & 50 & 0.049 & 0.222 & 0.395 & 0.923 & 0.995
+\end{array}
+ %]]></script>
+
+<!--![Probs table](http://i60.tinypic.com/347b48h.png)-->
+
+<p>* Of course, the values of <script type="math/tex">m</script> and <script type="math/tex">n</script> do enter the test-statistic. For example, if we assume that the underlying data is normally distributed i.i.d., with mean <script type="math/tex">\mu</script> and variance <script type="math/tex">\sigma</script> for both treatment and control groups, then it can be proven we can get the <a href="https://en.wikipedia.org/wiki/Student%27s_t-test">Student’s <script type="math/tex">t</script>-statistic</a>:</p>
+
+<script type="math/tex; mode=display">t = \frac{\overline {X}_1 - \overline{X}_2}{s_{X_1 X_2} \cdot \sqrt{\frac{1}{m}+\frac{1}{n}}},</script>
+
+<p>where</p>
+
+<script type="math/tex; mode=display">s_{X_1X_2} = \sqrt{\frac{(m-1)s_{X_1}^2+(n-1)s_{X_2}^2}{m+n}}.</script>
+
+  </article>
+  
+  
+
+<div class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'acarril'; // required: replace example with your forum shortname
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+</div>
+
+
+
+
+</div>
+
+        </div>
+        <div class="col-second">
+          <div class="col-box col-box-author">
+  <img class="avatar" src="https://avatars3.githubusercontent.com/u/9773292?v=3&s=460" alt="Alvaro Carril">
+  <div class="col-box-title name">Alvaro Carril</div>
+  <p>Economist / Research analyst at J-PAL</p>
+  <p class="contact">
+    
+    <a href="https://github.com/acarril"><i class="fa fa-github fa-2x"></i></a>
+    
+    
+    <a href="https://www.researchgate.net/profile/Alvaro_Carril"><i class="ai ai-researchgate-square ai-2x"></i></a>
+    
+    
+    <a href="http://twitter.com/alvcarril"><i class="fa fa-twitter fa-2x"></i></a>
+    
+    
+    <a href="mailto:acarril@fen.uchile.cl"><i class="fa fa-envelope fa-2x"></i></a>
+    
+  </p>
+</div>
+
+<div class="col-box">
+  <div class="col-box-title">Recent Posts</div>
+  <ul class="post-list">
+    
+      <li><a class="post-link" href="/posts/batch-processes">Parallel processes in batch mode</a></li>
+    
+      <li><a class="post-link" href="/posts/batch-jobs">Batch Jobs</a></li>
+    
+      <li><a class="post-link" href="/posts/column-percentages-tabstat">Adding column percentages of sums to tabstat</a></li>
+    
+      <li><a class="post-link" href="/posts/prob-false-positives">On the probability of false positives</a></li>
+    
+      <li><a class="post-link" href="/posts/slutsky">Slutsky matrix times price vector</a></li>
+    
+  </ul>
+</div>
+<!--
+<div class="col-box post-toc hide">
+  <div class="col-box-title">TOC</div>
+</div>
+-->
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+<div class="wrapper">
+&copy; 2016 Alvaro Carril
+</div>
+</footer>
+
+<script src="/js/easybook.js"></script>
+
+  </body>
+
+</html>
