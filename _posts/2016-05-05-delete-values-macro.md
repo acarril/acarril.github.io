@@ -22,7 +22,7 @@ Now, for some reason, I need to update the contents of `vars` by eliminating the
 
 <pre class="sh_stata">
 local not c
-local vars: list vars- not
+local vars: list vars - not
 di "`vars'"
 </pre>
 
