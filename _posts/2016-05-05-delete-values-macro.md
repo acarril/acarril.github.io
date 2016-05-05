@@ -14,7 +14,7 @@ Suppose you define the contents of a local macro `vars` as
 local vars a b c d e
 </pre>
 
-Now, for some reason, I need to update the contents of `vars` by eliminating the value `c`. The easiest way to do it is
+Now, for some reason, I need to update the contents of `vars` by eliminating the value `c`. The easiest way to do it is using [macro lists](http://www.stata.com/manuals13/pmacrolists.pdf):
 
 <pre class="sh_stata">
 local not c
