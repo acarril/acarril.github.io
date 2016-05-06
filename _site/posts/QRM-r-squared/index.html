@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>About « alvaro carril blog</title>
-  <meta name="description" content="Blog on the tools of the trade of the econ research analyst.">
+  <title>R-squared in quantile regressions « alvaro carril blog</title>
+  <meta name="description" content="We know that  is not relevant to quantile regression. In this post I explain why is that so and how can we measure “goodness of fit” using alternative measur...">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://acarril.github.io/about/">
+  <link rel="canonical" href="http://acarril.github.io/posts/QRM-r-squared">
   <link rel="alternate" type="application/rss+xml" title="alvaro carril blog" href="http://acarril.github.io/feed.xml" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="/css/academicons.css" />
@@ -68,36 +68,46 @@
           <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">About</h1>
+    <h1 class="post-title">R-squared in quantile regressions</h1>
+    <p class="post-meta">May 1, 2016</p>
   </header>
 
   <article class="post-content">
-    <h1 id="welcome-to-my-website">Welcome to my website!</h1>
+    <p>We know that <script type="math/tex">R^2</script> is not relevant to quantile regression. In this post I explain why is that so and how can we measure “goodness of fit” using alternative measurements.</p>
 
-<p>This site is mainly a personal output channel, useful for writing down ideas I have in mind. As many times those ideas turned out to be useful for others, I thought of making brief, clear blog posts with them. I hope you find something useful.</p>
+<h1 id="basics-of-quantile-regression-models">Basics of quantile regression models</h1>
 
-<p>My work (mainly) consists of performing economic analysis using Stata and most posts revolve around that topic. I’m very passionate about data analysis and computer programs to conduct it, so please feel free to comment posts or contact me if you want to discuss further.</p>
+<p>Quantile regression models (QRM) are</p>
 
-<h1 id="about-me">About me</h1>
+<h1 id="measuring-goodness-of-fit">Measuring goodness of fit</h1>
 
-<p><img style="float: right;margin-left:10px;" src="..\files\photo_cv.jpg" /><br />
-I’m Alvaro Carril, an economist working as a research analyst at <a href="https://www.povertyactionlab.org/lac">J-PAL LAC</a>. In J-PAL I’m involved in projects related to tax policy and procurement, working as research assistant of professors <a href="http://www.hbs.edu/faculty/Pages/profile.aspx?facId=603214">Dina Pomeranz</a> (Harvard) and <a href="http://gabriel-zucman.eu/">Gabriel Zucman</a> (UC Berkeley).</p>
+<p><a href="http://ajbuckeconbikesail.net/Econ616/Quantile/JASA1999.pdf">Koenker and Machado (1999)</a> propose <script type="math/tex">R^1(\tau)</script>, a pseudo-<script type="math/tex">R^2</script> which measures goodness of fit by comparing the sum of weighted deviations for the model of interest at the <script type="math/tex">\tau</script> quantile with the same sum from a model in which only the intercept appears.</p>
 
-<p>I’m interested in development economics, econometrics and computational tools for economics. I have developed several Stata programs, all of which are available in my <a href="http://www.github.com/acarril">Git repo</a> or at the <a href="https://ideas.repec.org/f/pca1141.html">SSC Archive</a>.</p>
+<script type="math/tex; mode=display">% <![CDATA[
+R_1(\tau) = 1 - \frac{\sum_{y_i \ge \hat y_i} \tau \cdot \vert y_i-\hat y_i \vert +\sum_{y_i<\hat y_i} (1-\tau) \cdot \vert y_i-\hat y_i \vert}{\sum_{y_i \ge \bar y} \tau \cdot \vert y_i-\bar y \vert +\sum_{y_i<\bar y_i} (1-\tau) \cdot \vert y_i-\bar y \vert}, %]]></script>
 
-<p>You can find my CV <a href="https://www.dropbox.com/s/oow36pf0wyevnc4/CV_acarril.pdf?dl=0">here</a>.</p>
+<p>where <script type="math/tex">\hat y_i =\alpha_{\tau}+\beta_{\tau}x</script> is the fitted <script type="math/tex">\tau</script>th quantile for observation <script type="math/tex">i</script>, and <script type="math/tex">\bar y=\beta_{\tau}</script> is the fitted value from the intercept-only model. <script type="math/tex">R_1(\tau)</script> belongs to <script type="math/tex">[0,1]</script>, where 1 is a perfect fit, since the numerator (weighted sum of deviations) would be zero in such case.</p>
 
-<h3 id="working-papers-and-work-in-progress">Working papers and work in progress</h3>
-
-<ul>
-  <li><a href="https://www.researchgate.net/publication/292091060_Dealing_with_misfits_in_random_treatment_assignment">“Dealing with misfits in random treatment assignment”</a>, Stata Journal (under review)</li>
-  <li>“What’s the Value of the Teacher? Mechanisms and effects of teacher absenteeism on<br />
-student achievement” with Valentina Paredes (in progress)</li>
-</ul>
+<p>Note that this is a <em>local</em> measure of fit for QRM since it depends on <script type="math/tex">\tau</script>, unlike the global <script type="math/tex">R^2</script> from OLS. That is arguably the source of the warnings about using it: if you model fits in the tail, there’s not guarantee that it fits well anywhere else.<br />
+This approach could also be used to compare nested models.</p>
 
   </article>
-
   
+  
+
+<div class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'acarril'; // required: replace example with your forum shortname
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+</div>
+
+
 
 
 </div>

@@ -5,9 +5,94 @@
     <description>Blog on the tools of the trade of the econ research analyst.</description>
     <link>http://acarril.github.io/</link>
     <atom:link href="http://acarril.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 01 May 2016 10:46:23 -0300</pubDate>
-    <lastBuildDate>Sun, 01 May 2016 10:46:23 -0300</lastBuildDate>
+    <pubDate>Sun, 01 May 2016 14:00:58 -0300</pubDate>
+    <lastBuildDate>Sun, 01 May 2016 14:00:58 -0300</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>R-squared in quantile regressions</title>
+        <description>&lt;p&gt;We know that &lt;script type=&quot;math/tex&quot;&gt;R^2&lt;/script&gt; is not relevant to quantile regression. In this post I explain why is that so and how can we measure “goodness of fit” using alternative measurements.&lt;/p&gt;
+
+&lt;h1 id=&quot;basics-of-quantile-regression-models&quot;&gt;Basics of quantile regression models&lt;/h1&gt;
+
+&lt;p&gt;Quantile regression models (QRM) are&lt;/p&gt;
+
+&lt;h1 id=&quot;measuring-goodness-of-fit&quot;&gt;Measuring goodness of fit&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://ajbuckeconbikesail.net/Econ616/Quantile/JASA1999.pdf&quot;&gt;Koenker and Machado (1999)&lt;/a&gt; propose &lt;script type=&quot;math/tex&quot;&gt;R^1(\tau)&lt;/script&gt;, a pseudo-&lt;script type=&quot;math/tex&quot;&gt;R^2&lt;/script&gt; which measures goodness of fit by comparing the sum of weighted deviations for the model of interest at the &lt;script type=&quot;math/tex&quot;&gt;\tau&lt;/script&gt; quantile with the same sum from a model in which only the intercept appears.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+R_1(\tau) = 1 - \frac{\sum_{y_i \ge \hat y_i} \tau \cdot \vert y_i-\hat y_i \vert +\sum_{y_i&lt;\hat y_i} (1-\tau) \cdot \vert y_i-\hat y_i \vert}{\sum_{y_i \ge \bar y} \tau \cdot \vert y_i-\bar y \vert +\sum_{y_i&lt;\bar y_i} (1-\tau) \cdot \vert y_i-\bar y \vert}, %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;where &lt;script type=&quot;math/tex&quot;&gt;\hat y_i =\alpha_{\tau}+\beta_{\tau}x&lt;/script&gt; is the fitted &lt;script type=&quot;math/tex&quot;&gt;\tau&lt;/script&gt;th quantile for observation &lt;script type=&quot;math/tex&quot;&gt;i&lt;/script&gt;, and &lt;script type=&quot;math/tex&quot;&gt;\bar y=\beta_{\tau}&lt;/script&gt; is the fitted value from the intercept-only model. &lt;script type=&quot;math/tex&quot;&gt;R_1(\tau)&lt;/script&gt; belongs to &lt;script type=&quot;math/tex&quot;&gt;[0,1]&lt;/script&gt;, where 1 is a perfect fit, since the numerator (weighted sum of deviations) would be zero in such case.&lt;/p&gt;
+
+&lt;p&gt;Note that this is a &lt;em&gt;local&lt;/em&gt; measure of fit for QRM since it depends on &lt;script type=&quot;math/tex&quot;&gt;\tau&lt;/script&gt;, unlike the global &lt;script type=&quot;math/tex&quot;&gt;R^2&lt;/script&gt; from OLS. That is arguably the source of the warnings about using it: if you model fits in the tail, there’s not guarantee that it fits well anywhere else.&lt;br /&gt;
+This approach could also be used to compare nested models.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 01 May 2016 00:00:00 -0300</pubDate>
+        <link>http://acarril.github.io/posts/QRM-r-squared</link>
+        <guid isPermaLink="true">http://acarril.github.io/posts/QRM-r-squared</guid>
+        
+        
+        <category>econ</category>
+        
+      </item>
+    
+      <item>
+        <title>Running sections of do-files</title>
+        <description>&lt;p&gt;As do-files get larger and more complex, it is common to want to run only a portion or section of the code. Over the years I’ve come to use extensively what I call &lt;strong&gt;do-switches&lt;/strong&gt;, which are just handy devices for “turning on and off” some parts of the code.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-issue&quot;&gt;The issue&lt;/h1&gt;
+
+&lt;p&gt;We’ve all done it. It starts with&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Error! &lt;code&gt;r(XXX);&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;then&lt;br /&gt;
+  &amp;lt;ol start=&quot;2&quot;&amp;gt;&lt;br /&gt;
+    &amp;lt;li&amp;gt;Correct small portion of code&amp;lt;/li&amp;gt;&lt;br /&gt;
+    &amp;lt;li&amp;gt;&lt;b&gt;Select section of code in large do-file and run it&lt;/b&gt;&amp;lt;/li&amp;gt;&lt;br /&gt;
+    &lt;i&gt;(rinse and repeat)&lt;/i&gt;&lt;br /&gt;
+  &amp;lt;/ol&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;This post is all about step &lt;strong&gt;3.&lt;/strong&gt;, which is can be very graphically appreciated in the following gif:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../files/long_selection.gif&quot; alt=&quot;Long selection&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;enter-do-switches&quot;&gt;Enter do-switches&lt;/h1&gt;
+
+&lt;p&gt;The idea is extremely simple: just set a local to 1 if you want to run some section of the code, and 0 (or anything else) otherwise. Then you can enclose the sections of codes you want to switch “on and off” with conditional blocks.&lt;/p&gt;
+
+&lt;p&gt;For example, suppose we have a do-file that imports several datasets and then merges them. We could structure this with the following code:&lt;/p&gt;
+
+&lt;pre class=&quot;sh_stata&quot;&gt;
+local A     0
+local B     0
+local merge 0
+
+if `A&#39; == 1 {
+  * Import and save A
+}
+
+if `B&#39; == 1 {
+  * Import and save B
+}
+
+if `merge&#39; == 1 {
+  * Merge A with B and save
+}
+&lt;/pre&gt;
+</description>
+        <pubDate>Wed, 20 Apr 2016 00:00:00 -0300</pubDate>
+        <link>http://acarril.github.io/posts/dofile-section</link>
+        <guid isPermaLink="true">http://acarril.github.io/posts/dofile-section</guid>
+        
+        
+        <category>stata</category>
+        
+      </item>
     
       <item>
         <title>Parallel processes in batch mode</title>
