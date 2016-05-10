@@ -10,7 +10,7 @@ public: true
 
   <ul class="post-list">
 
-{% capture categories %}{% for category in site.categories %}{{ category | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+{% capture categories %}{% for category in site.categories %}{% unless category is 'unlisted' %}{{ category | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
 {% assign category = categories | split:',' | sort: 'last' %}
 {% for item in (0..site.categories.size) %}{% unless forloop.last %}
 {% capture word %}{{ category[item] | strip_newlines }}{% endcapture %}
