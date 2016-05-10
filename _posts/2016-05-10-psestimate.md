@@ -3,7 +3,8 @@ layout: post
 comments: true
 title: "psestimate"
 permalink: /posts/psestimate
-published: false
+published: true
+public: false
 ---
 
 **psestimate**
