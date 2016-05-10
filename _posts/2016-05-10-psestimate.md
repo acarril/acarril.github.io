@@ -1,9 +1,7 @@
 ---
 layout: post
 comments: true
-title: "psestimate"
-permalink: /posts/psestimate
-published: true
+title: psestimate
 hidden: true
 ---
 
