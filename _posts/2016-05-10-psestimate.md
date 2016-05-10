@@ -1,9 +1,9 @@
 ---
 layout: post
-title: psestimate
+comments: true
+title: "psestimate"
 permalink: /posts/psestimate
 published: true
-nocomments: false
 ---
 
 **psestimate**
