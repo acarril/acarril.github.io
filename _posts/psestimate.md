@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: psestimate
 permalink: /posts/psestimate
 public: true
