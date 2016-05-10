@@ -236,7 +236,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 -100px; }
   @media screen and (max-width: 600px) {
     .post .post-header {
-      text-align: center;
+      text-align: left;
       margin-bottom: 10px;
       padding: 10px; } }
 .post .post-content {
@@ -352,7 +352,10 @@ h1, h2, h3, h4, h5, h6 {
   .header, .header .site-nav {
     text-align: right; }
   .header .site-title {
-    float: left; }
+    float: left;
+    margin-right: 5px; }
+    .header .site-title a {
+      padding: 10px 0px; }
 
   .page-content {
     padding-top: 50px; }

@@ -33,7 +33,6 @@
 	}
 	.site-nav {
 		text-align:left;
-
 		a {
 			text-decoration: none;
 			color: $header-link;
@@ -198,11 +197,13 @@
 	.header {
 		&, .site-nav{
 			text-align:right;
-			padding: 0px 0px;
-			font-size: 80%;
 		}
 		.site-title {
 			float: left;
+			margin-right: 5px;
+			a {
+				padding: 10px 0px;
+			}
 		}
 	}
 	.page-content {

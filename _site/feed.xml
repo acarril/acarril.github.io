@@ -5,9 +5,53 @@
     <description>Blog on the tools of the trade of the econ research analyst.</description>
     <link>http://acarril.github.io/</link>
     <atom:link href="http://acarril.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 01 May 2016 14:00:58 -0300</pubDate>
-    <lastBuildDate>Sun, 01 May 2016 14:00:58 -0300</lastBuildDate>
+    <pubDate>Tue, 10 May 2016 18:51:35 -0300</pubDate>
+    <lastBuildDate>Tue, 10 May 2016 18:51:35 -0300</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>psestimate</title>
+        <description>&lt;p&gt;&lt;strong&gt;psestimate&lt;/strong&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 10 May 2016 00:00:00 -0300</pubDate>
+        <link>http://acarril.github.io/posts/psestimate</link>
+        <guid isPermaLink="true">http://acarril.github.io/posts/psestimate</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Deleting values from macro</title>
+        <description>&lt;p&gt;After defining a macro, specially inside a program, I have found that oftentimes I need to update its content by eliminating one of its values. In this post I explain how to easily do it.&lt;/p&gt;
+
+&lt;h1 id=&quot;setup&quot;&gt;Setup&lt;/h1&gt;
+
+&lt;p&gt;Suppose you define the contents of a local macro &lt;code&gt;vars&lt;/code&gt; as&lt;/p&gt;
+
+&lt;pre class=&quot;sh_stata&quot;&gt;
+local vars a b c d e
+&lt;/pre&gt;
+
+&lt;h1 id=&quot;solution-with-macro-lists&quot;&gt;Solution with macro lists&lt;/h1&gt;
+
+&lt;p&gt;Now, for some reason, I need to update the contents of &lt;code&gt;vars&lt;/code&gt; by eliminating the value &lt;code&gt;c&lt;/code&gt;. The easiest way to do it is using &lt;a href=&quot;http://www.stata.com/manuals13/pmacrolists.pdf&quot;&gt;macro lists&lt;/a&gt;:&lt;/p&gt;
+
+&lt;pre class=&quot;sh_stata&quot;&gt;
+local not c
+local vars: list vars - not
+di &quot;`vars&#39;&quot;
+&lt;/pre&gt;
+
+&lt;p&gt;Cool! No need to &lt;a href=&quot;http://www.stata.com/manuals13/ptokenize.pdf&quot;&gt;tokenize&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 05 May 2016 00:00:00 -0300</pubDate>
+        <link>http://acarril.github.io/posts/delete-values-macro</link>
+        <guid isPermaLink="true">http://acarril.github.io/posts/delete-values-macro</guid>
+        
+        
+        <category>stata</category>
+        
+      </item>
     
       <item>
         <title>R-squared in quantile regressions</title>

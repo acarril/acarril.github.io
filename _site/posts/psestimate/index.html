@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Running sections of do-files « alvaro carril blog</title>
-  <meta name="description" content="As do-files get larger and more complex, it is common to want to run only a portion or section of the code. Over the years I’ve come to use extensively what ...">
+  <title>psestimate « alvaro carril blog</title>
+  <meta name="description" content="psestimate">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://acarril.github.io/posts/dofile-section">
+  <link rel="canonical" href="http://acarril.github.io/posts/psestimate">
   <link rel="alternate" type="application/rss+xml" title="alvaro carril blog" href="http://acarril.github.io/feed.xml" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="/css/academicons.css" />
@@ -72,55 +72,12 @@
           <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Running sections of do-files</h1>
-    <p class="post-meta">Apr 20, 2016</p>
+    <h1 class="post-title">psestimate</h1>
+    <p class="post-meta">May 10, 2016</p>
   </header>
 
   <article class="post-content">
-    <p>As do-files get larger and more complex, it is common to want to run only a portion or section of the code. Over the years I’ve come to use extensively what I call <strong>do-switches</strong>, which are just handy devices for “turning on and off” some parts of the code.</p>
-
-<h1 id="the-issue">The issue</h1>
-
-<p>We’ve all done it. It starts with</p>
-
-<ol>
-  <li>Error! <code>r(XXX);</code></li>
-</ol>
-
-<p>then<br />
-  &lt;ol start="2"&gt;<br />
-    &lt;li&gt;Correct small portion of code&lt;/li&gt;<br />
-    &lt;li&gt;<b>Select section of code in large do-file and run it</b>&lt;/li&gt;<br />
-    <i>(rinse and repeat)</i><br />
-  &lt;/ol&gt;</p>
-
-<p>This post is all about step <strong>3.</strong>, which is can be very graphically appreciated in the following gif:</p>
-
-<p><img src="../files/long_selection.gif" alt="Long selection" /></p>
-
-<h1 id="enter-do-switches">Enter do-switches</h1>
-
-<p>The idea is extremely simple: just set a local to 1 if you want to run some section of the code, and 0 (or anything else) otherwise. Then you can enclose the sections of codes you want to switch “on and off” with conditional blocks.</p>
-
-<p>For example, suppose we have a do-file that imports several datasets and then merges them. We could structure this with the following code:</p>
-
-<pre class="sh_stata">
-local A     0
-local B     0
-local merge 0
-
-if `A' == 1 {
-  * Import and save A
-}
-
-if `B' == 1 {
-  * Import and save B
-}
-
-if `merge' == 1 {
-  * Merge A with B and save
-}
-</pre>
+    <p><strong>psestimate</strong></p>
 
   </article>
   
