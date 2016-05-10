@@ -2,7 +2,7 @@
 layout: page
 title: Software
 permalink: /software/
-public: true
+public: false
 nocomments: true
 ---
 
