@@ -2,8 +2,8 @@
 layout: post
 title: psestimate
 permalink: /posts/psestimate
-public: true
-nocomments: true
+published: true
+nocomments: false
 ---
 
 **psestimate**
