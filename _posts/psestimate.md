@@ -1,7 +1,7 @@
 ---
 layout: page
 title: psestimate
-permalink: /software/psestimate
+permalink: /posts/psestimate
 public: true
 nocomments: true
 ---
