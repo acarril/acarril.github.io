@@ -3,6 +3,9 @@
 	font-size:34px;
 	font-weight: normal;
 	margin: 20px;
+	margin-left: 0px;
+	margin-top: 20px;
+	margin-bottom: 10px;
     @include media-query($on-palm) {
 		margin: 10px;
 		font-size: 34px;
@@ -23,7 +26,7 @@
 }
 .post-list {
     margin: 0;
-	padding: 20px 40px;
+	padding: 20px 0px;
     list-style: none;
     > li {
         padding-bottom: 30px;
