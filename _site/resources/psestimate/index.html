@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Software « alvaro carril blog</title>
-  <meta name="description" content="Blog on the tools of the trade of the econ research analyst.">
+  <title>psestimate &mdash; Estimate the propensity score proposed by Imbens and Rubin (2015) « alvaro carril blog</title>
+  <meta name="description" content="Imbens and Rubin (2015) proposed a procedure for estimating the propensity score, with an algorithm for selecting the underlying function further outlined by...">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://acarril.github.io/software/">
+  <link rel="canonical" href="http://acarril.github.io/resources/psestimate">
   <link rel="alternate" type="application/rss+xml" title="alvaro carril blog" href="http://acarril.github.io/feed.xml" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="/css/academicons.css" />
@@ -46,7 +46,7 @@
         
       
         
-        <a class="page-link" href="/posts/categories">posts</a>
+        <a class="page-link" href="/posts/">posts</a>
         
       
         
@@ -56,7 +56,7 @@
         
       
         
-        <a class="page-link" href="/software/">software</a>
+        <a class="page-link" href="/resources/">resources</a>
         
       
         
@@ -72,23 +72,41 @@
           <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Software</h1>
+    <h1 class="post-title">psestimate &mdash; Estimate the propensity score proposed by Imbens and Rubin (2015)</h1>
+    <p class="post-meta">May 10, 2016</p>
   </header>
 
   <article class="post-content">
-    <p>Although I code in R, Matlab and Python, I’m most proficient at writing in LaTeX and Stata.</p>
+    <p><a href="http://www.cambridge.org/zw/academic/subjects/statistics-probability/statistical-theory-and-methods/causal-inference-statistics-social-and-biomedical-sciences-introduction">Imbens and Rubin (2015)</a> proposed a procedure for estimating the propensity score, with an algorithm for selecting the underlying function further outlined by <a href="http://jhr.uwpress.org/content/50/2/373.refs">Imbens (2015)</a>. The <strong>psestimate</strong> command implements that algorithm and estimates the propensity score in Stata.</p>
 
-<h1 id="stata-programs">Stata programs</h1>
+<h1 id="some-context">Some context</h1>
 
-<ul>
-  <li><a href="/posts/psestimate"><strong>psestimate</strong></a> – Estimate the propensity score proposed by <a href="http://www.cambridge.org/zw/academic/subjects/statistics-probability/statistical-theory-and-methods/causal-inference-statistics-social-and-biomedical-sciences-introduction">Imbens and Rubin (2015)</a>. Available at my <a href="https://github.com/acarril/psestimate">git repo</a>.</li>
-  <li><strong>randtreat</strong> – Random treatment assignment with unequal treatment fractions and dealing with misfits. Available at the <a href="https://ideas.repec.org/c/boc/bocode/s458106.html">SSC archive</a> or at my <a href="https://github.com/acarril/randtreat">git repo</a>.</li>
-  <li><strong>nrow</strong> – Rename variables as their <em>n</em>-th row values. Available at the <a href="https://ideas.repec.org/c/boc/bocode/s458116.html">SSC archive</a> or at my <a href="https://github.com/acarril/nrow">git repo</a>.</li>
-</ul>
+<p>I’ve been working for a few months now in an project of professors <a href="http://www.hbs.edu/faculty/Pages/profile.aspx?facId=603214">Dina Pomeranz</a> and <a href="http://gabriel-zucman.eu/">Gabriel Zucman</a>. They’re analyzing a law reform on multinational transfer pricing enacted in 2011 in Chile and how it impacted transfers made by affiliates of multinationals.</p>
+
+<h1 id="references">References</h1>
+<p>Imbens, Guido W. and Donald B. Rubin. 2015.  <em>Causal Inference in Statistics, Social,<br />
+        and Biomedical Sciences</em>.  New York: Cambridge University Press.</p>
+
+<p>Imbens, Guido W. 2015.  “Matching Methods in Practice: Three Examples”.  <em>Journal of<br />
+        Human Resources</em> 50(2): 373-419.</p>
 
   </article>
-
   
+  
+
+<div class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'acarril'; // required: replace example with your forum shortname
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+</div>
+
+
 
 
 </div>
@@ -119,7 +137,7 @@
   <div class="col-box-title">Recent Posts</div>
   <ul class="post-list">
     
-      <li><a class="post-link" href="/posts/psestimate">psestimate</a></li>
+      <li><a class="post-link" href="/resources/psestimate">psestimate &mdash; Estimate the propensity score proposed by Imbens and Rubin (2015)</a></li>
     
       <li><a class="post-link" href="/posts/delete-values-macro">Deleting values from macro</a></li>
     

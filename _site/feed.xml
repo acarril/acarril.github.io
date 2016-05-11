@@ -5,17 +5,28 @@
     <description>Blog on the tools of the trade of the econ research analyst.</description>
     <link>http://acarril.github.io/</link>
     <atom:link href="http://acarril.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 10 May 2016 18:51:35 -0300</pubDate>
-    <lastBuildDate>Tue, 10 May 2016 18:51:35 -0300</lastBuildDate>
+    <pubDate>Wed, 11 May 2016 13:16:25 -0300</pubDate>
+    <lastBuildDate>Wed, 11 May 2016 13:16:25 -0300</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
-        <title>psestimate</title>
-        <description>&lt;p&gt;&lt;strong&gt;psestimate&lt;/strong&gt;&lt;/p&gt;
+        <title>psestimate &amp;mdash; Estimate the propensity score proposed by Imbens and Rubin (2015)</title>
+        <description>&lt;p&gt;&lt;a href=&quot;http://www.cambridge.org/zw/academic/subjects/statistics-probability/statistical-theory-and-methods/causal-inference-statistics-social-and-biomedical-sciences-introduction&quot;&gt;Imbens and Rubin (2015)&lt;/a&gt; proposed a procedure for estimating the propensity score, with an algorithm for selecting the underlying function further outlined by &lt;a href=&quot;http://jhr.uwpress.org/content/50/2/373.refs&quot;&gt;Imbens (2015)&lt;/a&gt;. The &lt;strong&gt;psestimate&lt;/strong&gt; command implements that algorithm and estimates the propensity score in Stata.&lt;/p&gt;
+
+&lt;h1 id=&quot;some-context&quot;&gt;Some context&lt;/h1&gt;
+
+&lt;p&gt;I’ve been working for a few months now in an project of professors &lt;a href=&quot;http://www.hbs.edu/faculty/Pages/profile.aspx?facId=603214&quot;&gt;Dina Pomeranz&lt;/a&gt; and &lt;a href=&quot;http://gabriel-zucman.eu/&quot;&gt;Gabriel Zucman&lt;/a&gt;. They’re analyzing a law reform on multinational transfer pricing enacted in 2011 in Chile and how it impacted transfers made by affiliates of multinationals.&lt;/p&gt;
+
+&lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
+&lt;p&gt;Imbens, Guido W. and Donald B. Rubin. 2015.  &lt;em&gt;Causal Inference in Statistics, Social,&lt;br /&gt;
+        and Biomedical Sciences&lt;/em&gt;.  New York: Cambridge University Press.&lt;/p&gt;
+
+&lt;p&gt;Imbens, Guido W. 2015.  “Matching Methods in Practice: Three Examples”.  &lt;em&gt;Journal of&lt;br /&gt;
+        Human Resources&lt;/em&gt; 50(2): 373-419.&lt;/p&gt;
 </description>
         <pubDate>Tue, 10 May 2016 00:00:00 -0300</pubDate>
-        <link>http://acarril.github.io/posts/psestimate</link>
-        <guid isPermaLink="true">http://acarril.github.io/posts/psestimate</guid>
+        <link>http://acarril.github.io/resources/psestimate</link>
+        <guid isPermaLink="true">http://acarril.github.io/resources/psestimate</guid>
         
         
       </item>
