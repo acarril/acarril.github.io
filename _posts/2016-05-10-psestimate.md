@@ -6,7 +6,7 @@ hidden: true
 permalink: /resources/psestimate
 ---
 
-[Imbens and Rubin (2015)](http://www.cambridge.org/zw/academic/subjects/statistics-probability/statistical-theory-and-methods/causal-inference-statistics-social-and-biomedical-sciences-introduction) proposed a procedure for estimating the propensity score, with an algorithm for selecting the underlying function further outlined by [Imbens (2015)](http://jhr.uwpress.org/content/50/2/373.refs). The **psestimate** command implements that algorithm and estimates the propensity score in Stata.
+[Imbens and Rubin (2015)](http://www.cambridge.org/zw/academic/subjects/statistics-probability/statistical-theory-and-methods/causal-inference-statistics-social-and-biomedical-sciences-introduction) proposed a procedure for estimating the propensity score, with an algorithm for selecting the underlying function further outlined by [Imbens (2015)](http://jhr.uwpress.org/content/50/2/373.refs). I've written the **psestimate** command, which implements that algorithm and estimates the propensity score in Stata.
 
 # Some context
 
