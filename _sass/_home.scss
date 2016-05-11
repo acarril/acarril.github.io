@@ -1,6 +1,6 @@
 .home {
 .page-heading {
-	font-size:40px;
+	font-size:34px;
 	font-weight: normal;
 	margin: 20px;
     @include media-query($on-palm) {
@@ -38,7 +38,7 @@
     .post-meta {
     	font-size: $small-font-size;
     	color: #666;
-        margin: 0 20px;
+        margin: 0 0px;
         margin-bottom: .5em;
     }
     .post-excerpt {
@@ -70,7 +70,7 @@
                 opacity: 1;
             }
         }
-        margin: 0 20px;
+        margin: 0 0px;
     }
     @include media-query($on-palm) {
 		padding: 10px;
