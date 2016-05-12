@@ -55,12 +55,15 @@ So in eq. $$(1)$$, $$\alpha$$ is comprised of $$h(x)$$, which is a function of c
 I paraphrase the algorithm below, adding the relevant Stata commands. All estimations are logit regressions estimated by maximum likelihood, where the dependent variable is the treatment indicator, `treatvar` in this example.
 
 1. Estimate base model with basic covariates $$X_b$$. If no covariates are chosen for $$X_b$$, then this is just the model with the intercept. Save this estimation result for comparison.
-    <pre class="sh_stata">
+<pre class="sh_stata">
 logit treatvar [K_b]
 estimates store base
-    </pre>
+</pre>
 2. Estimate one additional model for every covariate in $$X$$ not included in $$X_b$$. Eeach of this estimations includes the base covariates plus the additional covariate. For each estimated model perform a [likelihood ratio test](http://www.stata.com/manuals13/rlrtest.pdf) for the null hypothesis that the included covariate's coefficiente is equal to zero.
-
+<pre class="sh_stata">
+logit treatvar [K_b] X_1
+lrtest base .
+</pre>
 
 # Some context
 
