@@ -32,7 +32,7 @@ The do-file we're using is going to
 
 The key here is to collect `process`, an integer passed by the submit file (see the [submit file](#submit-file) below) onto the do-file. This will make each run of the do-file unique for each process.
 
-<pre class="sh_stata">
+```
 // set more off so that the do-file runs without halting
 set more off
 
@@ -53,7 +53,7 @@ collapse (mean) mean_bp_before = bp_before (sd) sd_bp_before = bp_before
 
 // save the result, appending the process number to the dataset name
 save "datasets/output_`process'.dta", replace
-</pre>
+```
 
 ### Submit file
 
@@ -61,7 +61,7 @@ The submit file is very similar to the basic template, but now we pass the `Proc
 
 How many process we are requesting is defined in the last line, `Queue`. In this example we're requesting 10 processes, which will make the `$(Process)` integer go from 0 to 9.
 
-```c
+```
 Universe = vanilla
 Executable = /usr/local/bin/stata-mp
 
