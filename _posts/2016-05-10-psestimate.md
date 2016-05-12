@@ -64,6 +64,9 @@ I paraphrase the algorithm below, adding the relevant Stata commands. All estima
 
 ```text
 logit treatvar [K_b] X_1
+*-------------------------------------------------------------------------------
+* Inputs
+*-------------------------------------------------------------------------------
 lrtest base .
 ```
 
