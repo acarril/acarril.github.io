@@ -35,6 +35,9 @@ pre {
 	padding: 20px 20px;
 	width: 46em;
 	border:1px dashed Black
+	float: left;
+  position: relative;
+  left: -50%;
 }
 pre, pre code {
 	color: #223;
