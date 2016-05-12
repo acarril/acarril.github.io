@@ -39,12 +39,12 @@
         }
 
         pre {
-        	margin: 0 -30px;
+        	margin: 0 auto;
             @include media-query($on-palm) {
 		        margin: 0 -10px;
             }
         }
-        
+
         .middle-image {
             display: block;
             margin-left: auto;
