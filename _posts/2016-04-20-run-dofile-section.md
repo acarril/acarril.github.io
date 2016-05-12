@@ -32,7 +32,7 @@ The idea is extremely simple: just set a local to 1 if you want to run some sect
 
 For example, suppose we have a do-file that imports several datasets and then merges them. We could structure this with the following code:
 
-<pre class="sh_stata">
+```
 local A     0
 local B     0
 local merge 0
@@ -48,4 +48,4 @@ if `B' == 1 {
 if `merge' == 1 {
   * Merge A with B and save
 }
-</pre>
+```
