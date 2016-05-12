@@ -23,13 +23,13 @@ blockquote {
 code,pre {
 	font-family:  $code-font-family;
 	font-size: $code-font-size;
+	text-align: center;
 }
 code {
 	color: #900;
 	background-color: #fff;
 	padding: 2px 5px;
 	border-radius: 5px;
-	text-align: center;
 }
 pre {
 	overflow-x: auto;
