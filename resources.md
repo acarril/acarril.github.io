@@ -14,6 +14,8 @@ Although I code in R, Matlab and Python, I believe my only worthy collaborations
 
 ### Stata programs
 
+All of these programs can be installed directly within Stata with the command <pre>ssc install <i>program_name</i></pre>.
+
 - [**psestimate**](/resources/psestimate) -- Estimate the propensity score proposed by [Imbens and Rubin (2015)](http://www.cambridge.org/zw/academic/subjects/statistics-probability/statistical-theory-and-methods/causal-inference-statistics-social-and-biomedical-sciences-introduction). Available at my [git repo](https://github.com/acarril/psestimate).
 - [**randtreat**](/resources/randtreat) -- Random treatment assignment with unequal treatment fractions and dealing with misfits. Available at the [SSC archive](https://ideas.repec.org/c/boc/bocode/s458106.html) or at my [git repo](https://github.com/acarril/randtreat).
 - **nrow** -- Rename variables as their *n*-th row values. Available at the [SSC archive](https://ideas.repec.org/c/boc/bocode/s458116.html) or at my [git repo](https://github.com/acarril/nrow).
