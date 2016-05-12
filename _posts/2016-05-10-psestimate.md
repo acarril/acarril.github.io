@@ -52,7 +52,7 @@ So in eq. $$(1)$$, $$\alpha$$ is comprised of $$h(x)$$, which is a function of c
 - $$X_b$$ are basic covariates included explicitely in $$h(x)$$, because you think they are relevant regardless of what the algorithm selects. It can be empty.
 - $$K_l$$ and $$K_q$$ are the selected linear and quadratic terms, respectively. Obviously, they are empty at the beginning.
 
-I paraphrase the algorithm below. All estimations are logit regressions estimated by maximum likelihood, where the treatment indicator is the dependent variable.
+I paraphrase the algorithm below, adding the relevant Stata commands. All estimations are logit regressions estimated by maximum likelihood, where the dependent variable is the treatment indicator, `treatvar` in this example.
 
 1. Estimate base model with basic covariates $$X_b$$. If no covariates are chosen for $$X_b$$, then this is just the model with the intercept. Save this estimation results for comparison.
 <pre class="sh_stata">
