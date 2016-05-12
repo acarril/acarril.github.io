@@ -33,13 +33,14 @@ code {
 pre {
 	overflow-x: auto;
 	padding: 20px 20px;
+	width: 46em;
 }
 pre, pre code {
 	color: #223;
 	background-color: #e0e0e3;
 }
 pre code {
-	padding: 20;
+	padding: 0;
 }
 .hide {
     display: none;
