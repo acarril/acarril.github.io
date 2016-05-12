@@ -6,7 +6,7 @@ hidden: true
 permalink: /resources/psestimate
 ---
 
-[Imbens and Rubin (2015)](http://www.cambridge.org/zw/academic/subjects/statistics-probability/statistical-theory-and-methods/causal-inference-statistics-social-and-biomedical-sciences-introduction) proposed a procedure for estimating the propensity score, with an algorithm for selecting the underlying function further outlined by [Imbens (2015)](http://jhr.uwpress.org/content/50/2/373.refs). I've written the **psestimate** command, which implements that algorithm and estimates the propensity score in Stata.
+[Imbens and Rubin (2015)](http://www.cambridge.org/zw/academic/subjects/statistics-probability/statistical-theory-and-methods/causal-inference-statistics-social-and-biomedical-sciences-introduction) proposed a procedure for estimating the propensity score, with an algorithm for selecting the covariates function further outlined by [Imbens (2015)](http://jhr.uwpress.org/content/50/2/373.refs). I've written the **psestimate** command, which implements that algorithm and estimates the propensity score in Stata.
 
 # Propensity score estimation
 
@@ -26,14 +26,12 @@ $$
 \tag{1}
 $$
 
-where
+where $$\boldsymbol{W}$$ indicates treatment(s), $$\boldsymbol{X}$$ are covariates, $$h(x)$$ is the function of covariates to include and $$\gamma$$ is just a parameter vector for those variables, estimated by
 
 $$
-\hat{\gamma}_{ml}(\boldsymbol{W},\boldsymbol{X}) = \arg \underset{\gamma}{\max} L(\gamma | \boldsymbol{W},\boldsymbol{X})
+\hat{\gamma}_{ml}(\boldsymbol{W},\boldsymbol{X}) = \arg \underset{\gamma}{\max} L(\gamma | \boldsymbol{W},\boldsymbol{X}).
 \tag{2}
 $$
-
-and $$\boldsymbol{W}$$ indicates treatment(s), $$\boldsymbol{X}$$ are covariates and $$\gamma$$ is just a parameter vector for those variables.
 
 <img src="https://s-media-cache-ak0.pinimg.com/736x/07/0f/d2/070fd27702c5aef90ed0e0bb01c865dd.jpg" alt="Say what" height="150" width="150">
 
@@ -43,13 +41,25 @@ $$
 \text{logit}^{-1} (\alpha) = \frac{\exp{\alpha}}{1+\exp{\alpha}}.
 $$
 
-So in eq. $$(1)$$, $$\alpha$$ is comprised of $$h(x)$$, which is a function of covariates with linear and higher order terms, and $$\gamma$$, the vector of unknown parameters. Equation $$(2)$$ just tells us that we're going to estimate those parameters by [maximum likelihood](https://en.wikipedia.org/wiki/Maximum_likelihood).
+So in eq. $$(1)$$, $$\alpha$$ is comprised of $$h(x)$$, which is a function of covariates with linear (and possibly higher) order terms, and $$\gamma$$, the vector of unknown parameters. Equation $$(2)$$ just tells us that we're going to estimate those parameters by [maximum likelihood](https://en.wikipedia.org/wiki/Maximum_likelihood).
 
-**So to get the propensity score we just have to choose $$h(x)$$, estimate its coefficients and use those to predict the probability of being treated.**
+**So to get the proposed propensity score we just have to choose $$h(x)$$, estimate its coefficients with a logit model by maximum likelihood and use those coefficients to predict the probability of being treated.**
 
 ### Selecting $$h(x)$$
 
-[Imbens (2015)](http://jhr.uwpress.org/content/50/2/373.refs) has an appendix with the algorithm for the selection of $$h(x)$$.
+[Imbens (2015)](http://jhr.uwpress.org/content/50/2/373.refs) has an appendix with the algorithm for defining $$h(x)$$. Some notation:
+
+- $$X_b$$ are basic covariates included explicitely in $$h(x)$$, because you think they are relevant regardless of what the algorithm selects. It can be empty.
+- $$K_l$$ and $$K_q$$ are the selected linear and quadratic terms, respectively. Obviously, they are empty at the beginning.
+
+I paraphrase the algorithm below. All estimations are logit regressions estimated by maximum likelihood, where the treatment indicator is the dependent variable.
+
+1. Estimate base model with basic covariates $$X_b$$. If no covariates are chosen for $$X_b$$, then this is just the model with the intercept. Save this estimation results for comparison.
+<pre class="sh_stata">
+logit treatvar [K_b]
+estimates store base
+</pre>
+2. Estimate one additional model for every covariate in $$X$$ not included in $$X_b$$. Eeach of this estimations includes the base covariates plus the additional covariate. For each estimated model perform a [likelihood ratio test](http://www.stata.com/manuals13/rlrtest.pdf) against the
 
 # Some context
 
