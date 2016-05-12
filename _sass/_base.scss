@@ -19,6 +19,7 @@ blockquote {
 	margin:0;
 	padding: 5px 20px;
 	border-left: 10px solid #CCC;
+	text-align: center;
 }
 code,pre {
 	font-family:  $code-font-family;
@@ -39,7 +40,6 @@ pre {
 pre, pre code {
 	color: #223;
 	background-color: #e0e0e3;
-	text-align: center;
 }
 pre code {
 	padding: 0;
