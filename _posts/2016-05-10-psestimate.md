@@ -64,6 +64,10 @@ estimates store base
 logit treatvar [K_b] X_1
 lrtest base .
 </pre>
+```text
+logit treatvar [K_b] X_1
+lrtest base .
+```
 
 # Some context
 
