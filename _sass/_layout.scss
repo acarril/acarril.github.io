@@ -187,7 +187,7 @@
 
 @include media-query($on-laptop) {
 	.page-content {
-		padding: 0;
+		padding: 50;
 	}
 	.footer {
 		padding: 15px 0 ;
