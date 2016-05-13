@@ -20,6 +20,7 @@
     		text-align:left;
     		margin-bottom: 10px;
     		padding: 10px;
+        margin-left: 90px;
         }
     }
     .post-content {
@@ -41,7 +42,7 @@
         pre {
         	margin: 0 auto;
             @include media-query($on-palm) {
-		        margin: 0 -10px;
+		        margin: 0 10px;
             }
         }
 
