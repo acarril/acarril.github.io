@@ -1,11 +1,36 @@
 ---
 layout: post
 comments: true
-title:  "Deleting values from macro"
+title:  "Manipulating locals"
 categories: stata
 published: true
 ---
 
+Defining and using locals in Stata is extremely useful, but sometimes we need to go beyond just storing and reusing some values. In this post I explain advanced manipulation of locals via `macro lists`.
+
+# Setup
+
+### Duplicate values
+
+We may have a local with duplicate elements stored within. For example,
+
+```
+local fib 0 1 1 2 3 5
+```
+
+We can easily **remove duplicated elements from the local** using
+
+```
+local fib_nodups : list uniq fib
+```
+
+We could also **extract duplicated elements from the local** using
+
+```
+local fib_dups : list dups fib
+```
+
+####################
 After defining a macro, specially inside a program, I have found that oftentimes I need to update its content by eliminating one of its values. In this post I explain how to easily do it.
 
 # Setup
