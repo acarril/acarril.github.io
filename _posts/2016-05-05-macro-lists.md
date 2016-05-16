@@ -7,9 +7,7 @@ published: true
 
 Defining and using locals in Stata is extremely useful, but sometimes we need to go beyond just storing and reusing some values. In this post I explain advanced manipulation of locals via [`macro lists`](http://www.stata.com/manuals13/pmacrolists.pdf), which allow us to get the number of elements in a local, handle duplicate elements, sort (and shuffle) elements and perform other logical operations.
 
-# Setup
-
-### Duplicate elements
+# Duplicate elements
 
 We may have a local with duplicate elements stored within. For example,
 
@@ -33,7 +31,7 @@ We could also **extract duplicated elements from the local** using
 1
 ```
 
-### Add and remove elements
+# Add and remove elements
 
 **Adding elements to a local** is as easy as "appending" one after the other. For example,
 
@@ -64,7 +62,7 @@ di "`vars'"
 
 Cool! No need to [tokenize](http://www.stata.com/manuals13/ptokenize.pdf).
 
-## Unions and intersections
+# Unions and intersections
 
 A slightly different way of adding the elements is taking the **union of two locals**, which is just the set of all distinct elements in both locals.
 
