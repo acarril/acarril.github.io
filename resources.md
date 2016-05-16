@@ -6,7 +6,7 @@ public: true
 nocomments: true
 ---
 
-This page is a repository of "resources" of various types, collected in one place. These include [**software**](#software) bits I've written (mostly Stata), [**datasets**](#datasets) and miscellaneous [**documents**](#documents) (mainly in spanish).
+This page is a repository of resources of various types, collected in one place. These include [**software**](#software) bits I've written (mostly Stata) and miscellaneous [**documents**](#documents) (mainly in spanish).
 
 # Software
 
@@ -19,3 +19,11 @@ All programs can be installed directly within Stata using <code>ssc install <i>p
 - [**psestimate**](/resources/psestimate) -- Estimate the propensity score proposed by [Imbens and Rubin (2015)](http://www.cambridge.org/zw/academic/subjects/statistics-probability/statistical-theory-and-methods/causal-inference-statistics-social-and-biomedical-sciences-introduction). Available at my [git repo](https://github.com/acarril/psestimate).
 - [**randtreat**](/resources/randtreat) -- Random treatment assignment with unequal treatment fractions and dealing with misfits. Available at the [SSC archive](https://ideas.repec.org/c/boc/bocode/s458106.html) or at my [git repo](https://github.com/acarril/randtreat).
 - **nrow** -- Rename variables as their *n*-th row values. Available at the [SSC archive](https://ideas.repec.org/c/boc/bocode/s458116.html) or at my [git repo](https://github.com/acarril/nrow).
+
+# Documents
+
+All of these documents are unfinished and most probably contain (lots of) errors. Use with caution.
+
+- [Resumen De Gregorio](https://www.dropbox.com/s/o5cj07jpdq0em54/DeGregorioResumen.pdf?dl=0) -- Resumen del libro [Macroeconomía: Teoría y Políticas](http://www.degregorio.cl/pdf/Macroeconomia.pdf), de [José De Gregorio (2007)](http://www.econ.uchile.cl/jdegregorio).
+- [Apunte Finanzas Públicas](https://www.dropbox.com/s/dsg9meznquq8kno/Apuntes%20finanzas%20publicas.pdf?dl=0) -- Apuntes del curso de Finanzas Públicas de [Claudia Martínez](https://www.povertyactionlab.org/mart%C3%ADnez).
+- [Manual de LaTeX](https://www.dropbox.com/s/hcz69dj5rrusi9g/manual_latex.pdf?dl=0) -- Breve guía práctica para escribir en [LaTeX](http://tex.stackexchange.com/a/94910/45978).
