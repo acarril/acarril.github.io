@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title:  "R-squared in quantile regressions"
-categories: Econ
+categories: econ
 published: true
 ---
 
