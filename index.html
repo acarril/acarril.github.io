@@ -12,13 +12,13 @@ layout: default
         <h2>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         </h2>
-
-        <div class="post-meta">{{ post.date | date: "%b %-d, %Y" }} | {{ page.categories }}</div>
-
+        {% for cat in post.categories %}
+        <div class="post-meta">{{ post.date | date: "%b %-d, %Y" }} • {{ cat | upcase }}</div>
+        {% endfor %}
         <div class="post-excerpt">
           {{ post.excerpt }}
           <p>
-            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">Read More &raquo;</a>
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">Keep reading &raquo;</a>
           </p>
         </div>
       </li>
