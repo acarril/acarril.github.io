@@ -30,7 +30,8 @@ We could also **extract duplicated elements from the local** using
 local fib_dups : list dups fib
 ```
 
-####################
+***
+
 After defining a macro, specially inside a program, I have found that oftentimes I need to update its content by eliminating one of its values. In this post I explain how to easily do it.
 
 # Setup
