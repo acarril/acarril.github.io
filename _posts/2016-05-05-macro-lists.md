@@ -7,6 +7,13 @@ published: true
 
 Defining and using locals in Stata is extremely useful, but sometimes we need to go beyond just storing and reusing some values. In this post I explain advanced manipulation of locals via [`macro lists`](http://www.stata.com/manuals13/pmacrolists.pdf), which allow us to get the number of elements in a local, handle duplicate elements, sort (and shuffle) elements and perform other logical operations.
 
+In particular, I explain how to:
+
+- Handle duplicate elements in locals, that is, listing them in a different local or removing them.
+- Add or remove elements from a local
+- Create unions and intersections of elements in locals
+-
+
 # Duplicate elements
 
 We may have a local with duplicate elements stored within. For example,
@@ -64,18 +71,35 @@ Cool! No need to [tokenize](http://www.stata.com/manuals13/ptokenize.pdf).
 
 # Unions and intersections
 
-A slightly different way of adding the elements is taking the **union of two locals**, which is just the set of all distinct elements in both locals.
+A slightly different way of adding the elements is taking the **union of two locals**, which is just the set of all *distinct* elements in both locals.
 
 For example, if we have local macros `A` and `B` defined as follows, we can append all the elements of `B` not contained in `A` with the `|` ("pipe") sign:
 
 ```
 . local A house tree car
 . local B computer car bike
-. local things : list A | B
-. display "`things'"
+. local all_things : list A | B
+. display "`all_things'"
 house tree car computer bike
 ```
 
 Notice how the element `car` was not appended, because it was already in `A`. This is how unions differ from simply [adding the elements of one local to the other](#add-and-remove-elements).
 
-We can easily
+We can also get the **intersection of two locals**, which corresponds to elements that belong to *both*. Using local macros `A` and `B` defined above, we can get their intersection in the following way:
+
+```
+. local common_things : list A & B
+. display "`common_things'"
+car
+```
+
+# Sorting and shuffling
+
+Sometimes we will want to sort the elements inside a local macro, which can be done as follows:
+
+```
+. local euler_nums 1 -1 5 -61 1385
+. local euler_nums : list sort euler_nums
+. display "`euler_nums'"
+
+```
