@@ -1,16 +1,15 @@
 ---
 layout: post
-comments: true
 title:  "Manipulating locals via macro lists"
 categories: stata
 published: true
 ---
 
-Defining and using locals in Stata is extremely useful, but sometimes we need to go beyond just storing and reusing some values. In this post I explain advanced manipulation of locals via `macro lists`, which allow us to get the number of elements in a local, handle duplicate elements, sort (and shuffle) elements and perform other logical operations.
+Defining and using locals in Stata is extremely useful, but sometimes we need to go beyond just storing and reusing some values. In this post I explain advanced manipulation of locals via [`macro lists`](http://www.stata.com/manuals13/pmacrolists.pdf), which allow us to get the number of elements in a local, handle duplicate elements, sort (and shuffle) elements and perform other logical operations.
 
 # Setup
 
-### Duplicate values
+### Duplicate elements
 
 We may have a local with duplicate elements stored within. For example,
 
@@ -22,7 +21,7 @@ We can easily **remove duplicated elements from the local** using
 
 ```
 . local fib_nodups : list uniq fib
-. di "`fib_nodups'"
+. display "`fib_nodups'"
 0 1 2 3 5
 ```
 
@@ -30,30 +29,55 @@ We could also **extract duplicated elements from the local** using
 
 ```
 . local fib_dups : list dups fib
-. di "`fib_dups'"
+. display "`fib_dups'"
 1
 ```
 
-***
+### Add and remove elements
 
-After defining a macro, specially inside a program, I have found that oftentimes I need to update its content by eliminating one of its values. In this post I explain how to easily do it.
+**Adding elements to a local** is as easy as "appending" one after the other. For example,
 
-# Setup
-
-Suppose you define the contents of a local macro `vars` as
+Lets define the contents of two local macros, `vars` and `coefs`, as follows:
 
 ```
-local vars a b c d e
+. local vars x y z
+. local coefs a b c
 ```
 
-# Solution with macro lists
-
-Now, for some reason, I need to update the contents of `vars` by eliminating the value `c`. The easiest way to do it is using [macro lists](http://www.stata.com/manuals13/pmacrolists.pdf):
+We can very easily join the contents of both locals into a third one using:
 
 ```
-local not c
-local vars: list vars - not
+. local vars_coefs `vars' `coefs'
+. display "`vars_coefs'"
+x y z a b c
+```
+
+Now, to **remove elements from a local** we need to define a new one with the elements to be removed and then "substract" it from the original one.
+
+For example, suppose we want to update the contents of `vars` by eliminating the element `y`. This can be done by defining a new local (e.g. `not`) with the elements to be removed and then "substracting" it from `vars`:
+
+```
+local not y
+local vars : list vars - not
 di "`vars'"
 ```
 
 Cool! No need to [tokenize](http://www.stata.com/manuals13/ptokenize.pdf).
+
+## Unions and intersections
+
+A slightly different way of adding the elements is taking the **union of two locals**, which is just the set of all distinct elements in both locals.
+
+For example, if we have local macros `A` and `B` defined as follows, we can append all the elements of `B` not contained in `A` with the `|` ("pipe") sign:
+
+```
+. local A house tree car
+. local B computer car bike
+. local things : list A | B
+. display "`things'"
+house tree car computer bike
+```
+
+Notice how the element `car` was not appended, because it was already in `A`. This is how unions differ from simply [adding the elements of one local to the other](#add-and-remove-elements).
+
+We can easily
