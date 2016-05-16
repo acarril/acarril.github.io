@@ -15,19 +15,23 @@ Defining and using locals in Stata is extremely useful, but sometimes we need to
 We may have a local with duplicate elements stored within. For example,
 
 ```
-local fib 0 1 1 2 3 5
+. local fib 0 1 1 2 3 5
 ```
 
 We can easily **remove duplicated elements from the local** using
 
 ```
-local fib_nodups : list uniq fib
+. local fib_nodups : list uniq fib
+. di "`fib_nodups'"
+0 1 2 3 5
 ```
 
 We could also **extract duplicated elements from the local** using
 
 ```
-local fib_dups : list dups fib
+. local fib_dups : list dups fib
+. di "`fib_dups'"
+1
 ```
 
 ***
