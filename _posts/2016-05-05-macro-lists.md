@@ -1,12 +1,12 @@
 ---
 layout: post
 comments: true
-title:  "Manipulating locals"
+title:  "Manipulating locals via macro lists"
 categories: stata
 published: true
 ---
 
-Defining and using locals in Stata is extremely useful, but sometimes we need to go beyond just storing and reusing some values. In this post I explain advanced manipulation of locals via `macro lists`.
+Defining and using locals in Stata is extremely useful, but sometimes we need to go beyond just storing and reusing some values. In this post I explain advanced manipulation of locals via `macro lists`, which allow us to get the number of elements in a local, handle duplicate elements, sort (and shuffle) elements and perform other logical operations.
 
 # Setup
 
