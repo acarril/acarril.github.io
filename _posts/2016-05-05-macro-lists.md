@@ -7,18 +7,17 @@ published: true
 
 Defining and using locals in Stata is extremely useful, but sometimes we need to go beyond just storing and reusing some values. In this post I explain advanced manipulation of locals via [`macro lists`](http://www.stata.com/manuals13/pmacrolists.pdf), which allow us to get the number of elements in a local, handle duplicate elements, sort (and shuffle) elements and perform other logical operations.
 
-In particular, I explain how to:
-
-- Handle duplicate elements in locals, that is, listing them in a different local or removing them.
-- Add or remove elements from a local
-- Create unions and intersections of elements in locals
+1. [Duplicate elements](#duplicate-elements)
+2. [Add and remove elements](#add-and-remove-elements)
+3. [Unions and intersections](#unions-and-intersections)
+4. [Sorting and shuffling](#sorting-and-shuffling)
 
 # Duplicate elements
 
 We may have a local with duplicate elements stored within. For example,
 
 ```
-. local fib 0 1 1 2 3 5
+. local fib 0 1 1 2 3
 ```
 
 We can easily **remove duplicated elements from the local** using
@@ -26,7 +25,7 @@ We can easily **remove duplicated elements from the local** using
 ```
 . local fib_nodups : list uniq fib
 . display "`fib_nodups'"
-0 1 2 3 5
+0 1 2 3
 ```
 
 We could also **extract duplicated elements from the local** using
@@ -37,11 +36,11 @@ We could also **extract duplicated elements from the local** using
 1
 ```
 
+Note that `dups` extracts *all* surplus elements, so if we have had three 1s in `fib`, then `fib_dups` would have had two.
+
 # Add and remove elements
 
-**Adding elements to a local** is as easy as "appending" one after the other. For example,
-
-Lets define the contents of two local macros, `vars` and `coefs`, as follows:
+**Adding elements to a local** is as easy as "appending" one after the other. For example, lets define the contents of two local macros, `vars` and `coefs`, as follows:
 
 ```
 . local vars x y z
@@ -61,9 +60,10 @@ Now, to **remove elements from a local** we need to define a new one with the el
 For example, suppose we want to update the contents of `vars` by eliminating the element `y`. This can be done by defining a new local (e.g. `not`) with the elements to be removed and then "substracting" it from `vars`:
 
 ```
-local not y
-local vars : list vars - not
-di "`vars'"
+. local not y
+. local vars : list vars - not
+. di "`vars'"
+x z
 ```
 
 Cool! No need to [tokenize](http://www.stata.com/manuals13/ptokenize.pdf).
@@ -94,11 +94,20 @@ car
 
 # Sorting and shuffling
 
-Sometimes we will want to sort the elements inside a local macro, which can be done as follows:
+Sometimes we will want to **sort the elements inside a local macro**, which can be done as follows:
 
 ```
-. local euler_nums 1 -1 5 -61 1385
-. local euler_nums : list sort euler_nums
-. display "`euler_nums'"
+. local names  tao galois ramunajan neumann
+. local names : list sort names
+. display "`names'"
+galois neumann ramunajan tao
+```
 
+And as a bonus, I had a hard time figuring out how to **randomly shuffle the elements of a macro**, which turns out can be easily done using a bit of [Mata](https://www.stata.com/manuals13/m.pdf):
+
+```
+. local nums 1 2 3 4 5
+. mata : st_local("random_nums", invtokens(jumble(tokens(st_local("nums"))')'))
+. display "`random_nums'"
+2 1 3 5 4
 ```
