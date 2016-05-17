@@ -12,7 +12,6 @@ In particular, I explain how to:
 - Handle duplicate elements in locals, that is, listing them in a different local or removing them.
 - Add or remove elements from a local
 - Create unions and intersections of elements in locals
--
 
 # Duplicate elements
 
