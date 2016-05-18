@@ -68,6 +68,11 @@ lrtest base . // mind the dot
 
 [In progres...]
 
+0. first item
+0. second item
+0. another item
+{: reversed="reversed"}
+
 # Some context
 
 I've been working for a few months now in an project of professors [Dina Pomeranz](http://www.hbs.edu/faculty/Pages/profile.aspx?facId=603214) and [Gabriel Zucman](http://gabriel-zucman.eu/). They're analyzing a law reform on multinational transfer pricing enacted in 2011 in Chile and how it impacted transfers made by affiliates of multinationals.
