@@ -61,7 +61,7 @@ estimates store base
 </pre>
 
 <ol start="2">
-<li> Estimate one additional model for every covariate in $$X$$ not included in $$X_b$$. Each of this estimations includes the base covariates plus the additional covariate. For each estimated model perform a [likelihood ratio test](http://www.stata.com/manuals13/rlrtest.pdf) for the null hypothesis that the included covariate's coefficiente is equal to zero.</li>
+<li> Estimate one additional model for every covariate in $$ X $$ not included in $$ X_b $$. Each of this estimations includes the base covariates plus the additional covariate. For each estimated model perform a [likelihood ratio test](http://www.stata.com/manuals13/rlrtest.pdf) for the null hypothesis that the included covariate's coefficiente is equal to zero.</li>
 
 <pre>
 logit <i>treatvar</i> [<i>K_b</i>] X_1
