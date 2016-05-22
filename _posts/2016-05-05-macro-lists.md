@@ -16,7 +16,7 @@ Defining and using locals in Stata is extremely useful, but sometimes we need to
 
 We may have a local with duplicate elements stored within. For example,
 
-```
+```stata
 . local fib 0 1 1 2 3
 ```
 
