@@ -8,6 +8,13 @@ permalink: /resources/psestimate
 
 [Imbens and Rubin (2015)](http://www.cambridge.org/zw/academic/subjects/statistics-probability/statistical-theory-and-methods/causal-inference-statistics-social-and-biomedical-sciences-introduction) proposed a procedure for estimating the propensity score, with an algorithm for selecting the covariates function further outlined by [Imbens (2015)](http://jhr.uwpress.org/content/50/2/373.refs). I've written the **psestimate** command, which implements that algorithm and estimates the propensity score in Stata.
 
+1. Firts
+2. second
+
+        gen x = 1
+
+3. Third
+
 # Propensity score estimation
 
 In order to estimate the propensity scores, two choices have to be made:
@@ -22,14 +29,14 @@ In **psestimate**, the functional form is a [logit model](https://en.wikipedia.o
 The proposed estimator for the propensity score, $$e(x)$$, is based on a logistic model and estimated by maximum likelihood. The estimated propensity score is
 
 $$
-\hat{e}(x|\boldsymbol{W},\boldsymbol{X}) = \frac{\exp{(h(x)'\hat{\gamma}_{ml}(\boldsymbol{W},\boldsymbol{X}))}}{1+\exp{(h(x)'\hat{\gamma}_{ml}(\boldsymbol{W},\boldsymbol{X}))}},
+\hat{e}(x\vert\boldsymbol{W},\boldsymbol{X}) = \frac{\exp{(h(x)'\hat{\gamma}_{ml}(\boldsymbol{W},\boldsymbol{X}))}}{1+\exp{(h(x)'\hat{\gamma}_{ml}(\boldsymbol{W},\boldsymbol{X}))}},
 \tag{1}
 $$
 
 where $$\boldsymbol{W}$$ indicates treatment(s), $$\boldsymbol{X}$$ are covariates, $$h(x)$$ is the function of covariates to include and $$\gamma$$ is just a parameter vector for those variables, estimated by
 
 $$
-\hat{\gamma}_{ml}(\boldsymbol{W},\boldsymbol{X}) = \arg \underset{\gamma}{\max} L(\gamma | \boldsymbol{W},\boldsymbol{X}).
+\hat{\gamma}_{ml}(\boldsymbol{W},\boldsymbol{X}) = \arg \underset{\gamma}{\max} L(\gamma \vert \boldsymbol{W},\boldsymbol{X}).
 \tag{2}
 $$
 
@@ -55,23 +62,14 @@ So in eq. $$(1)$$, $$\alpha$$ is comprised of $$h(x)$$, which is a function of c
 I paraphrase the algorithm below, adding the relevant Stata commands. All estimations are logit regressions estimated by maximum likelihood, where the dependent variable is the treatment indicator, <code><i>treatvar</i></code> in this example.
 
 1. Estimate base model with basic covariates $$ X_b $$. If no covariates are chosen for $$ X_b $$, then this is just the model with the intercept. Save this estimation result for comparison.
-<pre>
-logit <i>treatvar</i> [<i>K_b</i>]
-estimates store base
-</pre>
-2. Estimate one additional model for every covariate in $$ X $$ not included in $$ X_b $$. Each of this estimations includes the base covariates plus the additional covariate. For each estimated model perform a [likelihood ratio test](http://www.stata.com/manuals13/rlrtest.pdf) for the null hypothesis that the included covariate's coefficiente is equal to zero.
-<pre>
-logit <i>treatvar</i> [<i>K_b</i>] X_1
-lrtest base . // mind the dot
-</pre>
-{: reversed="reversed"}
 
-[In progres...]
+        logit *treatvar* K_b
+        estimates store base
 
-0. first item
-0. second item
-0. another item
-{: start=5}
+2. Estimate one additional model for every covariate in $$X$$ not included in $$X_b$$. Each of this estimations includes the base covariates plus the additional covariate. For each estimated model perform a [likelihood ratio test](http://www.stata.com/manuals13/rlrtest.pdf) for the null hypothesis that the included covariate's coefficiente is equal to zero.
+
+        logit treatvar K_b X_1
+        lrtest base . // mind the dot
 
 # Some context
 
