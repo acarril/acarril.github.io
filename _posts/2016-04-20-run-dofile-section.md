@@ -49,3 +49,5 @@ if `merge' == 1 {
   * Merge A with B and save
 }
 ```
+
+In that way, if you're only working on importing B, then you can set all switches to 0 except for <code>`B'</code> and then just run the whole do-file without manually selecting a portion of it.
