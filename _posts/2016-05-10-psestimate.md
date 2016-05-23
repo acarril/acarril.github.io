@@ -8,13 +8,6 @@ permalink: /resources/psestimate
 
 [Imbens and Rubin (2015)](http://www.cambridge.org/zw/academic/subjects/statistics-probability/statistical-theory-and-methods/causal-inference-statistics-social-and-biomedical-sciences-introduction) proposed a procedure for estimating the propensity score, with an algorithm for selecting the covariates function further outlined by [Imbens (2015)](http://jhr.uwpress.org/content/50/2/373.refs). I've written the **psestimate** command, which implements that algorithm and estimates the propensity score in Stata.
 
-1. Firts
-2. second
-
-        gen x = 1
-
-3. Third
-
 # Propensity score estimation
 
 In order to estimate the propensity scores, two choices have to be made:
@@ -57,19 +50,33 @@ So in eq. $$(1)$$, $$\alpha$$ is comprised of $$h(x)$$, which is a function of c
 [Imbens (2015)](http://jhr.uwpress.org/content/50/2/373.refs) has an appendix with the algorithm for defining $$h(x)$$. Some notation:
 
 - $$X_b$$ are basic covariates included explicitely in $$h(x)$$, because you think they are relevant regardless of what the algorithm selects. It can be empty.
-- $$K_l$$ and $$K_q$$ are the selected linear and quadratic terms, respectively. Obviously, they are empty at the beginning.
+- $$X_l$$ and $$X_q$$ are the selected linear and quadratic terms, respectively. Obviously, they are empty at the beginning.
+- $$C_l$$ and $$C_q$$ are the selected thresholds for selecting terms to the linear and quadratic parts of the model, respectively.
 
-I paraphrase the algorithm below, adding the relevant Stata commands. All estimations are logit regressions estimated by maximum likelihood, where the dependent variable is the treatment indicator, <code><i>treatvar</i></code> in this example.
+I paraphrase Imben and Rubin's algorithm below, but I've compressed it to only 6 steps. I also added a running example with relevant Stata commands, hoping it makes the implementation clearer.
 
-1. Estimate base model with basic covariates $$ X_b $$. If no covariates are chosen for $$ X_b $$, then this is just the model with the intercept. Save this estimation result for comparison.
+All estimations are logit regressions estimated by maximum likelihood, where the dependent variable is the treatment indicator, `treatvar` in this example. Also, I'll assume a dataset with ten covariates, creatively named `var1`, `var2`, ..., `var10`.
 
-        logit *treatvar* K_b
+1. Estimate base model with basic covariates $$ X_b $$. If no covariates are chosen for $$ X_b $$, then this is just the model with the intercept. Save this estimation result for comparison. Notice that I arbitrarily chose to include `var1` and `var2` in the base model, so they're in $$X_b$$.
+
+        logit treatvar var1 var2
         estimates store base
 
-2. Estimate one additional model for every covariate in $$X$$ not included in $$X_b$$. Each of this estimations includes the base covariates plus the additional covariate. For each estimated model perform a [likelihood ratio test](http://www.stata.com/manuals13/rlrtest.pdf) for the null hypothesis that the included covariate's coefficiente is equal to zero.
+2. Estimate one additional model for every covariate in $$X$$ not included in $$X_b$$ (i.e. `var3`, `var4`, ..., `var10`). Each of these estimations includes the base covariates plus *one* additional covariate. For each estimated model perform a [likelihood ratio test](http://www.stata.com/manuals13/rlrtest.pdf) for the null hypothesis that the included covariate's coefficient is equal to zero. Results are stored in local macros.
 
-        logit treatvar K_b X_1
-        lrtest base . // mind the dot
+        foreach v of varlist var3-var10 {
+          logit treatvar var1 var2 `v'
+          lrtest base .
+          local llrt_`v' = `r(chi2)'
+        }
+
+3. If the largest LLR result (stored now in <code>llrt_`v'</code>) is equal or larger than $$C_l$$, then the covariate associated with it is added to the linear part of the model and Step 2 is repeated, now including this covariate. This process is looped until the maximum LRT is lower than $$C_l$$ (i.e. there are no covariates that would improve the model) or you run out of covariates to add.
+
+4. By now the linear part of the model is selected. This includes our basic covariates $$X_b$$ (i.e. `var1` and `var2`) plus any covariates selected by the algorithm for the linear part $$X_l$$ (suppose it selected `var5` and `var8`). For the selection of quadratic (or "second order") terms the algorithm uses only covariates in $$X_b$$ and $$X_l$$, now testing the inclusion of their interactions or quadratic forms. In terms of our example, that means we have to test for the inclusion of `(var1)^2`, `var1 * var2`, `var1 * var5`, etc.
+
+5. Estimate one model for every second order candidate. Each estimation includes terms in $$X_b$$ and $$X_l$$ plus *one* additional quadratic or interactive covariate. For each estimated model perform a [likelihood ratio test](http://www.stata.com/manuals13/rlrtest.pdf) for the null hypothesis that the included covariate's coefficient is equal to zero. Results are stored in local macros, analogue to Step 2.
+
+6. If the largest LLR result of this additional second order terms is equal or larger than $$C_q$$, then the term associated with it is added to the quadratic part of the model and Step 5 is repeated, now including this term. This process is looped until the maximum LRT is lower than $$C_q$$ (i.e. there are no second order terms that would improve the model) or you run out of terms to add.
 
 # Some context
 
