@@ -3,7 +3,7 @@ layout: post
 comments: true
 title: psestimate &mdash; Estimate the propensity score proposed by Imbens and Rubin (2015)
 hidden: true
-categories: stata, econ
+categories: stata econ
 permalink: /resources/psestimate
 ---
 
