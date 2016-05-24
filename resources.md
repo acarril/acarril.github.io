@@ -16,9 +16,13 @@ Although I code in R, Matlab and Python, I believe my only worthy collaborations
 
 All programs can be installed directly within Stata using <code>ssc install <i>program_name</i></code>.
 
-- [**psestimate**](/resources/psestimate) -- Estimate the propensity score proposed by [Imbens and Rubin (2015)](http://www.cambridge.org/zw/academic/subjects/statistics-probability/statistical-theory-and-methods/causal-inference-statistics-social-and-biomedical-sciences-introduction). Available at my [git repo](https://github.com/acarril/psestimate).
-- [**randtreat**](/resources/randtreat) -- Random treatment assignment with unequal treatment fractions and dealing with misfits. Available at the [SSC archive](https://ideas.repec.org/c/boc/bocode/s458106.html) or at my [git repo](https://github.com/acarril/randtreat).
-- **nrow** -- Rename variables as their *n*-th row values. Available at the [SSC archive](https://ideas.repec.org/c/boc/bocode/s458116.html) or at my [git repo](https://github.com/acarril/nrow).
+- [**psestimate**](/resources/psestimate) -- Estimate the propensity score proposed by [Imbens and Rubin (2015)](http://www.cambridge.org/zw/academic/subjects/statistics-probability/statistical-theory-and-methods/causal-inference-statistics-social-and-biomedical-sciences-introduction) ([SSC](https://ideas.repec.org/c/boc/bocode/s458179.html), [Github](https://github.com/acarril/psestimate))
+- [**randtreat**](/resources/randtreat) -- Random treatment assignment with unequal treatment fractions and dealing with misfits ([SSC](https://ideas.repec.org/c/boc/bocode/s458106.html), [Github](https://github.com/acarril/randtreat))
+- **nrow** -- Rename variables as their *n*-th row values ([SSC](https://ideas.repec.org/c/boc/bocode/s458116.html), [Github](https://github.com/acarril/nrow))
+
+### Latex programs
+
+- [**jpaltheme**](/resources/psestimate) -- LaTeX Beamer theme that complies with [J-PAL](https://www.povertyactionlab.org/)'s branding guidelines ([Github](https://github.com/acarril/jpaltheme))
 
 # Documents
 
