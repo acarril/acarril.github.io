@@ -43,7 +43,7 @@ It is very straightforward to implement this in loops which are non-numerical by
 
 <pre>
 sysuse auto
-_dots 0, title(Loop running) reps(10)
+_dots 0, reps(10)
 foreach var of varlist price - gear_ratio {
   <i>some commands...</i>
   local i = `i'+1
@@ -51,14 +51,19 @@ foreach var of varlist price - gear_ratio {
 }
 </pre>
 
-The number of repetitions is not guessed by `_dots` and I had to manually count the variables and enter the number. The number of variables  could be counted automatically with the help of the [`list` extended macro](http://www.stata.com/manuals13/pmacrolists.pdf) function `sizeof`. For example,
+### Counting repetitions
+
+The number of repetitions is not guessed by `_dots` and I had to manually count the variables and enter the number. The number of variables  could be counted automatically with the help of the [`list` extended macro function](http://www.stata.com/manuals13/pmacrolists.pdf) `sizeof`.
+
+Expanding the last example, we could write:
 
 <pre>
 sysuse auto
 unab myvars : price - gear_ratio
 local N : list sizeof myvars
-_dots 0, title(Loop running) reps(`N')
+_dots 0, reps(`N')
 foreach var of varlist `myvars' {
+  <i>some commands...</i>
   local i = `i'+1
   _dots `i' 0
 }
