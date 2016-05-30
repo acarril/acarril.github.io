@@ -8,16 +8,23 @@ A few Stata commands (like [`bootstrap`](http://www.stata.com/help.cgi?bootstrap
 
 The key lies in using `_dots`, an undocumented Stata command whose only "official" mention is by [David Harrison (2007)](http://www.stata-journal.com/sjpdf.html?articlenum=pr0030). He outlines two examples in that Stata Tip, which I explain and expand in this post.
 
-# Usage with `forvalues`
+# Basic usage
 
-```stata
-foreach v of var * {
-  local l`v' : variable label `v'
-	if `"`l`v''"' == "" {
-		local l`v' "`v'"
-	}
+The easiest way to implement this is in a [forvalues loop](http://www.stata.com/help.cgi?forvalues), as Harrison's first example:
+
+<pre>
+_dots 0, title(Loop running) reps(75)
+forvalues i = 1/75 {
+  <i>some commands...</i>
+  _dots i' 0
 }
-```
+Loop running (75)
+----+--- 1 ---+--- 2 ---+--- 3 ---+--- 4 ---+--- 5
+..................................................    50
+.........................
+</pre>
+
+The first call of `_dots` sets up the graduated header line (`----+--- 1 ---+--- 2`...). Both the `title` and `reps` (repetitions) options are optional and bear in mind that `reps` only accepts integers as its argument.
 
 When collapsing a dataset with the [`collapse`](http://www.stata.com/help.cgi?collapse) command, all variable [labels](http://www.stata.com/help.cgi?label) are replaced by <code>(stat) <i>varname</i></code>. This short post describes how to preserve variable labels and restore them after collapsing.
 
