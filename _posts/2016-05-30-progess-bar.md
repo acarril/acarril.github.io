@@ -24,35 +24,30 @@ Loop running (75)
 .........................
 </pre>
 
-The first call of `_dots` sets up the graduated header line (`----+--- 1 ---+--- 2`...). Both the `title` and `reps` (repetitions) options are optional and bear in mind that `reps` only accepts integers as its argument.
+The **first call of `_dots`** sets up the graduated header line (`----+--- 1 ---+--- 2`...). Both the `title` and `reps` (repetitions) options are optional and keep in mind that `reps` only accepts integers as its argument.
 
-Further calls of `_dots` (like inside the loop) take two arguments:
+**Further calls of `_dots`** (like inside the loop) take two arguments:
 
 - The first argument is the *repetition number*, which tracks the number of attempts in progress. In the above example, it is automatically updated by the loop.
 - The second argument is the *return code*, which indicates the type of symbol displayed in the current repetition. The usual is to use `0`, which outputs a dot. Return codes are
-  - -1:
-  - 0: 
-  - 1:
-  - 2:
-  - 3:
+  - `-1`: outputs a green `s`
+  - `0`: outputs a black dot, `.`
+  - `1`: outputs a red `x`
+  - `2`: outputs a red `e`
+  - `3`: outputs a red `n`
+  - Any other value used in the return code outputs a red `?`
 
-When collapsing a dataset with the [`collapse`](http://www.stata.com/help.cgi?collapse) command, all variable [labels](http://www.stata.com/help.cgi?label) are replaced by <code>(stat) <i>varname</i></code>. This short post describes how to preserve variable labels and restore them after collapsing.
+  # Usage in non-numerical Loops
 
-First we **save all variable labels in locals**. I create locals for variables which don't have label in order to avoid pasting empty labels later on.
+  It is very straightforward to implement this in loops which are non-numerical by using a local macro as a counter. For example, in a [foreach](http://www.stata.com/help.cgi?foreach) loop with a [varlist](http://www.stata.com/help.cgi?varlist):
 
-```stata
-foreach v of var * {
-  local l`v' : variable label `v'
-	if `"`l`v''"' == "" {
-		local l`v' "`v'"
-	}
+<pre>
+sysuse auto
+_dots 0, title(Loop running) reps(10)
+foreach var of varlist price - gear_ratio {
+  local i = `i'+1
+  _dots `i' 0
 }
-```
+</pre>
 
-After collapsing the data, we need to **restore variable labels** using
-
-```
-foreach v of var * {
-	label var `v' "`l`v''"
-}
-```
+So we
