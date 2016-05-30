@@ -37,17 +37,31 @@ The **first call of `_dots`** sets up the graduated header line (`----+--- 1 ---
   - `3`: outputs a red `n`
   - Any other value used in the return code outputs a red `?`
 
-  # Usage in non-numerical Loops
+# Usage in non-numerical Loops
 
-  It is very straightforward to implement this in loops which are non-numerical by using a local macro as a counter. For example, in a [foreach](http://www.stata.com/help.cgi?foreach) loop with a [varlist](http://www.stata.com/help.cgi?varlist):
+It is very straightforward to implement this in loops which are non-numerical by **defining a local macro to act as a counter**. For example, in a [foreach](http://www.stata.com/help.cgi?foreach) loop with a [varlist](http://www.stata.com/help.cgi?varlist):
 
 <pre>
 sysuse auto
 _dots 0, title(Loop running) reps(10)
 foreach var of varlist price - gear_ratio {
+  <i>some commands...</i>
   local i = `i'+1
   _dots `i' 0
 }
 </pre>
 
-So we
+The number of repetitions is not guessed by `_dots` and I had to manually count the variables and enter the number. The number of variables  could be counted automatically with the help of the [`list` extended macro](http://www.stata.com/manuals13/pmacrolists.pdf) function `sizeof`. For example,
+
+<pre>
+sysuse auto
+unab myvars : price - gear_ratio
+local N : list sizeof myvars
+_dots 0, title(Loop running) reps(`N')
+foreach var of varlist `myvars' {
+  local i = `i'+1
+  _dots `i' 0
+}
+</pre>
+
+Notice that I first expanded the variable list with [`unab`](http://www.stata.com/manuals13/punab.pdf).
