@@ -16,7 +16,7 @@ The easiest way to implement this is in a [forvalues loop](http://www.stata.com/
 _dots 0, title(Loop running) reps(75)
 forvalues i = 1/75 {
   <i>some commands...</i>
-  _dots i' 0
+  _dots `i' 0
 }
 Loop running (75)
 ----+--- 1 ---+--- 2 ---+--- 3 ---+--- 4 ---+--- 5
@@ -25,6 +25,16 @@ Loop running (75)
 </pre>
 
 The first call of `_dots` sets up the graduated header line (`----+--- 1 ---+--- 2`...). Both the `title` and `reps` (repetitions) options are optional and bear in mind that `reps` only accepts integers as its argument.
+
+Further calls of `_dots` (like inside the loop) take two arguments:
+
+- The first argument is the *repetition number*, which tracks the number of attempts in progress. In the above example, it is automatically updated by the loop.
+- The second argument is the *return code*, which indicates the type of symbol displayed in the current repetition. The usual is to use `0`, which outputs a dot. Return codes are
+  - -1:
+  - 0: 
+  - 1:
+  - 2:
+  - 3:
 
 When collapsing a dataset with the [`collapse`](http://www.stata.com/help.cgi?collapse) command, all variable [labels](http://www.stata.com/help.cgi?label) are replaced by <code>(stat) <i>varname</i></code>. This short post describes how to preserve variable labels and restore them after collapsing.
 
