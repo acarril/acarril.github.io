@@ -5,7 +5,7 @@ categories: stata
 published: true
 ---
 
-When collapsing a dataset with the [`collapse`](http://www.stata.com/help.cgi?collapse) command, all variable [labels](http://www.stata.com/help.cgi?label) are replaced by <code>(stat) <i>varname</i></code>. This short post describes how to preserve variable labels and restore them after collapsing.
+When collapsing a dataset with the [`collapse`](http://www.stata.com/help.cgi?collapse) command, all variable [labels](http://www.stata.com/help.cgi?label) are replaced by <code>(<i>stat</i>) <i>varname</i></code>. This short post describes how to preserve variable labels and restore them after collapsing.
 
 First we **save all variable labels in locals**. I create locals for variables which don't have label in order to avoid pasting empty labels later on.
 
