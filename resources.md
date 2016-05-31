@@ -32,3 +32,8 @@ All of these documents are unfinished and most probably contain (lots of) errors
 - [Resumen De Gregorio](https://www.dropbox.com/s/o5cj07jpdq0em54/DeGregorioResumen.pdf?dl=0) -- Resumen del libro [Macroeconomía: Teoría y Políticas](http://www.degregorio.cl/pdf/Macroeconomia.pdf), de [José De Gregorio (2007)](http://www.econ.uchile.cl/jdegregorio)
 - [Apunte Finanzas Públicas](https://www.dropbox.com/s/dsg9meznquq8kno/Apuntes%20finanzas%20publicas.pdf?dl=0) -- Apuntes del curso de Finanzas Públicas de [Claudia Martínez](https://www.povertyactionlab.org/mart%C3%ADnez)
 - [Manual de LaTeX](https://www.dropbox.com/s/hcz69dj5rrusi9g/manual_latex.pdf?dl=0) -- Breve guía práctica para escribir en [LaTeX](http://tex.stackexchange.com/a/94910/45978)
+
+
+# Classes
+
+- Mecánica de aleatorización I -- slides, [data](https://www.dropbox.com/s/juo24v3si088e5x/aerdat5.dta?dl=0), do-file.
