@@ -36,4 +36,7 @@ All of these documents are unfinished and most probably contain (lots of) errors
 
 # Classes
 
-- Mecánica de aleatorización I -- slides, [data](https://www.dropbox.com/s/juo24v3si088e5x/aerdat5.dta?dl=0), do-file.
+Una colección de distintas clases que he realizado, la mayoría con J-PAL.
+
+- Mecánica de aleatorización I -- [slides](https://www.dropbox.com/s/aedge51xocm79iv/clase12_slides.pdf?dl=0), [datos](https://www.dropbox.com/s/juo24v3si088e5x/aerdat5.dta?dl=0), do-file
+- Mecánica de aleatorización II -- slides, datos, do-file
