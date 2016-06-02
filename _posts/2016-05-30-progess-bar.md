@@ -73,7 +73,7 @@ Notice that I first expanded the variable list with [`unab`](http://www.stata.co
 
 # Usage in while loops
 
-Now we can think of a more sophisticated example in a [`while`](http://www.stata.com/help.cgi?while) loop. Let's look at Harrison's example:
+Now we can think of a more sophisticated implementation in a [`while`](http://www.stata.com/help.cgi?while) loop. Let's look at Harrison's example:
 
 <pre>
 _dots 0, title(Looping until 70 successes...)
