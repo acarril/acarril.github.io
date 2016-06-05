@@ -53,7 +53,7 @@ foreach var of varlist price - gear_ratio {
 
 ### Counting repetitions
 
-The number of repetitions is not guessed by `_dots` and I had to manually count the variables and enter the number. The number of variables  could be counted automatically with the help of the [`list` extended macro function](http://www.stata.com/manuals13/pmacrolists.pdf) `sizeof`.
+The number of repetitions in `rep` is not calculated by `_dots`, so I had to manually count the variables and enter the number. The number of variables  could be counted automatically with the help of the [`list` extended macro function](http://www.stata.com/manuals13/pmacrolists.pdf) `sizeof`.
 
 Expanding the last example, we could write:
 
@@ -98,6 +98,6 @@ Now to the progress bar. The first call of `_dots` is similar to what we've seen
 _dots `rep++' `fail'
 ```
 
-The first argument, `rep++`, is just updating the repetitions counter. The `++` part is a [macro expansion operator](http://www.stata.com/manuals13/pmacro.pdf) which is just a shorthand for updating the local macro (it's the same as writing `local rep = `rep'+1`).
+The first argument, `rep++`, is just updating the repetitions counter. The `++` part is a [macro expansion operator](http://www.stata.com/manuals13/pmacro.pdf) which is just a shorthand for updating the local macro (it's the same as writing <code>local rep = `rep'+1</code>).
 
 The second argument, `fail`, is the return code. In this example the local macro `fail` equals zero if there is a success, so a dot is passed to the progress bar. In case of failure, `fail` equals 1 and thus the progress bar outputs a red X for that iteration.
