@@ -7,21 +7,21 @@ categories: stata econ
 permalink: /resources/UZH-migration
 ---
 
-This is a quick guide for securely migrating your project data to the new servers at [Universität Zürich (UZH)(http://www.uzh.ch/en.html).
+This is a quick guide for securely migrating your project data to the new servers at [Universität Zürich (UZH)](http://www.uzh.ch/en.html).
 
 # Level 3 security requirements
 
 In order to store Level 3 security level according to [Harvard guidelines](http://policy.security.harvard.edu/level-3), the computer that holds the data
 
-1. Must be secured in a way that only the appropriate people can access it. For computers, this means that it is secured with a username and password which is not shared and that a password protected screensaver engages when the device is not in use.
+1. Must be **secured in a way that only the appropriate people can access it**. For computers, this means that it is secured with a username and password which is not shared and that a password protected screensaver engages when the device is not in use.
 
-2. Must be encrypted.
+2. Must be **encrypted**.
 
-3. Must be running anti-virus and firewall software, and this software must be kept up to date.
+3. Must be running **anti-virus and firewall software**, and this software must be kept up to date.
 
-4. Must have it's operating system and applications kept up to date.
+4. Must have it's operating system and applications **kept up to date**.
 
-<img src="https://i.imgflip.com/167a47.jpg" alt="Say what" height="150" width="150">
+<img src="https://i.imgflip.com/167a47.jpg" alt="Say what" height="300" width="300">
 
 # The Imbens-Rubin propensity score
 
