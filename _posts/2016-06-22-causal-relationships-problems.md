@@ -7,9 +7,9 @@ hidden: true
 
 One of the fundamental endeavors of economic research is to establish and measure causal relationships from data. The "golden standard" is to do this by performing a randomized control trial, as many of my colleagues at J-PAL do. More often than not, though, we have to draw conclusions from observational data.
 
-Using observational data, we must resort to models that hopefully will allow us to identify the causal relationships we're investigating. The usefulness of causal identification models is given by their ability to identify causal relationships in spite of relevant data we leave out of them. If the data we leave out  
+Using observational data, we must resort to models that hopefully will allow us to identify the causal relationships we're investigating. The usefulness of causal identification models is given by their ability to identify causal relationships in spite of relevant data we leave out of them. If the data we leave out [...]
 
-# Basic framework
+### Basic framework
 Consider a regression like
 
 $$
@@ -60,23 +60,23 @@ So we'll have omitted variable bias if $$E(\mu \vert X_1) \neq 0$$ and we just s
 
 ### Stata simulation
 
-I'll use simulated data to exemplify the omitted variable bias. Starting with a basic setup:
+I'll use simulated data to exemplify the omitted variable bias, starting with a basic setup:
 
 ```stata
 set seed 2206
 set obs 10000
-local mu = .5
+local rho = .5
 ```
 
-We now artificially create correlated covariates and use them to generate the dependent variable:
+Local macro `rho` (or $$\rho$$) is the correlation coefficient. With it, we can create correlated covariates and use them to generate the dependent variable:
 
 ```stata
 gen X1 = rnormal()
-gen X2 = X1*`mu' + rnormal()
+gen X2 = X1*`rho' + rnormal()
 gen y = 1 + 3*X1 - 2*X2 + rnormal()
 ```
 
-Notice that in this artificial dataset we already know that $$\beta_1 = 3$$ and $$\beta_2 = -2$$. However, if we estimate our model without including $$X_2$$, we get the following output:
+Notice that in this artificial dataset we have defined $$\beta_1 = 3$$ and $$\beta_2 = -2$$. However, if we estimate our model *without* $$X_2$$, we get the following output:
 
 ```stata
 . regress y X1, vce(robust)
@@ -94,5 +94,6 @@ Linear regression                               Number of obs     =     10,000
           X1 |   2.005593   .0222217    90.25   0.000     1.962034    2.049152
        _cons |   1.016461   .0223332    45.51   0.000     .9726832    1.060239
 ------------------------------------------------------------------------------
-
 ```
+
+The estimated coefficient for $$X_1$$ is not only wrong, but statistically significant! This makes it very misleading.
