@@ -107,7 +107,7 @@ We'll have endogeneity whenever a covariate is correlated with the error term. S
 1. Existance of a causality loop between dependant and independant variables.
 2. Existance of an uncontrolled covariate affecting both dependant and independat variables.
 
-Using our defined framework, our $$X_2$$ covariate will be endogenous if we estimate
+Using our defined framework, the $$X_2$$ covariate will be endogenous if we estimate
 
 $$
 y = X_1 \beta_1 + X_2 \beta_2 + \mu
@@ -121,3 +121,23 @@ E(\mu \vert X_1) = & 0 \\
 E(\mu \vert X_2) \neq & 0.
 \end{align}
 $$
+
+```stata
+clear
+capture set seed 111
+quietly set obs 20000
+
+// Generate correlated unobservable variables
+matrix C  = (1, .5\ .5, 1)
+drawnorm e v, corr(C)
+
+// Generate exogenous covariate
+generate x1  = rnormal()
+
+// Generate endogenous covariate correlated with unobservable
+generate x2  = v
+
+
+// Generate model
+generate y = 1 - x1 + x2 + e
+```
