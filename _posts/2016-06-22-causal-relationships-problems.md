@@ -5,11 +5,11 @@ categories: econ
 hidden: true
 ---
 
-One of the fundamental endeavors of economic research is to establish and measure causal relationships from data. The "golden standard" is to do this by performing a randomized control trial, as many of my colleagues at J-PAL do. More often than not, though, we have to draw conclusions from observational data.
+One of the fundamental endeavors of economic research is to establish and measure causal relationships from data. The "golden standard" is to do this by performing a randomized control trial, as many of my colleagues at J-PAL do. However, in many cases we have to draw conclusions from observational data.
 
-Using observational data, we must resort to models that hopefully will allow us to identify the causal relationships we're investigating. The usefulness of causal identification models is given by their ability to identify causal relationships in spite of relevant data we leave out of them. If the data we leave out [...]
+Using observational data, we must resort to models that will (hopefully) allow us to identify the causal relationships we're investigating. The usefulness these types of models is given by their ability to identify causal relationships in spite of relevant data we leave out of them. If the data we leave out [...]
 
-### Basic framework
+# Basic framework
 Consider a regression like
 
 $$
@@ -38,13 +38,15 @@ $$
 y = \beta_1 X_1 + \beta_2 X_2 + \mu,
 $$
 
-so $$E(\mu\vert X_1,X_2) = 0$$ holds (as discussed on eq. $$(2)$$, above). However, if we (wrongly) fail to include $$X_2$$, we would be trying to estimate
+so $$E(\mu\vert X_1,X_2) = 0$$ holds (as discussed on eq. $$(2)$$, above). However, if we fail to include $$X_2$$, we would be trying to estimate
 
 $$
-y = \beta_1 X_1 + \epsilon,
+y = \beta_1 X_1 + \epsilon
 $$
 
-assuming that $$E(\mu\vert X_1) = 0$$. If that assumption is true, then we have no problem. However, that will only be true if the information of $$X_2$$ is irrelevant given the inclusion of $$X_1$$, that is, $$ E(X_2 \vert X_1) = 0$$.
+while assuming that $$E(\epsilon\vert X_1) = 0$$.
+
+If that assumption is true, then we have no problem. However, it will only be true if the information of $$X_2$$ is irrelevant given the inclusion of $$X_1$$, that is, $$ E(X_2 \vert X_1) = 0$$.
 
 To see this, it is useful to write
 
@@ -56,7 +58,7 @@ E(\mu \vert X_1) &= E(X_2\beta_2 + \mu \vert X_1) \\
 \end{align}
 $$
 
-So we'll have omitted variable bias if $$E(\mu \vert X_1) \neq 0$$ and we just saw that it stems from the relationship between the included covariates $$X_1$$ and the omitted covariates $$X_2$$.
+So we'll have omitted variable bias if $$E(\epsilon \vert X_1) \neq 0$$, which stems from the relationship between the included covariates ($$X_1$$) and the omitted covariates ($$X_2$$).
 
 ### Stata simulation
 
@@ -96,4 +98,26 @@ Linear regression                               Number of obs     =     10,000
 ------------------------------------------------------------------------------
 ```
 
-The estimated coefficient for $$X_1$$ is not only wrong, but statistically significant! This makes it very misleading.
+The estimated coefficient for $$X_1$$ is not only wrong, but statistically significant! This can make omitted variable bias very misleading.
+
+# Endogeneity
+
+We'll have endogeneity whenever a covariate is correlated with the error term. Several situations can result in endogeneity, with the two most common being
+
+1. Existance of a causality loop between dependant and independant variables.
+2. Existance of an uncontrolled covariate affecting both dependant and independat variables.
+
+Using our defined framework, our $$X_2$$ covariate will be endogenous if we estimate
+
+$$
+y = X_1 \beta_1 + X_2 \beta_2 + \mu
+$$
+
+assuming that
+
+$$
+\begin{align}
+E(\mu \vert X_1) = & 0 \\
+E(\mu \vert X_2) \neq & 0.
+\end{align}
+$$
