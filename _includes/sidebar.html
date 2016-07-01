@@ -22,7 +22,7 @@
   <div class="col-box-title">Recent Posts</div>
   <ul class="post-list">
     {% for post in site.posts limit:5 %}
-      {% unless post.hidden %}
+      {% unless post.draft %}
         <li><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
       {% endunless %}
     {% endfor %}
