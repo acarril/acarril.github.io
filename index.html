@@ -8,6 +8,7 @@ layout: default
 
   <ul class="post-list">
     {% for post in paginator.posts %}
+    {% unless post.draft %}
       <li>
         <h2>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
@@ -22,6 +23,7 @@ layout: default
           </p>
         </div>
       </li>
+    {% endunless %}  
     {% endfor %}
   </ul>
 
