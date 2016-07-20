@@ -9,6 +9,8 @@ permalink: /resources/psestimate
 
 [Imbens and Rubin (2015)](http://www.cambridge.org/zw/academic/subjects/statistics-probability/statistical-theory-and-methods/causal-inference-statistics-social-and-biomedical-sciences-introduction) proposed a procedure for estimating the propensity score, with an algorithm for selecting the covariates function further outlined by [Imbens (2015)](http://jhr.uwpress.org/content/50/2/373.refs). I've written the **psestimate** command, which implements that algorithm for model selection and estimates the propensity score in Stata.
 
+The command can be downloaded from [its Github repository](https://github.com/acarril/psestimate) or directly from the SSC archive using `ssc install psestimate`.
+
 # Propensity score estimation
 
 In order to estimate the propensity scores, two choices have to be made:
@@ -79,9 +81,13 @@ All estimations are logit regressions estimated by maximum likelihood, where the
 
 6. If the largest LLR result of this additional second order terms is equal or larger than $$C_q$$, then the term associated with it is added to the quadratic part of the model and Step 5 is repeated, now including this term. This process is looped until the maximum LRT is lower than $$C_q$$ (i.e. there are no second order terms that would improve the model) or you run out of terms to add.
 
+Please
+
 # Some context
 
 I've been working for a few months now in an project of professors [Dina Pomeranz](http://www.hbs.edu/faculty/Pages/profile.aspx?facId=603214) and [Gabriel Zucman](http://gabriel-zucman.eu/). They're analyzing a law reform on multinational transfer pricing enacted in 2011 in Chile and how it impacted transfers made by affiliates of multinationals.
+
+Since large firms tend to be very uneven in several variables, we're using PSM to match "treated" firms with a control firm. This process involves using `psestimate` and then the matching is done using [`psmatch2`](https://ideas.repec.org/c/boc/bocode/s432001.html).
 
 # References
 Imbens, Guido W. and Donald B. Rubin. 2015.  *Causal Inference in Statistics, Social,
