@@ -81,14 +81,6 @@ All estimations are logit regressions estimated by maximum likelihood, where the
 
 6. If the largest LLR result of this additional second order terms is equal or larger than $$C_q$$, then the term associated with it is added to the quadratic part of the model and Step 5 is repeated, now including this term. This process is looped until the maximum LRT is lower than $$C_q$$ (i.e. there are no second order terms that would improve the model) or you run out of terms to add.
 
-Please
-
-# Some context
-
-I've been working for a few months now in an project of professors [Dina Pomeranz](http://www.hbs.edu/faculty/Pages/profile.aspx?facId=603214) and [Gabriel Zucman](http://gabriel-zucman.eu/). They're analyzing a law reform on multinational transfer pricing enacted in 2011 in Chile and how it impacted transfers made by affiliates of multinationals.
-
-Since large firms tend to be very uneven in several variables, we're using PSM to match "treated" firms with a control firm. This process involves using `psestimate` and then the matching is done using [`psmatch2`](https://ideas.repec.org/c/boc/bocode/s432001.html).
-
 # References
 Imbens, Guido W. and Donald B. Rubin. 2015.  *Causal Inference in Statistics, Social,
         and Biomedical Sciences*.  New York: Cambridge University Press.
