@@ -18,11 +18,12 @@ All programs can be installed directly within Stata using <code>ssc install <i>p
 
 - [**psestimate**](/resources/psestimate) -- Estimate the propensity score proposed by [Imbens and Rubin (2015)](http://www.cambridge.org/zw/academic/subjects/statistics-probability/statistical-theory-and-methods/causal-inference-statistics-social-and-biomedical-sciences-introduction) ([SSC](https://ideas.repec.org/c/boc/bocode/s458179.html), [Github](https://github.com/acarril/psestimate))
 - [**randtreat**](/resources/randtreat) -- Random treatment assignment with unequal treatment fractions and dealing with misfits ([SSC](https://ideas.repec.org/c/boc/bocode/s458106.html), [Github](https://github.com/acarril/randtreat))
+- [**lcmm** and **gcdm**](/posts/GCD-LCM) -- Compute least common multiple and greatest common divisor
 - **nrow** -- Rename variables as their *n*-th row values ([SSC](https://ideas.repec.org/c/boc/bocode/s458116.html), [Github](https://github.com/acarril/nrow))
 
 ### Latex programs
 
-- [**jpaltheme**](/resources/psestimate) -- LaTeX Beamer theme that complies with [J-PAL](https://www.povertyactionlab.org/)'s branding guidelines ([Github](https://github.com/acarril/jpaltheme))
+- **jpaltheme** -- LaTeX Beamer theme that complies with [J-PAL](https://www.povertyactionlab.org/)'s branding guidelines ([Github](https://github.com/acarril/jpaltheme))
 
 # Documents
 
