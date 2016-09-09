@@ -37,7 +37,10 @@ All of these documents are unfinished and most probably contain (lots of) errors
 
 # Classes
 
+A collection of lectures I've given, mainly with J-PAL LAC (hence, in spanish).
 Una colección de distintas clases que he realizado, la mayoría con J-PAL.
 
+
+- [Efectos estandarizados y Poder estadístico](https://www.dropbox.com/s/pf4rse155g2yc2f/class_statistical_power.pdf?dl=0) -- Entender intuitivamente la necesidad de estandarizar efectos y cómo hacerlo. Entender intuitiva y gráficamente qué es el poder estadístico, cómo se relaciona con errores tipo I y II y qué elementos de un diseño lo afectan. Aplicaciones en Stata.
 - [Mecánica de aleatorización I](https://www.dropbox.com/s/aedge51xocm79iv/clase12_slides.pdf?dl=0) -- Pasos para una aleatorización simple y replicable en Stata. Aplicación de estos pasos en diseños de lotería simple, rotación, *phase-in* y aleatorización en la burbuja. [Datos](https://www.dropbox.com/s/juo24v3si088e5x/aerdat5.dta?dl=0) y do-file.
 - Mecánica de aleatorización II -- slides, datos, do-file
