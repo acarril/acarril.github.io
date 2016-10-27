@@ -10,7 +10,7 @@ We've all read the dreaded `convergence not achieved` message, punctuated by `r(
 
 We know that the maximization problem is
 
-$$ L(\hat{\theta};\mathbb{Z}) = \max_{t\in\Theta} L(\mathbb{t};\mathbb{Z}) $$ 
+$$ L(\hat{\boldsymbol{\theta}};\boldsymbol{Z}) = \max_{\boldsymbol{t}\in\Theta} L(\boldsymbol{t};\boldsymbol{Z}) $$
 
 # References
 William Gould, Jeffrey Pitblado, and Brian Poi. 2010.  *Maximum Likelihood Estimation with Stata*, Fourth Edition. Stata Press.
