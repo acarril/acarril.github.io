@@ -55,5 +55,3 @@ defaults:
       type:         "people"
     values:
       layout:       "profile"
-
-excerpt_separator: "\n"
