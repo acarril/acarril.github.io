@@ -3,20 +3,10 @@ title: Blog
 permalink: /blog/
 ---
 
-<div class="content list">
-  {% for post in site.posts %}
-    {% if post.categories contains 'blog' %}
-    <div class="list-item">
-    <p class="list-post-title">
-        <a href="{{ site.baseurl }}{{ post.url }}">- {{ post.title }}</a> (<small>{{post.date | date: "%m/%d/%y" }}</small>)
-        </p>
-    </div>
-    {% endif %}
-  {% endfor %}
-</div>
-
 <div class="home">
   <h1 class="page-heading">Posts</h1>
+
+<hr>
 
   <ul class="post-list">
 {% capture categories %}{% for category in site.categories %}{{ category | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
