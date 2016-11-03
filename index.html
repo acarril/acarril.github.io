@@ -12,6 +12,9 @@ layout: default
     </p>
     <div class="content">
       {{ post.excerpt }}
+      <p>
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">Keep reading &raquo;</a>
+      </p>
     </div>
   {% endfor %}
 
