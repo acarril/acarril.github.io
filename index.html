@@ -22,20 +22,20 @@ layout: default
   <header class="masthead text-center">
   <div class="pagination">
 
+  <span class="page_number ">{{ paginator.page }} / {{ paginator.total_pages }}</span>
+  <br>
+
   {% if paginator.previous_page %}
     <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="previous"> < newer posts </a>
   {% else %} <!-- Non active -->
     <span class="previous"> < newer posts </span>
   {% endif %}
-
+   • 
   {% if paginator.next_page %}
     <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="next"> older posts > </a>
   {% else %} <!-- Non active -->
     <span class="next "> older posts > </span>
   {% endif %}
-
-  <br>
-  <span class="page_number ">{{ paginator.page }} / {{ paginator.total_pages }}</span>
 
   </div>
 </div>
