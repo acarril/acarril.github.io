@@ -1,7 +1,3 @@
-# # # # # # # #
-#   K i k o   #
-# # # # # # # #
-
 # Basic
 name:               "Alvaro Carril"
 title:              "econ blog"
@@ -31,6 +27,9 @@ nav:
   - name:           "posts"
     href:           "/posts"
 
+# Plugins
+gems: jekyll-paginate
+
 # Sass
 sass:
   style:            :compressed
@@ -55,9 +54,3 @@ defaults:
       type:         "people"
     values:
       layout:       "profile"
-
-
-collections:
-  people:
-    output: true
-    permalink: /people/:title/index.html
