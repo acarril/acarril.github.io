@@ -26,12 +26,10 @@ nav:
     href:           "/"
   - name:           "about"
     href:           "/about"
-  - name:           "publications"
-    href:           "/publication"
-  - name:           "posts"
-    href:           "/posts"
   - name:           "resources"
     href:           "/resources"
+  - name:           "posts"
+    href:           "/posts"
 
 # Sass
 sass:
