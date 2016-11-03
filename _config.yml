@@ -1,44 +1,67 @@
-# Site settings
-title: alvaro carril blog
-url: http://acarril.github.io    # the protocol and hostname of your site, eg. `http://laobubu.github.io`
-baseurl:  # the prefix of your site uri, eg. `/jekyll-theme-EasyBook` or just one slash `/`
-#timezone: Asia/Chongqing
-description: Blog on the tools of the trade of the econ research analyst.
+# # # # # # # #
+#   K i k o   #
+# # # # # # # #
 
-# Your information
-email: acarril@fen.uchile.cl
-author: Alvaro Carril
-avatar: "https://avatars3.githubusercontent.com/u/9773292?v=3&s=460"
-profile: Economist / Research analyst at J-PAL
-twitter_username: alvcarril
-github_username:  acarril
-researchgate_username: Alvaro_Carril
+# Basic
+name:               "Kording lab"
+title:              "as called as Bayesian Behavior Lab"
+description:        "this is a page for Konrad Kording lab, we are comptational neurosciece and datascience lab based in Rehabilitation Institute of Chicago and Northwestern University, Chicago"
 
-# Comment Service
-disqus_shortname: acarril
 
-permalink: /posts/:title
-gems:
- - jekyll-paginate
- - jekyll-gist
- - jemoji
+# URL
+url:                http://kordinglab.github.io
+baseurl:
+#baseurl:            "" #For Root Domain
+permalink:          /:year/:month/:day/:title.html
 
-# Build settings
-paginate: 5
-paginate_path: "page:num"
+# Markdown
+markdown:           kramdown
 
-highlighter: rouge
-markdown: kramdown
+# Highlighter
+highlighter:        rouge
 
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
+# Navigation
+nav:
+  - name:           "home"
+    href:           "/"
+  - name:           "about"
+    href:           "/about"
+  - name:           "publications"
+    href:           "/publication"
+  - name:           "people"
+    href:           "/people"
+  - name:           "blog"
+    href:           "/blog"
+  - name:           "resources"
+    href:           "/resources"
 
+# Sass
+sass:
+  style:            :compressed
+
+# Scopes
 defaults:
   -
     scope:
-      path: "posts" # an empty string here means all files in the project
-      type: "posts" # previously `post` in Jekyll 2.2.
+      path:         ""
+      type:         "pages"
     values:
-      comments: true
-      published: false
+      layout:       "page"
+  -
+    scope:
+      path:         ""
+      type:         "posts"
+    values:
+      layout:       "post"
+  -
+    scope:
+      path:         ""
+      type:         "people"
+    values:
+      layout:       "profile"
+
+
+collections:
+  people:
+    output: true
+    permalink: /people/:title/index.html
