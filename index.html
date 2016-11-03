@@ -2,12 +2,9 @@
 layout: default
 ---
 
-
-<div class="home">
-  <a class="rss-link" href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS Feed</a>
-  <h1 class="page-heading">Recent posts</h1>
-
-  <ul class="post-list">
+<div class='container'>
+    <header class="masthead text-center">
+      <ul class="post-list">
     {% for post in paginator.posts %}
     {% unless post.draft %}
       <li>
@@ -27,20 +24,5 @@ layout: default
     {% endunless %}
     {% endfor %}
   </ul>
-
-  <!-- Pagination links -->
-<div class="pagination">
-  {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="previous"> < newer posts </a>
-  {% else %} <!-- Non active -->
-    <span class="previous"> < newer posts </span>
-  {% endif %}
-  <span class="page_number ">{{ paginator.page }} of {{ paginator.total_pages }}</span>
-  {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="next"> older posts > </a>
-  {% else %} <!-- Non active -->
-    <span class="next "> older posts > </span>
-  {% endif %}
-</div>
-
+    </header>
 </div>
