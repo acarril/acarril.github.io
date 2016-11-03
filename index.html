@@ -6,6 +6,7 @@ layout: default
 <div class='container'>
   <!-- This loops through the paginated posts -->
   {% for post in paginator.posts %}
+  {% unless post.draft %}
     <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
     <p class="author">
       <span class="date">{{ post.date | date: '%B %d, %Y' }}</span>
@@ -13,23 +14,21 @@ layout: default
     <div class="content">
       {{ post.excerpt }}<span><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">Keep reading &raquo;</a></span>
     </div>
+  {% endunless %}
   {% endfor %}
 
   <!-- Pagination links -->
   <div class="pagination">
-    <hr>
-    <p>
-    {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
-    {% else %}
-      <span class="previous">Previous</span>
-    {% endif %}
-    <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
-    {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path }}" class="next">Next</a>
-    {% else %}
-      <span class="next ">Next</span>
-    {% endif %}
-    </p>
-  </div>
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="previous"> < newer posts </a>
+  {% else %} <!-- Non active -->
+    <span class="previous"> < newer posts </span>
+  {% endif %}
+  <span class="page_number ">{{ paginator.page }} of {{ paginator.total_pages }}</span>
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="next"> older posts > </a>
+  {% else %} <!-- Non active -->
+    <span class="next "> older posts > </span>
+  {% endif %}
+</div>
 </div>
