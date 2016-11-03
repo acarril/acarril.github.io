@@ -7,7 +7,7 @@ This page is a repository of resources of various types, collected in one place.
 
 # Software
 
-Although I also like to code in R, Matlab and Python, I believe my only worthy collaborations to the world are Stata and LaTeX programs. All Stata programs can be installed directly within Stata using ```ssc install <i>program_name```.
+Although I also like to code in R, Matlab and Python, I believe my only worthy collaborations to the world are Stata and LaTeX programs. All Stata programs can be installed directly within Stata using ```ssc install <program>```.
 
 - [**psestimate**](/resources/psestimate) -- Estimate the propensity score proposed by [Imbens and Rubin (2015)](http://www.cambridge.org/zw/academic/subjects/statistics-probability/statistical-theory-and-methods/causal-inference-statistics-social-and-biomedical-sciences-introduction) ([SSC](https://ideas.repec.org/c/boc/bocode/s458179.html), [Github](https://github.com/acarril/psestimate))
 - [**randtreat**](/resources/randtreat) -- Random treatment assignment with unequal treatment fractions and dealing with misfits ([SSC](https://ideas.repec.org/c/boc/bocode/s458106.html), [Github](https://github.com/acarril/randtreat)). There's a related working paper [here](https://www.researchgate.net/publication/292091060_Dealing_with_misfits_in_random_treatment_assignment).
