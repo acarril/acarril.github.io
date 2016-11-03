@@ -28,8 +28,8 @@ nav:
     href:           "/about"
   - name:           "publications"
     href:           "/publication"
-  - name:           "blog"
-    href:           "/blog"
+  - name:           "posts"
+    href:           "/posts"
   - name:           "resources"
     href:           "/resources"
 

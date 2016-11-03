@@ -1,6 +1,6 @@
 ---
-title: Blog
-permalink: /blog/
+title: Posts
+permalink: /posts/
 ---
 
 <div class="home">
