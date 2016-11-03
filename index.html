@@ -11,10 +11,7 @@ layout: default
       <span class="date">{{ post.date | date: '%B %d, %Y' }}</span>
     </p>
     <div class="content">
-      {{ post.excerpt }}
-      <p style="display:inline">
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">Keep reading &raquo;</a>
-      </p>
+      {{ post.excerpt }}<span><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">Keep reading &raquo;</a></span>
     </div>
   {% endfor %}
 
