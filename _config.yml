@@ -29,6 +29,7 @@ nav:
 
 # Plugins
 gems: jekyll-paginate
+paginate: 5
 
 # Sass
 sass:
