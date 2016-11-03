@@ -1,28 +1,18 @@
 ---
 layout: default
+title: Home
 ---
 
-<div class='container'>
-    <header class="masthead text-center">
-      <ul class="post-list">
-    {% for post in paginator.posts %}
-    {% unless post.draft %}
-      <li>
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-        {% for cat in post.categories %}
-        <div class="post-meta">{{ post.date | date: "%b %-d, %Y" }} • {{ cat | upcase }}</div>
-        {% endfor %}
-        <div class="post-excerpt">
-          {{ post.excerpt }}
-          <p>
-            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">Keep reading &raquo;</a>
-          </p>
-        </div>
-      </li>
-    {% endunless %}
-    {% endfor %}
-  </ul>
-    </header>
+<h1>Latest posts</h1>
+<div class="hfeed">
+
+  {% for post in site.posts %}
+    <article class="hentry entry">
+      <h1 class="entry-title">
+        <a href="{{ post.url }}" rel="bookmark">{{ post.title }}</a>
+      </h1>
+      <p>Posted on <time class="published" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date }}</time></p>
+    </article>
+  {% endfor %}
+
 </div>
