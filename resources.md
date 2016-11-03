@@ -1,38 +1,34 @@
 ---
-title: Reference
+title: Resources
 permalink: /resources/
 ---
 
-We moved the [resources page](http://klab.smpp.northwestern.edu/wiki/index.php5/Resources)
-from Kording lab page to here. We hope it will be much better and faster for people who want to share it
-and view it on cell phones.
+This page is a repository of resources of various types, collected in one place. These include [**software**](#software) bits I've written (mostly Stata) and miscellaneous [**documents**](#documents) (mostly in spanish).
 
-<hr>
+# Software
 
+Although I code in R, Matlab and Python, I believe my only worthy collaborations to the world are LaTeX and Stata programs. All Stata programs can be installed directly within Stata using <code>ssc install <i>program_name</i></code>.
 
-{% assign reference_types = "scientists|students|discussion" | split: "|" %}
+- [**psestimate**](/resources/psestimate) -- Estimate the propensity score proposed by [Imbens and Rubin (2015)](http://www.cambridge.org/zw/academic/subjects/statistics-probability/statistical-theory-and-methods/causal-inference-statistics-social-and-biomedical-sciences-introduction) ([SSC](https://ideas.repec.org/c/boc/bocode/s458179.html), [Github](https://github.com/acarril/psestimate))
+- [**randtreat**](/resources/randtreat) -- Random treatment assignment with unequal treatment fractions and dealing with misfits ([SSC](https://ideas.repec.org/c/boc/bocode/s458106.html), [Github](https://github.com/acarril/randtreat))
+- [**lcmm** and **gcdm**](/posts/GCD-LCM) -- Compute least common multiple and greatest common divisor
+- **nrow** -- Rename variables as their *n*-th row values ([SSC](https://ideas.repec.org/c/boc/bocode/s458116.html), [Github](https://github.com/acarril/nrow))
 
-{% for type in reference_types %}
+- **jpaltheme** -- LaTeX Beamer theme that complies with [J-PAL](https://www.povertyactionlab.org/)'s branding guidelines ([Github](https://github.com/acarril/jpaltheme))
 
-{% if type == 'scientists' %}
-### **For scientists**
- {% elsif type == 'students' %}
-### **For students, lab members**
- {% elsif type == 'discussion' %}
-### **Random bits of discussion**
-{% endif %}
+# Documents
 
-<div class="content list">
-  {% for post in site.posts %}
-    {% if post.categories contains type %}
-    <div class="list-item">
-      <p class="list-post-title">
-        <a href="{{ site.baseurl }}{{ post.url }}">- {{ post.title }}</a>
-      </p>
-    </div>
-    {% endif %}
-  {% endfor %}
-</div>
+All of these documents are unfinished and most probably contain (lots of) errors. Use with caution.
 
-<hr>
-{% endfor %}
+- [Poder estadístico en diseños experimentales](https://www.dropbox.com/s/s4wvhsi59zqw34c/poder_optimal_design.pdf?dl=0) -- Ejercicios sencillos de cálculos de poder en [Optimal Design](http://hlmsoft.net/od/) (pauta disponible [aquí](https://www.dropbox.com/s/q5l73pjng99fjyz/poder_optimal_design%20-%20pauta.pdf?dl=0))
+- [Resumen De Gregorio](https://www.dropbox.com/s/o5cj07jpdq0em54/DeGregorioResumen.pdf?dl=0) -- Resumen del libro [Macroeconomía: Teoría y Políticas](http://www.degregorio.cl/pdf/Macroeconomia.pdf), de [José De Gregorio (2007)](http://www.econ.uchile.cl/jdegregorio)
+- [Apunte Finanzas Públicas](https://www.dropbox.com/s/dsg9meznquq8kno/Apuntes%20finanzas%20publicas.pdf?dl=0) -- Apuntes del curso de Finanzas Públicas de [Claudia Martínez](https://www.povertyactionlab.org/mart%C3%ADnez)
+- [Manual de LaTeX](https://www.dropbox.com/s/hcz69dj5rrusi9g/manual_latex.pdf?dl=0) -- Breve guía práctica para escribir en [LaTeX](http://tex.stackexchange.com/a/94910/45978)
+
+# Classes
+
+A collection of lectures I've given, mainly with [J-PAL LAC](https://www.povertyactionlab.org/LAC) (hence, in spanish).
+
+- [Efectos estandarizados y Poder estadístico](https://www.dropbox.com/s/pf4rse155g2yc2f/class_statistical_power.pdf?dl=0) -- Entender intuitivamente la necesidad de estandarizar efectos y cómo hacerlo. Entender intuitiva y gráficamente qué es el poder estadístico, cómo se relaciona con errores tipo I y II y qué elementos de un diseño lo afectan. Aplicaciones en Stata.
+- [Mecánica de aleatorización I](https://www.dropbox.com/s/aedge51xocm79iv/clase12_slides.pdf?dl=0) -- Pasos para una aleatorización simple y replicable en Stata. Aplicación de estos pasos en diseños de lotería simple, rotación, *phase-in* y aleatorización en la burbuja. [Datos](https://www.dropbox.com/s/juo24v3si088e5x/aerdat5.dta?dl=0) y do-file.
+- Mecánica de aleatorización II -- slides, datos, do-file
