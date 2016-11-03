@@ -8,18 +8,17 @@ Under construction.
 <div class='container'>
     <header class="masthead text-center">
 
-      <div class="hfeed">
-
-  {% for post in site.posts %}
-    <article class="hentry entry">
-      <h1 class="entry-title">
-        <a href="{{ post.url }}" rel="bookmark">{{ post.title }}</a>
-      </h1>
-      <p>Posted on <time class="published" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date }}</time></p>
-    </article>
-  {% endfor %}
-
+      <ul class="posts">
+{% for post in site.posts limit: 5 %}
+  <div class="post_info">
+    <li>
+	    <a href="{{ post.url }}">{{ post.title }}</a>
+	    <span>({{ post.date | date:"%Y-%m-%d" }})</span>
+    </li>
+    </br> <em>{{ post.excerpt }} </em>
     </div>
+  {% endfor %}
+</ul>
 
     </header>
 </div>
