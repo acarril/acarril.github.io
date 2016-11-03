@@ -531,14 +531,3 @@ tbody tr:nth-child(odd) th {
   border: none;
   background-color: #FFF;
 }
-
-.pagination.center {
-  text-align: center;
-}
-.pagination ul {
-  display: -moz-inline-box; /* FF2 or lower */
-  display: inline-block;
-  /* IE6/7 inline-block hack */
-  *display: inline;
-  *zoom: 1;
-}
