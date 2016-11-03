@@ -3,22 +3,22 @@ title: Resources
 permalink: /resources/
 ---
 
-This page is a repository of resources of various types, collected in one place. These include [**software**](#software) bits I've written (mostly Stata) and miscellaneous [**documents**](#documents) (mostly in spanish).
+This page is a repository of resources of various types, collected in one place. These include [software](#software) bits I've written (mostly Stata) and miscellaneous [documents](#documents) (mostly in spanish).
 
 # Software
 
-Although I code in R, Matlab and Python, I believe my only worthy collaborations to the world are LaTeX and Stata programs. All Stata programs can be installed directly within Stata using <code>ssc install <i>program_name</i></code>.
+Although I also like to code in R, Matlab and Python, I believe my only worthy collaborations to the world are Stata and LaTeX programs. All Stata programs can be installed directly within Stata using ```ssc install <i>program_name```.
 
 - [**psestimate**](/resources/psestimate) -- Estimate the propensity score proposed by [Imbens and Rubin (2015)](http://www.cambridge.org/zw/academic/subjects/statistics-probability/statistical-theory-and-methods/causal-inference-statistics-social-and-biomedical-sciences-introduction) ([SSC](https://ideas.repec.org/c/boc/bocode/s458179.html), [Github](https://github.com/acarril/psestimate))
-- [**randtreat**](/resources/randtreat) -- Random treatment assignment with unequal treatment fractions and dealing with misfits ([SSC](https://ideas.repec.org/c/boc/bocode/s458106.html), [Github](https://github.com/acarril/randtreat))
-- [**lcmm** and **gcdm**](/posts/GCD-LCM) -- Compute least common multiple and greatest common divisor
+- [**randtreat**](/resources/randtreat) -- Random treatment assignment with unequal treatment fractions and dealing with misfits ([SSC](https://ideas.repec.org/c/boc/bocode/s458106.html), [Github](https://github.com/acarril/randtreat)). There's a related working paper [here](https://www.researchgate.net/publication/292091060_Dealing_with_misfits_in_random_treatment_assignment).
+- [**lcmm / gcdm**](/posts/GCD-LCM) -- Compute least common multiple and greatest common divisor
 - **nrow** -- Rename variables as their *n*-th row values ([SSC](https://ideas.repec.org/c/boc/bocode/s458116.html), [Github](https://github.com/acarril/nrow))
 
 - **jpaltheme** -- LaTeX Beamer theme that complies with [J-PAL](https://www.povertyactionlab.org/)'s branding guidelines ([Github](https://github.com/acarril/jpaltheme))
 
 # Documents
 
-All of these documents are unfinished and most probably contain (lots of) errors. Use with caution.
+Almost all of of these documents are unfinished and most probably contain (lots of) errors. Use with caution.
 
 - [Poder estadístico en diseños experimentales](https://www.dropbox.com/s/s4wvhsi59zqw34c/poder_optimal_design.pdf?dl=0) -- Ejercicios sencillos de cálculos de poder en [Optimal Design](http://hlmsoft.net/od/) (pauta disponible [aquí](https://www.dropbox.com/s/q5l73pjng99fjyz/poder_optimal_design%20-%20pauta.pdf?dl=0))
 - [Resumen De Gregorio](https://www.dropbox.com/s/o5cj07jpdq0em54/DeGregorioResumen.pdf?dl=0) -- Resumen del libro [Macroeconomía: Teoría y Políticas](http://www.degregorio.cl/pdf/Macroeconomia.pdf), de [José De Gregorio (2007)](http://www.econ.uchile.cl/jdegregorio)
