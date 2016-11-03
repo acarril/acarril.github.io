@@ -2,33 +2,45 @@
 layout: default
 ---
 
-<div class='container'>
-    <header class="masthead text-center">
-      <div style="width:1px; height:1px; visibility:hidden; overflow:hidden">
-        <img class='img-responsive center-block' src="/images/people/michigan2.jpg" />
-      </div>
-      <img class='img-responsive center-block' src="/images/people/michigan1.jpg" width="70%" height="70%" onmouseover="this.src='/images/people/michigan2.jpg'" width="70%" height="70%" onmouseout="this.src='/images/people/michigan1.jpg'" width="70%" height="70%" />
 
-      <p>Brain, behavior and cognition, science and scientists, <br>
-        and the dream that our ideas and not our data limit the questions we can ask.</p>
+<div class="home">
+  <a class="rss-link" href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS Feed</a>
+  <h1 class="page-heading">Recent posts</h1>
 
-      <p>Rehabilitation Institute of Chicago, Northwestern University<br>
-        345 E Superior St, Rm 1479, Chicago, IL, 60611
+  <ul class="post-list">
+    {% for post in paginator.posts %}
+    {% unless post.draft %}
+      <li>
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+        {% for cat in post.categories %}
+        <div class="post-meta">{{ post.date | date: "%b %-d, %Y" }} • {{ cat | upcase }}</div>
+        {% endfor %}
+        <div class="post-excerpt">
+          {{ post.excerpt }}
+          <p>
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">Keep reading &raquo;</a>
+          </p>
+        </div>
+      </li>
+    {% endunless %}
+    {% endfor %}
+  </ul>
 
-        <span style="display: block; margin-bottom: 1em"></span>
-        Office Tel: (312) 238-6966<br>
-        Lab Tel: (312) 238-6515<br>
-        Fax: (312) 238-7605<br>
+  <!-- Pagination links -->
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="previous"> < newer posts </a>
+  {% else %} <!-- Non active -->
+    <span class="previous"> < newer posts </span>
+  {% endif %}
+  <span class="page_number ">{{ paginator.page }} of {{ paginator.total_pages }}</span>
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="next"> older posts > </a>
+  {% else %} <!-- Non active -->
+    <span class="next "> older posts > </span>
+  {% endif %}
+</div>
 
-        <span style="display: block; margin-bottom: 3em"></span>
-
-      <a href="https://github.com/KordingLab"><i class="fa fa-github"></i> KordingLab</a>&nbsp;&nbsp;&nbsp;
-      <a href="https://twitter.com/KordingLab"><i class="fa fa-twitter"></i> KordingLab</a>&nbsp;&nbsp;&nbsp;
-      <a href="mailto:kk@northwestern.edu"><i class="fa fa-envelope-o"></i> kk@northwestern.edu</a>
-      </p>
-
-      <a class="twitter-timeline" href="https://twitter.com/KordingLab" data-widget-id="695051708246941697">Tweets by @KordingLab</a>
-      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-    </header>
 </div>
