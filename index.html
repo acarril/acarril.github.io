@@ -14,7 +14,7 @@ layout: default
     {% endfor %}
     </p>
     <div class="content">
-      <span style="white-space: nowrap">{{ post.excerpt }}<a class="post-link" href="{{ post.url | prepend: site.baseurl }}">Keep reading &raquo;</a></span>
+      {{ post.excerpt }}<span><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">Keep reading &raquo;</a></span>
     </div>
   {% endunless %}
   {% endfor %}
