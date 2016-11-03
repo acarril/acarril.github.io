@@ -19,9 +19,9 @@ layout: default
 
   <!-- Pagination links -->
   <hr>
-  <div class="center">
+  <header class="masthead text-center">
   <div class="pagination">
-    <header class="masthead text-center">
+
   {% if paginator.previous_page %}
     <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="previous"> < newer posts </a>
   {% else %} <!-- Non active -->
@@ -33,7 +33,8 @@ layout: default
   {% else %} <!-- Non active -->
     <span class="next "> older posts > </span>
   {% endif %}
-  </header>
+
   </div>
 </div>
+  </header>
 </div>
