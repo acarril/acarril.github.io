@@ -1,5 +1,5 @@
 ---
-title: Posts
+title: Posts by category
 permalink: /posts/
 ---
 
