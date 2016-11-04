@@ -9,13 +9,14 @@ We've all read the dreaded `convergence not achieved` message, punctuated by `r(
 # A bit of intuition on maximum likelihood
 
 You have some data and are willing (?) to assume that it is generated from some distribution. Say you assume it comes from a normal (Gaussian) distribution. That's fine, but there are infinitely many possible parameters (i.e. means, variances) that "source" distribution may have:
+
 ![Possible normal distributions](/files/convergence_notes-gaussian_dists.png "Which distribution is producing my data?")
 
 The idea behind MLE is to pick the distribution that is "most consistent" with the data. That is, MLE finds the most likely function that explains the observed data.
 
 ## How can you choose parameters which are "most consistent" with the data?
 
-Say you've got a variable `y=4,1,10`. The most consistent parameters would be to choose a mean equal to 5 and a variance of 14. Yes, some other Gaussian distribution may have produced the values in `y`, but the key is that the probability of getting those particular values of is maximized with the chosen mean and variance.
+Say you've got a variable `y=4,1,10`. The most consistent parameters would be to choose a mean equal to 5 and a variance of 14. Yes, some other Gaussian distribution may have produced those values in `y`, but the key is that the probability of getting those particular values of is maximized with the chosen mean and variance.
 
 In a regression framework the mean is simply a linear function of the data. Consider the same vector `y` as before and a new variable `x=1,-1,3`. The mean is the fitted regression model $$X' \hat\beta$$, with $$\hat\beta=[2.75, 2.25]$$. You can easily check this in Stata:
 
@@ -33,6 +34,21 @@ replace x = -1 in 2
 replace x = 3 in 3
 
 reg y x
+
+Source |       SS           df       MS      Number of obs   =         3
+-------------+----------------------------------   F(1, 1)         =     27.00
+ Model |        40.5         1        40.5   Prob > F        =    0.1210
+Residual |         1.5         1         1.5   R-squared       =    0.9643
+-------------+----------------------------------   Adj R-squared   =    0.9286
+ Total |          42         2          21   Root MSE        =    1.2247
+
+------------------------------------------------------------------------------
+     y |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+     x |       2.25   .4330127     5.20   0.121    -3.251948    7.751948
+ _cons |       2.75   .8291562     3.32   0.186    -7.785428    13.28543
+------------------------------------------------------------------------------
+
 ```
 # A bit of math
 
