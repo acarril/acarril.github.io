@@ -14,7 +14,7 @@ layout: default
     {% endfor %}
     </p>
     <div class="content">
-      {{ post.excerpt }}<span><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">Keep reading &raquo;</a></span>
+      {{ post.excerpt | remove: '</p>' }}<span><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">Keep reading &raquo;</a></span></p>
     </div>
   {% endunless %}
   {% endfor %}
