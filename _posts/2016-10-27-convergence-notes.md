@@ -36,6 +36,17 @@ replace x = 3 in 3
 reg y x
 ```
 
+## The likelihood function maximization
+
+Let's now expand our example to something a bit more sophisticated. The basic idea still is that we have some points in `x` and `y`, and we want to know the parameters $$\mu$$ and $$\sigma$$ that most likely fit the data. We're going to start by cheating and generating the data with known parameters:
+
+```
+set obs 200
+
+gen x = runiform(1,10)
+gen y = `beta'*x + rnormal(0,`sigma2')
+```
+
 # A bit of math
 
 We know that the maximization problem is
