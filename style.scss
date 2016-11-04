@@ -544,6 +544,7 @@ img.displayed {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    position: fixed;
+    position: absolute;
     bottom: 0px;
+    z-index: -1;
   }
