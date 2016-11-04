@@ -16,6 +16,7 @@ layout: default
     <div class="content">
       {{ post.excerpt | remove: '</p>' }}<span><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">Keep reading &raquo;</a></span></p>
     </div>
+    <hr>
   {% endunless %}
   {% endfor %}
 
@@ -25,7 +26,6 @@ layout: default
   <div class="pagination">
 
   <span class="page_number ">{{ paginator.page }} / {{ paginator.total_pages }}</span>
-  <br>
 
   {% if paginator.previous_page %}
     <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="previous"> < newer posts </a>
