@@ -11,6 +11,7 @@ We've all read the dreaded `convergence not achieved` message, punctuated by `r(
 We know that the maximization problem is
 
 $$ L(\hat{\boldsymbol{\theta}};\boldsymbol{Z}) = \max_{\boldsymbol{t}\in\Theta} L(\boldsymbol{t};\boldsymbol{Z}) $$
+
 which simply means we are maximizing 
 
 # References
