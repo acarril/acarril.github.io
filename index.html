@@ -5,8 +5,9 @@ layout: default
 
 <div class='container'>
   <!-- This loops through the paginated posts -->
-  {% for post in paginator.posts %}
   {% unless post.draft %}
+  {% for post in paginator.posts %}
+
     <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
     <p class="author">
     {% for cat in post.categories %}
@@ -17,8 +18,9 @@ layout: default
       {{ post.excerpt | remove: '</p>' }}<span><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">Keep reading &raquo;</a></span></p>
     </div>
     <hr>
-  {% endunless %}
+
   {% endfor %}
+  {% endunless %}
 
   <!-- Pagination links -->
   <hr>
