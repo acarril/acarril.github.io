@@ -8,11 +8,32 @@ We've all read the dreaded `convergence not achieved` message, punctuated by `r(
 
 # A bit of intuition on maximum likelihood
 
-You have some data and are willing (?) to assume that it is generated from some distribution. Say you assume it comes from a normal distribution. That's fine, but there are infinitely many possible parameters (i.e. means, variances) that "source" distribution may have.
-
-Inline-style:
+You have some data and are willing (?) to assume that it is generated from some distribution. Say you assume it comes from a normal (Gaussian) distribution. That's fine, but there are infinitely many possible parameters (i.e. means, variances) that "source" distribution may have:
 ![Possible normal distributions](/files/convergence_notes-gaussian_dists.png "Which distribution is producing my data?")
 
+The idea behind MLE is to pick the distribution that is "most consistent" with the data. That is, MLE finds the most likely function that explains the observed data.
+
+## How can you choose parameters which are "most consistent" with the data?
+
+Say you've got a variable `y=4,1,10`. The most consistent parameters would be to choose a mean equal to 5 and a variance of 14. Yes, some other Gaussian distribution may have produced the values in `y`, but the key is that the probability of getting those particular values of is maximized with the chosen mean and variance.
+
+In a regression framework the mean is simply a linear function of the data. Consider the same vector `y` as before and a new variable `x=1,-1,3`. The mean is the fitted regression model $$X' \hat\beta$$, with $$\hat\beta=[2.75, 2.25]$$. You can easily check this in Stata:
+
+```
+set obs 3
+
+gen y = .
+replace y = 4 in 1
+replace y = 1 in 2
+replace y = 10 in 3
+
+gen x = .
+replace x = 1 in 1
+replace x = -1 in 2
+replace x = 3 in 3
+
+reg y x
+```
 # A bit of math
 
 We know that the maximization problem is
