@@ -8,7 +8,7 @@ description:        "tools of the trade of the econ research analyst"
 url:                http://acarril.github.io
 baseurl:
 #baseurl:            "" #For Root Domain
-permalink:          /:year/:month/:day/:title
+permalink:          /posts/:title
 
 # Markdown
 markdown:           kramdown
