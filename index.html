@@ -32,7 +32,9 @@ layout: default
   {% else %} <!-- Non active -->
     <span class="previous"></span>
   {% endif %}
+  {% if paginator.previous_page and paginator.next_page %}
    &middot;
+  {% endif %}
   {% if paginator.next_page %}
     <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="next"> older posts > </a>
   {% else %} <!-- Non active -->
