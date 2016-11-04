@@ -527,3 +527,9 @@ tbody tr:nth-child(odd) th {
   border: none;
   background-color: #FFF;
 }
+
+// black links
+a.black:link, a.black:visited, a.black:active
+{
+    color: #333;
+}
