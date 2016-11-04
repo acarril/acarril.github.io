@@ -7,7 +7,7 @@ layout: default
   <!-- This loops through the paginated posts -->
   {% for post in paginator.posts %}
   {% unless post.draft %}
-    <h3><a href="{{ post.url }}" class="black">{{ post.title }}</a></h3>
+    <h1><a href="{{ post.url }}" style="color: #333">{{ post.title }}</a></h1>
     <p class="author">
     {% for cat in post.categories %}
       <span class="date">{{ post.date | date: '%B %d, %Y' }} • {{ cat | upcase }}</span>
