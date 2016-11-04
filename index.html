@@ -24,9 +24,6 @@ layout: default
   <header class="masthead text-center">
   <div class="pagination">
 
-  <span class="page_number ">{{ paginator.page }} / {{ paginator.total_pages }}</span>
-  <br>
-
   {% if paginator.previous_page %}
     <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="previous"> < newer posts </a>
   {% else %} <!-- Non active -->
@@ -40,6 +37,9 @@ layout: default
   {% else %} <!-- Non active -->
     <span class="next "></span>
   {% endif %}
+
+  <br>
+  <span class="page_number" style="color:Gainsboro;"> {{ paginator.page }} / {{ paginator.total_pages }} </span>
 
   </div>
 </div>
