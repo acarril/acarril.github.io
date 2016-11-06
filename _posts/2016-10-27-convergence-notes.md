@@ -47,6 +47,10 @@ gen x = runiform(1,10)
 gen y = `beta'*x + rnormal(0,`sigma2')
 ```
 
+continues...
+
+![Plot of likelihood function](/files/mle_max_plot.png "There is a maximum somewhere")
+
 # A bit of math
 
 We know that the maximization problem is
