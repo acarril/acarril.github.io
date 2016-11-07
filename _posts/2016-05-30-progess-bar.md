@@ -12,17 +12,17 @@ The key lies in using `_dots`, an undocumented Stata command whose only "officia
 
 The easiest way to implement this is in a [forvalues loop](http://www.stata.com/help.cgi?forvalues), as Harrison's first example:
 
-<pre>
+```
 _dots 0, title(Loop running) reps(75)
 forvalues i = 1/75 {
-  <i>some commands...</i>
+  ...
   _dots `i' 0
 }
 Loop running (75)
 ----+--- 1 ---+--- 2 ---+--- 3 ---+--- 4 ---+--- 5
 ..................................................    50
 .........................
-</pre>
+```
 
 The **first call of `_dots`** sets up the graduated header line (`----+--- 1 ---+--- 2`...). Both the `title` and `reps` (repetitions) options are optional. Keep in mind that `reps` only accepts integers as its argument.
 
@@ -41,15 +41,15 @@ The **first call of `_dots`** sets up the graduated header line (`----+--- 1 ---
 
 It is very straightforward to implement this in loops which are non-numerical by **defining a local macro to act as a counter**. For example, in a [foreach](http://www.stata.com/help.cgi?foreach) loop with a [varlist](http://www.stata.com/help.cgi?varlist):
 
-<pre>
+```
 sysuse auto
 _dots 0, reps(10)
 foreach var of varlist price - gear_ratio {
-  <i>some commands...</i>
+  ...
   local i = `i'+1
   _dots `i' 0
 }
-</pre>
+```
 
 ### Counting repetitions
 
@@ -57,17 +57,17 @@ The number of repetitions in `rep` is not calculated by `_dots`, so I had to man
 
 Expanding the last example, we could write:
 
-<pre>
+```
 sysuse auto
 unab myvars : price - gear_ratio
 local N : list sizeof myvars
 _dots 0, reps(`N')
 foreach var of varlist `myvars' {
-  <i>some commands...</i>
+  ...
   local i = `i'+1
   _dots `i' 0
 }
-</pre>
+```
 
 Notice that I first expanded the variable list with [`unab`](http://www.stata.com/manuals13/punab.pdf), which permits entering an abbreviated `varlist` like `price - gear_ratio` and then have Stata automatically expand the list with all variables in that range.
 
@@ -75,7 +75,7 @@ Notice that I first expanded the variable list with [`unab`](http://www.stata.co
 
 Now we can think of a more sophisticated implementation in a [`while`](http://www.stata.com/help.cgi?while) loop. Let's look at Harrison's example:
 
-<pre>
+```
 _dots 0, title(Looping until 70 successes...)
 local rep 1
 local nsuccess 0
@@ -88,7 +88,7 @@ Looping until 70 successes...
 ----+--- 1 ---+--- 2 ---+--- 3 ---+--- 4 ---+--- 5
 xx...x..x...xx...xx....x................x......... 50
 .x..............x..x.x.x....x.......
-</pre>
+```
 
 It is useful to realize that `nsuccess` just controls the loop, but it's not related to the progress bar. So `nsuccess` is just set to zero and then will is updated with +1 with 80% probability, that is, if `fail` *doesn't* fail, which means it is equal to zero.
 
