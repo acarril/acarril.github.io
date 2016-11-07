@@ -3,6 +3,7 @@ beta <- 2
 sigma2 <- 1
 
 # Generate dataset
+set.seed(123)
 data   <- data.frame(x = runif(100, 1, 10))
 data$y <- beta*data$x + rnorm(100, 0, sigma2)
 plot(data$x, data$y, xlab="x", ylab="y")
@@ -40,6 +41,6 @@ wireframe(logL ~ beta*sigma2,
 # Find maximization points
 linear.MLE <- nlm(f=linear.lik, p=c(1,1,1), hessian=TRUE, y=data$y, X=cbind(1, data$x))
 linear.MLE$estimate
-## [1] -0.4578486  2.0923226  0.7413104
+## [1] 0.001049617 1.990013519 0.920734469
 
 summary(lm(y ~ x, data))
