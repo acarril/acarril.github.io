@@ -1,3 +1,15 @@
+# PART 1
+
+# Input data
+y <- c(4, 1, 10)
+x <- c(1, -1, 3) 
+exampledata <- data.frame(y,x)
+
+# Fit the model
+lm(y ~ x, data = exampledata)
+
+# PART 2
+
 # The true parameters
 beta <- 2
 sigma2 <- 1
