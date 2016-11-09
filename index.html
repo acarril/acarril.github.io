@@ -9,7 +9,7 @@ layout: default
   {% unless post.draft %}
     <h1><a href="{{ post.url }}" style="color: #333">{{ post.title }}</a></h1>
     <p class="author">
-      <span class="date">{{ post.date | date: '%B %d, %Y' }}{% for cat in post.categories %} • {{ cat | upcase }}{% endfor %}</span>
+      <span class="date">{{ post.date | date: '%B %d, %Y' }} • {{ page.categories | upcase | join: ', ' }}</span>
     </p>
     <div class="content">
       {{ post.excerpt | remove: '</p>' }}<span><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">Keep reading &raquo;</a></span></p>
