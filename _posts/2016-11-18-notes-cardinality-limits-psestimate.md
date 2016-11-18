@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Notes on practical difficulties and limitations of `psestimate`"
+title:  "Notes on practical difficulties and limitations of <code>psestimate</code>"
 categories: metrics stata
 ---
 
