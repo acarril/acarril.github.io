@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Notes on practical difficulties and limitations of <code>psestimate</code>"
+title:  "Practical difficulties and limitations of <code>psestimate</code>"
 categories: metrics stata
 ---
 
@@ -28,7 +28,7 @@ a,b,c,d : (a^2 + b^2 + c^2 + d^2) + (a*b + a*c + a*d + b*c + b*d + c*d)
 ...
 ```
 
-It should be readily apparent that for any number of linear covariates $$l$$, the number of squared terms to try in the second stage is also $$l$$, while the number of unique two-way interactions is going to be equal to $$\sum^{l-1}$$. This is simply the sum over $$l$$.
+It should be readily apparent that for any number of linear covariates $$l$$, the number of squared terms to try in the second stage is also $$l$$, while the number of unique two-way interactions is going to be equal to $$\sum^{l-1}$$. Taken together, both simply amount to the sum over $$l$$.
 
 Given that Stata imposes a [limit of 300 stored estimation results](http://www.stata.com/help.cgi?limits) in memory, we need this sum to be less than that limit:
 
@@ -36,4 +36,4 @@ $$
 \sum^l = \frac{l(l+1)}{2} < 300
 $$
 
-Solving that inequality for positive values of $$l$$ tells us that $$l\leq 24$$. This means that if the total number of linear terms chosen in the first stage is equal or greater than 24, the program is not going to be able to store all the estimates needed for the first loop in the second stage.
+Solving that inequality for positive values of $$l$$ tells us that $$l<24$$. This means that if the total number of linear terms chosen in the first stage is equal or greater than 24, the program is not going to be able to store all the estimates needed for the first loop in the second stage.
