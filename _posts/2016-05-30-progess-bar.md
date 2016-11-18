@@ -4,7 +4,7 @@ title:  "Loops with progress bars"
 categories: stata
 ---
 
-A few Stata commands (like [`bootstrap`](http://www.stata.com/help.cgi?bootstrap) or [psestimate](/resources/psestimate)) have a "progress bar", which is more like a table of dots. Those are very useful for tracking the advancements made in long loops or programs. In this post I explain how to include progress bars in several different situations.
+A few Stata commands (like [`bootstrap`](http://www.stata.com/help.cgi?bootstrap) or my own [psestimate](/resources/psestimate)) have a "progress bar", which is more like a table of dots. Those are very useful for tracking the advancements made in long loops or programs. In this post I explain how to include progress bars in several different situations.
 
 The key lies in using `_dots`, an undocumented Stata command whose only "official" mention (AFAIK) is by [David Harrison (2007)](http://www.stata-journal.com/sjpdf.html?articlenum=pr0030). He outlines two examples in that Stata Tip, which I explain and expand in this post.
 
