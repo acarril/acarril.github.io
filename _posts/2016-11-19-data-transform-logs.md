@@ -5,15 +5,15 @@ categories: metrics
 draft: true
 ---
 
-In statistics it is common practice to apply some transformation to the data. This is (or should be) done so that the data more closely meet the assumptions the statistical inference procedure to be applied, but is also helps to interpret and visualize it better. In this post I go into detail of when (and when not) to transform your data. I also go into the specifics of log-transforms, which are widely used in economic analysis.
+In statistics it is common practice to apply some [transformation to the data](https://en.wikipedia.org/wiki/Data_transformation_(statistics)). This is (or should be) done so that the data more closely meet the assumptions the statistical inference procedure to be applied, but is also helps to interpret and visualize it better. In this post I go into detail of when (and when not) to transform your data. I also go into the specifics of log-transforms, which are widely used in economic analysis.
 
-# Why transform your data?
+# Good reasons to transform your data
 
-There are many possible [transformations that can be applied to data](https://en.wikipedia.org/wiki/Data_transformation_(statistics)), such as logarithms, reciprocals, roots, etc. Below I explain some general situations in which it is desirable to apply some non-linear re-expression of the dependent variable.
+There are many possible transformations that can be applied to data, such as logarithms, reciprocals or roots. Below I explain some *general* situations in which it is desirable to apply some non-linear re-expression of the dependent variable.
 
 ### Residuals
 
-First, the residuals of your model can have a **skewed distribution**. The idea behind the transformation should be to obtain residuals that are more symmetrically distributed about zero.
+First, the [residuals of your model](https://en.wikipedia.org/wiki/Errors_and_residuals) can have a **skewed distribution**. The idea behind the transformation should be to obtain residuals that are more symmetrically distributed about zero.
 
 Residuals can also present **heteroskedasticity**, which is simply a systematic change in their spread with different values of the independent variables. Analogously, the idea behind the transformation should be to remove that systematic change in spread.
 
@@ -27,7 +27,7 @@ $$
 
 You may have **theoretical reasons** to choose that model to fit into your data, so in order to use OLS for instance you have to apply some sort of transformation to your data. Additionally, linear relationships usually can **make estimation easier**, simplify the number or complexity of interaction terms, etc.
 
-## No-nos
+## *Bad* reasons to transform your data
 
 While the reasons detailed above are valid from a data-driven perspective, sometimes data scientists use re-expressions for reasons that are not scientifically sound. These include
 
@@ -76,4 +76,7 @@ The emphasis is on *directly* interpretable, because we could take logarithms in
 
 
 # References
-Andrew Gelman and Jennifer Hill (2007). Data Analysis using Regression and Multilevel/Hierarchical Models. Cambridge University Press: Cambridge; New York, pp. 60-61.
+
+Andrew Gelman and Jennifer Hill (2007). Data Analysis using Regression and Multilevel/Hierarchical Models. Cambridge University Press: Cambridge; New York.
+
+John W. Tukey (1977). Exploratory Data Analysis. Addison Wesley.
