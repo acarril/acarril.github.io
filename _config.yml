@@ -28,7 +28,6 @@ nav:
     href:           "/posts"
 
 # Plugins
-gems: jekyll-paginate
 paginate: 5
 
 # Sass
