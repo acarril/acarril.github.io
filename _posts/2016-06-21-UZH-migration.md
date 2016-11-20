@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title: Quick guide for UZH data migration
-draft: true
+hidden: true
 categories: stata econ
 permalink: /resources/UZH-migration
 ---

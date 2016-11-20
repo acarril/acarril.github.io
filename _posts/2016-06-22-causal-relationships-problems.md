@@ -2,7 +2,7 @@
 layout: post
 title:  "Practical problems in causal relationships"
 categories: econ
-draft: true
+hidden: true
 ---
 
 One of the fundamental endeavors of economic research is to establish and measure causal relationships from data. The "golden standard" is to do this by performing a randomized control trial, as many of my colleagues at J-PAL do. However, in many cases we have to draw conclusions from observational data.

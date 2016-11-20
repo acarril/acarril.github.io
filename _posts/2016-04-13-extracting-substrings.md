@@ -2,7 +2,7 @@
 layout: post
 title:  "Extracting substrings"
 categories: stata
-published: false
+hidden: true
 ---
 
 Oftentimes we need to work with part of a string, or substring.
