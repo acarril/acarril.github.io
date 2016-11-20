@@ -2,7 +2,7 @@
 layout: post
 title:  "Practical difficulties and limitations of <code>psestimate</code>"
 categories: metrics stata
-daft: true
+draft: true
 ---
 
 I've written a Stata program, [`psestimate`](/resources/psestimate), that implements an algorithm proposed by [Imbens and Rubin](http://jhr.uwpress.org/content/50/2/373) which helps to determine the first or second order polynomial of covariates to use in the  estimation of a propensity score. By its very nature this algorithm is slow and intensive in computational resources, which makes it challenging to code. In this post I share some notes on the strategies I use in `psestimate` to overcome or mitigate those challenges.
