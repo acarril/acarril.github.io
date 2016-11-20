@@ -27,7 +27,7 @@ $$
 
 You may have **theoretical reasons** to choose that model to fit into your data, so in order to use OLS for instance you have to apply some sort of transformation to your data. Additionally, linear relationships usually can **make estimation easier**, simplify the number or complexity of interaction terms, etc.
 
-## *Bad* reasons to transform your data
+## Bad reasons to transform your data
 
 While the reasons detailed above are valid from a data-driven perspective, sometimes data scientists use re-expressions for reasons that are not scientifically sound. These include
 
@@ -60,7 +60,7 @@ It baffles me that we economists keep saying "take the logarithm of household in
 
 Yes, but the reasons are not extremely strong.
 
-The most commonly cited advantage is that coefficients on the natural-log scale are *directly* interpretable as approximate proportional differences: with a coefficient of 0.07, a difference of 1 in $$x$$ corresponds to an approximate 7% difference in $$y$$ (Gelman and Hill).
+The most commonly cited advantage is that coefficients on the natural-log scale are *directly* interpretable as approximate proportional differences: with a coefficient of 0.07, a difference of 1 in $$x$$ corresponds to an approximate 7% difference in $$y$$ (Gelman and Hill, 2007).
 
 Another advantage of natural logs of regular ones is that their first differential is simpler:
 
@@ -73,7 +73,33 @@ $$
 
 The emphasis is on *directly* interpretable, because we could take logarithms in a different base and still get similar results.
 
+## Percentage change
 
+Recall that for any variable $$z$$, the derivative of its natural logarithm is
+
+$$
+\frac{\partial \ln{z}}{\partial z} = \frac{1}{z}.
+$$
+
+Natural logarithm are usually interpreted as percentage changes because one can take that last equation and restate it as
+
+$$
+\partial \ln{z} = \frac{\partial z}{z}, \tag{1}
+$$
+
+which if multiplied by 100 gives you the percent change in $$z$$.
+
+In a plain vanilla regression model like
+
+$$
+y = \alpha + \beta x + \epsilon
+$$
+
+one can choose to take the (natural) logarithm of the dependent and independent variables ($$y$$ and $$x$$). Notice that in that transformed model you'll have
+
+$$
+\beta = \frac{\partial \log{y}}{\partial \log{x}}
+$$
 
 # References
 
