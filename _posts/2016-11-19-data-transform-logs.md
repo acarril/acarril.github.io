@@ -2,7 +2,7 @@
 layout: post
 title:  "Data transformations and the (natural) logarithm"
 categories: metrics
-draft: true
+hidden: true
 ---
 
 In statistics it is common practice to apply some [transformation to the data](https://en.wikipedia.org/wiki/Data_transformation_(statistics)). This is (or should be) done so that the data more closely meet the assumptions the statistical inference procedure to be applied, but is also helps to interpret and visualize it better. In this post I go into detail of when (and when not) to transform your data. I also go into the specifics of log-transforms, which are widely used in economic analysis.
