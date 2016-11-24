@@ -24,6 +24,8 @@ Selected second order covariates are: c.ed#c.ed
 Final model is: i.black ed age c.ed#c.ed
 ```
 
+que pasa si pongo algo acá
+
 ## First stage (linear terms)
 
 In the first stage, the number of terms to try is directly given by the user by a combination of `totry()` and `notry()` options.
