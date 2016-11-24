@@ -9,6 +9,21 @@ I've written a Stata program, [`psestimate`](/resources/psestimate), that implem
 
 # Cardinality of covariates to try
 
+
+
+```
+psestimate treat i.black, totry(age ed re74)
+Selecting first order covariates... (6)
+----+--- 1 ---+--- 2 ---+--- 3 ---+--- 4 ---+--- 5
+..s.s
+Selected first order covariates are: ed age
+Selecting second order covariates... (21)
+----+--- 1 ---+--- 2 ---+--- 3 ---+--- 4 ---+--- 5
+.....s....
+Selected second order covariates are: c.ed#c.ed
+Final model is: i.black ed age c.ed#c.ed
+```
+
 ## First stage (linear terms)
 
 In the first stage, the number of terms to try is directly given by the user by a combination of `totry()` and `notry()` options.
@@ -20,7 +35,7 @@ psestimate treat i.black, totry(age ed re74)
 
 In this example, `psestimate` will choose among three covariates: age, education and remunerations. To do this, it will first run a base logit model, `logit treat i.black`. Then, in the first iteration it will fit 3 models:
 
-```stata
+```
 logit treat i.black age
 logit treat i.black ed
 logit treat i.black re74
@@ -29,7 +44,7 @@ logit treat i.black re74
 After each of these estimations, it will perform a likelihood ratio test against the base model.
 Whichever of these 3 models yields the highest LR test statistic indicates what covariate is chosen, unless none of these statistics is higher than the threshold established in `clin()`
 
-Whichever of these 3 covariates yields the highest LR test statistic is chosen and included in the
+
 
 ## Second stage (quadratic terms)
 
