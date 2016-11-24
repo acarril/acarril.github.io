@@ -9,9 +9,29 @@ I've written a Stata program, [`psestimate`](/resources/psestimate), that implem
 
 # Cardinality of covariates to try
 
-[complete]
+## First stage (linear terms)
 
-## Second stage
+In the first stage, the number of terms to try is directly given by the user by a combination of `totry()` and `notry()` options.
+Using the Lalonde data, suppose we run
+
+```
+psestimate treat i.black, totry(age ed re74)
+```
+
+In this example, `psestimate` will choose among three covariates: age, education and remunerations. To do this, it will first run a base logit model, `logit treat i.black`. Then, in the first iteration it will fit 3 models:
+
+```stata
+logit treat i.black age
+logit treat i.black ed
+logit treat i.black re74
+```
+
+After each of these estimations, it will perform a likelihood ratio test against the base model.
+Whichever of these 3 models yields the highest LR test statistic indicates what covariate is chosen, unless none of these statistics is higher than the threshold established in `clin()`
+
+Whichever of these 3 covariates yields the highest LR test statistic is chosen and included in the
+
+## Second stage (quadratic terms)
 
 We'll explore now hoy many covariates, including their quadratic forms and two-way interactions, the program will need to check in the second stage. We'll build up from the simpler cases into a general form, so bear with me.
 
