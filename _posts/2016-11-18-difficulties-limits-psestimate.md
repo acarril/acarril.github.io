@@ -9,7 +9,7 @@ I've written a Stata program, [`psestimate`](/resources/psestimate), that implem
 
 # Cardinality of covariates to try
 
-
+Hola, voy a poner algo.
 
 ```
 psestimate treat i.black, totry(age ed re74)
