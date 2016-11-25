@@ -82,10 +82,9 @@ All estimations are logit regressions estimated by maximum likelihood, where the
 6. If the largest LLR result of this additional second order terms is equal or larger than $$C_q$$, then the term associated with it is added to the quadratic part of the model and Step 5 is repeated, now including this term. This process is looped until the maximum LRT is lower than $$C_q$$ (i.e. there are no second order terms that would improve the model) or you run out of terms to add.
 
 # References
-Imbens, Guido W. and Donald B. Rubin. 2015.  *Causal Inference in Statistics, Social,
-        and Biomedical Sciences*.  New York: Cambridge University Press.
 
-Imbens, Guido W. 2015.  "Matching Methods in Practice: Three Examples".  *Journal of
-        Human Resources* 50(2): 373-419.
+Imbens, Guido W., and Donald B. Rubin. 2015. *Causal Inference in Statistics, Social, and Biomedical Sciences: An Introduction*. 1 edition. Cambridge University Press.
+
+Imbens, Guido W. 2015. “Matching Methods in Practice: Three Examples.” *Journal of Human Resources* 50 (2): 373–419.
 
 <!-- http://www.bristol.ac.uk/media-library/sites/cmm/migrated/documents/prop-scores.pdf -->
