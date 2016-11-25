@@ -50,10 +50,11 @@ Out of the 4 candidate variables, only `nodeg` and `hisp` were chosen, after fit
 ## Second stage (quadratic terms)
 
 The second stage demands a bit more attention, because the number of terms to try is not immediately obvious.
+We'll explore first hoy many terms, including quadratic forms and two-way interactions, the program will need to check in the second stage.
 
 ### Number of squared terms and two-way interactions
 
-We'll explore first hoy many terms, including quadratic forms and two-way interactions, the program will need to check in the second stage. If only one covariate $$a$$ was chosen, the program would only need to check $$a^2$$ in the second stage. If covariates $$a$$ and $$b$$ were chosen, the program would need to check
+If only one covariate $$a$$ was chosen, the program would only need to check $$a^2$$ in the second stage. If covariates $$a$$ and $$b$$ were chosen, the program would need to check
 
 ```
 a,b :    (a^2 + b^2) + (a*b)
@@ -67,12 +68,41 @@ a,b,c,d : (a^2 + b^2 + c^2 + d^2) + (a*b + a*c + a*d + b*c + b*d + c*d)
 ...
 ```
 
-Let the number of chosen covariates for the first stage (including baseline covariates) be indexed by $$l=1,\ldots,L$$.
+In general, let the number of chosen covariates for the first stage (including baseline covariates) be indexed by $$l=1,\ldots,L$$.
 Then it should be readily apparent that for any number $$L$$, the number of squared terms to try in the second stage is also $$L$$, while the number of unique two-way interactions is going to be equal to $$\sum^{L-1}$$. Taken together, both simply amount to the sum over $$L$$.
+
+So if we let $$Q$$ be the total number of second order terms to try, we have that
+
+$$
+Q = \sum_{l=1}^L l = \frac{l(l+1)}{2}.
+$$
+
+In our example we know that $$L=3$$ (`ed`, `nodeg`, `hisp`), so the total number of second order terms to try $$Q$$ is 6.
 
 ### Number of iterations in the second stage
 
+The number of logit models to fit in the second stage is analogous to those of the first stage. However, we need to take into account the actual number of terms to try, $$Q$$, which we know is 6. The actual terms are
 
+```
+ed^2, nodeg^2, hisp^2, ed*nodeg, ed*hisp, nodeg*hisp
+```
+
+In this stage, the theoretical maximum number of logits the program is going to estimate is equal to the sum over $$Q$$, which is 21. Again, we can see this in the second part of the output:
+
+```
+. psestimate treat ed, totry(age black hisp nodeg)
+Selecting first order covariates... (10)
+----+--- 1 ---+--- 2 ---+--- 3 ---+--- 4 ---+--- 5
+...s..s..
+Selected first order covariates are: nodeg hisp
+Selecting second order covariates... (21)
+----+--- 1 ---+--- 2 ---+--- 3 ---+--- 4 ---+--- 5
+.....s.....
+Selected second order covariates are: c.nodeg#c.ed
+Final model is: ed nodeg hisp c.nodeg#c.ed
+```
+
+In the first iteration (6 logits), the program selected the term `c.nodeg#c.ed`. In the second iteration (5 logits) no other quadratic term improved the fit, so the program halts.
 
 # References
 
