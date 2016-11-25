@@ -1,15 +1,16 @@
 ---
 layout: post
-title:  "Understanding the cardinality behind <code>psestimate</code>"
+title:  "Understanding the cardinality of <code>psestimate</code>"
 categories: metrics stata
-hidden: true
 ---
 
-I've written a Stata program, [`psestimate`](/resources/psestimate), that implements an algorithm proposed by [Imbens and Rubin](http://jhr.uwpress.org/content/50/2/373) which helps to determine the first or second order polynomial of covariates to use in the  estimation of a propensity score. By its very nature this algorithm is slow and intensive in computational resources, which makes it challenging to code. In this post I share some notes on the strategies I use in `psestimate` to overcome or mitigate those challenges.
+I've written a Stata program, [`psestimate`](/resources/psestimate), that implements an algorithm proposed by [Imbens and Rubin](http://jhr.uwpress.org/content/50/2/373) which helps to determine the first or second order polynomial of covariates to use in the  estimation of a propensity score. By its very nature this algorithm is slow and intensive in computational resources, which makes it slow to run. In this post I go over the number of models the program needs to fit, given some initial parameters.
 
-### Dataset and base setup
+This post complements the "main explanation" of `psestimate`, which can be found here. If you're not familiar with the command, I suggest you read that page first or download it from SSC and read its help file. Of course, Imbens and Rubin's (2015) original article is also recommended.
 
-**For this post I'll use the LaLonde data** (LaLonde, 1986), focusing on the Dehejia-Wahba sample that can be downloaded [here](http://economics.mit.edu/faculty/angrist/data1/mhe/dehejia) (the filename is nswre74.dta). This dataset is also included with `psestimate` as an ancillary file.
+# Dataset and base setup
+
+For this post we'll use the **LaLonde data** (LaLonde, 1986), focusing on the Dehejia-Wahba sample that can be downloaded [here](http://economics.mit.edu/faculty/angrist/data1/mhe/dehejia) (the filename is nswre74.dta). This dataset is also included with `psestimate` as an ancillary file.
 
 As a running example, we'll use `psestimate` to find the polynomial of covariates that better predict the treatment variable (`treat`). We'll include the education variable `ed` as a **baseline term**, which means the algorithm is going to automatically include it in the base model. Additionally, we'll specify that the **candidate variables** for the program are age, and dummies for being black, hispanic and not having a degree. All this can be done as follows:
 
@@ -41,7 +42,7 @@ logit treat ed nodeg black
 logit treat ed nodeg hisp
 ```
 
-I hope you see the pattern. In general, if the number of covariates to try is $$C$$, then the program could theoretically fit as much as $$\sum^C$$ logits for the first stage. In our example with 4 candidates, this means up to $$\sum_{c=1}^4 = 10 $$ logits could be fitted. We can see this in the first part of the output:
+I hope you see the pattern. In general, if the number of covariates to try is $$C$$, then the program could theoretically fit as much as $$\sum^C$$ logits for the first stage. In our example with 4 candidates, this means up to 10 logits could be fitted. We can see this in the first part of the output:
 
 ```
 . psestimate treat ed, totry(age black hisp nodeg)
@@ -111,4 +112,6 @@ In the first iteration (6 logits), the program selected the term `c.nodeg#c.ed`.
 
 # References
 
-LaLonde, R. J. (1986). Evaluating the Econometric Evaluations of Training Programs with Experimental Data. The American Economic Review, 76(4), 604–620.
+Imbens, Guido W. 2015. “Matching Methods in Practice: Three Examples.” *Journal of Human Resources* 50 (2): 373–419.
+
+LaLonde, Robert J. 1986. “Evaluating the Econometric Evaluations of Training Programs with Experimental Data.” *The American Economic Review* 76 (4): 604–20.
