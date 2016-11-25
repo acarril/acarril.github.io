@@ -16,7 +16,7 @@ permalink: /posts/
 <h2 class="category" id="{{ word }}">{{ word | upcase }}</h2>
 <ul>
 {% for post in site.categories[word] %}{% if post.title != null %}
-{% unless post.draft %}
+{% unless post.hidden %}
 <li><span>{{ post.date | date: "%b %-d, %Y"}}</span> » <a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }}</a></li>
 {% endunless %}
 {% endif %}{% endfor %}
