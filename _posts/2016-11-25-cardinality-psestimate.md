@@ -6,7 +6,7 @@ categories: metrics stata
 
 I've written a Stata program, [`psestimate`](/resources/psestimate), that implements an algorithm proposed by [Imbens and Rubin](http://jhr.uwpress.org/content/50/2/373) which helps to determine the first or second order polynomial of covariates to use in the  estimation of a propensity score. By its very nature this algorithm is slow and intensive in computational resources, which makes it slow to run. In this post I go over the number of models the program needs to fit, given some initial parameters.
 
-This post complements the "main explanation" of `psestimate`, which can be found here. If you're not familiar with the command, I suggest you read that page first or download it from SSC and read its help file. Of course, Imbens and Rubin's (2015) original article is also recommended.
+This post complements the "main explanation" of `psestimate`, which can be found [here](/resources/psestimate). If you're not familiar with the command, I suggest you read that page first or download it from SSC and read its help file. Of course, Imbens and Rubin's (2015) original article is also recommended.
 
 # Dataset and base setup
 
