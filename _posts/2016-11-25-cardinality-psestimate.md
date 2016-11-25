@@ -9,7 +9,7 @@ I've written a Stata program, [`psestimate`](/resources/psestimate), that implem
 
 # Cardinality of covariates to try
 
-For this post I'll use the "Lalonde data" (Lalonde, 1986), focusing on the Dehejia-Wahba sample that can be downloaded [here](http://economics.mit.edu/faculty/angrist/data1/mhe/dehejia) (the filename is nswre74.dta). This ancillary file is also included with `psestimate`.
+For this post I'll use the **LaLonde data** (LaLonde, 1986), focusing on the Dehejia-Wahba sample that can be downloaded [here](http://economics.mit.edu/faculty/angrist/data1/mhe/dehejia) (the filename is nswre74.dta). This ancillary file is also included with `psestimate`.
 
 As a running example, we'll use `psestimate` to find the polynomial of covariates that better predict the treatment variable (`treat`). We'll include the education variable `ed` as a baseline term, which means the algorithm is going to automatically include it in the base model. Additionally, we'll specify that the candidate variables for the program are age, and dummies for being black, hispanic and not having a degree. All this can be done as follows:
 
@@ -19,7 +19,7 @@ As a running example, we'll use `psestimate` to find the polynomial of covariate
 
 This means that the base model to fit is `logit treat ed`.
 
-## First stage (linear terms)
+## First stage (linear terms)
 
 In the first stage `psestimate` will choose other linear terms to include in the base model. This will be done in a stepwise process with several iterations. In the first iteration, the program will choose among four variables specified in `totry()`. To do this, it will first run the base logit model (`logit treat ed`) and then it will fit 4 models:
 
@@ -33,9 +33,9 @@ logit treat ed nodeg
 After each of these estimations, it will perform a likelihood ratio test against the base model.
 Whichever of these 4 models yields the highest LR test statistic indicates which covariate is chosen, unless none of these statistics is higher than the threshold established in `clin()`.
 
-In general, if the number of covariates to try is $$l=1,\ldots,L$$, then `psestimate` could fit as much as $$\sum^L$$ logits for the linear part of the specification.
+In general, if the number of covariates to try is $$c=1,\ldots,C$$, then `psestimate` could fit as much as $$\sum^C$$ logits for the linear part of the specification.
 
-So in our example with 4 candidates, up to $$\sum_{l=1}^4 = 10 $$ logits could be fitted. We see this in the first part of the output:
+So in our example with 4 candidates, up to $$\sum_{c=1}^4 = 10 $$ logits could be fitted. We see this in the first part of the output:
 
 ```
 . psestimate treat ed, totry(age black hisp nodeg)
@@ -49,9 +49,11 @@ Out of the 4 candidate variables, only `nodeg` and `hisp` were chosen, after fit
 
 ## Second stage (quadratic terms)
 
-We'll explore now hoy many covariates, including their quadratic forms and two-way interactions, the program will need to check in the second stage. We'll build up from the simpler cases into a general form, so bear with me.
+The second stage demands a bit more attention, because the number of terms to try is not immediately obvious.
 
-If only one covariate $$a$$ was chosen, the program would only need to check $$a^2$$ in the second stage. If covariates $$a$$ and $$b$$ were chosen, the program would need to check
+### Number of squared terms and two-way interactions
+
+We'll explore first hoy many terms, including quadratic forms and two-way interactions, the program will need to check in the second stage. If only one covariate $$a$$ was chosen, the program would only need to check $$a^2$$ in the second stage. If covariates $$a$$ and $$b$$ were chosen, the program would need to check
 
 ```
 a,b :    (a^2 + b^2) + (a*b)
@@ -65,12 +67,13 @@ a,b,c,d : (a^2 + b^2 + c^2 + d^2) + (a*b + a*c + a*d + b*c + b*d + c*d)
 ...
 ```
 
-It should be readily apparent that for any number of linear covariates $$l$$, the number of squared terms to try in the second stage is also $$l$$, while the number of unique two-way interactions is going to be equal to $$\sum^{l-1}$$. Taken together, both simply amount to the sum over $$l$$.
+Let the number of chosen covariates for the first stage (including baseline covariates) be indexed by $$l=1,\ldots,L$$.
+Then it should be readily apparent that for any number $$L$$, the number of squared terms to try in the second stage is also $$L$$, while the number of unique two-way interactions is going to be equal to $$\sum^{L-1}$$. Taken together, both simply amount to the sum over $$L$$.
 
-Given that Stata imposes a [limit of 300 stored estimation results](http://www.stata.com/help.cgi?limits) in memory, we need this sum to be less than that limit:
+### Number of iterations in the second stage
 
-$$
-\sum^l = \frac{l(l+1)}{2} < 300
-$$
 
-Solving that inequality for positive values of $$l$$ tells us that $$l<24$$. This means that if the total number of linear terms chosen in the first stage is equal or greater than 24, the program is not going to be able to store all the estimates needed for the first loop in the second stage.
+
+# References
+
+LaLonde, R. J. (1986). Evaluating the Econometric Evaluations of Training Programs with Experimental Data. The American Economic Review, 76(4), 604–620.
