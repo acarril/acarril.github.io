@@ -181,12 +181,13 @@ blockquote {
 
 code,
 pre {
-  font-family: Monaco, "Courier New", monospace;
+  font-family: "Roboto Mono", monospace;
+  font-style: light;
 }
 
 code {
   padding: .25em .5em;
-  font-size: 80%;
+  font-size: 100%;
   color: #bf616a;
   background-color: #f9f9f9;
   border-radius: 3px;
@@ -197,7 +198,7 @@ pre {
   margin-top: 0;
   margin-bottom: 1rem;
   padding: 0.5rem;
-  font-size: .8rem;
+  font-size: 1rem;
   line-height: 1.4;
   white-space: pre;
   white-space: pre-wrap;
@@ -208,7 +209,7 @@ pre {
 
 pre code {
   padding: 0;
-  font-size: 80%;
+  font-size: 100%;
   color: inherit;
   background-color: transparent;
 }
