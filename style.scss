@@ -17,7 +17,7 @@ body {
 html {
   font-family: "Open Sans", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 20px;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.6;
 
   @media (min-width: 38em) {
@@ -70,7 +70,7 @@ h4, h5, h6 {
 
 p {
   font-family: "Open Sans", "Helvetica Neue", Helvetica;
-  font-weight: 300;
+  font-weight: 400;
   margin: 0 0 1rem;
   font-size: 1rem;
 }
@@ -97,7 +97,7 @@ dd {
 
 ul {
   /*font-family: Helvetica, 'Ubuntu Mono';*/
-  font-size: 0.8rem;
+  font-size: 1rem;
   list-style: inside disc;
   padding-left: 0;
 
