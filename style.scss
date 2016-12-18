@@ -187,14 +187,13 @@ code {
   color: #52595d;
   background-color: #f9f9f9;
   border-radius: 1px;
-  overflow: auto;
 }
 
 pre {
   display: block;
   margin-top: 0;
   margin-bottom: 1rem;
-  padding: 1rem;
+  padding: .2rem;
   line-height: 1.4;
   background-color: #f9f9f9;
   border: 1px solid #52595d;
@@ -213,7 +212,7 @@ h1 code, h2 code, h3 code, h4 code {
 
 .highlight {
   margin-bottom: 1rem;
-  border-radius: 2px;
+  border-radius: 1px;
   border: none;
 }
 
