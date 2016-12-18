@@ -195,10 +195,9 @@ pre {
   margin-bottom: 1rem;
   padding: 0.1rem;
   line-height: 1.4;
-  white-space: pre;
-  white-space: pre-wrap;
-  word-break: break-all;
-  // word-wrap: break-word;
+// white-space: pre;
+// white-space: pre-wrap;
+// word-wrap: break-word;
   background-color: #f9f9f9;
   font-color: #52595d;
 }
@@ -208,6 +207,7 @@ pre code {
   font-size: .8rem;
   color: inherit;
   background-color: transparent;
+//  white-space: pre;
 }
 
 .highlight {
