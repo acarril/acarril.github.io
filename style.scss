@@ -179,6 +179,9 @@ blockquote {
 code,
 pre {
   font-family: "Roboto Mono", monospace;
+  overflow: auto;
+  word-wrap: normal;
+  white-space: pre;
 }
 
 code {
