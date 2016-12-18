@@ -12,6 +12,8 @@ permalink:          /posts/:title
 
 # Markdown
 markdown:           kramdown
+kramdown:
+  input: GFM
 
 # Highlighter
 highlighter:        rouge
