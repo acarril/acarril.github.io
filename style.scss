@@ -457,6 +457,9 @@ tbody tr:nth-child(odd) th {
 .highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
 
 .post>.highlight pre code { display: block; white-space: pre; overflow-x: auto; word-wrap: normal; }
+.post>.highlight pre code.console { color:#666; background-color: black; padding: inherit;}
+.post>.highlight pre code.console .go { color: #bbb; }
+.post>.highlight pre code.console .gp { color: #999; }
 
 // customization
 .pos_header {
