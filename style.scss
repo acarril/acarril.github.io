@@ -74,9 +74,8 @@ p {
 }
 
 ul, ol, dl {
-  font-family: "Open Sans", "Helvetica Neue", Helvetica;
-  font-weight: 400;
-  font-size: 1rem;
+  font-family: 'Open Sans', sans-serif;
+  font-size: .8rem;
   margin-top: 0;
   margin-bottom: 1rem;
 }
@@ -94,8 +93,6 @@ dd {
 }
 
 ul {
-  /*font-family: Helvetica, 'Ubuntu Mono';*/
-  font-size: 1rem;
   list-style: inside disc;
   padding-left: 0;
 
@@ -180,7 +177,6 @@ blockquote {
 code,
 pre {
   font-family: "Roboto Mono", monospace;
-  font-style: light;
 }
 
 code {
