@@ -198,7 +198,8 @@ pre {
   margin-bottom: 1rem;
   padding: 0.1rem;
   line-height: 1.4;
-// white-space: pre;
+  white-space: pre;
+  overflow-x:scroll;
 // white-space: pre-wrap;
 // word-wrap: break-word;
   background-color: #f9f9f9;
