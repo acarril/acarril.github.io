@@ -3,14 +3,13 @@ title: Home
 layout: default
 ---
 
-<div class="container">
+<div class="container content post">
   <!-- This loops through the paginated posts -->
   {% for post in paginator.posts %}
   {% unless post.draft %}
-    <h1><a href="{{ post.url }}" style="color: #333">{{ post.title }}</a></h1>
-    <p class="author">
-      <span class="date">{{ post.date | date: '%B %d, %Y' }} • {% for cat in post.categories %} {{ cat | upcase }}{% if forloop.last == false %}, {% endif %}{% endfor %}</span>
-    </p>
+    <h1><strong><a href="{{ post.url }}" style="color: #333">{{ post.title }}</a></strong><br/>
+    <small>posted on {{ post.date | date: '%B %-d, %Y'}} • {% for cat in post.categories %} {{ cat }}{% if forloop.last == false %}, {% endif %}{% endfor %}</small></h1>
+    <br>
     <div class="content">
       {{ post.excerpt | remove: '</p>' }}<span><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">Keep reading &raquo;</a></span></p>
     </div>
