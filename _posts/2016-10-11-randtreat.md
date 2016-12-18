@@ -1,6 +1,6 @@
 ---
 layout: post
-title: randtreat &mdash; Random treatment assignment and dealing with misfits
+title: <code>randtreat</code> &mdash; Random treatment assignment and dealing with misfits
 categories: stata econ
 permalink: /resources/randtreat
 ---
