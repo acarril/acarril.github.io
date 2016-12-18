@@ -208,6 +208,11 @@ pre code {
   background-color: transparent;
 }
 
+h1 code, h2 code, h3 code, h4 code {
+  color: inherit;
+  background-color: transparent;
+}
+
 .highlight {
   margin-bottom: 1rem;
   border-radius: 2px;
@@ -450,6 +455,8 @@ tbody tr:nth-child(odd) th {
 .highlight .vg { color: #008080 } /* Name.Variable.Global */
 .highlight .vi { color: #008080 } /* Name.Variable.Instance */
 .highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+
+.post>.highlight pre code { display: block; white-space: pre; overflow-x: auto; word-wrap: normal; }
 
 // customization
 .pos_header {
