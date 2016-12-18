@@ -38,6 +38,7 @@ a {
   &:hover,
   &:focus {
     text-decoration: underline;
+    color: #268bd2;
   }
 }
 
@@ -203,6 +204,10 @@ pre code {
   padding: 0;
   font-size: .7rem;
   background-color: transparent;
+}
+
+a code {
+  color: #268bd2;
 }
 
 h1 code, h2 code, h3 code, h4 code {
