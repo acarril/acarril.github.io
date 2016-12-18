@@ -179,8 +179,6 @@ blockquote {
 code,
 pre {
   font-family: "Roboto Mono", monospace;
-  word-wrap: normal;
-  white-space: pre;
 }
 
 code {
@@ -196,12 +194,8 @@ pre {
   display: block;
   margin-top: 0;
   margin-bottom: 1rem;
-  padding: 0.1rem;
+  padding: 0.5rem;
   line-height: 1.4;
-  white-space: pre;
-  overflow-x:scroll;
-// white-space: pre-wrap;
-// word-wrap: break-word;
   background-color: #f9f9f9;
   font-color: #52595d;
   border: 1px solid #52595d;
@@ -210,9 +204,8 @@ pre {
 pre code {
   padding: 0;
   font-size: .8rem;
-  color: inherit;
+  color: #52595d;
   background-color: transparent;
-//  white-space: pre;
 }
 
 .highlight {
