@@ -182,11 +182,11 @@ pre {
 }
 
 code {
-  padding: .01em .15em;
+  padding: 0em .1em; // background padding (vertical, horizontal)
   font-size: 100%;
   color: #52595d;
   background-color: #f9f9f9;
-  border-radius: 1px;
+  border-radius: 3px;
 }
 
 pre {
@@ -211,7 +211,8 @@ a code {
 
 h1 code, h2 code, h3 code, h4 code {
   color: inherit;
-  background-color: transparent;
+  padding: 0em;
+  background-color: #f9f9f9;
 }
 
 .highlight {
