@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Understanding the cardinality of <code>psestimate</code> and <code>BIG</code> shit"
+title:  "Understanding the cardinality of <code>psestimate</code>"
 categories: metrics stata
 ---
 
