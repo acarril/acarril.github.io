@@ -2,7 +2,6 @@
 layout: post
 title: <code>randtreat</code> &mdash; Random treatment assignment and dealing with misfits
 categories: stata econ
-permalink: /resources/randtreat
 ---
 
 In this post I'll try to intuitively explain the **<i>misfits</i> problem**, an issue that can arise in random treatment assignment whenever the number of observations can't be divided among the treatments you want to assign (e.g. assigning two treatments *evenly* in a sample with 9 observations).

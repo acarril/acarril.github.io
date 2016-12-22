@@ -1,10 +1,7 @@
 ---
 layout: post
-comments: true
-title:  "Slutsky matrix times price vector"
-date:   2015-09-06
+title: Slutsky matrix times price vector
 categories: econ
-permalink: /posts/slutsky
 ---
 
 From microeconomic theory we know that
