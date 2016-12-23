@@ -1,6 +1,6 @@
 ---
 layout: post
-title: psestimate &mdash; Estimate the propensity score proposed by Imbens and Rubin (2015)
+title: <code>psestimate</code> &mdash; Estimate the propensity score proposed by Imbens and Rubin (2015)
 categories: stata econ
 permalink: /resources/psestimate
 ---
