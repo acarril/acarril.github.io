@@ -1,6 +1,6 @@
 ---
 title: Posts by category
-permalink: /posts
+permalink: /posts/
 ---
 
 <div class="home">
