@@ -3,9 +3,13 @@ title: Resources
 permalink: /resources/
 ---
 
+# Resources
+
+<hr>
+
 This page is a repository of resources of various types, collected in one place. These include [software](#software) bits I've written (mostly Stata) and miscellaneous [documents](#documents) (mostly in spanish).
 
-# Software
+### Software
 
 Although I also like to code in R, Matlab and Python, I believe my only worthy collaborations to the world are Stata and LaTeX programs. All Stata programs can be installed directly within Stata using ```ssc install <program>```.
 
@@ -16,7 +20,7 @@ Although I also like to code in R, Matlab and Python, I believe my only worthy c
 
 - **jpaltheme** -- LaTeX Beamer theme that complies with [J-PAL](https://www.povertyactionlab.org/)'s branding guidelines ([Github](https://github.com/acarril/jpaltheme))
 
-# Documents
+### Documents
 
 Almost all of of these documents are unfinished and most probably contain (lots of) errors. Use with caution.
 
@@ -25,7 +29,7 @@ Almost all of of these documents are unfinished and most probably contain (lots 
 - [Apunte Finanzas Públicas](https://www.dropbox.com/s/574qx72wji32tgq/Apuntes%20finanzas%20publicas.pdf?dl=0) -- Apuntes del curso de Finanzas Públicas de [Claudia Martínez](https://www.povertyactionlab.org/mart%C3%ADnez)
 - [Manual de LaTeX](https://www.dropbox.com/s/hcz69dj5rrusi9g/manual_latex.pdf?dl=0) -- Breve guía práctica para escribir en [LaTeX](http://tex.stackexchange.com/a/94910/45978)
 
-# Classes
+### Classes
 
 A collection of lectures I've given, mainly with [J-PAL LAC](https://www.povertyactionlab.org/LAC) (hence, in spanish).
 
