@@ -5,7 +5,7 @@ layout: null
   {% for post in site.posts %}
 
     "{{ post.url | slugify }}": {
-      "title": "{{ post.title | xml_escape }}",
+      "title": "{{ post.title }}",
       "content"	 : "{{post.content | strip_html | strip_newlines | remove:  "	" | escape | remove: "\"}}",
       "url": " {{ post.url | xml_escape }}",
       "author": "{{ post.author | xml_escape }}",
