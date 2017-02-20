@@ -12,9 +12,7 @@ My work (mainly) consists of performing economic analysis using Stata, R and Pyt
 # About me
 
 <img style="float: right; margin-left:0px;" src="..\files\photo_cv.jpg">
-I'm Alvaro Carril, an economist and senior research analyst at [J-PAL LAC](https://www.povertyactionlab.org/lac). Right now I work mostly  with professor [Christopher Neilson](https://sites.google.com/site/christopherneilson/) (Princeton University), analyzing national-level data of school attendance in the Dominican Republic and implementing machine learning methods to predict school droput.
-
-I also devote some time to a project related to tax policy and procurement, with professors [Dina Pomeranz](http://www.hbs.edu/faculty/Pages/profile.aspx?facId=603214) (Harvard Business School) and [Gabriel Zucman](http://gabriel-zucman.eu/) (UC Berkeley).
+I'm Alvaro Carril, an economist and senior research analyst at [J-PAL LAC](https://www.povertyactionlab.org/lac). Right now I work mostly  with professor [Christopher Neilson](https://sites.google.com/site/christopherneilson/) (Princeton University), analyzing national-level data of school attendance in the Dominican Republic and implementing machine learning methods to predict school dropout. I also devote part of my time to a project related to tax policy and procurement, with professors [Dina Pomeranz](http://www.hbs.edu/faculty/Pages/profile.aspx?facId=603214) (Harvard Business School) and [Gabriel Zucman](http://gabriel-zucman.eu/) (UC Berkeley).
 
 I'm interested in development economics, econometrics and computational tools for economics. I have developed several [Stata programs](/resources), all of which are available in my [Git repo](http://www.github.com/acarril) or at the [SSC Archive](https://ideas.repec.org/f/pca1141.html).
 
