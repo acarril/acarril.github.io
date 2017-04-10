@@ -10,7 +10,7 @@ One of the main advantages of a Stata/LaTeX workflow is the automatic updating o
 
 Say you're analyzing the good old auto dataset, running some paradigm-shifting regressions like the following:
 
-```stata
+```
 . sysuse auto
 . reg mpg trunk weight foreign
 
@@ -37,7 +37,36 @@ However, suppose you want to mention the `foreign` coefficient in your text. It 
 
 # Proposed solution
 
-So I though about this problem and realized that the advantage of figures and tables is that you call them from your document with a fixed name. For instance, let's suppose you import
+So I though about this problem and realized that the advantage of figures and tables is that you call them from your document with a fixed name. For instance, let's suppose you export the table above as `basic_reg.tex`. In your document, you just call it and it will be updated automatically.
+
+**So the solution is to call individual results with fixed names, in a way that's analogous to figures and text.** The way to achieve this is to export all individual result's (e.g. coefficients, $$p$$-values, etc.) as LaTeX macros containing the number. These macros are all stored in one text file which is called in the document preamble, allowing you to call these results with the same macro names.
+
+So, for example, instead of copying and pasting the `foreign` coefficient we could save it already rounded down to a nice number of decimal figures:
+
+```
+local foreign = round(_b[foreign], 0.1)
+```
+
+Now we can use the [`file`](http://www.stata.com/manuals14/pfile.pdf) command to create a text file with a new LaTeX macro containing our stored coefficient:
+
+```
+capture: file close myfile
+file open myfile using "results.tex", write replace
+file write myfile "\newcommand{\foreign}{$`foreign'$}" _n
+file close myfile
+```
+
+Notice that I saved the coefficient inside inline math delimiters ($...$), to get nice numbers in LaTeX. I also finished the line with  `_n` in order to add a new line to store additional macros in the same file.
+
+Now we just need to go to our LaTeX document and use this result! A minimal working example would look like this:
+
+```TeX
+\documentclass{article}
+\input{results.tex}
+\begin{document}
+Our main result is \foreign.
+\end{document}
+```
 
 # Description
 
