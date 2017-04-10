@@ -57,7 +57,6 @@ file close myfile
 ```
 
 Notice that I saved the coefficient inside inline math delimiters ($...$), to get nice numbers in LaTeX. I also finished the line with  `_n` in order to add a new line to store additional macros in the same file.
-
 Now we just need to go to our LaTeX document and use this result! A minimal working example would look like this:
 
 ```TeX
@@ -68,16 +67,28 @@ Our main result is \foreign.
 \end{document}
 ```
 
-# Description
+# Stata command
 
-`texresults` is a convenience command to easily store any computed result to a LaTeX macro.
-After running an estimation command in Stata, `texresults` can be used to create a new LaTeX macro, which is stored in an external text file.
-This file may be called from a LaTeX document in order to use those results.
+I took this approach, added some other nice details and wrapped it up into **`texresults`**, a Stata program available for download at the SSC. To get it, just execute
 
-One of the main advantages of a Stata/LaTeX workflow is the automatic updating of tables and figures.
-For instance, if we add a new control variable to a regression, we can correct the do-file that produces a table of coefficients and compile the LaTeX document again to see the updated table.
-However, that advantage doesn't extend to in-text mentions of coefficients (or other results).
-This leads to documents that contain inconsistent results, which have to be manually checked every time a preliminary result changes. 
+```
+ssc install texresults
+```
 
-This sitation can be remedied by creating an external file with LaTeX macros that store all cited results of an analysis.
-Using these macros instead of manually copying results in the text is much less error prone, and we can be certain that results are consistent throughout the document.
+The command allows you to achieve the same result as before with just one line. For instance, to save the foreign coefficient you would execute the following line after estimation:
+
+```
+texresults using results.txt, texmacro(mainresult) coef(foreign)
+```
+
+Besides saving us lines of code, `texresults` allows us to easily extract other regression results. For instance, we could append `foreign`'s $$t$$-stat to the macros file using
+
+```
+texresults using results.txt, texmacro(trunkT) tstat(trunk) append
+```
+
+Other nice capabilities of `texresults` include:
+
+- Option to automatically add a zero to the units digit if it is missing (i.e. store $0.12$ instead of $.12$)
+- Automatic rounding of results, with ability to modify number of significant digits
+- Option to define commands using xspace, which is a nicer way of dealing with space after LaTeX macros; see [this question](http://tex.stackexchange.com/questions/31091/space-after-latex-commands) for more info.
