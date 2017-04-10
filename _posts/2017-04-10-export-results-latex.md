@@ -4,11 +4,11 @@ title:  Export Stata results as LaTeX macros
 categories: stata
 ---
 
-One of the main advantages of a Stata/LaTeX workflow is the automatic updating of tables and figures in the document. However, this advantage does not extend to specific results mentioned in the text. I usually solve this by exporting results (e.g. coefficients, p-values, etc.) as LaTeX macros to an external file, which I latter call from the document draft. In this post I explain how to do this, both manually and using a new command in Stata I wrote specifically for this function.
+One of the main advantages of a Stata/LaTeX workflow is the automatic updating of tables and figures in the document. However, this advantage does not extend to specific results mentioned in the text. I usually solve this by exporting results (e.g. coefficients, p-values, etc.) as LaTeX macros to an external file, which I latter call from the document draft. In this post I explain how to do this, both manually and using a new command in Stata I wrote specifically for this purpose.
 
 # The issue
 
-Say you're analyzing the good old auto dataset, running some paradigm-shifting regressions like the following:
+Say you're analyzing the good old `auto` dataset, running some paradigm-shifting regressions like the following:
 
 ```
 . sysuse auto
@@ -37,11 +37,11 @@ However, suppose you want to mention the `foreign` coefficient in your text. It 
 
 # Proposed solution
 
-So I though about this problem and realized that the advantage of figures and tables is that you call them from your document with a fixed name. For instance, let's suppose you export the table above as `basic_reg.tex`. In your document, you just call it and it will be updated automatically.
+I though about this problem and realized that the advantage of figures and tables is that you call them from our documents with a fixed name. For instance, let's suppose you export the table above as `basic_reg.tex`. In your document, you just call it and it will be updated automatically.
 
-**So the solution is to call individual results with fixed names, in a way that's analogous to figures and text.** The way to achieve this is to export all individual result's (e.g. coefficients, $$p$$-values, etc.) as LaTeX macros containing the number. These macros are all stored in one text file which is called in the document preamble, allowing you to call these results with the same macro names.
+**So the solution is to call individual results with fixed names, in a way that's analogous to figures and tables.** The way to achieve this is to export all individual result's (e.g. coefficients, $$p$$-values, etc.) as LaTeX macros that *contain* the numeric result. These macros are all stored in one text file which is called in the document preamble, allowing you to call these results as macros within the text.
 
-So, for example, instead of copying and pasting the `foreign` coefficient we could save it already rounded down to a nice number of decimal figures:
+For example, instead of copying and pasting the `foreign` coefficient we could save it in a local, rounding it down to a reasonable number of decimal figures:
 
 ```
 local foreign = round(_b[foreign], 0.1)
@@ -56,7 +56,7 @@ file write myfile "\newcommand{\foreign}{$`foreign'$}" _n
 file close myfile
 ```
 
-Notice that I saved the coefficient inside inline math delimiters ($...$), to get nice numbers in LaTeX. I also finished the line with  `_n` in order to add a new line to store additional macros in the same file.
+Notice that I saved the coefficient inside inline math delimiters ($...$), to get nice numbers in LaTeX. I also finished the line with  `_n` in order to add a new line, which will be useful if we store additional macros in the same file.
 Now we just need to go to our LaTeX document and use this result! A minimal working example would look like this:
 
 ```TeX
