@@ -49,7 +49,7 @@ $on-laptop:        780px;
 .dont-break-out {
 
   /* Careful, this breaks the word wherever it is without a hyphen */
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
   word-wrap: normal;
 
   /* Adds a hyphen where the word breaks */
