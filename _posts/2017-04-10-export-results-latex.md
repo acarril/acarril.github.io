@@ -43,9 +43,9 @@ I though about this problem and realized that the advantage of figures and table
 
 For example, instead of copying and pasting the `foreign` coefficient we could save it in a local, rounding it down to a reasonable number of decimal figures:
 
-<pre class="sh_stata">
+```stata
 local foreign = round(_b[foreign], 0.1)
-</pre>
+```
 
 Now we can use the [`file`](http://www.stata.com/manuals14/pfile.pdf) command to create a text file with a new LaTeX macro containing our stored coefficient:
 
