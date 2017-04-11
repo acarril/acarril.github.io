@@ -20,6 +20,17 @@ markdown: kramdown
 kramdown:
   input: GFM
 
+# Navigation
+nav:
+  - name:           "home"
+    href:           "/"
+  - name:           "about"
+    href:           "/about"
+  - name:           "resources"
+    href:           "/resources"
+  - name:           "posts"
+    href:           "/posts"
+
 # Third-party services
 # just leave someone empty to disable it
 # google_analytics: 
