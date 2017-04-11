@@ -18,9 +18,9 @@ title: Home
           {% if post.description %}
           {{ post.description}}
           {% else %}
-          {{ post.excerpt }}
+          {{ post.excerpt | remove: '</p>' }}
           {% endif %} 
-          <a class="read-more" href="{{ post.url | prepend: site.baseurl }}">Keep reading » &raquo;</a>
+          <a class="read-more" href="{{ post.url | prepend: site.baseurl }}">Keep reading &raquo;</a>
         </p> 
       </div>
       <footer class="post_meta">
