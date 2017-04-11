@@ -49,7 +49,7 @@ local foreign = round(_b[foreign], 0.1)
 
 Now we can use the [`file`](http://www.stata.com/manuals14/pfile.pdf) command to create a text file with a new LaTeX macro containing our stored coefficient:
 
-```
+```stata
 capture: file close myfile
 file open myfile using "results.tex", write replace
 file write myfile "\newcommand{\foreign}{$`foreign'$}" _n
@@ -71,19 +71,19 @@ Our main result is \foreign.
 
 I took this approach, added some other nice details and wrapped it up into **`texresults`**, a Stata program available for download at the SSC. To get it, just execute
 
-```
+```stata
 ssc install texresults
 ```
 
 The command allows you to achieve the same result as before with just one line. For instance, to save the foreign coefficient you would execute the following line after estimation:
 
-```
+```stata
 texresults using results.txt, texmacro(mainresult) coef(foreign)
 ```
 
 Besides saving us lines of code, `texresults` allows us to easily extract other regression results. For instance, we could append `foreign`'s $$t$$-stat to the macros file using
 
-```
+```stata
 texresults using results.txt, texmacro(trunkT) tstat(trunk) append
 ```
 
