@@ -1,16 +1,14 @@
-# jekyll-simple
+# Minimal Theme
 
-## simple
-simple is a theme designed for blogger using static site generator like jekyll, Hexo etc.
+[Demo the Theme](http://orderedlist.github.com/minimal/)
 
-Especially for those who writes in both Chinese and English. The font-type setting looks really good when writers use Chinese mixed with English.
+This is the raw HTML and styles that are used for the *minimal* theme on [GitHub Pages](http://pages.github.com/).
 
-Supposedly, this could work with Japanese as well but never had a chance to try.
+Syntax highlighting is provided on GitHub Pages by [Pygments](http://pygments.org).
 
-## Story behind this theme
+# License
 
-It has been long that using font with Chinese in web was a tedious and time-consuming work. It would be almost impossible to make different OS or devices to look the same.
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-sa/3.0/).
 
-iOS 9 has pulished some new fonts in Chinese and I decided to make one theme that looks good on iOS devices, at the same time, making it acceptable on computers using other fonts.
 
-So mobile goes first, then the macOS.
+
