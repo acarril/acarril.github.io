@@ -8,7 +8,7 @@ title: Home
     {% for post in site.posts limit:5%}
 
     <article class="post_card post">
-        <h1 class="post_title"><a class="nodeco" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
+        <h2 class="post_title"><a class="nodeco" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
         <time class="post_date">{{ post.date | date: "%d %B %Y, %A" }}</time>
       <div class="post_excerpt">
         <p>
