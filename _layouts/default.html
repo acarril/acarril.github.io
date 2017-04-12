@@ -14,8 +14,8 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1>{{ site.title }}</h1>
-        <p>econ research &amp; computer stuff and a big big big big big big big line to see where the break is</p>
+        <h2 style="margin-bottom: 5px;">{{ site.title }}</h2>
+        <p>{{ site.description }}</p>
           <ul>
             <li><a href="{{ "/" | prepend: site.baseurl }}">home</a></li>
             <li><a href="{{ "/archive" | prepend: site.baseurl }}">archive</a></li>
@@ -29,7 +29,6 @@
 
       </section>
       <footer>
-        <p>This project is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
         <p><small>Hosted on <a href="https://github.com/acarril">GitHub</a> &mdash; No rights reserved.</a></small></p>
       </footer>
     </div>
