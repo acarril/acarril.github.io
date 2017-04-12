@@ -3,3 +3,5 @@ name: Alvaro Carril R
 description: "econ research &amp; computer stuff"
 show_downloads: true
 google_analytics:
+baseurl: "/" # the subpath of your site, e.g. /blog
+url: "http://acarril.github.io" # the base hostname & protocol for your site
