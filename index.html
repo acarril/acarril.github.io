@@ -11,7 +11,7 @@ title: Home
     <article class="post_card post">
       <header class="post_header">
         <h1 class="post_title"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title}}</a></h1>
-        <time class="post_date">{{ post.date | date: "%d %B %Y, %A" }}</time>
+        <time class="post_date">{{ post.date | date: "%b %-d, %Y" }}</time>
       </header>
       <div class="post_excerpt">
         <p>
