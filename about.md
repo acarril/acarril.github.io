@@ -21,6 +21,6 @@ You can find my CV [here](https://www.dropbox.com/s/oow36pf0wyevnc4/CV_acarril.p
 
 ### Working papers and work in progress
 
-- ["Dealing with misfits in random treatment assignment"](https://www.researchgate.net/publication/292091060_Dealing_with_misfits_in_random_treatment_assignment), Stata Journal (under review)
+- ["Dealing with misfits in random treatment assignment"](https://www.researchgate.net/publication/292091060_Dealing_with_misfits_in_random_treatment_assignment), Stata Journal (forthcoming)
 - "What's the Value of the Teacher? Mechanisms and effects of teacher absenteeism on student achievement" with Valentina Paredes (in progress)
 - Amador, Diego y Alvaro Carril (2017) *Análisis de datos en R* (en progreso)
