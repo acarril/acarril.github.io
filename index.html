@@ -10,7 +10,7 @@ title: Home
 
     <article class="post_card post">
       <header class="post_header">
-        <h2 class="post_title"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title}}</a></h2>
+        <h1 class="post_title"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title}}</a></h1>
         <time class="post_date">{{ post.date | date: "%d %B %Y, %A" }}</time>
       </header>
       <div class="post_excerpt">
@@ -57,6 +57,6 @@ title: Home
     </article>
     {% endfor %}
 
-    <div class="pagination older-post"><a href="./archive"><data data-icon="ei-arrow-right"></data> Archive  </a></div>
+    <div class="pagination older-post"><a href="./archive">Archive <data data-icon="ei-arrow-right"></data></a></div>
   </div>
 </div>
