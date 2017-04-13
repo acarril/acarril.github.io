@@ -7,3 +7,5 @@ markdown: kramdown
 kramdown:  
   parse_block_html: true
 encoding:         UTF-8
+gems:
+  - jekyll-feed
