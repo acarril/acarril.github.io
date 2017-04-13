@@ -1,5 +1,7 @@
 @import "fonts";
+/*
 @import "rouge-github";
+*/
 
 body {
   background-color: #fff;
@@ -78,7 +80,7 @@ pre, code {
 }
 
 pre {
-  font-size: 12px;
+  font-size: 14px;
   padding:8px 15px;
   background: #f8f8f8;
   border-radius:5px;
@@ -87,7 +89,7 @@ pre {
 }
 
 code {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 table {
@@ -128,7 +130,7 @@ header ul {
 }
 
 section {
-  width:600px;
+  width:700px;
   float:right;
   padding-bottom:50px;
 }
