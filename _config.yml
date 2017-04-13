@@ -4,3 +4,6 @@ show_downloads: true
 google_analytics:
 theme: 
 markdown: kramdown
+kramdown:  
+  parse_block_html: true
+encoding:         UTF-8
