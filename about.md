@@ -2,7 +2,7 @@
 layout: default
 ---
 
-## About
+# About
 
 This site is mainly a personal output channel, useful for writing down ideas I have in mind. As many times those ideas turned out to be useful for others, I thought of making brief, clear blog posts with them. I hope you find something useful.
 
