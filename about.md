@@ -1,8 +1,8 @@
 ---
-layout: page
-title: About
-permalink: /about/
+layout: default
 ---
+
+## About
 
 This site is mainly a personal output channel, useful for writing down ideas I have in mind. As many times those ideas turned out to be useful for others, I thought of making brief, clear blog posts with them. I hope you find something useful.
 
@@ -11,7 +11,7 @@ My work (mainly) consists of performing economic data analysis using Stata, R an
 # About me
 
 <img style="float: right; margin-left:20px;" src="../files/photo_cv.jpg">
-I'm Alvaro Carril, an economist and senior research analyst at [J-PAL LAC](https://www.povertyactionlab.org/lac). Right now I'm based in the Dominican Republic, assisting Princeton professor [Christopher Neilson](https://sites.google.com/site/christopherneilson/) in the analysis of national-level student data in the DR, assessing the impact of public policies in school dropout and implementing machine learning methods to predict dropout. I also devote part of my time assisting professors [Sebastián Bustos](https://www.hks.harvard.edu/about/faculty-staff-directory/sebastian-bustos) (Harvard Kennedy School), [Dina Pomeranz](http://www.hbs.edu/faculty/Pages/profile.aspx?facId=603214) (Harvard & University of Zurich) and [Gabriel Zucman](http://gabriel-zucman.eu/) (UC Berkeley) in a project that studies tax evasion of multinational firms operating in Chile.
+I'm Alvaro Carril, an economist and senior research analyst at [J-PAL LAC](https://www.povertyactionlab.org/lac). I'm currently based in the Dominican Republic, assisting Princeton professor [Christopher Neilson](https://sites.google.com/site/christopherneilson/) in the analysis of national-level student data in the DR, assessing the impact of public policies in school dropout and implementing machine learning methods to predict dropout. I also devote part of my time assisting professors [Sebastián Bustos](https://www.hks.harvard.edu/about/faculty-staff-directory/sebastian-bustos) (Harvard Kennedy School), [Dina Pomeranz](http://www.hbs.edu/faculty/Pages/profile.aspx?facId=603214) (Harvard & University of Zurich) and [Gabriel Zucman](http://gabriel-zucman.eu/) (UC Berkeley) in a project that studies tax evasion of multinational firms operating in Chile.
 
 Prior to joining J-PAL I was a math and physics head teacher at [Colegio Antares](http://www.colegioantares.cl/), a small school in the outskirts of Santiago, Chile. I did this as part of Enseña Chile, which is based in the Teach for America model. I still enjoy teaching and continue to do so, either as a TA at Universidad de Chile, as a lecturer at [J-PAL's Impact Evaluation](http://www.educacioncontinua.uc.cl/24718-ficha-diplomado-en-evaluacion-de-impacto-de-programas-y-politicas-publicas) postgraduate program and in several standalone workshops with partners.
 
