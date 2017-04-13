@@ -3,3 +3,4 @@ description: "econ research &amp; computer stuff"
 show_downloads: true
 google_analytics:
 theme: 
+markdown: kramdown
