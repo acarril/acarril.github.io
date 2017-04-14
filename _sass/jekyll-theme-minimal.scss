@@ -74,22 +74,17 @@ blockquote {
 }
 
 pre, code {
-  font-family:Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
+  font-family: 'Ubuntu Mono', monospace;
   color:#444;
   background: #f8f8f8;
 }
 
 pre {
-  font-size: 13px;
   padding:8px 15px;
   background: #f8f8f8;
   border-radius:5px;
   border:1px solid #e5e5e5;
   overflow-x: auto;
-}
-
-code {
-  font-size: 13px;
 }
 
 table {
