@@ -62,7 +62,7 @@ a:hover small {
 }
 
 .wrapper {
-  width:960px;
+  width:800px;
   margin:0 auto;
 }
 
@@ -126,7 +126,7 @@ header ul {
 }
 
 section {
-  width:660px;
+  width:580px;
   float:right;
   padding-bottom:50px;
 }
@@ -143,11 +143,12 @@ hr {
 }
 
 footer {
-  width:270px;
+  width:200px;
   float:left;
   position:fixed;
   bottom:50px;
   -webkit-font-smoothing:subpixel-antialiased;
+  line-height: 1.25;
 }
 
 @media print, screen and (max-width: 960px) {
