@@ -2,7 +2,6 @@
 layout: post
 title:  "Some notes on the convergence of maximum likelihood functions"
 categories: stata
-hidden: true
 ---
 
 We've all read the dreaded `convergence not achieved` message, punctuated by `r(430);`, after waiting for a long maximization process. These situations are most commonly encountered when estimating logit, probit or any kind of maximum-likelihood model, but in general they arise whenever you're asking it to perform iterative maximization. In this post I'll share some practical advice on how to deal with slow or non-convergent maximization processes.
@@ -14,6 +13,8 @@ You have some data and are willing (?) to assume that it is generated from some 
 ![Possible normal distributions](/files/convergence_notes-gaussian_dists.png "Which distribution is producing my data?")
 
 The idea behind MLE is to pick the distribution that is "most consistent" with the data. That is, MLE finds the most likely function that explains the observed data.
+
+<!--more-->
 
 ## How can you choose parameters which are "most consistent" with the data?
 

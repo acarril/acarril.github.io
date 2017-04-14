@@ -6,6 +6,8 @@ categories: metrics
 
 I've used [bootstrapping](https://en.wikipedia.org/wiki/Bootstrapping_(statistics)) many times to estimate errors, but when asked to explain how does it work, I realized I couldn't state it in an intuitive way. The question is simple: is bootstrapping simply a process of resampling from  our sample? How does that help us to learn something new about the *population*?
 
+<!--more-->
+
 When we try to say something about a population, we usually say it by looking at a sample. How well are we going to be able to describe the population using our sample depends on several things, like the structure of the population, the size of our sample, etc. Ideally, we would like to take many samples, and if they tend to describe the population in a consistent way, we can be reasonably confident that the population fits this description.
 
 However, we usually *can't* take multiple samples; we have just the one. So in general we either

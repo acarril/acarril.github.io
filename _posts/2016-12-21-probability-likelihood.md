@@ -6,6 +6,8 @@ categories: metrics R
 
 The distinction between probability and likelihood is extremely important, though often misunderstood. I like to remember that probability refers to possible *results*, whereas likelihood refers to *hypotheses*.
 
+<!--more-->
+
 # The experiment
 
 Suppose an experiment where a person has to predict the outcome of each of 10 coin tosses. After carrying out the test, you could observe that the person has 0 correct predictions or up to 10 correct predictions, which amounts to *11 possible results for the experiment*. These 11 **results are mutually exclusive** (i.e. he can't get 5 and 7 correct predictions) **and exhaustive** (i.e. 0 to 11 correct predictions cover all possible results).
