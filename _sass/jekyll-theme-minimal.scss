@@ -241,14 +241,18 @@ h1.post_title, h2.post_title {
   margin-bottom: 5px;
 }
 
-.fixbottom{
+.fixbottom {
     position:fixed;
     bottom:0px;
     left:50%;
 }
 
-.footicons{
+.footicons {
   font-size: 24px;
   vertical-align:middle;
   display:inline-block;
+}
+
+.read-more {
+  text-align: right;
 }
