@@ -6,8 +6,8 @@ title: Home
 <div class="home">
     {% for post in site.posts limit:5%}
     <article class="post_card post">
-        <h1 class="post_title"><a class="nodeco" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
-        <time class="post_date">{{ post.date | date: "%d %B %Y, %A" }}</time>
+      <h1 class="post_title"><a class="nodeco" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
+      <time class="post_date">{{ post.date | date: "%d %B %Y, %A" }}</time>
       <div class="post_excerpt">
         <p>
           {% if post.description %}
@@ -21,6 +21,6 @@ title: Home
     </article>
     <hr>
     {% endfor %}
-    <div><a href="./archive">Archive <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a></div>
+    <div style="text-align: right;"><a href="./archive">Archive <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a></div>
 </div>
 
