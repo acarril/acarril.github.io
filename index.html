@@ -4,9 +4,7 @@ title: Home
 ---
 
 <div class="home">
-
     {% for post in site.posts limit:5%}
-
     <article class="post_card post">
         <h1 class="post_title"><a class="nodeco" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
         <time class="post_date">{{ post.date | date: "%d %B %Y, %A" }}</time>
@@ -17,12 +15,12 @@ title: Home
           {% else %}
           {{ post.excerpt }}
           {% endif %}
-          <a class="read-more" href="{{ post.url | prepend: site.baseurl }}"> »  </a>
+          <a class="read-more" href="{{ post.url | prepend: site.baseurl }}">Keep reading »</a>
         </p> 
       </div>
     </article>
+    <hr>
     {% endfor %}
-
-    <div class="pagination older-post"><a href="./archive"><data data-icon="ei-arrow-right"></data> Archive  </a></div>
+    <div><a href="./archive">Archive <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a></div>
 </div>
 
