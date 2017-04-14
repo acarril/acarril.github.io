@@ -10,6 +10,8 @@ From a [frequentist](https://en.wikipedia.org/wiki/Frequentist_inference) standp
 
 > *What is the interval that will bracket the true value of the parameter in $$(100 \cdot p)\% $$ of the instances of an experiment that is carried out a large number of times?*
 
+<!--more-->
+
 Suppose the parameter of interest is $$\theta$$ and your data is $$D$$. Let $$x_1$$ and $$x_2$$ be two points drawn independently from the following distribution:
 
 $$
