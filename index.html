@@ -8,15 +8,12 @@ title: Home
     <article class="post_card post">
       <h1 class="post_title"><a class="nodeco" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
       <time class="post_date">{{ post.date | date: "%d %B %Y, %A" }}</time>
-      <div class="post_excerpt">
-        <p>
-          {{ post.excerpt }}
-          <a class="read-more" href="{{ post.url | prepend: site.baseurl }}">Keep reading »</a>
-        </p>
+      <div>
+        {{ post.excerpt }}
+        <div style="text-align: right;"><p><a class="read-more" href="{{ post.url | prepend: site.baseurl }}">Keep reading »</a></p></div>
       </div>
     </article>
     <hr>
     {% endfor %}
     <div style="text-align: right;"><a href="./archive">Archive <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a></div>
 </div>
-
