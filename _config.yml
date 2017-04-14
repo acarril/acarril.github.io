@@ -9,3 +9,5 @@ kramdown:
 encoding:         UTF-8
 gems:
   - jekyll-feed
+
+excerpt_separator: <!--more-->
