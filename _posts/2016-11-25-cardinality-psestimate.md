@@ -8,6 +8,8 @@ I've written a Stata program, [`psestimate`](/resources/psestimate), that implem
 
 This post complements the "main explanation" of `psestimate`, which can be found [here](/resources/psestimate). If you're not familiar with the command, I suggest you read that page first or download it from SSC and read its help file. Of course, Imbens and Rubin's (2015) original article is also recommended.
 
+<!--more-->
+
 # Dataset and base setup
 
 For this post we'll use the **LaLonde data** (LaLonde, 1986), focusing on the Dehejia-Wahba sample that can be downloaded [here](http://economics.mit.edu/faculty/angrist/data1/mhe/dehejia) (the filename is nswre74.dta). This dataset is also included with `psestimate` as an ancillary file.
