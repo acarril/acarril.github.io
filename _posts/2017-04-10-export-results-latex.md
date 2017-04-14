@@ -35,6 +35,8 @@ Later, you could use [`estout`](http://repec.org/bocode/e/estout/esttab.html) to
 
 However, suppose you want to mention the `foreign` coefficient in your text. It is very likely that you will just copy the number, approximate it and paste it in your document. The problem with this approach is that if your coefficient changes as a result of modifying the regression, you'll have to hunt down all of its mentions in the draft.
 
+<!--more-->
+
 ## Proposed solution
 
 I though about this problem and realized that the advantage of figures and tables is that you call them from our documents with a fixed name. For instance, let's suppose you export the table above as `basic_reg.tex`. In your document, you just call it and it will be updated automatically.
