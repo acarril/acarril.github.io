@@ -11,3 +11,4 @@ gems:
   - jekyll-feed
 
 excerpt_separator: <!--more-->
+permalink: /:title
