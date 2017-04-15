@@ -11,4 +11,4 @@ gems:
   - jekyll-feed
 
 excerpt_separator: <!--more-->
-permalink: /:title
+permalink: /posts/:title
