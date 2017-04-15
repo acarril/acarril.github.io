@@ -1,8 +1,7 @@
 ---
-layout: post
+layout: default
 title: <code>psestimate</code> &mdash; Estimate the propensity score proposed by Imbens and Rubin (2015)
 categories: stata econ
-permalink: /resources/psestimate
 ---
 
 [Imbens and Rubin (2015)](http://www.cambridge.org/zw/academic/subjects/statistics-probability/statistical-theory-and-methods/causal-inference-statistics-social-and-biomedical-sciences-introduction) proposed a procedure for estimating the propensity score, with an algorithm for selecting the covariates function further outlined by [Imbens (2015)](http://jhr.uwpress.org/content/50/2/373.refs). I've written the **psestimate** command, which implements that algorithm for model selection and estimates the propensity score in Stata.
