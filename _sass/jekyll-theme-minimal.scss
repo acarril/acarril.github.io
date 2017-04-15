@@ -266,3 +266,12 @@ h1.post_title, h2.post_title {
 p + ul {
     margin-top: -10px;
 }
+
+p + ol {
+    margin-top: -10px;
+}
+
+.hang {
+    text-indent: -2em;
+    margin-left: 2em;
+}
