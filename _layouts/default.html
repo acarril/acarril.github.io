@@ -25,11 +25,12 @@
       <header>
         <h1 class="post_title">{{ site.title }}</h1>
         <p>{{ site.description }}</p>
-          <ul>
+          <ul style="margin-top: 20px">
             <li><a href="{{ "/" | prepend: site.baseurl }}">home</a></li>
-            <li><a href="{{ "/about" | prepend: site.baseurl }}">about</a></li>
-            <li><a href="{{ "/resources" | prepend: site.baseurl }}">resources</a></li>
             <li><a href="{{ "/archive" | prepend: site.baseurl }}">archive</a></li>
+            <li><a href="{{ "/resources" | prepend: site.baseurl }}">resources</a></li>
+            <li><a href="{{ "/setup" | prepend: site.baseurl }}">setup</a></li>
+            <li><a href="{{ "/about" | prepend: site.baseurl }}">about</a></li>
             <li><a href="{{ "/feed.xml" | prepend: site.baseurl }}">rss</a></li>
           </ul>
       </header>
@@ -42,6 +43,7 @@
         <div class="footicons">
           <a href="https://github.com/acarril"><i class="fa fa-github"></i></a>
           <a href="https://www.researchgate.net/profile/Alvaro_Carril"><i class="ai ai-researchgate-square"></i></a>
+          <a href="{{ "/feed.xml" | prepend: site.baseurl }}"><i class="fa fa-rss"></i></a>
         </div>
         <p><small>Hosted on <a href="https://github.com/acarril/acarril.github.io">GitHub</a> &mdash; No rights reserved.</a></small></p>
       </footer>
