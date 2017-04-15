@@ -262,3 +262,7 @@ h1.post_title, h2.post_title {
 .post_date {
   color: #999999;
 }
+
+p + ul {
+    margin-top: -10px;
+}
