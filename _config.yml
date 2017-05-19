@@ -1,6 +1,7 @@
 title: "Alvaro Carril"
 description: "econ research &amp; computer stuff"
 show_downloads: true
+comments: true
 google_analytics:
 theme: 
 markdown: kramdown
