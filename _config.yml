@@ -13,3 +13,10 @@ gems:
 
 excerpt_separator: <!--more-->
 permalink: /posts/:title
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      type: posts
+    values:
+      comments: true
