@@ -8,8 +8,8 @@ title: Archive
   {% for post in site.posts %}
   {% unless post.hidden %}{% unless post.draft %}
   <div class="post_title hang">
-    <p style="margin-bottom:0;"><a class="nodeco" href="{{ post.url | prepend: site.baseurl }}">{{ post.title}}</a>
-    <div class="post_date">{{ post.date | date: "%-d %b, %Y" }}</div></p>
+    <a class="nodeco" href="{{ post.url | prepend: site.baseurl }}">{{ post.title}}</a>
+    <div class="post_date">{{ post.date | date: "%-d %b, %Y" }}</div>
  	</div>
   {% endunless %}{% endunless %}
   {% endfor %}
