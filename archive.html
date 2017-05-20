@@ -1,7 +1,10 @@
+---
+layout: default
+title: Archive
+---
+
 <h1>Archive</h1>
 <hr>
-
-<section class="archive_list">
   {% for post in site.posts %}
   {% unless post.hidden %}{% unless post.draft %}
   <div class="post_title hang">
@@ -10,4 +13,3 @@
   </div>
   {% endunless %}{% endunless %}
   {% endfor %}
-</section>
