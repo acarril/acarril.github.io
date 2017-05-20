@@ -125,7 +125,7 @@ header ul {
 
 section {
   width:580px;
-  float:right;
+  float:center;
   padding-bottom:50px;
 }
 
@@ -156,7 +156,7 @@ footer {
     margin:0;
   }
 
-  header, footer {
+  header, section, footer {
     float:none;
     position:static;
     width:auto;
