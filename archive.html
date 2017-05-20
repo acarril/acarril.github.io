@@ -10,9 +10,9 @@ title: Archive
   {% for post in site.posts %}
   {% unless post.hidden %}{% unless post.draft %}
   <div class="post_title hang">
-    <a class="nodeco" href="{{ post.url | prepend: site.baseurl }}">{{ post.title}}</a>
+    <p><a class="nodeco" href="{{ post.url | prepend: site.baseurl }}">{{ post.title}}</a>
     <span class="post_date">{{ post.date | date: "%-d %b, %Y" }}</span>
-  </div>
+  </p></div>
   {% endunless %}{% endunless %}
   {% endfor %}
 </section>
