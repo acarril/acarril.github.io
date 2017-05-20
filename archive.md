@@ -5,6 +5,7 @@ title: Archive
 
 # Archive
 <hr>
+<div>
 <section class="archive_list">
   {% for post in site.posts %}
   {% unless post.hidden %}{% unless post.draft %}
@@ -15,5 +16,5 @@ title: Archive
   {% endunless %}{% endunless %}
   {% endfor %}
 </section>
-
+</div>
 
