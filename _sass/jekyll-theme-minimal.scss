@@ -1,6 +1,10 @@
 @import "fonts";
 @import "rouge-github";
 
+html {
+    overflow-y: scroll;
+}
+
 body {
   background-color: #fff;
   padding:50px;
