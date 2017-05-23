@@ -242,6 +242,7 @@ section p + ul {
 @media print, screen and (max-width: 620px) {
   body {
     word-wrap:break-word;
+    padding:15px;
   }
 
   header {
@@ -260,9 +261,6 @@ section p + ul {
 }
 
 @media print, screen and (max-width: 480px) {
-  body {
-    padding:15px;
-  }
 
   header ul {
     width:99%;
