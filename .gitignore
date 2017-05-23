@@ -1,4 +1,4 @@
-.sass-cache/
-_site/
-*.lock
-*.lock
+_site
+.sass-cache
+Gemfile.lock
+*.gem

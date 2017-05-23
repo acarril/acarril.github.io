@@ -1,22 +1,10 @@
-title: "Alvaro Carril"
-description: "econ research &amp; computer stuff"
-show_downloads: true
-comments: true
-google_analytics:
-theme: 
-markdown: kramdown
-kramdown:  
-  parse_block_html: true
-encoding:         UTF-8
-gems:
-  - jekyll-feed
+title: Alvaro Carril
+description: econ research &amp; computer stuff
+show_downloads: false
+google_analytics: UA-54241026-2
 
 excerpt_separator: <!--more-->
 permalink: /posts/:title
-# Defaults
-defaults:
-  # _posts
-  - scope:
-      type: posts
-    values:
-      comments: true
+
+gems:
+  - jekyll-feed
