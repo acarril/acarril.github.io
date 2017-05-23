@@ -79,10 +79,10 @@ blockquote {
   font-style:italic;
 }
 
-code, pre {
-  font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
-  color:#333;
-  font-size:12px;
+code {
+  font-family: 'Ubuntu Mono', Monaco, monospace;
+  padding: 0px 2px;
+  background: #f8f8f8;
 }
 
 pre {
@@ -91,6 +91,7 @@ pre {
   border-radius:5px;
   border:1px solid #e5e5e5;
   overflow-x: auto;
+  line-height: 1.2;
 }
 
 table {
@@ -196,6 +197,10 @@ footer p {
 
 .footicons {
   font-size: 20px;
+}
+
+section p + ul {
+    margin-top: -10px;
 }
 
 @media print, screen and (max-width: 960px) {
