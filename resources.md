@@ -5,6 +5,7 @@ permalink: /resources/
 ---
 
 # Resources
+<hr>
 
 This page is a repository of resources of various types, collected in one place. These include [software](#software) bits I've written (mostly Stata) and miscellaneous [documents](#documents) (mostly in spanish).
 
