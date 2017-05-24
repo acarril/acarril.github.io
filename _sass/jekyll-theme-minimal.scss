@@ -28,6 +28,9 @@ h1, h2, h3 {
 
 h1 {
   font-size:28px;
+}
+
+h1:first-of-type {
   margin-bottom: 5px;
 }
 
@@ -80,7 +83,7 @@ blockquote {
 }
 
 code {
-  font-family: 'Ubuntu Mono', Monaco, monospace;
+  font-family: Menlo, Monaco, 'Lucida Console', 'Ubuntu Mono', monospace;
   padding: 0px 2px;
   background: #f8f8f8;
 }
