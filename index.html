@@ -6,7 +6,7 @@ title: Home
 <div class="home">
     {% for post in site.posts limit:5%}
     <article class="post_card post">
-      <h1 class="post_title"><a class="nodeco" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
+      <h1 class="reduced-margin"><a class="nodeco" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
       <time class="post_date">{{ post.date | date: "%b %-d, %Y" }}</time>
       <div><p>
         {{ post.excerpt }}
