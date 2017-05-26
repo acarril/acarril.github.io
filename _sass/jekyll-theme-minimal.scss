@@ -208,6 +208,10 @@ section p + ul {
     margin-top: -10px;
 }
 
+li {
+  margin:0 0 10px 0;
+}
+
 @media print, screen and (max-width: 960px) {
 
   div.wrapper {
