@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Sci-Hub and collaboration"
-draft: false
+draft: true
 ---
 
 ![](http://assets3.bigthink.com/system/idea_thumbnails/60490/size_896/robin_hood_final.jpg?1455065058)
