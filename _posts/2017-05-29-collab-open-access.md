@@ -1,11 +1,6 @@
 ---
 layout: post
-<<<<<<< HEAD:_posts/2017-05-29-collab-open-access.md
 title: "Scientific collaboration and open access"
-=======
-title: "Sci-Hub and collaboration"
-draft: true
->>>>>>> origin/master:_posts/2017-05-29-sci-hub-friends.md
 ---
 
 ![](http://assets3.bigthink.com/system/idea_thumbnails/60490/size_896/robin_hood_final.jpg?1455065058)
