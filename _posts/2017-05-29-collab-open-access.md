@@ -10,12 +10,13 @@ Vast amounts of data and tools to further advance scientific research are widely
 Even though [some powerful people are trying hard to make alternative facts great again](https://www.theverge.com/2017/5/23/15682188/trump-science-budget-nih-cdc-nsf-epa-doe-energy-research-funding-cuts), other [world leaders have responded boldly](http://www.reuters.com/article/us-france-election-macron-idUSKBN15J0RQ).
 Notwithstanding these hiccups, today science and technology reign supreme.
 
+<!--more-->
+
 The age we're currently living in is usually dubbed "the information age" or "digital age", with good reason. Since the digital revolution we've been capitalizing on computer miniaturization advances, and this has led to the fact that the modernization of information and communication processes has become the driving force of social evolution. This certainly includes science, and in fact it could be argued that science is one of the human endeavors most inextricably intertwined with the digital age.
 Science, after all, is what started the digital revolution.
 
 However, I believe the hallmark of scientific research from this age onwards will not be merely computers, "big data" or algorithms. Those tools are certainly important (and I'm a huge fan, as you can probably guess if you're here), and extremely innovative work is being done in this regard. However, *I believe the hallmark of this age's scientific research will be collaboration, and the single biggest hinder for scientific collaboration today is the scientific paper paywall.*
 
-<!--more-->
 ## The collaborative scientist
 
 The image of a lone genius working like a madman is what people tend to associate with a scientist. Individuals like [Grigori Perelman](https://en.wikipedia.org/wiki/Grigori_Perelman) confirm this stereotype, and I think they will never disappear. I don't think they should, as many gifted people are known to thrive in isolation. However, that is not the only path to new discoveries.
