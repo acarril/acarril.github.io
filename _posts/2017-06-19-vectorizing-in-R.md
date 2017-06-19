@@ -51,6 +51,6 @@ Well, the "high-level" part means that R takes care of a lot of basic (or low-le
 x <- 2.0
 ```
 
-we actually don't tell the computer that `x` stores numeric-type data, that "2.0" is a floating-point number, that it should find a space in memory to store this number and to register `x` as a pointer to that space.
+we actually don't tell the computer that `x` stores numeric-type data, that "2.0" is a floating-point number, that it should find a space in memory to store this number and to register `x` as a pointer to that space. This seems like a chore, but in many languages you have to explicitely tell the machine all these things. Below we'll see how this can sometimes be an advantage.
 
 This means we can issue instructions in a near-human level of abstraction ("high-level") and the language 
