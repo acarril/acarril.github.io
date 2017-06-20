@@ -43,13 +43,14 @@ This doesn't make a whole lot of sense. I mean, in both cases we're performing t
 
 <!--more-->
 
-## Thinking in parallel
+## Vectorizing, a.k.a. thinking in parallel
 
 You may be conditioned to think that every repetitive instantly calls for a loop. That's fine from a code-efficiency perspective, because you're trying to minimize redundancy in your code, which is good. However, we can dig a little deeper and start to think if our loops carry out operations that are dependent of each other or not.
 
 Dependent operations cannot be performed in parallel. These cases basically boil down to loops where the next iteration depends on values from the previous one. Examples include Bayesian statistic computations or some Markov Chain Monte Carlo methods.
 
-However, there are many operations which are not inherently serial, which opens the door to parallelize them. A vectorized function takes a vector as an input and outputs a vector of the same length, which eliminates the need for nested loops when dealing with two-dimensional data structures (e.g. data frames).
+However, there are many operations which are not inherently serial, which opens the door to parallelize them. And a neat way of parallelizing operations is to vectorize them, e.g. adding two vectors instead of performing three additions, like in our example above.
+A vectorized function takes a vector as an input and outputs a vector of the same length, which eliminates the need for nested loops when dealing with two-dimensional data structures (e.g. data frames).
 
 In this post I don't cover how to vectorize your R code. If you want a more in-depth read I recommend reading [Hadley Wickham's Advanced R chapter on functionals](http://adv-r.had.co.nz/Functionals.html) or [David Springate vectorization tricks](http://rpubs.com/daspringate/vectorisation). **Here we'll understand how does vectorizing your R code make it more efficient.**
 
@@ -65,7 +66,7 @@ x <- 2.0
 
 we actually don't tell the computer that `x` stores numeric-type data, that "2.0" is a floating-point number, that it should find a space in memory to store this number and to register `x` as a pointer to that space. This seems like a chore, but in many languages you have to explicitly tell the machine all these things. Below we'll see how this can sometimes be an advantage.
 
-This means we can issue instructions in a near-human level of abstraction ("high-level") and the language performs a series of intermediate tasks, making reasonable assumptions, corresponding to the details of what we want done.
+This kind of simplification means we can issue instructions in a near-human level of abstraction ("high-level") and the language performs automatically a series of intermediate tasks, making reasonable assumptions, corresponding to the details of what we want done.
 
 Moreover, R performs all these intermediate tasks on the fly, as you type them in the console (or source them from a script). This means that running a command in R takes a tiny bit longer than in some other lower-level languages, like C. Take the following command as an example:
 
@@ -110,7 +111,7 @@ If you need to apply a function to all the values of a vector, you could call th
 *"Hey, but there's a catch: you still need to interpret each value of the vector!"*
 Actually, no, because one key aspect of a vector in R is that all its elements are of the same data type. In fact, a number in R is actually a one dimensional vector. So passing a whole vector into a function is equivalent to checking just one number, in terms of what the "interpreting part" is concerned about.
 
-Inside C or Fortran vectors will be processed using loops or some equivalent constructs; there's just no way around it. However, since these operations now occur in the compiled code, they run much faster.
+Inside C or Fortran vectors will be processed using loops or some equivalent constructs; there's just no way around it. However, since these operations now occur in the compiled code, they run much faster. **Vectorizing cuts down the amount of interpreting that R has to do, which removes overhead and speeds up operations.**
 
 ## BLASt through your tasks
 
