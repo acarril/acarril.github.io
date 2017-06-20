@@ -5,7 +5,7 @@ title: "Vectorization in R: under the hood"
 
 ![](https://www.quizover.com/jc2012-war/ocw/mirror/col10685_1.2_complete/m21494/pic009.png)
 
-As soon as you start to dig deeper into serious R programming, someone will surely tell you to avoid loops like the plague, and that vectorizing your code is the way to go.
+As soon as you start to dig deeper into serious R programming, someone will surely tell you to [avoid loops like the plague](https://yihui.name/en/2010/10/on-the-gory-loops-in-r/), and that vectorizing your code is the way to go.
 
 Basically you're asked to blindly believe that 
 
@@ -43,6 +43,16 @@ This doesn't make a whole lot of sense. I mean, in both cases we're performing t
 
 <!--more-->
 
+## Thinking in parallel
+
+You may be conditioned to think that every repetitive instantly calls for a loop. That's fine from a code-efficiency perspective, because you're trying to minimize redundancy in your code, which is good. However, we can dig a little deeper and start to think if our loops carry out operations that are dependent of each other or not.
+
+Dependent operations cannot be performed in parallel. These cases basically boil down to loops where the next iteration depends on values from the previous one. Examples include Bayesian statistic computations or some Markov Chain Monte Carlo methods.
+
+However, there are many operations which are not inherently serial, which opens the door to parallelize them. A vectorized function takes a vector as an input and outputs a vector of the same length, which eliminates the need for nested loops when dealing with two-dimensional data structures (e.g. data frames).
+
+In this post I don't cover how to vectorize your R code. If you want a more in-depth read I recommend reading [Hadley Wickham's Advanced R chapter on functionals](http://adv-r.had.co.nz/Functionals.html) or [David Springate vectorization tricks](http://rpubs.com/daspringate/vectorisation). **Here we'll understand how does vectorizing your R code make it more efficient.**
+
 ## High-level, interpreted language
 
 Almost every introduction to the R language mentions that **R is a high-level, interpreted language.** However, very few of them explain what the f*ck does that mean. This is basic stuff if have a computer science or engineering background, but if you don't, then here is the quick version.
@@ -79,7 +89,7 @@ Internally, this computation goes down a little something like this:
 
 Being an interpreted language means that the computer translates our statements into binary on the fly. If R were a compiled language, this interpretation would be done in the compilation step, before the program was actually run. In compiled languages the user-written code is translated to binary at compilation: after it is written, but before it is run. Since this translation occurs for the whole program ---not line by line--- it allows the compiler to optimize the binary code in an optimal way for the computer to interpret.
 
-## How is R linked to compiled languages?
+## How does R relates to compiled languages?
 
 Many R functions are actually written in a compiled language, like C, C++ or Fortran. For instance, if you inspect the code for the `stats::dnorm()` function (just typing `dnorm` in the console), you get
 
@@ -95,9 +105,10 @@ We can see that R is basically passing the inputs onto a C function, `C_dnorm`. 
 
 ## What has this to do with vectorization?
 
-If you need to apply a function to all the values of a vector, you could call the function repeatedly for each of its values. However, this means R will do the small "interpreting part" for each call. On the other hand, passing the whole vector onto the function means R will only interpret the inputs once.
+If you need to apply a function to all the values of a vector, you could call the function repeatedly for each of its values. However, this means R will do the small "interpreting part" for each call. On the other hand, **passing a whole vector onto the function means R will only interpret the inputs once.**
 
-"Hey, but there's a catch: you still need to interpret each value of the vector!" Actually, no, because one key aspect of a vector in R is that all its elements are of the same data type. In fact, a number in R is actually a one dimensional vector. So passing a whole vector into a function is equivalent to checking just one number, in terms of what the "interpreting part" is concerned about.
+*"Hey, but there's a catch: you still need to interpret each value of the vector!"*
+Actually, no, because one key aspect of a vector in R is that all its elements are of the same data type. In fact, a number in R is actually a one dimensional vector. So passing a whole vector into a function is equivalent to checking just one number, in terms of what the "interpreting part" is concerned about.
 
 Inside C or Fortran vectors will be processed using loops or some equivalent constructs; there's just no way around it. However, since these operations now occur in the compiled code, they run much faster.
 
