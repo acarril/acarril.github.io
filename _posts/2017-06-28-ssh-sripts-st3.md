@@ -3,7 +3,7 @@ layout: post
 title: "Editing remote scripts locally via SSH using SublimeText 3"
 ---
 
-![](http://www.pharmaceutical-journal.com/files/rps-pjonline/missing_link_chain_dreamstime_Tsekhmister.jpg)
+![](files/missing_link_chain.jpg)
 
 Nowadays I conduct most of my research in servers, like [Microsoft Azure](https://azure.microsoft.com/en-us/). The two main methods for interacting with remote systems are either through SSH (ie. using Putty in Windows) o through X11 tunneling GUI (something like Remote Desktop Environment).
 
