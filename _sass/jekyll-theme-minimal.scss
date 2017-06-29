@@ -85,7 +85,7 @@ blockquote {
 }
 
 code {
-  font-family: Menlo, Monaco, 'Lucida Console', 'Ubuntu Mono', monospace;
+  font-family: 'Fira Mono', Menlo, Monaco, 'Lucida Console', monospace;
   padding: 0px 2px;
   background: #f8f8f8;
 }
@@ -96,7 +96,12 @@ pre {
   border-radius:0px;
   border:1px solid #e5e5e5;
   overflow-x: auto;
-  line-height: 1.2;
+  line-height: 1.5;
+  font-size: smaller;
+}
+
+pre code {
+  padding-left: 0px;
 }
 
 table {
