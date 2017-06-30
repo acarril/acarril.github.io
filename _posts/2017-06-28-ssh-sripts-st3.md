@@ -13,13 +13,47 @@ Editing scripts through either of those methods is a pain in the ass, because yo
 
 [SublimeText 3](http://www.sublimetext.com/) (ST3) is a superb text editor that's available for free on Windows, Mac and Linux. In a [previous post](/posts/use-st3) I explained how to get ST3 up and running, and how to configure it in order to be able to edit R, Python, Stata, LaTeX and Julia scripts. For this post I'll assume you have ST3 installed (including [Package Control](https://packagecontrol.io/installation)).
 
+## Installation
+
 1. Fire up ST3 on your local machine and open the Package Control panel (Ctrl-Shift-P on Linux/Win; Cmd-Shift-P on Mac), type "install" and hit enter. Now search for the `rsub` package and hit enter again to install it.
 
-2. In your local machine add `RemoteForward 52698 127.0.0.1:52698` to your `.ssh/config` file. This can be done from the terminal with
-```bash
+2. In your local machine add `RemoteForward 52698 localhost:52698` to your `.ssh/config` file. The process is different for Linux/Mac or Windows.
+<br/><br/>
+**Linux/Mac**
+<br/><br/>
+Add the following option to your `ssh` command:
+```
 -R 52698:localhost:52698
 ```
-Alternatively, if you're using Putty to connect to your remote machine then load your session and go to the `Connection > SSH > Tunnels` category. Write `52698` on "Source port" and `Localhost:52698` on "Destination". Change the radio buttons below so that "Remote" is selected and click "Add". You should see something like the screenshot below once the new forwarded port is added:
+For instance, if you normally connect to the machine by typing 
+```
+ssh <username>@<remotehost>
+```
+where `<remotehost>` is the server address or IP, now you should type
+```
+ssh -R 52698:localhost:52698 <username>@<remotehost>
+```
+Of course, a much better alternative is to store these settings into your `.ssh/config` file. If you haven't done it already, now it may be a good time to do it. Simply launch the terminal and run
+```
+nano ~/.ssh/config
+```
+You will probably see a blank file if you haven't configured any SSH hosts.
+The cool thing about doing this is that you just choose an `<alias>` for the session and it will load all the necessary settings.
+So write the following lines, filling your own information in any fields that are written like `<this>`:
+```
+host <alias>
+HostName <remotehost>
+User <username>
+RemoteForward 52698 localhost:52698
+```
+Save with Ctrl+O and exit with Ctrl+X.
+The beauty of having configured your `.ssh/config` file is that now you can connect just by typing
+```
+ssh <alias>
+```
+**Windows (Putty)**
+<br/><br/>
+If you're using Windows I'll assume you use [Putty](http://www.putty.org/) as your SSH client. Load your session and go to the `Connection > SSH > Tunnels` category. Write `52698` on "Source port" and `Localhost:52698` on "Destination". Change the radio buttons below so that "Remote" is selected and click "Add". You should see something like the screenshot below once the new forwarded port is added:
 <br/><br/>
 ![](https://blog.cs.wmich.edu/wp-content/uploadsfiles/2014/10/sub5.png)
 <br/><br/>
@@ -31,4 +65,6 @@ sudo wget -O /usr/local/bin/rmate https://raw.github.com/aurora/rmate/master/rma
 sudo chmod a+x /usr/local/bin/rmate
 ```
 
-4. That's it! Your now ready to edit any file locally. Just execute `rmate <file>` and the file will be automatically transferred through SSH and opened in ST3. You can edit the file locally and each time you save it will be automatically transferred to the remote machine.
+## Usage
+
+That's it! Your now ready to edit any remote text file locally. Just execute `rmate <file>` and the file will be seamlessly transferred through SSH and opened in ST3. You can edit the file locally and each time you save it will be automatically transferred to the remote machine.
