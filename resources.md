@@ -13,6 +13,7 @@ This page is a repository of resources of various types, collected in one place.
 
 Although I also like to code in R, Matlab and Python, I believe my only worthy collaborations to the world are Stata and LaTeX programs. All Stata programs can be installed directly within Stata using `ssc install <program>`.
 
+- [**rddsga**](https://gitlab.com/acarril/rddsga/wikis/home) -- Subgroup analysis with propensity score weighting in RDD settings ([Github](https://github.com/acarril/rddsga))
 - [**psestimate**]({{site.baseurl}}/posts/psestimate) -- Estimate the propensity score proposed by [Imbens and Rubin (2015)](http://www.cambridge.org/zw/academic/subjects/statistics-probability/statistical-theory-and-methods/causal-inference-statistics-social-and-biomedical-sciences-introduction) ([SSC](https://ideas.repec.org/c/boc/bocode/s458179.html), [Github](https://github.com/acarril/psestimate))
 - [**randtreat**]({{site.baseurl}}/posts/randtreat) -- Random treatment assignment with unequal treatment fractions and dealing with misfits ([SSC](https://ideas.repec.org/c/boc/bocode/s458106.html), [Github](https://github.com/acarril/randtreat)). I also discuss misfits in greater detail in my [paper](https://www.researchgate.net/publication/292091060_Dealing_with_misfits_in_random_treatment_assignment) (forthcoming).
 - [**texresults**]({{site.baseurl}}/posts/export-results-latex) -- Create external file of LaTeX macros with results ([SSC](https://ideas.repec.org/c/boc/bocode/s458334.html), [Github](https://github.com/acarril/texresults))
