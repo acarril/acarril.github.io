@@ -10,7 +10,9 @@ title: Home
       <time class="post_date">{{ post.date | date: "%b %-d, %Y" }}</time>
       <div><p>
         {{ post.excerpt }}
+          {% if post.excerpt != post.content %}
         <div style="text-align: right;"><p><a class="read-more" href="{{ post.url | prepend: site.baseurl }}">Keep reading »</a></p></div>
+          {% endif %}
       </p></div>
     </article>
     <hr>
