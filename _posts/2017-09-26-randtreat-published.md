@@ -5,6 +5,6 @@ title: "randtreat published"
 
 ![](https://media.giphy.com/media/glvyCVWYJ21fq/giphy.gif)
 
-yay!
+Today I got my very first ever single–handedly-written article [published in the Stata Journal](http://www.stata-journal.com/article.html?article=st0490)! The PDF can be found [here]().
 
-<iframe src="https://giphy.com/embed/glvyCVWYJ21fq" width="480" height="284" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/song-windshield-wipers-glvyCVWYJ21fq">via GIPHY</a></p>
+An good introduction to the *misfits* problem is provided by Bruhn and McKenzie in their [original blog post](http://blogs.worldbank.org/impactevaluations/tools-of-the-trade-doing-stratified-randomization-with-uneven-numbers-in-some-strata). Some time ago I wrote a Stata program -`randtreat`- to address this issue. Be sure to check out the help file for more details on the program.
