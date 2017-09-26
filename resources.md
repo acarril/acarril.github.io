@@ -9,6 +9,11 @@ permalink: /resources
 
 This page is a repository of resources of various types, collected in one place. These include [software](#software) bits I've written (mostly Stata) and miscellaneous [documents](#documents) (mostly in spanish).
 
+### Published Articles
+
+- ["Dealing with misfits in random treatment assignment"](http://www.stata-journal.com/article.html?article=st0490). Stata Journal 17, no. 3 (2017): 652–67. ([PDF](https://www.dropbox.com/s/os7f4zohdtt2zap/sjart_st0490.pdf?dl=0))
+
+
 ### Software
 
 Although I also like to code in R, Matlab and Python, I believe my only worthy collaborations to the world are Stata and LaTeX programs. All Stata programs can be installed directly within Stata using `ssc install <program>`.
