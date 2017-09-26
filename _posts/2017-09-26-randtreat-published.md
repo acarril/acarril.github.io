@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Subgroup analysis in RDD settings"
+title: "randtreat published"
 ---
 
 ![](https://media.giphy.com/media/glvyCVWYJ21fq/giphy.gif)
