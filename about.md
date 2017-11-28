@@ -20,10 +20,4 @@ Before joining J-PAL I was a math and physics teacher at [Colegio Antares](http:
 
 I'm interested in development economics, economics of education, econometrics and data analysis. I have developed several [Stata programs](/resources), all of which are available in my [Git repo](http://www.github.com/acarril) or at the [SSC Archive](https://ideas.repec.org/f/pca1141.html). There are some Python and R routines as well. I'm also writing a book on data analysis in R.
 
-You can find my CV [here](https://www.dropbox.com/s/oow36pf0wyevnc4/CV_acarril.pdf?dl=0).
-
-### Working papers and work in progress
-
-- ["Dealing with misfits in random treatment assignment"](https://www.researchgate.net/publication/292091060_Dealing_with_misfits_in_random_treatment_assignment), Stata Journal (forthcoming)
-- "What's the Value of the Teacher? Mechanisms and effects of teacher absenteeism on student achievement" with Valentina Paredes (in progress)
-- Amador, Diego y Alvaro Carril (2017) *Análisis de datos en R* (in progress)
+You can find my CV [here](https://www.dropbox.com/s/oow36pf0wyevnc4/CV_acarril.pdf?dl=0). My research can be found in the [research](/research) section of this webpage.
