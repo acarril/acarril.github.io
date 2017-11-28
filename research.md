@@ -5,6 +5,7 @@ permalink: /research
 ---
 
 # Research
+<hr>
 
 ### Publications
 
