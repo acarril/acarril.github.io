@@ -7,12 +7,6 @@ permalink: /about
 # About
 <hr>
 
-This site is mainly a personal output channel, useful for writing down ideas I have in mind. As sometimes those ideas turn out to be useful for others, I thought of making brief, clear blog posts with them. I hope you find something useful.
-
-My work (mainly) consists of performing economic data analysis using Stata, R and Python, so most posts revolve around that topic. I'm very passionate about data analysis and computer programs to conduct it, so feel free contact me if you want to discuss further.
-
-# About me
-
 <img style="float: right; margin-left:20px;" src="../files/photo_cv.jpg">
 I am a research assistant at the [NBER](http://www.nber.org/) for professor [Christopher Neilson](https://sites.google.com/site/christopherneilson/).
 My current research with professor Neilson is mainly concerned in the determinants of income inequality within college graduates, focusing on the role of observable and unobservable skills and preferences.
@@ -25,3 +19,9 @@ Before joining J-PAL I was a math and physics teacher at [Colegio Antares](http:
 I am interested in development economics, economics of education, econometrics and data analysis. I have developed several [Stata, R and Python routines](/resources), all of which are available in my [Git repo](http://www.github.com/acarril). I am also writing a book on data analysis in R.
 
 You can find my CV [here](https://www.dropbox.com/s/oow36pf0wyevnc4/CV_acarril.pdf?dl=0). My research can be found in the [research](/research) section of this webpage.
+
+# About this site
+
+This site is mainly a personal output channel, useful for writing down ideas I have in mind. As sometimes those ideas turn out to be useful for others, I thought of making brief, clear blog posts with them. I hope you find something useful.
+
+My work (mainly) consists of performing economic data analysis using Stata, R and Python, so most posts revolve around that topic. I'm very passionate about data analysis and computer programs to conduct it, so feel free contact me if you want to discuss further.
