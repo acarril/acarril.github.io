@@ -16,6 +16,7 @@ I have also worked with [Sebastián Bustos](https://www.hks.harvard.edu/about/fa
 
 Before joining J-PAL I was a math and physics teacher at [Colegio Antares](http://www.colegioantares.cl/), a small school in the outskirts of Santiago, Chile. I did this as part of Enseña Chile, which is part of [Teach for All](http://teachforall.org/). I still enjoy teaching and continue to do so, either as a TA at Universidad de Chile, as a lecturer at [J-PAL's Impact Evaluation](http://www.educacioncontinua.uc.cl/24718-ficha-diplomado-en-evaluacion-de-impacto-de-programas-y-politicas-publicas) postgraduate program and in several standalone workshops with partners.
 
+I hold a B.A. degree in economics from Universidad de Chile.
 I am interested in development economics, economics of education, econometrics and data analysis. I have developed several [Stata, R and Python routines](/resources), all of which are available in my [Git repo](http://www.github.com/acarril). I am also writing a book on data analysis in R.
 
 You can find my CV [here](https://www.dropbox.com/s/oow36pf0wyevnc4/CV_acarril.pdf?dl=0). My research can be found in the [research](/research) section of this webpage.
