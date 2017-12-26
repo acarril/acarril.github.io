@@ -5,7 +5,7 @@ title: NBER working paper with <code>rddsga</code> application is out in the wil
 
 ![](http://ahoramismo.mx/wp-content/uploads/2015/09/ACME.jpg)
 
-Maria Paula Gerardino, Stephan Litschig and Dina Pomeranz have recently-ish published a [new NBER working paper](http://www.nber.org/papers/w23978), "Can Audits Backfire? Evidence from Public Procurement in Chile".
+Maria [Paula Gerardino](http://www.nber.org/people/maria_paula_gerardino), [Stephan Litschig](http://www3.grips.ac.jp/~s-litschig/) and [Dina Pomeranz](https://www.econ.uzh.ch/en/people/faculty/pomeranz.html) have recently-ish published a [new NBER working paper](http://www.nber.org/papers/w23978), "Can Audits Backfire? Evidence from Public Procurement in Chile".
 It deals with the problem that while audits are intended to monitor compliance of tax rules, they can also generate unintended incentives.
 From the abstract:
 
@@ -19,4 +19,4 @@ You can read more about `rddsga` in a [previous post](/posts/rddsga-intro), and 
 ssc install rddsga
 ```
 
-The help file includes a more detailed explanation and examples using a synthetic dataset. Merry Discontinuity to everyone!
+The help file includes a more detailed explanation and examples using a synthetic dataset. Merry Discontinuities to everyone!
