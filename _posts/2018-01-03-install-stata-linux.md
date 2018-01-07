@@ -139,4 +139,4 @@ Exec=/usr/local/stata14/xstata-mp -q projmanag "%f"
 ```bash
 Exec=env GTK_THEME=Arc xstata-mp
 ```
-but apparently GTK+ 3 applications have to be coded to respect the `GTK_THEME` env variable, and Stata is not. I suspect some answers in [this](https://askubuntu.com/questions/78088/can-i-apply-a-different-gtk3-theme-from-the-main-one-to-an-individual-applicatio) and [this](https://unix.stackexchange.com/q/14129) thread might contain possible solutions, but I just switched to a light variant of Arc and called it a day.
+but apparently GTK+ 3 applications have to be coded to respect the `GTK_THEME` env variable, and Stata is not. I suspect some answers in [this](https://askubuntu.com/questions/78088/can-i-apply-a-different-gtk3-theme-from-the-main-one-to-an-individual-applicatio) and [this](https://unix.stackexchange.com/q/14129) questions might contain possible solutions, but I just switched to a light variant of Arc and called it a day.
