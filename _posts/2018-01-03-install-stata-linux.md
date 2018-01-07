@@ -34,7 +34,7 @@ sudo ~/Downloads/statainstall/install
 
 ### License
 
-In order you configure the license file you just need to run `./stinit`, but you'll need root privileges to write the file. Be sure to have the serial number, code and authorization. No need to disconnect from the internet here, even if you have an "alternative" license ;)
+In order you configure the license file you just need to run `./stinit` (you'll need root privileges to write the file). Be sure to have the serial number, code and authorization. No need to disconnect from the interwebz here, even if you have an "alternative" license ;)
 
 ```bash
 sudo ./stinit
@@ -49,17 +49,22 @@ In order to be able to launch Stata you'll need to add the installation director
 echo export PATH="/usr/local/stata14:$PATH" >> ~/.bashrc
 ```
 
-2. You need to source your `.bashrc` so that the changes are effective (you can also restart your terminal):
+2. You need to source your `.bashrc` so that the changes are effective:
 ```bash
 source ~/.bashrc
 ```
+(Or you can also restart your terminal)
 
-At this point you should be able to run the appropriate version of Stata from the terminal, e.g.:
+After adding the install directory to yout path, you should be able to run the appropriate version of Stata from the terminal, e.g.:
 ```bash
 xstata-mp
 ```
-
-You can also delete the temporary installation folder:
+This launches the X-window (GUI based) version of Stata MP. You can also run Stata directly within the terminal with
+```bash
+stata-mp
+```
+Obviously you'll need to substitute `mp` for whatever version you have a license for.
+At this point you can also delete the temporary installation folder:
 ```bash
 rm -r ~/Downloads/statainstall
 ```
