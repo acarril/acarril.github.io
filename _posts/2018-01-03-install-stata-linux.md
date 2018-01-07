@@ -10,33 +10,24 @@ Installing Stata properly on Linux is surprisingly cumbersome, and I've found th
 <!--more-->
 
 I have installed Stata in many Linux systems, but this tutorial focuses on Ubuntu 16.04 (specially in the last part). I will use Stata 14.2, but with minimal modifications it can be used for versions 13 through 15.
+I'm also assuming you have a tarball (a `.tar.gz` file) with the appropriate installation files for your operating system, and that you have root privileges in your system.
 
 # Installation
 
-If you have the Stata installation in a `.tar.gz` file, extract them:
-
-1. Navigate to the directory where you have the `.tar.gz` file. In my case it's just the Downloads folder:
+1. Change directory to wherever you have the `.tar.gz` file (e.g. the Downloads folder). There, create a temporary folder to store the installation files (e.g. `statainstall`), and extract the installation files to that folder.
 ```bash
 cd ~/Downloads
-```
-
-2. Create a temporary folder to store the installation files.
-```bash
 mkdir statainstall
-```
-
-2. Extract the installation files to the temporary folder you just created.
-```bash
 tar -xvzf Stata14Linux64.tar.gz -C statainstall
 ```
 
-4. Create the installation directory and change location into it.
+2. Create the installation directory, and change location into it.
 ```bash
 sudo mkdir /usr/local/stata14
 cd /usr/local/stata14
 ```
 
-5. Run the install script.
+3. Run the install script.
 ```bash
 sudo ~/Downloads/statainstall/install
 ```
@@ -66,6 +57,11 @@ source ~/.bashrc
 At this point you should be able to run the appropriate version of Stata from the terminal, e.g.:
 ```bash
 xstata-mp
+```
+
+You can also delete the temporary installation folder:
+```bash
+rm -r ~/Downloads/statainstall
 ```
 
 # Additional improvements
