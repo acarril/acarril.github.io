@@ -96,7 +96,6 @@ StartupNotify=true
 
 After saving this file you should be able to find Stata from the Unity dash, and when launched it should have its icon.
 
-
 ### Adding mimetype associations
 
 1. Edit the `stata14.desktop` file we created in the previous section (I'm using `gedit` now, but you can use `nano` or whatever you prefer).
@@ -133,3 +132,11 @@ Exec=/usr/local/stata14/xstata-mp -q projmanag "%f"
 ```
 
 4. [Coming soon]
+
+# Known issues
+
+- If you have a dark GTK+ theme enabled (e.g. the dark variant of [Arc](https://github.com/horst3180/arc-theme), my theme of choice), the X-window version of Stata looks awful. I tried solving this by executing `xstata` with a different GTK theme; i.e. something like
+```bash
+Exec=env GTK_THEME=Arc xstata-mp
+```
+but apparently GTK+ 3 applications have to be coded to respect the `GTK_THEME` env variable, and Stata is not. I suspect some answers in [this](https://askubuntu.com/questions/78088/can-i-apply-a-different-gtk3-theme-from-the-main-one-to-an-individual-applicatio) and [this](https://unix.stackexchange.com/q/14129) thread might contain possible solutions, but I just switched to a light variant of Arc and called it a day.
