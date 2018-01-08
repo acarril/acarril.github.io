@@ -71,15 +71,15 @@ rm -r ~/Downloads/statainstall
 
 # Additional improvements
 
-### Create Unity launcher
+### Unity launcher and desktop file
 
 Even after successfully installing and running Stata, in Ubuntu it won't be available as an application in the dash, and it won't have a proper icon in the application launcher. We can easily fix this by creating a `.desktop` file for Stata.
 
 ```bash
-sudo nano /usr/share/applications/stata14.desktop
+sudo gedit /usr/share/applications/stata14.desktop
 ```
 
-In this newly-created, empty file just copy the following Desktop Entry, obviously adjusting it if you have a different version or flavor of Stata:
+In this newly-created file just copy and paste the following, obviously adjusting it if you have a different version or flavor of Stata:
 
 ```
 [Desktop Entry]
@@ -92,24 +92,18 @@ Exec=/usr/local/stata14/xstata-mp -q
 Name=Stata/MP 14
 Comment=Perform statistical analyses using Stata.
 StartupNotify=true
+MimeType=application/x-stata-dta;application/x-stata-do;application/x-stata-smcl;application/x-stata-stpr;application/x-stata-gph;application/x-stata-stsem;
+Actions=doedit;use;view;graphuse;projmanag;semopen;
 ```
 
 After saving this file you should be able to find Stata from the Unity dash, and when launched it should have its icon.
 
 ### Adding mimetype associations
 
-1. Edit the `stata14.desktop` file we created in the previous section (I'm using `gedit` now, but you can use `nano` or whatever you prefer).
-```
-sudo gedit /usr/share/applications/stata14.desktop
-```
+Adding mimetype associations for Stata files allows you to see Stata files (e.g. `do` files, `dta` files) with their proper icons, and more importantly, to be automagically opened in Stata when executed. This is the default behavior in Windows or Mac, but with Linux we have to do a bit of extra work.
 
-2. Add the following parameters immediately after the last line of the `stata14.desktop` file:
-```
-MimeType=application/x-stata-dta;application/x-stata-do;application/x-stata-smcl;application/x-stata-stpr;application/x-stata-gph;application/x-stata-stsem;
-Actions=doedit;use;view;graphuse;projmanag;semopen;
-```
-
-3. In the same file, add the following entries below `[Desktop Entry]` and all of its parameters:
+<!---
+1. In the same file, add the following entries below `[Desktop Entry]` and all of its parameters:
 ```bash
 [Desktop Action doedit]
 Name=Start Stata and open do-file editor
@@ -130,8 +124,30 @@ Exec=/usr/local/stata14/xstata-mp -q sembuilder "%f"
 Name=Start Stata and open project manager
 Exec=/usr/local/stata14/xstata-mp -q projmanag "%f"
 ```
+--->
 
-4. [Coming soon]
+1. First download [this tarball with Stata icons](/files/stataicons.tar.gz) and extract it wherever you like.
+
+2. In the terminal, go to the location where you have extracted the icons and then change directory to the PNG icons that correspond to your version of Stata. Then issue the following commands:
+```bash
+xdg-icon-resource install --context mimetypes --size 256 stata-dta_256x256x32.png application-x-stata-dta
+xdg-icon-resource install --context mimetypes --size 256 stata-do_256x256x32.png application-x-stata-do
+```
+
+3. Create and edit the mimetype definitions with the following command:
+```bash
+sudo gedit /usr/share/mime/packages/application-x-stata.xml
+```
+Then copy the following inside this newly created file, and save.
+<script src="https://gist.github.com/acarril/d8894997454653f3d7ffed01695934dd.js?file=application-x-stata.xml"></script>
+
+5. Finally, update the mime and desktop databases so that changes take effect.
+```bash
+sudo update-mime-database /usr/share/mime
+sudo update-desktop-database /usr/share/applications/
+```
+
+That's it! You should now have a fully functional, "pretty" version of Stata on your Linux system. With a bit of extra work, you can complete the job and add mimetype associations for more obscure Stata files. For instance, I've associated `do` and `ado` files to be opened up by [Atom](https://atom.io/) (my preferred text editor in Linux), as well as `sthlp` files (useful for when you're documenting a program).
 
 # Known issues
 
