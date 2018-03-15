@@ -55,7 +55,7 @@ ssh <alias>
 ```
 **Windows (Putty)**
 <br/><br/>
-If you're using Windows I'll assume you use [Putty](http://www.putty.org/) as your SSH client. Load your session and go to the `Connection > SSH > Tunnels` category. Write `52698` as "Source port" and `Localhost:52698` as "Destination". Change the radio buttons below so that "Remote" is selected and click "Add". You should see something like the screenshot below once the new forwarded port is added:
+If you're using Windows I'll assume you use [Putty](http://www.putty.org/) as your SSH client. Load your session and go to the `Connection > SSH > Tunnels` category. Write `52698` as "Source port" and `localhost:52698` as "Destination". Change the radio buttons below so that "Remote" is selected and click "Add". You should see something like the screenshot below once the new forwarded port is added:
 <br/><br/>
 ![](https://blog.cs.wmich.edu/wp-content/uploadsfiles/2014/10/sub5.png)
 <br/><br/>
