@@ -7,7 +7,7 @@
     </div>
 
     <div class="compact-header">
-        <a href="{{ site.baseurl | prepend: site.url }}"><img class="avatar" src="{% if site.avatar %}{{site.avatar}}{% else %}{{ site.email | to_gravatar:140 }}{% endif %}" /></a>
+        <a href="{{ "/about/" | prepend: site.baseurl }}"><img class="avatar" src="{% if site.avatar %}{{site.avatar}}{% else %}{{ site.email | to_gravatar:140 }}{% endif %}" /></a>
         <div class="my-info">
             <strong class="my-name">{{ site.name }}</strong>
             <span class="my-job-title">{{ site.job_title }}</span>
