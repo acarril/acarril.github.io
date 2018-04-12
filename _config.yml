@@ -59,6 +59,14 @@ defaults:
 url: ""
 baseurl: ""
 
+# -----------------------------------------------------------------------------
+# Collections
+# -----------------------------------------------------------------------------
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+
 # Includes
 include: ["_pages"]
 
