@@ -7,7 +7,10 @@
             {% include sidebar.html %}
 
             <main class="the-content" role="main">
-                {% include search.html %}
+                {% if page.url == "/" %}
+                  {% include search.html %}
+                {% endif %}
+
                 {{ content }}
             </main>
         </div>
