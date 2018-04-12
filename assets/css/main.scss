@@ -196,3 +196,8 @@
 }
 
 @import "responsive";
+
+// Always show scrollbar (to prevent horizontal jumping)
+html {
+    overflow-y: scroll;
+}
