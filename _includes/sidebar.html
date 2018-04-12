@@ -20,9 +20,9 @@
             <a href="{{ "/" | prepend: site.baseurl }}" {% if page.url == "/" or page.url contains "/posts/" %}class="active"{% endif %}>Blog</a>
             {% assign sorted_pages = site.pages | sort:"order" %}
             {% for p in sorted_pages %}
-                {% if p.layout == 'page' %}
+                {% if p.layout == 'page' %}{% unless p.hide == true %}
                     <a href="{{ p.url | prepend: site.baseurl | prepend: site.url }}" {% if p.url == page.url %}class="active"{% endif %}>{{ p.title }}</a>
-                {% endif %}
+                {% endunless %}{% endif %}
             {% endfor %}
         </div>
         {% endif %}
