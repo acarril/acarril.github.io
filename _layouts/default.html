@@ -1,73 +1,17 @@
-<!doctype html>
-<html lang="{{ site.lang | default: "en-US" }}">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+<!DOCTYPE html>
+<html>
+    {% include head.html %}
 
-    <title>{% unless page.title == 'Home' %}{{ page.title | strip_html }} - {% endunless %}{{ site.title | default: site.github.repository_name }}</title>
+    <body>
+        <div class="wrapper clear">
+            {% include sidebar.html %}
 
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-    <meta name="viewport" content="width=device-width">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <!-- Import body and mono fonts from Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Fira+Mono|Noto+Sans" rel="stylesheet">
-
-    <!-- MathJax -->
-    <script type="text/javascript" async
-    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
-    </script>
-
-    <!-- Font Awesome -->
-    <script src="https://use.fontawesome.com/bdf51b1da0.js"></script>
-
-    <!-- Academic Icons -->
-    <link rel="stylesheet" href="{{ "/css/academicons.css" | prepend: site.baseurl }}"/>
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1 class="reduced-margin">{{ site.title | default: site.github.repository_name }}</h1>
-        <p>{{ site.description | default: site.github.project_tagline }}</p>
-        
-        <ul>
-          <li><a href="{{ "/" | prepend: site.baseurl }}">home</a></li>
-          <li><a href="{{ "/archive" | prepend: site.baseurl }}">archive</a></li>
-          <li><a href="{{ "/research" | prepend: site.baseurl }}">research</a></li>
-          <li><a href="{{ "/resources" | prepend: site.baseurl }}">resources</a></li>
-          <li><a href="{{ "/about" | prepend: site.baseurl }}">about</a></li>
-        </ul>
-
-      </header>
-      <section>
-
-      {{ content }}
-
-      </section>
-      <footer>
-        <div class="footicons">
-          <a href="mailto:acarril@fen.uchile.cl" target="_top"><i class="fa fa-envelope"></i></a>
-          <a href="https://github.com/acarril"><i class="fa fa-github"></i></a>
-          <a href="https://www.researchgate.net/profile/Alvaro_Carril"><i class="ai ai-researchgate-square"></i></a>
-          <a href="{{ "/feed.xml" | prepend: site.baseurl }}"><i class="fa fa-rss"></i></a>
+            <main class="the-content" role="main">
+                {% include search.html %}
+                {{ content }}
+            </main>
         </div>
-        <p><small>Hosted on <a href="https://github.com/acarril/acarril.github.io">GitHub</a> and developed with <a href="https://jekyllrb.com/">Jekyll</a>. All contents are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> license.</small></p>
-      </footer>
-    </div>
-    <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
 
-  {% if site.google_analytics %}
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-        ga('create', '{{ site.google_analytics }}', 'auto');
-        ga('send', 'pageview');
-    </script>
-  {% endif %}
-  </body>
+        {% include scripts.html %}
+    </body>
 </html>
