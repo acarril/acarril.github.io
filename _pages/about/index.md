@@ -2,6 +2,7 @@
 layout: page
 title:  "About me"
 permalink: "/about/"
+order: 2
 ---
 
 Currently I'm a research fellow at the [NBER](http://www.nber.org/), working with [Christopher Neilson](https://sites.google.com/site/christopherneilson/) in a massive project that studies the determinants of income inequality within college graduates in Chile, focusing on the role of observable and unobservable skills and preferences.
