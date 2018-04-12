@@ -11,9 +11,9 @@ disqus: acarril
 
 # Social Accounts
 social_networks:
--  { name: facebook, url: 'http://facebook.com' }
--  { name: twitter, url: 'http://twitter.com' }
--  { name: instagram, url: '' }
+-  { name: facebook, url: '' }
+-  { name: twitter, url: 'http://twitter.com/alvcarril' }
+-  { name: instagram, url: 'https://www.instagram.com/alvcarril/' }
 -  { name: google-plus, url: '' }
 -  { name: linkedin, url: '' }
 -  { name: skype, url: '' }
