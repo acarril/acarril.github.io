@@ -3,7 +3,7 @@ layout: page
 title: Projects
 permalink: /projects/
 description: A growing collection of projects that I'm involved in.
-hide: false
+hide: true
 ---
 
 {% for project in site.projects %}
