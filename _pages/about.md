@@ -5,7 +5,8 @@ permalink: "/about/"
 order: 2
 ---
 
-Currently I'm a research fellow at the [NBER](http://www.nber.org/), working with [Christopher Neilson](https://sites.google.com/site/christopherneilson/) in a massive project that studies the determinants of income inequality within college graduates in Chile, focusing on the role of observable and unobservable skills and preferences.
+Currently I'm a research fellow at the [NBER](http://www.nber.org/), working with [Christopher Neilson](https://sites.google.com/site/christopherneilson/) in a project that
+uses a structural model to integrate quasi-experimental and descriptive evidence ---taken from nearly fifty years of admission records for Chilean universities linked to population tax data--- to study the earnings effects of college and major choice over the life course.
 
 Prior to this position I was a research assistant at [J-PAL LAC](https://www.povertyactionlab.org/lac), based in Chile and in the Dominican Republic.
 In the latter, I worked with Chris in the analysis of national-level student data in the DR, assessing the impact of a nation-wide policy to help prevent school dropout, and implementing machine learning methods to predict dropout rates, among other projects.
