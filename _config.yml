@@ -86,3 +86,6 @@ excerpt_separator: <!--more-->
 sass:
   sass_dir: assets/partials
   style: compressed
+
+# Fixes (bundle exec error)
+exclude: [vendor]
