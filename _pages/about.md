@@ -2,7 +2,7 @@
 layout: page
 title:  "About me"
 permalink: "/about/"
-order: 2
+order: 3
 ---
 
 Currently I'm a research fellow at the [NBER](http://www.nber.org/), working with [Christopher Neilson](https://sites.google.com/site/christopherneilson/) in a project that
