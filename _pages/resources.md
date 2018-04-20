@@ -14,7 +14,7 @@ Although I also like to code in R, Matlab and Python, I believe my only worthy c
 
 - [**rddsga**](https://gitlab.com/acarril/rddsga/wikis/home) -- Subgroup analysis with propensity score weighting in RDD settings ([Github](https://github.com/acarril/rddsga))
 - [**psestimate**]({{site.baseurl}}/posts/psestimate) -- Estimate the propensity score proposed by [Imbens and Rubin (2015)](http://www.cambridge.org/zw/academic/subjects/statistics-probability/statistical-theory-and-methods/causal-inference-statistics-social-and-biomedical-sciences-introduction) ([SSC](https://ideas.repec.org/c/boc/bocode/s458179.html), [Github](https://github.com/acarril/psestimate))
-- [**randtreat**]({{site.baseurl}}/posts/randtreat) -- Random treatment assignment with unequal treatment fractions and dealing with misfits ([SSC](https://ideas.repec.org/c/boc/bocode/s458106.html), [Github](https://github.com/acarril/randtreat)). I also discuss misfits in greater detail in my [paper](https://www.researchgate.net/publication/292091060_Dealing_with_misfits_in_random_treatment_assignment) (forthcoming).
+- [**randtreat**]({{site.baseurl}}/posts/randtreat) -- Random treatment assignment with unequal treatment fractions and dealing with misfits ([SSC](https://ideas.repec.org/c/boc/bocode/s458106.html), [Github](https://github.com/acarril/randtreat)). I also discuss misfits in greater detail in my [SJ paper](http://www.stata-journal.com/article.html?article=st0490) (see the [research section](/research) for additional info).
 - [**texresults**]({{site.baseurl}}/posts/export-results-latex) -- Create external file of LaTeX macros with results ([SSC](https://ideas.repec.org/c/boc/bocode/s458334.html), [Github](https://github.com/acarril/texresults))
 - [**lcmm / gcdm**]({{site.baseurl}}/posts/GCD-LCM) -- Compute least common multiple and greatest common divisor
 - **nrow** -- Rename variables as their *n*-th row values ([SSC](https://ideas.repec.org/c/boc/bocode/s458116.html), [Github](https://github.com/acarril/nrow))
@@ -24,11 +24,11 @@ Although I also like to code in R, Matlab and Python, I believe my only worthy c
 
 Almost all of these documents are unfinished and may contain errors. Use with caution.
 
-- [Poder estadístico en diseños experimentales](https://www.dropbox.com/s/s4wvhsi59zqw34c/poder_optimal_design.pdf?dl=0) -- Ejercicios sencillos de cálculos de poder en [Optimal Design](http://hlmsoft.net/od/) (pauta disponible [aquí](https://www.dropbox.com/s/q5l73pjng99fjyz/poder_optimal_design%20-%20pauta.pdf?dl=0))
-- [Resumen De Gregorio](https://www.dropbox.com/s/o5cj07jpdq0em54/DeGregorioResumen.pdf?dl=0) -- Resumen del libro [Macroeconomía: Teoría y Políticas](http://www.degregorio.cl/pdf/Macroeconomia.pdf), de [José De Gregorio (2007)](http://www.econ.uchile.cl/jdegregorio)
-- [Apunte Finanzas Públicas](https://www.dropbox.com/s/574qx72wji32tgq/Apuntes%20finanzas%20publicas.pdf?dl=0) -- Apuntes del curso de Finanzas Públicas de [Claudia Martínez](https://www.povertyactionlab.org/mart%C3%ADnez)
-- [Manual de LaTeX](https://www.dropbox.com/s/hcz69dj5rrusi9g/manual_latex.pdf?dl=0) -- Breve guía práctica para escribir en [LaTeX](http://tex.stackexchange.com/a/94910/45978)
-- [Análisis de Datos en R](https://www.dropbox.com/s/at5qtihss4vsme5/ADR.pdf?dl=0) -- Borrador en progreso de un libro que estoy escribiendo para manejo y análisis de datos en [R](https://www.r-project.org/).
+- [**Poder estadístico en diseños experimentales**](https://www.dropbox.com/s/s4wvhsi59zqw34c/poder_optimal_design.pdf?dl=0) -- Ejercicios sencillos de cálculos de poder en [Optimal Design](http://hlmsoft.net/od/) (pauta disponible [aquí](https://www.dropbox.com/s/q5l73pjng99fjyz/poder_optimal_design%20-%20pauta.pdf?dl=0))
+- [**Resumen De Gregorio**](https://www.dropbox.com/s/o5cj07jpdq0em54/DeGregorioResumen.pdf?dl=0) -- Resumen del libro [Macroeconomía: Teoría y Políticas](http://www.degregorio.cl/pdf/Macroeconomia.pdf), de [José De Gregorio (2007)](http://www.econ.uchile.cl/jdegregorio)
+- [**Apunte Finanzas Públicas**](https://www.dropbox.com/s/574qx72wji32tgq/Apuntes%20finanzas%20publicas.pdf?dl=0) -- Apuntes del curso de Finanzas Públicas de [Claudia Martínez](http://economia.uc.cl/profesor/claudia-martinez-a/)
+- [**Manual de LaTeX**](https://www.dropbox.com/s/hcz69dj5rrusi9g/manual_latex.pdf?dl=0) -- Breve guía práctica para escribir en [LaTeX](http://tex.stackexchange.com/a/94910/45978)
+- [**Análisis de Datos en R**](https://www.dropbox.com/s/at5qtihss4vsme5/ADR.pdf?dl=0) -- Borrador en progreso de un libro que estoy escribiendo para manejo y análisis de datos en [R](https://www.r-project.org/).
 
 ### Lectures
 
