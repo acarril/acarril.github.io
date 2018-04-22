@@ -71,7 +71,7 @@ collections:
 include: ["_pages"]
 
 # Outputting
-permalink: /posts/:title.html
+permalink: /posts/:title
 category_dir: categories
 
 # Pagination
