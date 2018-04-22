@@ -89,3 +89,6 @@ sass:
 
 # Fixes (bundle exec error)
 exclude: [vendor]
+
+# Syntax highlighting
+highlighter: rouge
