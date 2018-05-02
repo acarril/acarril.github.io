@@ -126,7 +126,7 @@ Exec=/usr/local/stata14/xstata-mp -q projmanag "%f"
 ```
 --->
 
-1. First download [this tarball with Stata icons](/files/stataicons.tar.gz) and extract it wherever you like.
+1. First download [this tarball with Stata icons](https://github.com/acarril/acarril.github.io/raw/master/files/stataicons.tar.gz) and extract it wherever you like.
 
 2. In the terminal, go to the location where you have extracted the icons and then change directory to the PNG icons that correspond to your version of Stata. Then issue the following commands:
 ```bash
