@@ -10,7 +10,7 @@ So without further ado, let me bring forth to you the ultimate text editor:
 
 ![sdasd](/assets/img/atom-banner.png)
 
-My plan is to give a detailed explanation on how to set up Atom for use with (my) furious five:
+I will give a detailed explanation on how to set up Atom for use with (my) furious five:
 
 - **Python**
 - **R**
@@ -62,16 +62,35 @@ A gif is worth a thousand words:
 We'll set up Atom+Hydrogen to work with Python, R and Julia.
 You can choose a subset of those packages, of course --- the steps involved are pretty much the same for all three of them.
 
-First you should install the software:
+First you should install the software. Bear in mind that Python is pretty much a prerequisite for using Hydrogen with R and Julia (and other languages), because [Jupyter](http://jupyter.org/install) itself depends on Python.
 
-### Python
+### Install Python
 
-If you don't have Python in your system, I recommend you install [Anaconda Python](https://www.anaconda.com/).
+If you don't have [Python](https://www.python.org/about/) in your system, I recommend you install [Anaconda Python](https://www.anaconda.com/).
 **Anaconda is a Python distribution that comes with Python itself, plus 250+ popular data science and machine learning packages, plus the `conda` package and virtual environment manager.**
+Importantly for us, it already comes bundled with [IPython](https://ipython.org/index.html) and its dependencies.
 Just head over to [https://www.anaconda.com/download](https://www.anaconda.com/download) and download the version that corresponds to your system.
 If you're unsure whether you should go with Python 2.x or 3.x, I suggest the latter.
 
-If you have Python in your system (most versions of mac OS and Linux do), I still suggest you install Anaconda, as probably your system comes with Python 2.x, and Anaconda includes `conda`.
-If you already have Python installed and know what you're doing, then this section is not for you.
+If you have Python in your system (most versions of mac OS and Linux do), I still suggest you install Anaconda, as probably your system comes with Python 2.x, and Anaconda includes `conda` and [IPython](https://ipython.org/index.html).
+If you already have Python and IPython installed and you know what you're doing, then this section is not for you.
 
 ### R
+
+[R](https://www.r-project.org/about.html) is a venerable programming language for statistical computing.
+You can download and install R by choosing a CRAN mirror [here](https://cran.r-project.org/mirrors.html) (for Windows you have to choose the `base` distribution).
+
+You'll now need [IRkernel](https://github.com/IRkernel/IRkernel), which is a native R kernel for Jupyter.
+Assuming you have already installed Anaconda Python (see [above](#install-python)), you'll just need to follow the steps outlined [here](https://github.com/IRkernel/IRkernel#installation) in order to finish.
+
+### Julia
+
+[Julia](https://julialang.org/) is an up-and-coming programming language for numerical analysis and computational science.
+Head over to [https://julialang.org/downloads/](https://julialang.org/downloads/) to download the appropriate version for your operating system.
+
+Finally, after installing Julia itself you need to add the [`IJulia`](https://github.com/JuliaLang/IJulia.jl) package.
+To do so, just start a Julia interpreter (you should see a line starting with `julia>`) and type
+
+```julia
+Pkg.add("IJulia")
+```
