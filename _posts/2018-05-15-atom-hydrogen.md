@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Use Atom!
+title: Use Atom + Hydrogen!
 draft: true
 ---
 
@@ -12,11 +12,11 @@ So without further ado, let me bring forth to you the ultimate text editor:
 
 In this guide I'll give a detailed explanation on how to set up Atom for use with (my) furious five:
 
-- Python
-- R
+- **Python**
+- **R**
+- **Julia**
 - Stata
 - LaTeX
-- Julia
 
 <!--more-->
 
@@ -44,6 +44,15 @@ We'll fix that now, installing two packages (that I consider) essential:
 
 To install any package in Atom just go to `File > Settings` (or hit `Ctrl+Comma`) and select `Install` on the left pane (you can also go directly from the welcome screen, if you have it open).
 Search for `file-icons` and install it.
-If you had a project folder open in the Tree Viewer, you should immediately see icons being updated.
+If you had a project folder open in the Tree Viewer, you should inmediatly see icons being updated.
 
 Repeat the process above, this time looking up `project-manager`.
+
+
+# Python, Julia and R unite under Atom + Hydrogen
+
+One of the main reasons to use Atom is the [Hydrogen package](https://atom.io/packages/hydrogen), which is an interactive coding environment that supports Python, R and Julia kernels.
+Put simply, **Hydrogen lets you run code inline and in real time, which is the ideal workflow for rapid developing.**
+A gif is worth a thousand words:
+
+![](https://cloud.githubusercontent.com/assets/13285808/20360886/7e03e524-ac03-11e6-9176-37677f226619.gif)
