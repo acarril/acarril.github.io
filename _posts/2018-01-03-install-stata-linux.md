@@ -71,6 +71,27 @@ rm -r ~/Downloads/statainstall
 
 # Additional improvements
 
+I have identified three potential issues you may have after installing Stata in Linux:
+
+1. Interface has no icons (ie. only question marks)
+2. Program doesn't have an application menu entry (ie. can't search for the app)
+3. Mimetype associations don't work (ie. you can't double click a `.dta` file and have it open in Stata)
+
+If you want to solve all these issues at once, with little messing around, you can use [Daniel Bela's `stata-integration`](https://github.com/dirtyhawk/stata-integration), which is a bundled Linux binary script integrating an already installed Stata instance into the desktop environment.
+I've tried the script and it works as advertised, solving all above issues.
+However, it runs some binaries in `sudo`, so you must be comfortable with that.
+
+If you want to address this issues individually, without running programs with `sudo`, you can check out the sections below.
+
+### Interface icons
+
+Although it is only a aesthetic annoyance, it _is_ annoying to have an interface with no icons:
+
+![](https://www.statalist.org/forums/filedata/fetch?id=1351289&d=1469795531&type=full)
+
+My good friend and colleague at the NBER, Kyle Barron, has written [a fix for this issue](https://github.com/kylebarron/stata-png-fix). The main advantage of Kyle's solution is that it doesn't require `sudo` privileges.
+
+
 ### Unity launcher and desktop file
 
 Even after successfully installing and running Stata, in Ubuntu it won't be available as an application in the dash, and it won't have a proper icon in the application launcher. We can easily fix this by creating a `.desktop` file for Stata.
