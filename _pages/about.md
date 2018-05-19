@@ -18,7 +18,7 @@ I hold a B.A. degree in economics from Universidad de Chile.
 My research interests include development and labor economics with a focus on education and health, as well as econometrics and data analysis. I have developed several [Stata, R and Python routines](/resources), all of which are available in my [Git repo](http://www.github.com/acarril). I am also writing a book on data analysis in R.
 
 You can find my CV [here](https://www.dropbox.com/s/oow36pf0wyevnc4/CV_acarril.pdf?dl=0).
-My research can be found in the [research](/research) section of this webpage.
+I've collected much of my work in the [research](/research) and [resources](/resources) sections of this webpage.
 
 # About this site
 
