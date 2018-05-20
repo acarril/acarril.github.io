@@ -81,7 +81,7 @@
 						&:before { content: none; }
 					}
 					&:before { position: absolute; top: 50%; left: 0; width: 3px; height: 3px; border-radius: 50%; background: $grey-color-lighter; content: ""; @include translate(0, -50%); }
-					&.cats a { color: $grey-color-light;
+					&.cats a { color: $grey-color-light; transition: 0.3s;
 						&:last-of-type:after { content: none; }
 						&:after { content: ","; }
 						&:hover { color: $primary-color; border-bottom: 1px solid $primary-color; }
@@ -89,7 +89,7 @@
 				}
 			}
 			h1, h2 { font-size: 30px; font-weight: 900; margin: 0 0 20px; color: $grey-color-dark;
-				a { color: $grey-color-dark;
+				a { color: $grey-color-dark; transition: 0.3s;
 					&:hover { color: $primary-color; }
 				}
 			}
@@ -115,8 +115,8 @@
 				&:hover { color: $grey-color-light; }
 			}
 
-			a { color: $primary-color; border-bottom: 1px solid $primary-color;
-				&:hover { border: none; }
+			a { border-bottom: 1px dotted $primary-color; transition: 0.3s;
+				&:hover { color: $primary-color; border-bottom: none; }
 			}
 
 			ul, ol { margin: 15px 0;
