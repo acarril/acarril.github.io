@@ -6,6 +6,10 @@
 <script src="{{ site.baseurl | prepend: site.url }}/assets/js/svg4everybody.min.js"></script>
 <script src="{{ site.baseurl | prepend: site.url }}/assets/js/scripts.js"></script>
 <script src="{{ site.baseurl | prepend: site.url }}/assets/js/clipboard.min.js"></script>
+<!-- 3. Instantiate clipboard -->
+<script>
+  new ClipboardJS('.btn');
+</script>
 {% if site.analytics_code != null %}
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
