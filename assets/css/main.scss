@@ -166,6 +166,13 @@
 						}
 					}
 				}
+				&.shareURL { position: relative; z-index: 10; padding: 0 20px 0 40px; background: lighten($grey-color-lightest, 5%) url(../svg/clippy.svg) no-repeat 20px center; @include bgsizeNum(10px, 10px); cursor: pointer;
+					input { display:none; visibility:hidden;}
+					&:hover { background-color: $white; }
+					&:active {
+						input { display:inline; }
+					}
+				}
 				&.tags { position: absolute; right: 0; width: 100%; float: right; padding: 0 20px; border: none; text-transform: lowercase; text-align: right;
 					ul li { display: inline;
 						&:last-child:after { content: none; }
