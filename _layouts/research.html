@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+<article class="post page single" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <h3>{{ page.journal }}</h3>
+        <h2 itemprop="name headline">{{ page.title }}</h2>
+        <p><b>Abstract:</b> {{ page.abstract }}</p>
+    </header>
+
+    <div class="post-content">
+        {{ content }}
+    </div>
+</article>
