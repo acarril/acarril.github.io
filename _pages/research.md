@@ -7,12 +7,25 @@ order: 1
 
 ### Publications
 
-- ["Dealing with misfits in random treatment assignment"](http://www.stata-journal.com/article.html?article=st0490).
-Stata Journal 17, no. 3 (2017): 652–67. ([PDF](https://www.dropbox.com/s/os7f4zohdtt2zap/sjart_st0490.pdf?dl=0))
+<ul>
+  {% for item in site.research %}
+    <li>
+      <b><a href="{{ item.url }}">{{ item.title }}</a></b><br/>
+      {{ item.journal }}
+    </li>
+  {% endfor %}
+</ul>
 
 
 ### Working papers & work in progress
 
-- "Teacher Academic Ability and Teacher Quality", with [Sebastián Gallegos](https://sites.google.com/site/sebastiangallegos/) and [Christopher Neilson](https://sites.google.com/site/christopherneilson/)
+- "What goes in, must come out? Initial Academic Achievement, College Value Added and Teacher Quality", with [Sebastián Gallegos](https://sites.google.com/site/sebastiangallegos/) and [Christopher Neilson](https://econphilomath.github.io/)
 - "Inverse probability weighting for subgroup analysis in RD settings", with Andre Cazor, Maria Paula Gerardino, Stephan Litschig and Dina Pomeranz ([NBER working paper](http://www.nber.org/papers/w23978) that uses our proposed methodology)
 - "What’s the Value of the Teacher? Mechanisms and Impacts of Teacher Absenteeism on Student Achievement", with Andreas Aron and [Valentina Paredes](https://sites.google.com/a/fen.uchile.cl/vparedes/home)
+
+## Test
+<ul>
+  {% for item in site.research %}
+    <li><b><a href="{{ item.url }}">{{ item.title }}</a></b></li>
+  {% endfor %}
+</ul>
