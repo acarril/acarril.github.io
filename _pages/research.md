@@ -7,7 +7,7 @@ order: 1
 
 ### Publications
 
-<ul>
+<ul class="ul-research" style="list-style-position: outside;">
   {% for item in site.research %}
     <li>
       <b><a href="{{ item.url }}">{{ item.title }}</a></b><br/>
