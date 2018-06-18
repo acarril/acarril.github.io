@@ -37,7 +37,7 @@ order: 1
           {% assign authordata = site.data.coauthors[author] %}
           {% if author != last %}
             {% if authordata.webpage %}
-              <a href="{{ authordata.webpage }}">{{ author | append:',' }}</a>
+              <a href="{{ authordata.webpage }}">{{ author }}</a>,
             {% else %}
               {{ author | append:',' }}
             {% endif %}
