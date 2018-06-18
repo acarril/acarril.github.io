@@ -229,5 +229,22 @@ html {
 }
 
 .ul-research {
-	list-style-position: outside;
+	list-style: none;
+	ul {
+	  list-style: none;
+	  margin-left: 0;
+	  padding-left: 0;
+	}
+
+	li {
+		list-style: none;
+	  padding-left: 1em;
+	  text-indent: -1em;
+	}
+
+	li:before {
+		list-style: none;
+	  content: ">";
+	  padding-right: 5px;
+	}
 }

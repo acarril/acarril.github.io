@@ -7,7 +7,7 @@ order: 1
 
 ### Publications
 
-<ul class="ul-research" style="list-style-position: outside;">
+<ul class="ul-research">
   {% for item in site.research %}
     <li>
       <b><a href="{{ item.url }}">{{ item.title }}</a></b><br/>
@@ -15,7 +15,6 @@ order: 1
     </li>
   {% endfor %}
 </ul>
-
 
 ### Working papers & work in progress
 
