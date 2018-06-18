@@ -5,8 +5,9 @@ permalink: "/research/"
 order: 1
 ---
 
-### Publications
+## Publications
 
+<div id="research">
 <ul class="ul-research">
   {% for item in site.research %}{% if item.pubstatus == 'published' %}
     <li>
@@ -16,11 +17,15 @@ order: 1
     </li>
   {% endif %}{% endfor %}
 </ul>
+</div>
 
-### Working papers & work in progress
 
+## Working papers & work in progress
+
+<div id="research">
 <ul class="ul-research">
-  {% for item in site.research %}{% if item.pubstatus != 'published' %}
+  {% assign research_sorted = site.research | sort:"pubdate" | reverse %}
+  {% for item in research_sorted %}{% if item.pubstatus != 'published' %}
     <li>
       <b><a href="{{ item.url }}">{{ item.title }}</a></b>
       {% if item.coauthors %}, with {{ item.coauthors }}{% endif %}<br/>
@@ -28,7 +33,4 @@ order: 1
     </li>
   {% endif %}{% endfor %}
 </ul>
-
-- "What goes in, must come out? Initial Academic Achievement, College Value Added and Teacher Quality", with [Sebastián Gallegos](https://sites.google.com/site/sebastiangallegos/) and [Christopher Neilson](https://econphilomath.github.io/)
-- "Inverse probability weighting for subgroup analysis in RD settings", with Andre Cazor, Maria Paula Gerardino, Stephan Litschig and Dina Pomeranz ([NBER working paper](http://www.nber.org/papers/w23978) that uses our proposed methodology)
-- "What’s the Value of the Teacher? Mechanisms and Impacts of Teacher Absenteeism on Student Achievement", with Andreas Aron and [Valentina Paredes](https://sites.google.com/a/fen.uchile.cl/vparedes/home)
+</div>
