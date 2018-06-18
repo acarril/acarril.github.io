@@ -228,23 +228,18 @@ html {
     min-width: 100%;
 }
 
-.ul-research {
+div#research ul {
 	list-style: none;
-	ul {
-	  list-style: none;
-	  margin-left: 0;
-	  padding-left: 0;
-	}
+	margin-top: 5px;
+}
 
-	li {
-		list-style: none;
-	  padding-left: 1em;
-	  text-indent: -1em;
-	}
+div#research li {
+	padding-left: 1em;
+	text-indent: -1em;
+	margin-bottom: 15px;
+}
 
-	li:before {
-		list-style: none;
-	  content: ">";
-	  padding-right: 5px;
-	}
+div#research li:before {
+	content: ">";
+	padding-right: 5px;
 }
