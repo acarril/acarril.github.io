@@ -9,7 +9,7 @@ layout: default
     </header>
 
     <div class="post-content">
-        <p><b>Abstract:</b> {{ page.abstract }}</p>
+        <p><b>Abstract:</b> {{ page.abstract  | markdownify }}</p>
         <hr>
         {{ content }}
     </div>
