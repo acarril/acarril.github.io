@@ -9,7 +9,7 @@ layout: default
     </header>
 
     <div class="post-content">
-        <p><b>Abstract:</b> {{ page.abstract | markdownify | strip_newlines }}</p>
+        <b>Abstract:</b> {{ page.abstract | markdownify | remove: '<p>' | remove: '</p>' }}
         <hr>
         {{ content }}
     </div>
