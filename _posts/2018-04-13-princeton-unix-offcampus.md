@@ -3,7 +3,7 @@ layout: post
 title: Configuring Unix access to Princeton's servers off campus
 ---
 
-![](https://www.princeton.edu/researchcomputing/software/about_photobanner-rev.jpg)
+![](https://researchcomputing.princeton.edu/sites/researchcomputing2/files/styles/pwds_media_large_no_crop/public/media/tiger-logo-machine-room1.jpg)
 
 A small guide of what I've learned in order to connect to your Unix account off-campus.
 
