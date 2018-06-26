@@ -4,7 +4,7 @@ title: Use Atom + Hydrogen!
 draft: false
 ---
 
-Less than a year ago I wrote [a long post praising Sublime](/posts/use-st3).
+Less than a year ago I wrote a [long post praising Sublime](/posts/use-st3).
 However, [times are a changin'](https://www.youtube.com/watch?v=e7qQ6_RV4VQ), and during this time I've reconsidered my choice of text editor.
 So without further ado, let me bring forth to you what I believe is the ultimate one:
 
