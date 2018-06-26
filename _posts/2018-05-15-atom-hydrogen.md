@@ -4,9 +4,9 @@ title: Use Atom + Hydrogen!
 draft: false
 ---
 
-Yes, I know than a year ago I wrote [a long post urging you to use Sublime](/posts/use-st3).
-However, [times are a changin'](https://www.youtube.com/watch?v=e7qQ6_RV4VQ), _fast_ (at least for me), as I have matured my coding workflow very much.
-So without further ado, let me bring forth to you the ultimate text editor:
+Less than a year ago I wrote [a long post praising Sublime](/posts/use-st3).
+However, [times are a changin'](https://www.youtube.com/watch?v=e7qQ6_RV4VQ), and during this time I've reconsidered my choice of text editor.
+So without further ado, let me bring forth to you what I believe is the ultimate one:
 
 ![sdasd](/assets/img/atom-banner.png)
 
