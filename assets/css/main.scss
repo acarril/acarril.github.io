@@ -21,15 +21,12 @@
 		}
 	}
 	.about-me { font-size: 16px; line-height: 26px; margin: 30px 0 0; }
-	.socials { font-size: 0; margin: 25px 0 0;
-		li { display: inline-block; margin: 5px;
-			a { position: relative; display: block; width: 40px; height: 40px; line-height: 40px; background: darken($grey-color-lightest, 6%); border-radius: 50%; @include transition(all, .07s, linear);
-				&:hover { background: $primary-color; }
-				svg { display: inline-block; vertical-align: middle;
-					* { fill: $white; }
-				}
-			}
-		}
+	.socials { margin: 25px 0 0;
+		li { display: inline-block; margin: 5px; }
+		.fa-stack        .fa { color: white }
+		.fa-stack        .fab { color: white }
+		.fa-stack        .fa.fa-circle { color:black; opacity:0.2; }
+		.fa-stack:hover  .fa.fa-circle { color: $primary-color; opacity:1.0; transition: 0.3s; }
 	}
 
 	.burger { display: none !important;
