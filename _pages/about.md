@@ -19,6 +19,8 @@ My research interests include development and labor economics with a focus on ed
 
 You can find my CV [here](https://www.dropbox.com/s/oow36pf0wyevnc4/CV_acarril.pdf?dl=0).
 I've collected much of my work in the [research](/research) and [resources](/resources) sections of this webpage.
+Feel free to write me at [acarril@princeton.edu](mailto:acarril@princeton.edu).
+If you would like to leave anonymous feedback, you can do so [here](http://www.admonymous.com/acarril).
 
 # About this site
 
