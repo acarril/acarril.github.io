@@ -42,7 +42,7 @@ layout: default
     </footer>
 </article>
 
-{% if page.comments and site.show_comments == 1 %}
+{% if page.comments != false and site.show_comments == 1 %}
 <aside class="comments" role="complementary">
     <div id="disqus_thread"></div>
     <script>
