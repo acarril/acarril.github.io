@@ -30,7 +30,7 @@ layout: default
         {{ post.excerpt }}
 
         {% if post.excerpt != post.content %}
-            <p><a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}" role="button">Read More</a></p>
+            <p align="right"><a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}" role="button"><i>Keep reading &raquo;</i></a></p>
         {% endif %}
     </div>
 
