@@ -9,6 +9,6 @@ abstract: 'This paper studies the relationship between pre-college academic achi
 ## Predicting "bad" teachers
 
 Can we accurately predict "bad" teachers using only pre-college information?
-Using University entry-exam math scores and high-school GPA we can predict if a future teacher will fall into the lowest quartile of the teacher evaluation distribution.
+Using University entry-exam math scores and high-school GPA, we predict if a future teacher will fall into the lowest quartile of the teacher evaluation distribution.
 
 ![](/assets/plots/teacher-quality_prediction-contour-math-gpa.png)
