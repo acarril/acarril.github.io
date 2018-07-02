@@ -9,6 +9,7 @@ layout: default
     </header>
 
     <div class="post-content">
+        {% if page.coauthors %}<b>Coauthors:</b> {{ page.coauthors }}</br>{% endif %}
         <b>Abstract:</b> {{ page.abstract | markdownify | remove: '<p>' | remove: '</p>' }}
         <hr>
         {{ content }}
