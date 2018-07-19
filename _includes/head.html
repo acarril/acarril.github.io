@@ -3,7 +3,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{% if page.title %}{{ page.title | strip_html }} |{% endif %} {{ site.name | strip_html }}</title>
+    <title>{% if page.title %}{{ page.title | strip_html }} &#126;{% endif %} {{ site.name | strip_html }}</title>
     <meta property="og:title" content="{% if page.title %}{{ page.title | escape }} |{% endif %} {{ site.name | strip_html }}" />
     <meta name="twitter:title" content="{% if page.title %}{{ page.title | escape }} |{% endif %} {{ site.name | strip_html }}" />
 
