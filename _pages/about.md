@@ -22,14 +22,13 @@ Before joining J-PAL I was a math and physics teacher at [Colegio Antares](http:
 <!-- I still enjoy teaching and continue to do so, either as a TA at Universidad de Chile, as a lecturer at [J-PAL's Impact Evaluation](http://www.educacioncontinua.uc.cl/24718-ficha-diplomado-en-evaluacion-de-impacto-de-programas-y-politicas-publicas) postgraduate program and in several standalone workshops with partners. -->
 
 You can find my CV [here](/cv).
-I've collected much of my work in the [Research](/research) and [Resources](/resources) sections of this webpage.
+I've collected much of my work in the [research](/research) and [resources](/resources) sections of this website.
 Feel free to write me at [acarril@princeton.edu](mailto:acarril@princeton.edu).
 If you would like to leave anonymous feedback, you can do so [here](http://www.admonymous.com/acarril).
 
 # About this site
 
-I'm very passionate about data analysis, and I like it when researchers take the time to share their knowledge of the computational tools that they use.
-The [Blog](/) section of this website is an attempt to do so myself.
+I like it when researchers take the time to share their knowledge of the computational tools that they use, so the [blog](/) section of this website is an attempt to do so myself.
 Over the years I've accumulated some expertise on what I call "the tools of the trade", and I find it useful and fun to write down tidbits of that expertise in concise chunks (i.e. blog posts).
 My work (mainly) consists in conducting empirical analysis using Stata, R and Python, so most posts revolve around that theme.
 I hope you find something useful.
