@@ -4,6 +4,8 @@ title: Use Atom + Hydrogen!
 draft: false
 ---
 
+**Edited September, 2018 to reflect the new availability of using Hydrogen with Stata**.
+
 Less than a year ago I wrote a [long post praising Sublime](/posts/use-st3).
 However, [times are a changin'](https://www.youtube.com/watch?v=e7qQ6_RV4VQ), and during this time I've reconsidered my choice of text editor.
 So without further ado, let me bring forth to you what I believe is the ultimate one:
@@ -15,10 +17,10 @@ I will give a detailed explanation on how to set up [Atom](https://atom.io/) for
 - **Python**
 - **R**
 - **Julia**
-- Stata
+- **Stata**
 - LaTeX
 
-In this post I'll concentrate on the first three, because they can all be set up to interact with [Hydrogen](https://github.com/nteract/hydrogen), one of the coolest inventions since avocado on toast.
+In this post I'll concentrate on the first four, because they can all be set up to interact with [Hydrogen](https://github.com/nteract/hydrogen), one of the coolest inventions since avocado on toast.
 
 <!--more-->
 
@@ -31,8 +33,8 @@ Upon first execution, you should be greeted with something like the following sc
 
 Now we're ready to go!
 
-I suggest you open the Tree View (`View > Toggle Tree View`, or hit `Ctrl+\`), which gives you an overview of the files contained in a folder.
-You can now right-click anywhere in that pane and select `Add Project Folder` (or hit `Ctrl+Shift+A`) to open any project folder that contains some scripts (eg. `*.py` files).
+I suggest you open the Tree View (`View > Toggle Tree View`, or hit <kbd>Ctrl</kbd>+<kbd>\\</kbd>), which gives you an overview of the files contained in a folder.
+You can now right-click anywhere in that pane and select `Add Project Folder` (or hit <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>A</kbd>) to open any project folder that contains some scripts (eg. `*.py` files).
 After doing so you should see something like the following screenshot:
 
 ![](/assets/scrshots/atom-win.png)
@@ -44,7 +46,7 @@ We'll fix that now, installing two packages (that I consider) essential:
 - [File Icons](https://atom.io/packages/file-icons)
 - [Project Manager](https://atom.io/packages/project-manager)
 
-To install any package in Atom just go to `File > Settings` (or hit `Ctrl+Comma`) and select `Install` on the left pane (you can also go directly from the welcome screen, if you have it open).
+To install any package in Atom just go to `File > Settings` (or hit <kbd>Ctrl</kbd>+<kbd>,</kbd>) and select `Install` on the left pane (you can also go directly from the welcome screen, if you have it open).
 Search for `file-icons` and install it.
 If you had a project folder open in the Tree Viewer, you should immediately see icons being updated.
 
@@ -53,17 +55,17 @@ Repeat the process above, this time looking up `project-manager`.
 
 # Python, Julia and R with Atom + Hydrogen
 
-One of the main reasons to use Atom is the [Hydrogen package](https://atom.io/packages/hydrogen), which is an interactive coding environment that supports Python, R and Julia kernels.
+One of the main reasons to use Atom is the [Hydrogen package](https://atom.io/packages/hydrogen), which is an interactive coding environment that supports Python, R, Julia, and Stata kernels.
 Put simply, **Hydrogen lets you run code inline and in real time, which is the ideal workflow for rapid developing.**
 A gif is worth a thousand words:
 
 ![](https://cloud.githubusercontent.com/assets/13285808/20360886/7e03e524-ac03-11e6-9176-37677f226619.gif)
 
-We'll set up Atom+Hydrogen to work with Python, R and Julia.
-You can choose a subset of those packages, of course --- the steps involved are pretty much the same for all three of them.
+We'll set up Atom+Hydrogen to work with Python, R, Julia, and Stata.
+You can choose a subset of those packages, of course --- the steps involved are pretty much the same for all four of them.
 
-First you should install the software. **Bear in mind that Python is pretty much a prerequisite for using Hydrogen with R and Julia (and other languages), because [Jupyter](http://jupyter.org/install) itself depends on Python.**
-R and Julia are optional.
+First you should install the software. **Bear in mind that Python is pretty much a prerequisite for using Hydrogen with R, Julia, and Stata (and other languages), because [Jupyter](https://jupyter.org/install) itself depends on Python.**
+R, Julia, and Stata are optional.
 
 ### Install Anaconda Python
 
@@ -96,12 +98,28 @@ To do so, just start a Julia interpreter (you should see a line starting with `j
 Pkg.add("IJulia")
 ```
 
+### Stata
+
+[Stata](https://www.stata.com/) is a statistical software package heavily used by economists and other social-science practitioners. Unlike Python, R, and Julia, it's proprietary software and must be [purchased](https://www.stata.com/order/).
+
+After installing Stata itself you need to install the [`stata_kernel`](https://kylebarron.github.io/stata_kernel/) package.
+Assuming you have already installed Anaconda Python (see [above](#install-python)), you'll just need to follow the steps outlined [here](https://kylebarron.github.io/stata_kernel/getting_started/) in order to finish.
+
+Essentially it's just
+
+```
+pip install stata_kernel
+python -m stata_kernel.install
+```
+
+though an [extra step](https://kylebarron.github.io/stata_kernel/getting_started/#prerequisites) is needed on Windows.
+
 # Atom + Hydrogen
 
 Once we have [Anaconda Python installed](#install-python) (or any Python distribution + Jupyter), we can now install Hydrogen itself.
 In Atom, go to `Settings` (`Ctrl+Comma`) and in the `Install` pane look for `hydrogen` and install it.
 
-Now we're ready for interactive coding! Create a new file with a `.py` (or `.R` or `.jl`) extension and write some code. For instance, you could create a new file called `test.py` with the following lines:
+Now we're ready for interactive coding! Create a new file with a `.py` (or `.R`, `.jl` or `.do`) extension and write some code. For instance, you could create a new file called `test.py` with the following lines:
 
 ```python
 import numpy as np
@@ -125,7 +143,7 @@ plt.scatter(x, y, s=area, c=colors, alpha=0.5)
 plt.show()
 ```
 
-If you hit `Ctrl+Enter` in any line, Hydrogen should evaluate it in the appropriate kernel (Python, in this case) and output the result inline.
+If you hit <kbd>Ctrl</kbd>+<kbd>Enter</kbd> in any line, Hydrogen should evaluate it in the appropriate kernel (Python, in this case) and output the result inline.
 You can also evaluate multiple lines by selecting them, or the full script with `Ctrl+Shift+Alt+Enter`.
 I suggest you read [Hydrogen's documentation](https://nteract.gitbooks.io/hydrogen/docs/Usage/GettingStarted.html) to see what you can do with it.
 Below I demonstrate how to evaluate the code above.
