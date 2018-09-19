@@ -108,5 +108,22 @@ Then go to the package's settings and add `text.tex.latex` at the end of the lis
 ![](/assets/scrshots/atom-latex-spellcheck-grammar.png)
 
 After doing this, you should get spell checking in your LaTeX document.
-Still, something that annoyed me is that you also get corrections for obviously-LaTeXy commands, like `\documentclass`.
-I discovered you can exclude certain parts of the document with the 'Exlude Scopes' option, and I added `keyword.control.preamble.latex` to that (empty) list to prevent the spell checker from doing its thing in the preamble.
+However, something that annoyed me is that you also get corrections for obviously-LaTeXy commands, like `\documentclass`.
+I discovered you can exclude certain parts of the document with the 'Exlude Scopes' option, and I added these scopes to that list.
+You can add each scope in `spell-check` settings as comma separated names, or you can paste the following code directly in your `config.cson` file (`Edit > Config...`):
+
+```cson
+"spell-check":
+  excludedScopes: [
+    "support.function.tex"
+    "meta.preamble.latex"
+    "support.type.function.latex"
+    "comment.line.percentage.tex"
+    "storage.type.function.latex"
+    "support.function.latex"
+    "string.other.math.tex"
+    "string.other.math.block.environment.latex"
+    "variable.parameter.function.latex"
+    "constant.other.reference.latex"
+  ]
+```
