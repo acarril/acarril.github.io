@@ -42,6 +42,24 @@ It should start working right away.
 If it doesn't, double check that the document you have open is recognized as a LaTeX file (it should say 'Latex' on the bottom right corner).
 You can also explicitly set a language for any open document with `Ctrl+Shift+l` (or `Cmd+Shift+l` on a Mac).
 
+Writing LaTeX is slightly different from normal coding, so for this specific language I like to turn on [soft wrapping](https://en.wikipedia.org/wiki/Line_wrap_and_word_wrap).
+To do so, just go to the Settings View with `Ctrl+Comma` and in the 'Packages' tab look for our newly installed package, `language-latex`.
+Open its settings and make sure the 'Soft Wrap' option is checked.
+
+### Soft wrap and other tweaks
+
+![](/assets/img/wrap.png)
+
+*WTF is soft wrap?*, you may ask.
+**Soft wrap** basically breaks very long lines into multiple ones, without actually inserting a real line break.
+Since in LaTeX you're basically writing text, lines tend to be longer than your average Python statement, so if you want to avoid vertical scrolling this is what's best.
+A  ~~stolen~~ GIF is worth a thousand images:
+
+![](https://i.imgur.com/3qkEqvy.gif)
+
+I also like to be able to **scroll past the end of the document**, so I'm not permanently focusing on the very bottom of the screen.
+This feature can be activated for LaTeX in the `language-latex` configuration page, but I actually like this feature for *all* my documents, so if you also prefer that, you have to check the option in the in the 'Editor' tab of the general Settings View.
+
 
 # Compile
 
@@ -82,7 +100,8 @@ For instance, you can build on each save, change the default logging levels (I w
 ## Spell check
 
 Finally, since my native language is not english, I usually prefer to write documents with a spell checker.
-I went with the basic [`spell-check`](https://atom.io/packages/spell-check), which comes by default with Atom.
+Unfortunately, spell check is one of the most poorly developed LaTeX tools in Atom.
+For the time being I went with the basic [`spell-check`](https://atom.io/packages/spell-check), which comes by default with Atom.
 Make sure the package is installed (it should) and enabled.
 Then go to the package's settings and add `text.tex.latex` at the end of the list of Grammars, like in the bottom right of the screenshot below.
 
