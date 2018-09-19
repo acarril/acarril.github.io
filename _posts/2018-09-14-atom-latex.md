@@ -112,7 +112,7 @@ However, something that annoyed me is that you also get corrections for obviousl
 I discovered you can exclude certain parts of the document with the 'Exlude Scopes' option, and I added these scopes to that list.
 You can add each scope in `spell-check` settings as comma separated names, or you can paste the following code directly in your `config.cson` file (`Edit > Config...`):
 
-```cson
+```json
 "spell-check":
   excludedScopes: [
     "support.function.tex"
