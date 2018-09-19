@@ -6,8 +6,8 @@ title: Atom + LaTeX
 ![](https://ctan.org/lion/files/ctan_lion_600.png)
 
 It's been a while since I updated my series on `Atom + <something>`, but here comes a good one: **how to set up Atom as a LaTeX editor**.
-Since migrating my workflow to Atom, I've found that LaTeX support is a bit subpar, at least when compared to [Sublime's](https://www.sublimetext.com/).
-However, I've tried lots of packages and configurations, and I believe the configuration described below makes Atom a solid LaTeX editor.
+When I first migrated to Atom, I found that LaTeX support was a bit subpar, at least when compared to [Sublime's](https://www.sublimetext.com/).
+However, I've tried lots of packages and configurations, and I believe the combination described below makes Atom a solid LaTeX editor.
 
 <!--more-->
 
