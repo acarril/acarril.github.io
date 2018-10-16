@@ -2,6 +2,7 @@
 layout: post
 title: On the probability of false positives
 categories: metrics
+hidden: true
 ---
 Whenever we do regression analysis there is the chance of getting false positives. Suppose you have $$k$$ outcome variables and are targeting a $$p$$-value of $$p$$. Is there a way to compute *ex ante* the exact probability of getting at least one false positive significant result under $$p$$?
 

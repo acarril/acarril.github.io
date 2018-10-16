@@ -2,6 +2,7 @@
 layout: post
 title: Slutsky matrix times price vector
 categories: econ
+hidden: true
 ---
 
 From microeconomic theory we know that
