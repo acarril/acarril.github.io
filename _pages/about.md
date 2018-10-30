@@ -15,10 +15,9 @@ Before this, I was a high-school math and physics teacher at [Colegio Antares](h
 You can find my CV [here](/cv).
 I've collected much of my work in the [research](/research) and [resources](/resources) sections of this website.
 Feel free to write me at [acarril@princeton.edu](mailto:acarril@princeton.edu).
-If you would like to leave anonymous feedback, you can do so [here](http://www.admonymous.com/acarril).
 
 # About this site
 
 I like it when researchers take the time to share their knowledge of the computational tools that they use, so the [blog](/) section of this website is an attempt to do so myself.
-Over the years I've accumulated some expertise on what I call "the tools of the trade", and I find it both useful and fun to write blog posts covering specific topics.
+Over the years I've accumulated some expertise on what I call "the tools of the trade", and I find it both constructive and fun to write blog posts covering specific topics.
 I hope you find something useful.
