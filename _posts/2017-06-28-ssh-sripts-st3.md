@@ -80,12 +80,12 @@ This issue has been documented in [this SE question](https://superuser.com/quest
 
 Basically you need to alter two things to avoid this problem.
 
-1. Tunnel source port must be different for each user, so in step 2 above the SSH command for `<userA|userB>` should be
+1. Tunnel source port must be different for each user, so in step 2 above the SSH command for `<userA|userB>` would be
 ```bash
 ssh -R <52678|52679>:localhost:52698 <userA|userB>@<remotehost>
 ```
-In Windows this amounts to `userA|userB` typing `<52678|52679>` as the "Source port" in Putty's SSH Tunnels window.
-Of course, one user could still keep using the same default source port (ie. 52698), but any _additional_ users must change it.
+In Windows this amounts to `<userA|userB>` typing `<52678|52679>` as the "Source port" in Putty's SSH Tunnels window.
+Of course, one user could keep using the same default source port (ie. 52698), but any _additional_ users must change it.
 
 2. Whenever `<userA|userB>` runs `rmate` in the remote machine, she must add the `-p <52678|52679>` flag.
 So the command to execute would be something like
