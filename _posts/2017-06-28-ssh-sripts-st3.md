@@ -17,7 +17,7 @@ Editing scripts through either of those methods is a pain in the ass, because yo
 
 1. Fire up ST3 on your local machine and open the Package Control panel (Ctrl-Shift-P on Linux/Win; Cmd-Shift-P on Mac), type "install" and hit enter. Now search for the `rsub` package and hit enter again to install it.
 
-2. You must add a new forwarded port (52968) to your SSH connection. This process is different depending on your OS.
+2. You must add a new forwarded port (52698) to your SSH connection. This process is different depending on your OS.
 <br/><br/>
 **Linux/Mac**
 <br/><br/>
@@ -25,7 +25,7 @@ Add the following option to your `ssh` command:
 ```
 -R 52698:localhost:52698
 ```
-For instance, if you normally connect to the machine by typing 
+For instance, if you normally connect to the machine by typing
 ```
 ssh <username>@<remotehost>
 ```
