@@ -71,19 +71,20 @@ rm -r ~/Downloads/statainstall
 
 # Additional improvements
 
-I have identified three potential issues you may have after installing Stata in Linux:
+I have identified the following potential issues you may have after installing Stata in Linux:
 
 1. Interface has no icons (ie. only question marks)
 2. Program doesn't have an application menu entry (ie. can't search for the app)
 3. Mimetype associations don't work (ie. you can't double click a `.dta` file and have it open in Stata)
+4. PDF documentation links don't work
 
-If you want to solve all these issues at once, with little messing around, you can use [Daniel Bela's `stata-integration`](https://github.com/dirtyhawk/stata-integration), which is a bundled Linux binary script integrating an already installed Stata instance into the desktop environment.
+If you want to solve the first three of these issues at once with little messing around, you can use [Daniel Bela's `stata-integration`](https://github.com/dirtyhawk/stata-integration), which is a bundled Linux binary script integrating an already installed Stata instance into the desktop environment.
 I've tried the script and it works as advertised, solving all above issues.
-However, it runs some binaries in `sudo`, so you must be comfortable with that.
+However, it runs some binaries in `sudo`, so you may be uncomfortable with that.
 
-If you want to address this issues individually, without running programs with `sudo`, you can check out the sections below.
+If you want to address this issues manually, you can check out the sections below.
 
-### Interface icons
+### 1. Interface icons
 
 Although it is only a aesthetic annoyance, it _is_ annoying to have an interface with no icons:
 
@@ -92,7 +93,7 @@ Although it is only a aesthetic annoyance, it _is_ annoying to have an interface
 My good friend and colleague at the NBER, Kyle Barron, has written [a fix for this issue](https://github.com/kylebarron/stata-png-fix). The main advantage of Kyle's solution is that it doesn't require `sudo` privileges.
 
 
-### Unity launcher and desktop file
+### 2. Unity launcher and desktop file
 
 Even after successfully installing and running Stata, in Ubuntu it won't be available as an application in the dash, and it won't have a proper icon in the application launcher. We can easily fix this by creating a `.desktop` file for Stata.
 
@@ -119,7 +120,7 @@ Actions=doedit;use;view;graphuse;projmanag;semopen;
 
 After saving this file you should be able to find Stata from the Unity dash, and when launched it should have its icon.
 
-### Adding mimetype associations
+### 3. Adding mimetype associations
 
 Adding mimetype associations for Stata files allows you to see Stata files (e.g. `do` files, `dta` files) with their proper icons, and more importantly, to be automagically opened in Stata when executed. This is the default behavior in Windows or Mac, but with Linux we have to do a bit of extra work.
 
@@ -169,6 +170,46 @@ sudo update-desktop-database /usr/share/applications/
 ```
 
 That's it! You should now have a fully functional, "pretty" version of Stata on your Linux system. With a bit of extra work, you can complete the job and add mimetype associations for more obscure Stata files. For instance, I've associated `do` and `ado` files to be opened up by [Atom](https://atom.io/) (my preferred text editor in Linux), as well as `sthlp` files (useful for when you're documenting a program).
+
+### 4. PDF documentation
+
+The PDF manuals are loaded by a script named `stata_pdf`, located inside your Stata installation directory (eg. `/usr/local/stata15/stata_pdf`).
+By default the script points to Acrobat Reader (`acroread`), but [Adobe discontinued it](https://askubuntu.com/questions/507777/adobe-reader-for-linux-discontinued) around 2014 (good riddance). We can make some edits to `stata_pdf` so that it uses Evince, which is the default PDF reader in many Linux distros.
+
+First, it always advisable to backup the original file:
+```bash
+cp /usr/local/stata15/stata_pdf /usr/local/stata15/stata_pdf_bkp
+```
+Now we edit the script with `nano` (or whatever you prefer):
+```bash
+nano /usr/local/stata15/stata_pdf
+```
+Scroll past the commented text and modify it so that it reads like the following block.
+It boils down to three edits: `cmd="evince"` in second line and the first two `wharg=...`.
+```
+case "$PDFVIEWER" in
+"")     cmd="evince"
+        ;;
+*)      cmd="$PDFVIEWER"
+        ;;
+esac
+
+case "$1" in
+"-page")        pagenum=$2
+                fname=$3
+                wharg="--page-label=$pagenum"
+                ;;
+"-section")     section=$2
+                fname=$3
+                wharg="--named-dest=$section"
+                ;;
+*)              fname="$1"
+                wharg=""
+                ;;
+esac
+
+exec $cmd $wharg "$fname"
+```
 
 # Known issues
 
