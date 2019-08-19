@@ -1,114 +1,45 @@
-# General Settings
-name: Alvaro Carril
-job_title: econ research &amp; computer tools
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: Alvaro Carril
 email: acarril@princeton.edu
-description: I'm an economics PhD student @Princeton. I work with computers.
-avatar: /assets/pics/acarril-princeton.jpg
+description: >- # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: jekyllrb
+github_username:  jekyll
 favicon: /assets/icon/analytics-trans.png
-twitter_handler: alvcarril
-analytics_code: UA-54241026-2
-disqus: alvarocarril
 
-# Social Accounts
-social_networks:
--  { name: facebook, url: '' }
--  { name: twitter, url: 'http://twitter.com/alvcarril' }
--  { name: instagram, url: 'https://www.instagram.com/alvcarril/' }
--  { name: google-plus, url: '' }
--  { name: linkedin, url: '' }
--  { name: skype, url: '' }
--  { name: github, url: 'https://github.com/acarril' }
--  { name: codepen, url: '' }
--  { name: stack-overflow, url: '' }
--  { name: dribbble, url: '' }
--  { name: behance, url: '' }
--  { name: pinterest, url: '' }
--  { name: tumblr, url: '' }
--  { name: youtube, url: '' }
--  { name: vimeo, url: '' }
--  { name: vine, url: '' }
--  { name: 500px, url: '' }
--  { name: flickr, url: '' }
--  { name: spotify, url: '' }
--  { name: steam, url: '' }
--  { name: wordpress, url: '' }
--  { name: xing, url: '' }
--  { name: bitcoin, url: '' }
--  { name: pocket, url: '' }
--  { name: applemusic, url: '' }
 
-# Modules Settings
-show_categories: 1
-show_tags: 1
-show_email: 1
-show_rss: 1
-show_comments: 1
-show_menu: 1
-fixed_sidebar: 1
-
-# Defaults
-defaults:
-  -
-    scope:
-      path: ""
-      type: "posts"
-    values:
-      comments: "true"
-
-# Serving
-url: ""
-baseurl: ""
-
-# -----------------------------------------------------------------------------
-# Collections
-# -----------------------------------------------------------------------------
-collections:
-  projects:
-    output: true
-    permalink: /projects/:path/
-  research:
-    output: true
-    permalink: /research/:title
-
-defaults:
-  - scope:
-      path: ""
-      type: "research"
-    values:
-      layout: research
-
-# Includes
-include: ["_pages"]
-
-# Outputting
-permalink: /posts/:title
-category_dir: categories
-
-# Pagination
-paginate: 10
-paginate_path: "/page:num/"
-
-# Conversion
+# Build settings
 markdown: kramdown
-excerpt_separator: <!--more-->
+theme: "just-the-docs"
+plugins:
+  - jekyll-feed
 
-# Assets Settings
-sass:
-  sass_dir: assets/partials
-  style: compressed
-
-# Fixes (bundle exec error)
-exclude: [vendor]
-
-# Syntax highlighting
-highlighter: rouge
-
-# Jekyll 3 now only supports Kramdown for Markdown
-kramdown:
-  # Use GitHub flavored markdown, including triple backtick fenced code blocks
-  input: GFM
-  # Jekyll 3 and GitHub Pages now only support rouge for syntax highlighting
-  syntax_highlighter: rouge
-  syntax_highlighter_opts:
-    # Use existing pygments syntax highlighting css
-#    css_class: 'highlight'
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
