@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-remote_theme: pmarsceill/just-the-docs
+
 title: Alvaro Carril
 email: acarril@princeton.edu
 description: >- # this means to ignore newlines until "baseurl:"
@@ -56,8 +56,6 @@ category_dir: categories
 
 # Build settings
 markdown: kramdown
-# theme: "just-the-docs"
-remote_theme: pmarsceill/just-the-docs
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
