@@ -137,3 +137,15 @@ img.rounded-wrapped {
 //lg: $content-width + $nav-width,
 //xl: 1400px
 //);
+
+div#research ul {
+	list-style: none;
+}
+
+div#research li {
+	margin-bottom: 15px;
+}
+
+div#research li:before {
+	content: ">";
+}
