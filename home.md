@@ -1,7 +1,8 @@
 ---
 layout: page
-title: Home
-permalink: /home/
+title: Home2
+permalink: /home2/
+nav_order: 2
 ---
 
 Welcome to my website! My name is Alvaro Carril. I'm a grad student at Princeton University.
