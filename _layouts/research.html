@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+    <header class="post-header">
+        <h3>{{ page.journal }}</h3>
+        <h2 itemprop="name headline">{{ page.title }}</h2>
+    </header>
+
+    <div class="post-content">
+        {% if page.coauthors %}<b>Coauthors:</b> {{ page.coauthors }}</br>{% endif %}
+        <b>Abstract:</b> {{ page.abstract | markdownify | remove: '<p>' | remove: '</p>' }}
+        <hr>
+        {{ content }}
+    </div>
