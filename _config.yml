@@ -49,6 +49,10 @@ defaults:
 # Includes
 include: ["_pages"]
 
+# Outputting
+permalink: /posts/:title
+category_dir: categories
+
 # Build settings
 markdown: kramdown
 theme: "just-the-docs"
