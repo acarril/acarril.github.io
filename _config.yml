@@ -62,3 +62,11 @@ collections:
   research:
     output: true
     permalink: /research/:title
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "research"
+    values:
+      layout: research
