@@ -42,6 +42,7 @@ color_scheme: nil
 # e.g, UA-1234567-89
 ga_tracking: UA-54241026-2
 
+# Plugins
 plugins:
   - jekyll-seo-tag
 
@@ -52,3 +53,6 @@ compress_html:
   startings: []
   blank_lines: false
   profile: false
+
+# Includes
+include: ["_pages"]
