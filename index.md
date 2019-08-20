@@ -15,8 +15,8 @@ I'm Alvaro Carril, a PhD student at the Economics Department of Princeton Univer
 My main (research) interests revolve around reducing inequalities and improving the efficiency of markets that are heavily influenced ---or controlled--- by the public sector.
 I'm particularly interested in studying the relationship between the education and labor markets.
 
-You can read more about me and find my CV in [About/CV](/about-cv) section of this website.
-The [Resources](/resources) section serves as a repository of miscellaneous material that I've worked on over the years, which some people my find useful.
+You can read more about me in the [About](/about) section of this website, or in my [CV](/cv).
+The [Resources](/resources) section serves as a repository of miscellaneous material that I've worked on over the years, while [Posts](/posts) collects brief blog-type posts I've made about various topics.
 Many of the projects that I'm working on (or not) are hosted on [my Github repo](https://www.github.com/acarril), which also hosts most of the material listed in [Resources](/resources).
 
 ## About this site

@@ -29,7 +29,7 @@ heading_anchors: true
 
 # Aux links for the upper right navigation
 aux_links:
-  "Go to Github repo >":
+  "Goto Github repo >":
     - "//github.com/acarril"
 
 # Footer content appears at the bottom of every page's main content
