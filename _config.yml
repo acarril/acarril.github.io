@@ -56,3 +56,9 @@ compress_html:
 
 # Includes
 include: ["_pages"]
+
+# Collections
+collections:
+  research:
+    output: true
+    permalink: /research/:title
