@@ -54,6 +54,9 @@ compress_html:
   blank_lines: false
   profile: false
 
+# Posts permalink
+
+
 # Includes
 include: ["_pages"]
 
@@ -64,6 +67,7 @@ collections:
     permalink: /research/:title
 
 # Defaults
+permalink: /posts/:title # posts default
 defaults:
   - scope:
       path: ""
