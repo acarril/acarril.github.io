@@ -1,73 +1,54 @@
 # Welcome to Jekyll!
 #
-# This config file is meant for settings that affect your whole blog, values
+# This config file is meant for settings that affect your whole site, values
 # which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
+# yourself editing these this file very often, consider using Jekyll's data files
 # feature for the data you need to update frequently.
 #
 # For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+# 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
 # These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# you will see them accessed via {{ site.title }}, {{ site.github_repo }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-remote_theme: pmarsceill/just-the-docs
 title: Alvaro Carril
-email: acarril@princeton.edu
-description: >- # this means to ignore newlines until "baseurl:"
-  I'm a PhD student at Princeton. I work with computers.
+description: I'm a PhD student at Princeton. I work with computers.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://acarril.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-# twitter_username: jekyllrb
-github_username:  acarril
-favicon: /assets/icon/analytics-trans.png
-# footer_content: "Copyright &copy; 2017-2019 Patrick Marsceill. Distributed by an <a href=\"https://github.com/pmarsceill/just-the-docs/tree/master/LICENSE.txt\">MIT license.</a>"
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+
+permalink: pretty
+exclude: ["node_modules/", "*.gemspec", "*.gem", "Gemfile", "Gemfile.lock", "package.json", "package-lock.json",  "script/", "LICENSE.txt", "lib/", "bin/", "README.md", "Rakefile"]
+
+# Enable or disable the site search
+search_enabled: true
+
+# Enable or disable heading anchors
+heading_anchors: true
+
 # Aux links for the upper right navigation
 aux_links:
-    "Jump to Github repository >":
-      - "//github.com/acarril"
+  "Go to Github repo >":
+    - "//github.com/acarril"
 
-# -----------------------------------------------------------------------------
-# Collections
-# -----------------------------------------------------------------------------
-collections:
-  projects:
-    output: true
-    permalink: /projects/:path/
-  research:
-    output: true
-    permalink: /research/:title
+# Footer content appears at the bottom of every page's main content
+footer_content: "Copyright &copy; 2017-2019 Alvaro Carril. Distributed by an <a href=\"https://github.com/pmarsceill/just-the-docs/tree/master/LICENSE.txt\">MIT license.</a>"
 
-defaults:
-  - scope:
-      path: ""
-      type: "research"
-    values:
-      layout: research
+# Color scheme currently only supports "dark" or nil (default)
+color_scheme: nil
 
-# Includes
-include: ["_pages"]
+# Google Analytics Tracking (optional)
+# e.g, UA-1234567-89
+ga_tracking: UA-54241026-2
 
-# Outputting
-permalink: /posts/:title
-category_dir: categories
-
-# Build settings
-markdown: kramdown
 plugins:
-  - jekyll-feed
   - jekyll-seo-tag
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  startings: []
+  blank_lines: false
+  profile: false

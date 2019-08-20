@@ -3,11 +3,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 
   {% if site.plugins.jekyll-seo == nil %}
-    {% if page.title == "Home" %}
-      <title>{{ site.title }}</title>
-    {% else %}
-      <title>{{ site.github_username }}/{{ page.title }}</title>
-    {% endif %}
+    <title>{{ page.title }} - {{ site.title }}</title>
 
     {% if page.description %}
       <meta name="Description" content="{{ page.description }}">
