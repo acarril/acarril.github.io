@@ -10,9 +10,10 @@ _I'm in the process of updating this website so some images might be missing fro
 Please bear with me._
 
 <ul>
-  {% for post in site.posts %}
+  {% assign sorted-posts = site.posts | sort: 'post_date' %}
+  {% for post in sorted-posts %}{% if post.draft != true %}
     <li>
       <a href="{{ post.url }}">{{ post.title }}</a>
     </li>
-  {% endfor %}
+  {% endif %}{% endfor %}
 </ul>

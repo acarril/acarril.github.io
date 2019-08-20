@@ -2,6 +2,7 @@
 layout: post
 title:  The difference between probability and likelihood using coins
 categories: metrics R
+draft: true
 ---
 
 The distinction between probability and likelihood is extremely important, though often misunderstood. I like to remember that probability refers to possible *results*, whereas likelihood refers to *hypotheses*.

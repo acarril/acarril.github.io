@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Bootstrap anythang in Stata"
+title: "Bootstrap anything in Stata"
 draft: true
 ---
 
@@ -13,4 +13,3 @@ If I could bring only one statistical technique to a deserted island, it would p
 For every estimate we compute (eg. the sample mean), we also need a measure of its precision, which is given by the standard error. For something like the sample mean it is relatively easy to derive an expression for the standard error. However, **with a non-standard estimator it may be too difficult to come up with an analytical expression for its standard error**. The bootstrap is basically a resampling method in which we compute our estimator several times, each time with a different subsample of our full sample. We then use the sample standard deviation of these estimates as an estimate of the standard error.
 
 <!--more-->
-
