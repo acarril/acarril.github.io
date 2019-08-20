@@ -28,6 +28,8 @@ aux_links:
     "Jump to Github repository >":
       - "//github.com/acarril"
 
+# Includes
+include: ["pages"]
 
 # Build settings
 markdown: kramdown
