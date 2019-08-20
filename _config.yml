@@ -57,7 +57,6 @@ category_dir: categories
 # Build settings
 markdown: kramdown
 # theme: "just-the-docs"
-baseurl: "/guidelines"
 remote_theme: pmarsceill/just-the-docs
 plugins:
   - jekyll-feed
