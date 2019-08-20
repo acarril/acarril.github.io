@@ -1,0 +1,10 @@
+---
+layout: page
+title:  CV
+permalink: /cv
+nav_order: 4
+---
+
+My CV is rendered below. You can also download it directly from [here](https://www.dropbox.com/s/oow36pf0wyevnc4/CV_acarril.pdf?raw=1).
+
+<iframe src="https://www.dropbox.com/s/oow36pf0wyevnc4/CV_acarril.pdf?raw=1" width="100%" height="800"></iframe>
