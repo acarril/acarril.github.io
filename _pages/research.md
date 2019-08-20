@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Research
-permalink: /research/
-nav_order: 4
+permalink: /research
+nav_order: 1
 ---
 
 ## Publications

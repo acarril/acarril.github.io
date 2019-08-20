@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Resources
-permalink: /resources/
-nav_order: 4
+permalink: /resources
+nav_order: 2
 ---
 
 This page is a repository of resources of various types, collected in one place. These include [software](#software) bits I've written (mostly Stata) and miscellaneous [documents](#documents) (mostly in spanish).
