@@ -28,8 +28,26 @@ aux_links:
     "Jump to Github repository >":
       - "//github.com/acarril"
 
+# -----------------------------------------------------------------------------
+# Collections
+# -----------------------------------------------------------------------------
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+  research:
+    output: true
+    permalink: /research/:title
+
+defaults:
+  - scope:
+      path: ""
+      type: "research"
+    values:
+      layout: research
+
 # Includes
-include: ["pages"]
+include: ["_pages"]
 
 # Build settings
 markdown: kramdown
