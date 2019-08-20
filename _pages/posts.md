@@ -5,7 +5,8 @@ permalink: /posts
 nav_order: 3
 ---
 
-_Things are a bit messy here, some images might be messing from some posts. Please bear with me._
+_I'm in the process of updating this website so some images might be missing from some posts.
+Please bear with me._
 
 <ul>
   {% for post in site.posts %}
