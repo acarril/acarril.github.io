@@ -104,6 +104,16 @@ $link-color: $purple-100;
 //$border-radius: 4px;
 //$border-color: $grey-lt-100;
 
+img.rounded-wrapped {
+  border-radius: 20px;
+  float: right;
+  margin: 0 15px;
+  max-width: 40%;
+  height: auto;
+  // -webkit-shape-outside:circle();
+  // shape-outside:circle();
+}
+
 ////
 //// Grid system
 ////
