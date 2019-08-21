@@ -31,38 +31,11 @@ $$
 
 is better/faster than
 
-
 \begin{align}
 0 + 3 &= 3 \\
 1 + 4 &= 5 \\
 2 + 5 &= 7.
 \end{align}
-
-
-\\begin{align}
-\sqrt{37} & = \sqrt{\frac{73^2-1}{12^2}} \\\\
- & = \sqrt{\frac{73^2}{12^2}\cdot\frac{73^2-1}{73^2}} \\\\
- & = \sqrt{\frac{73^2}{12^2}}\sqrt{\frac{73^2-1}{73^2}} \\\\
- & = \frac{73}{12}\sqrt{1 - \frac{1}{73^2}} \\\\
- & \approx \frac{73}{12}\left(1 - \frac{1}{2\cdot73^2}\right)
-\\end{align}
-
-$$
-\begin{align*}
-  & \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right)
-  = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = \\
-  & (x_1, \ldots, x_n) \left( \begin{array}{ccc}
-      \phi(e_1, e_1) & \cdots & \phi(e_1, e_n) \\
-      \vdots & \ddots & \vdots \\
-      \phi(e_n, e_1) & \cdots & \phi(e_n, e_n)
-    \end{array} \right)
-  \left( \begin{array}{c}
-      y_1 \\
-      \vdots \\
-      y_n
-    \end{array} \right)
-\end{align*}
-$$
 
 This doesn't make a whole lot of sense. I mean, in both cases we're performing the three same sums, so why should using vectors be more efficient? In this post we'll dive into the inner workings of R to understand why.
 
