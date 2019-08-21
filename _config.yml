@@ -54,8 +54,7 @@ compress_html:
   blank_lines: false
   profile: false
 
-# Posts permalink
-
+markdown : kramdown
 
 # Includes
 include: ["_pages"]
