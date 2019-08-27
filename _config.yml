@@ -17,9 +17,11 @@ title: Alvaro Carril
 description: I'm a PhD student at Princeton. I work with computers.
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://acarril.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-
 permalink: pretty
 exclude: ["node_modules/", "*.gemspec", "*.gem", "Gemfile", "Gemfile.lock", "package.json", "package-lock.json",  "script/", "LICENSE.txt", "lib/", "bin/", "README.md", "Rakefile"]
+
+compress_html:
+  blank_lines: true
 
 # Enable or disable the site search
 search_enabled: true
@@ -45,16 +47,6 @@ ga_tracking: UA-54241026-2
 # Plugins
 plugins:
   - jekyll-seo-tag
-
-compress_html:
-  clippings: all
-  comments: all
-  endings: all
-  startings: []
-  blank_lines: false
-  profile: false
-
-markdown : kramdown
 
 # Includes
 include: ["_pages"]
