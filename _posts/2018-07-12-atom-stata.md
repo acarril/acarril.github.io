@@ -3,7 +3,7 @@ layout: post
 title: Atom + Stata
 ---
 
-![](/assets/img/atom-stata.png)
+![](/assets/images/atom-stata.png)
 
 By popular demand, in this post I'll explain how to use Stata with Atom in Linux, Mac and Windows.
 This is possible because my colleague and friend [Kyle Barron](https://github.com/kylebarron) wrote two plugins:
@@ -32,7 +32,7 @@ By the end of this post you will be able to edit Stata `do` files (or `ado` file
 
 The first thing we need to turn Atom into a proper Stata editor is getting syntax highlighting, i.e. getting Atom to display the code in different colors and fonts according to the category of terms:
 
-![](/assets/img/language-stata-screenshot.png)
+![](/assets/images/language-stata-screenshot.png)
 
 To get this feature working, you need to install [`language-stata`](https://github.com/kylebarron/language-stata) by going to `File > Settings` (or hit `Ctrl/Cmd+Comma`) and selecting `Install` on the left pane.
 Search for `language-stata` and install it.

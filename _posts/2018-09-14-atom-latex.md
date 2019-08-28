@@ -48,7 +48,7 @@ Open its settings and make sure the 'Soft Wrap' option is checked.
 
 ### Soft wrap and other tweaks
 
-![](/assets/img/wrap.png)
+![](/assets/images/wrap.png)
 
 *WTF is soft wrap?*, you may ask.
 **Soft wrap** basically breaks very long lines into multiple ones, without actually inserting a real line break.

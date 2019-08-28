@@ -3,7 +3,7 @@ layout: post
 title: NBER working paper with <code>rddsga</code> application is out in the wild
 ---
 
-![](assets/img/acme-coyote.jpg)
+![](assets/images/acme-coyote.jpg)
 
 [Maria Paula Gerardino](http://www.nber.org/people/maria_paula_gerardino), [Stephan Litschig](http://www3.grips.ac.jp/~s-litschig/) and [Dina Pomeranz](https://www.econ.uzh.ch/en/people/faculty/pomeranz.html) have recently-ish published a [new NBER working paper](http://www.nber.org/papers/w23978), "Can Audits Backfire? Evidence from Public Procurement in Chile".
 It deals with the problem that while audits are intended to monitor compliance of tax rules, they can also generate unintended incentives.
