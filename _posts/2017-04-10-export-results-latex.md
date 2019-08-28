@@ -41,7 +41,7 @@ However, suppose you want to mention the `foreign` coefficient in your text. It 
 
 I though about this problem and realized that the advantage of figures and tables is that you call them from our documents with a fixed name. For instance, let's suppose you export the table above as `basic_reg.tex`. In your document, you just call it and it will be updated automatically.
 
-**So the solution is to call individual results with fixed names, in a way that's analogous to figures and tables.** The way to achieve this is to export all individual result's (e.g. coefficients, $$p$$-values, etc.) as LaTeX macros that *contain* the numeric result. These macros are all stored in one text file which is called in the document preamble, allowing you to call these results as macros within the text.
+**So the solution is to call individual results with fixed names, in a way that's analogous to figures and tables.** The way to achieve this is to export all individual result's (e.g. coefficients, p-values, etc.) as LaTeX macros that *contain* the numeric result. These macros are all stored in one text file which is called in the document preamble, allowing you to call these results as macros within the text.
 
 For example, instead of copying and pasting the `foreign` coefficient we could save it in a local, rounding it down to a reasonable number of decimal figures:
 
@@ -83,7 +83,7 @@ The command allows you to achieve the same result as before with just one line. 
 texresults using results.txt, texmacro(mainresult) coef(foreign)
 ```
 
-Besides saving us lines of code, `texresults` allows us to easily extract other regression results. For instance, we could append `foreign`'s $$t$$-stat to the macros file using
+Besides saving us lines of code, `texresults` allows us to easily extract other regression results. For instance, we could append `foreign`'s t-stat to the macros file using
 
 ```stata
 texresults using results.txt, texmacro(trunkT) tstat(trunk) append

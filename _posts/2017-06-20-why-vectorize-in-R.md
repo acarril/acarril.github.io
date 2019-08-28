@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Vectorization in R: under the hood"
+mathjax: true
 ---
 
 ![](https://www.quizover.com/jc2012-war/ocw/mirror/col10685_1.2_complete/m21494/pic009.png)
@@ -39,13 +40,15 @@ $$
 \end{align}
 $$
 
-This doesn't make a whole lot of sense. I mean, in both cases we're performing the three same sums, so why should using vectors be more efficient? In this post we'll dive into the inner workings of R to understand why.
+This doesn't seem to make a whole lot of sense.
+I mean, in both cases we're performing the three same sums, so why should using vectors be more efficient?
+In this post we'll dive into the inner workings of R to understand why.
 
 <!--more-->
 
 ## Vectorizing, a.k.a. thinking in parallel
 
-You may be conditioned to think that every repetitive instantly calls for a loop. That's fine from a code-efficiency perspective, because you're trying to minimize redundancy in your code, which is good. However, we can dig a little deeper and start to think if our loops carry out operations that are dependent of each other or not.
+You may be conditioned to think that every repetitive action instantly calls for a loop. That's fine from a code-efficiency perspective, because you're trying to minimize redundancy in your code, which is good. However, we can dig a little deeper and start to think if our loops carry out operations that are dependent of each other or not.
 
 Dependent operations cannot be performed in parallel. These cases basically boil down to loops where the next iteration depends on values from the previous one. Examples include Bayesian statistic computations or some Markov Chain Monte Carlo methods.
 

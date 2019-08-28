@@ -2,6 +2,7 @@
 layout: post
 title:  "Data transformations and the (natural) logarithm"
 categories: metrics
+mathjax: true
 draft: true
 ---
 

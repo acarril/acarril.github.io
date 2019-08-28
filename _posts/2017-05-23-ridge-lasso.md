@@ -2,6 +2,7 @@
 layout: post
 title: The Ordinary, the Ridge and the Lasso
 draft: true
+mathjax: true
 ---
 
 ![the lasso](http://imageresize.org/Output/209682bb-4d01-4c3a-ab6c-3b2cb7adcd6a.jpg)

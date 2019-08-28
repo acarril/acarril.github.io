@@ -3,6 +3,7 @@ layout: post
 title:  What exactly is the confidence interval?
 categories: metrics
 draft: true
+mathjax: true
 ---
 
 Interpreting a simple 95% [confidence interval](https://en.wikipedia.org/wiki/Confidence_interval) (CI) is trickier than it seems. Many people think of the interval as a range that contains the parameter of interest (e.g. the mean) with a probability of 95%, but that's (kind of) wrong.

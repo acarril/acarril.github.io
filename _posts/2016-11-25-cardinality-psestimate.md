@@ -2,6 +2,7 @@
 layout: post
 title:  "Understanding the cardinality of <code>psestimate</code>"
 categories: metrics stata
+mathjax: true
 ---
 
 I've written a Stata program, [`psestimate`](/resources/psestimate), that implements an algorithm proposed by [Imbens and Rubin](http://jhr.uwpress.org/content/50/2/373) which helps to determine the first or second order polynomial of covariates to use in the  estimation of a propensity score. By its very nature this algorithm is slow and intensive in computational resources, which makes it slow to run. In this post I go over the number of models the program needs to fit, given some initial parameters.
