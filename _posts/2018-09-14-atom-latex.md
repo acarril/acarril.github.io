@@ -34,7 +34,7 @@ The first thing we'll want to do is to have syntax highlighting for `.tex` files
 If you open a LaTeX document right now, it should look like plain text, ie. the left panel in the image below.
 We want to have something like the right panel.
 
-![](/assets/scrshots/atom-latex-syntaxhighlighting.png)
+![](/assets/screenshots/atom-latex-syntaxhighlighting.png)
 
 We'll use [`language-latex`](https://atom.io/packages/language-latex), which works great out of the box.
 To install it, open the Settings View with `Ctrl+Comma` and in the `Install` tab look for `language-latex`.
@@ -85,7 +85,7 @@ After a successful build, the `latex` package should automatically invoke your d
 In some situations this is fine, but when I want a preview I usually prefer it side by side inside the editor itself.
 This behavior can be easily achieved by installing the [`pdf-view`](https://atom.io/packages/pdf-view) package.
 
-![](/assets/scrshots/atom-latex-pdf-view.png)
+![](/assets/screenshots/atom-latex-pdf-view.png)
 
 If it doesn't work for you after installing, go to `latex` package settings and be sure to select `pdf-view` as Opener.
 You can find these settings by opening the 'Settings View' with `Ctrl+Comma` and then selecting the 'Packages' tab on the left.
@@ -105,7 +105,7 @@ For the time being I went with the basic [`spell-check`](https://atom.io/package
 Make sure the package is installed (it should) and enabled.
 Then go to the package's settings and add `text.tex.latex` at the end of the list of Grammars, like in the bottom right of the screenshot below.
 
-![](/assets/scrshots/atom-latex-spellcheck-grammar.png)
+![](/assets/screenshots/atom-latex-spellcheck-grammar.png)
 
 After doing this, you should get spell checking in your LaTeX document.
 However, something that annoyed me is that you also get corrections for obviously-LaTeXy commands, like `\documentclass`.

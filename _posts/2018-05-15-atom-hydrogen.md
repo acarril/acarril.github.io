@@ -27,7 +27,7 @@ In this post I'll concentrate on the first three, because they can all be set up
 Head over to [https://atom.io/](https://atom.io/) to download Atom for your operating system, and then install it.
 Upon first execution, you should be greeted with something like the following screenshot:
 
-![](/assets/scrshots/atom-welcome.png)
+![](/assets/screenshots/atom-welcome.png)
 
 Now we're ready to go!
 
@@ -35,7 +35,7 @@ I suggest you open the Tree View (`View > Toggle Tree View`, or hit `Ctrl+\`), w
 You can now right-click anywhere in that pane and select `Add Project Folder` (or hit `Ctrl+Shift+A`) to open any project folder that contains some scripts (eg. `*.py` files).
 After doing so you should see something like the following screenshot:
 
-![](/assets/scrshots/atom-win.png)
+![](/assets/screenshots/atom-win.png)
 
 You'll notice that the file icons in my Tree View probably look much nicer than yours.
 It's not only that they're nice --- it's helpful to be able to tell file types apart at a glance.
