@@ -1,18 +1,27 @@
 ---
 layout: post
-title: Installing Stata on (Ubuntu) Linux
+title: Installing Stata in Linux
 ---
 
-![](https://www.statalist.org/forums/filedata/fetch?id=1351289&d=1469795531&type=full)
-
-Installing Stata properly on Linux is surprisingly cumbersome, and I've found that even [Statacorp's own guide](https://www.stata.com/support/faqs/unix/install-on-linux/) is incomplete and outdated. So here's mine.
+Properly installing Stata in Linux is surprisingly cumbersome, and I've found that even [Statacorp's own guide](https://www.stata.com/support/faqs/unix/install-on-linux/) is incomplete and outdated. So here's mine.
+{: .fs-6 .fw-300 }
 
 <!--more-->
 
-I have installed Stata in many Linux systems, but this tutorial focuses on Ubuntu 16.04 (specially in the last part). I will use Stata 14.2, but with minimal modifications it can be used for versions 13 through 15.
+I have installed Stata in many Linux systems, but this guide was originally written for Ubuntu 16.04.
+Having said that, I've checked that it works in many other Ubuntu-based and Arch-based distros.
+I have used Stata 14 here, but with minimal modifications it can be used for versions 13 through 16.
 I'm also assuming you have a tarball (a `.tar.gz` file) with the appropriate installation files for your operating system, and that you have root privileges in your system.
 
-# Installation
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
+
+# Install
 
 1. Change directory to wherever you have the `.tar.gz` file (e.g. the Downloads folder). There, create a temporary folder to store the installation files (e.g. `statainstall`), and extract the installation files to that folder.
 ```bash
@@ -69,7 +78,31 @@ At this point you can also delete the temporary installation folder:
 rm -r ~/Downloads/statainstall
 ```
 
+# Update
+
+It is important to check if you're version of Stata is up to date.
+You can head [here](https://www.stata.com/support/updates/) to find more information on updating.
+If you have an internet connection you can simply run `update query` to check automatically.
+However, if you have an "alternative" license you'll want to do a manual update (i.e. without internet access).
+
+You may run into permissions errors while attempting an update: after running `update query` (online updating) or `update db` (manual, offline updating) you can get something like
+```
+cannot write in directory /usr/local/stata15/.tmp
+r(603);
+```
+This happens due to permission issues in the install folder, but it's easily fixed.
+Before attempting to update, you can either start Sata with `sudo` (eg. `sudo xstata-mp`), or temporarily change the folder's permissions:
+```bash
+sudo chmod 777 -R /usr/local/stata15
+```
+If you do the latter it would be advisable to revert to the default permissions with
+```bash
+sudo chmod 755 -R /usr/local/stata15
+```
+
 # Additional improvements
+
+![](https://www.statalist.org/forums/filedata/fetch?id=1351289&d=1469795531&type=full)
 
 I have identified the following potential issues you may have after installing Stata in Linux:
 
@@ -82,9 +115,9 @@ If you want to solve the first three of these issues at once with little messing
 I've tried the script and it works as advertised, solving all above issues.
 However, it runs some binaries in `sudo`, so you may be uncomfortable with that.
 
-If you want to address this issues manually, you can check out the sections below.
+If you would rather fix these issues manually, you can check out the sections below.
 
-### 1. Interface icons
+### Interface icons
 
 Although it is only a aesthetic annoyance, it _is_ annoying to have an interface with no icons:
 
@@ -93,7 +126,7 @@ Although it is only a aesthetic annoyance, it _is_ annoying to have an interface
 My good friend and colleague at the NBER, Kyle Barron, has written [a fix for this issue](https://github.com/kylebarron/stata-png-fix). The main advantage of Kyle's solution is that it doesn't require `sudo` privileges.
 
 
-### 2. Unity launcher and desktop file
+### Unity launcher and desktop file
 
 Even after successfully installing and running Stata, in Ubuntu it won't be available as an application in the dash, and it won't have a proper icon in the application launcher. We can easily fix this by creating a `.desktop` file for Stata.
 
@@ -120,7 +153,7 @@ Actions=doedit;use;view;graphuse;projmanag;semopen;
 
 After saving this file you should be able to find Stata from the Unity dash, and when launched it should have its icon.
 
-### 3. Adding mimetype associations
+### Adding mimetype associations
 
 Adding mimetype associations for Stata files allows you to see Stata files (e.g. `do` files, `dta` files) with their proper icons, and more importantly, to be automagically opened in Stata when executed. This is the default behavior in Windows or Mac, but with Linux we have to do a bit of extra work.
 
@@ -171,7 +204,7 @@ sudo update-desktop-database /usr/share/applications/
 
 That's it! You should now have a fully functional, "pretty" version of Stata on your Linux system. With a bit of extra work, you can complete the job and add mimetype associations for more obscure Stata files. For instance, I've associated `do` and `ado` files to be opened up by [Atom](https://atom.io/) (my preferred text editor in Linux), as well as `sthlp` files (useful for when you're documenting a program).
 
-### 4. PDF documentation
+### PDF documentation
 
 The PDF manuals are loaded by a script named `stata_pdf`, located inside your Stata installation directory (eg. `/usr/local/stata15/stata_pdf`).
 By default the script points to Acrobat Reader (`acroread`), but [Adobe discontinued it](https://askubuntu.com/questions/507777/adobe-reader-for-linux-discontinued) around 2014 (good riddance). We can make some edits to `stata_pdf` so that it uses Evince, which is the default PDF reader in many Linux distros.
