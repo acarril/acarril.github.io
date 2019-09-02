@@ -142,14 +142,17 @@ $link-color: $myblue-000;
 // ADDITIONS
 //-----------------------------------------------------------------------------
 
-img.rounded-wrapped {
-  border-radius: 10px;
+img.wrapped-float {
   float: right;
   margin: 0 15px;
   max-width: 40%;
   height: auto;
   // -webkit-shape-outside:circle();
   // shape-outside:circle();
+}
+
+img.rounded {
+  border-radius: 10px;
 }
 
 div#research ul {
