@@ -42,7 +42,9 @@ nav_order: 1
               {{ author | append:',' }}
             {% endif %}
           {% else %}
-          and
+          {% if coauthors.size > 1 %}
+            and
+          {% endif %}
             {% if authordata.webpage %}
               <a href="{{ authordata.webpage }}">{{ author }}</a>
             {% else %}
@@ -52,6 +54,7 @@ nav_order: 1
         {% endfor %}
       {% endif %}
     </li>
-  {% endif %}{% endfor %}
+    {% endif %}
+  {% endfor %}
 </ul>
 </div>
