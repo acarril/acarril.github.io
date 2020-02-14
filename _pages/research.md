@@ -25,7 +25,7 @@ nav_order: 1
 <div id="research">
 <ul class="ul-research">
   {% assign research_sorted = site.research | sort:"pubdate" | reverse %}
-  {% for item in research_sorted %}{% if item.pubstatus != 'published' %}
+  {% for item in research_sorted %}{% if item.pubstatus == 'wp' %}
     <li>
       <b><a href="{{ item.url }}">{{ item.title }}</a></b>
       {{ item.journal }}
@@ -54,7 +54,6 @@ nav_order: 1
         {% endfor %}
       {% endif %}
     </li>
-    {% endif %}
-  {% endfor %}
+    {% endif %}{% endfor %}
 </ul>
 </div>
