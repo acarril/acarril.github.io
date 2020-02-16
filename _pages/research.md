@@ -32,6 +32,26 @@ nav_order: 1
       {% if item.coauthors %}
         <br/>With
         {% assign coauthors = item.coauthors | join: ',' | strip | split: ', ' %}
+        {% for author in coauthors %}
+          {{ author }}{% if forloop.rindex0 > 1 %},{% elsif forloop.rindex0 == 1 %} and{% endif %}
+        {% endfor %}
+      {% endif %}
+    </li>
+    {% endif %}
+  {% endfor %}
+</ul>
+</div>
+
+<!-- <div id="research">
+<ul class="ul-research">
+  {% assign research_sorted = site.research | sort:"pubdate" | reverse %}
+  {% for item in research_sorted %}{% if item.pubstatus == 'wp' %}
+    <li>
+      <b><a href="{{ item.url }}">{{ item.title }}</a></b>
+      {{ item.journal }}
+      {% if item.coauthors %}
+        <br/>With
+        {% assign coauthors = item.coauthors | join: ',' | strip | split: ', ' %}
         {% assign last = coauthors | last %}
         {% for author in coauthors %}
           {% assign authordata = site.data.coauthors[author] %}
@@ -56,4 +76,8 @@ nav_order: 1
     </li>
     {% endif %}{% endfor %}
 </ul>
-</div>
+</div> -->
+
+
+
+
