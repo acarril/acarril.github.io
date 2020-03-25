@@ -1,4 +1,4 @@
-Personal site: https://acarril.github.io/
+Personal site https://acarril.github.io/
 
 Developed with [Jekyll](https://jekyllrb.com/).
 Hosted in [GitHub Pages](https://github.com/).
