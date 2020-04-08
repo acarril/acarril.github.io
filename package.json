@@ -13,7 +13,9 @@
   "dependencies": {
     "@primer/css": "^12.6.0",
     "mixin-deep": ">=1.3.2",
-    "set-value": ">=2.0.1"
+    "set-value": ">=2.0.1",
+    "minimist": ">=0.2.1",
+    "kind-of": ">=6.0.3"
   },
   "scripts": {
     "test": "stylelint '**/*.scss'"
