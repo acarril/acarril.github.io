@@ -30,7 +30,7 @@ nav_order: 1
       <b><a href="{{ item.url }}">{{ item.title }}</a></b>
       {{ item.journal }}
       {% if item.coauthors %}
-        <br/>With
+        <br/>with
         {% assign coauthors = item.coauthors | join: ',' | strip | split: ', ' %}
         {% for author in coauthors %}
           {{ author }}{% if forloop.rindex0 > 1 %},{% elsif forloop.rindex0 == 1 %} and{% endif %}
