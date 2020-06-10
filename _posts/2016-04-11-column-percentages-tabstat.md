@@ -4,6 +4,7 @@ comments: true
 title:  "Adding column percentages of sums to tabstat"
 categories: stata
 permalink: /posts/column-percentages-tabstat
+draft: true
 ---
 
 Tabstat is a very useful command to produce tables of various summary statistics. It also works seamlessly with estout, so this tables can be easily exported.

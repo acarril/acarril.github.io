@@ -2,6 +2,7 @@
 layout: post
 title:  What is bootstrapping and how does it work?
 categories: metrics
+draft: true
 ---
 
 I've used [bootstrapping](https://en.wikipedia.org/wiki/Bootstrapping_(statistics)) many times to estimate errors, but when asked to explain how does it work, I realized I couldn't state it in an intuitive way. The question is simple: is bootstrapping simply a process of resampling from  our sample? How does that help us to learn something new about the *population*?

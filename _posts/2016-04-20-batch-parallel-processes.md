@@ -2,6 +2,7 @@
 layout: post
 title:  "Parallel processes in batch mode"
 categories: RCE
+draft: true
 ---
 
 One of the most powerful features of batch mode is the ability to run several processes in parallel. I'll explain how to easily use this feature  with Stata.

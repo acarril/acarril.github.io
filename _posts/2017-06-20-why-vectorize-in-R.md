@@ -2,6 +2,7 @@
 layout: post
 title: "Vectorization in R: under the hood"
 mathjax: true
+draft: true
 ---
 
 ![](https://www.quizover.com/jc2012-war/ocw/mirror/col10685_1.2_complete/m21494/pic009.png)

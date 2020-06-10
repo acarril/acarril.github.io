@@ -2,6 +2,7 @@
 layout: post
 title:  "Looping over values of a variable"
 categories: stata
+draft: true
 ---
 
 When creating loops, it is common to loop over all unique values of a variable. Usually we set these values explicitely, but there are more streamlined ways to automatically loop over existing values. This makes your code less error prone and more adaptable.
