@@ -13,7 +13,8 @@ nav_order: 1
     <li>
     <b><a href="{{ item.url }}">{{ item.title }}</a></b>
     {% if item.coauthors %}, with {{ item.coauthors }}{% endif %}<br/>
-    {{ item.journal }}
+    <b>{{ item.journal }}</b>
+    <br/>{{ item.abstract }}
     </li>
   {% endif %}{% endfor %}
 </ul>
@@ -30,12 +31,14 @@ nav_order: 1
       <b><a href="{{ item.url }}">{{ item.title }}</a></b>
       {{ item.journal }}
       {% if item.coauthors %}
-        <br/>with
+        <br/><b>with
         {% assign coauthors = item.coauthors | join: ',' | strip | split: ', ' %}
         {% for author in coauthors %}
           {{ author }}{% if forloop.rindex0 > 1 %},{% elsif forloop.rindex0 == 1 %} and{% endif %}
         {% endfor %}
+        </b>
       {% endif %}
+      <br/>{{ item.abstract }}
     </li>
     {% endif %}
   {% endfor %}
