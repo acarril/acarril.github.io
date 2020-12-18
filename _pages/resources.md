@@ -2,8 +2,10 @@
 layout: page
 title: Resources
 permalink: /resources
-nav_order: 2
+nav_order: 4
 ---
+
+# Resources
 
 This page is a repository of resources of various types, collected in one place. These include [software](#software) bits I've written (mostly Stata) and miscellaneous [documents](#documents) (mostly in spanish).
 {: .fs-6 .fw-300 }

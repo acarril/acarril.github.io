@@ -6,6 +6,8 @@ nav_order: 3
 search_exclude: true
 ---
 
+# Posts
+
 <!-- {% for category in site.tags %}
   <h3>{{ category[0] }}</h3>
   <ul>

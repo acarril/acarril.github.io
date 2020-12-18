@@ -1,8 +1,9 @@
 ---
-layout: default
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+layout: home
 title: Home
 nav_order: 1
-permalink: /
 ---
 
 # Welcome!
@@ -15,9 +16,9 @@ I'm Alvaro Carril, a PhD student at the Economics Department of Princeton Univer
 My main (research) interests revolve around reducing inequalities and improving the efficiency of markets that are heavily influenced ---or controlled--- by the public sector.
 I'm particularly interested in studying the relationship between education and labor markets.
 
-You can read more about me in the [About](/about) section of this website, or in my [CV](/cv).
-The [Resources](/resources) section serves as a repository of miscellaneous material that I've worked on over the years, while [Posts](/posts) collects brief blog-type posts I've made about various topics.
-Many of the projects that I'm working on (or not) are hosted on [my Github repo](https://www.github.com/acarril), which also hosts most of the material listed in [Resources](/resources).
+Check out the papers I am currently working on in the [research](/research) section.
+The [resources](/resources) section serves as a repository of miscellaneous material that I've worked on over the years, and most of the projects that I'm (not) working on (big and small) are hosted in [my Github repo](https://www.github.com/acarril).
+I also have a number of brief blog-type [posts](/posts) I've made about various econ and/or computer topics.
 
 ## About this site
 
