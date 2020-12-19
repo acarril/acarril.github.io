@@ -11,14 +11,14 @@ img.rounded {
     border-radius: 50%;
 }
 
-div#research ul {
+div.research ul {
 	list-style: none;
 }
 
-div#research li {
+div.research li {
 	margin-bottom: 15px;
 }
 
-div#research li:before {
+div.research li:before {
 	content: ">";
 }

@@ -6,27 +6,30 @@ nav_order: 2
 ---
 
 ## Publications
-
-<ul class="ul-research">
-  {% for item in site.research %}{% if item.pubstatus == 'published' %}
-    <li>
-    <b><a href="{{ item.url }}">{{ item.title }}</a></b>
-    {% if item.coauthors %}, with {{ item.coauthors }}{% endif %}<br/>
-    <b>{{ item.journal }}</b>
-    <br/>{{ item.abstract }}
-    </li>
-  {% endif %}{% endfor %}
-</ul>
+<div class="research">
+  <ul class="ul-research">
+    {% for item in site.research %}{% if item.pubstatus == 'published' %}
+      <li>
+      <b><a href="{{ item.url }}">{{ item.title }}</a></b>
+      {% if item.coauthors %}, with {{ item.coauthors }}{% endif %}<br/>
+      <b>{{ item.journal }}</b>
+      <br/>{{ item.abstract }}
+      </li>
+    {% endif %}{% endfor %}
+  </ul>
+</div>
 
 ## Work in progress
 
-<ul class="ul-research">
-  {% for item in site.research %}{% if item.pubstatus != 'published' %}
-    <li>
-    <b><a href="{{ item.url }}">{{ item.title }}</a></b>
-    {% if item.coauthors %}, with {{ item.coauthors }}{% endif %}<br/>
-    <b>{{ item.journal }}</b>
-    <br/>{{ item.abstract }}
-    </li>
-  {% endif %}{% endfor %}
-</ul>
+<div class="research">
+  <ul class="ul-research">
+    {% for item in site.research %}{% if item.pubstatus != 'published' %}
+      <li>
+      <b><a href="{{ item.url }}">{{ item.title }}</a></b>
+      {% if item.coauthors %}, with {{ item.coauthors }}{% endif %}<br/>
+      <b>{{ item.journal }}</b>
+      <br/>{{ item.abstract }}
+      </li>
+    {% endif %}{% endfor %}
+  </ul>
+</div>
