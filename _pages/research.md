@@ -21,7 +21,7 @@ nav_order: 2
 </div>
 
 
-<!-- ## Working papers & work in progress
+## Working papers & work in progress
 
 <div id="research">
 <ul class="ul-research">
@@ -30,17 +30,17 @@ nav_order: 2
     <li>
       <b><a href="{{ item.url }}">{{ item.title }}</a></b>
       {{ item.journal }}
-      {% if item.coauthors %}
+      <!-- {% if item.coauthors %}
         <br/><b>with
         {% assign coauthors = item.coauthors | join: ',' | strip | split: ', ' %}
         {% for author in coauthors %}
           {{ author }}{% if forloop.rindex0 > 1 %},{% elsif forloop.rindex0 == 1 %} and{% endif %}
         {% endfor %}
         </b>
-      {% endif %}
+      {% endif %} -->
       <br/>{{ item.abstract }}
     </li>
     {% endif %}
   {% endfor %}
 </ul>
-</div> -->
+</div>
