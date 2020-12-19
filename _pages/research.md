@@ -5,11 +5,7 @@ permalink: /research
 nav_order: 2
 ---
 
-## Publications
-
-<div>
-  Something.
-</div>
+## Publicationz
 
 
 <!-- ## Working papers & work in progress
