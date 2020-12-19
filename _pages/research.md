@@ -23,7 +23,7 @@ nav_order: 2
 
 ## Working papers & work in progress
 
-<div id="research">
+<!-- <div id="research"> -->
 <ul class="ul-research">
   {% assign research_sorted = site.research | sort:"pubdate" | reverse %}
   {% for item in research_sorted %}{% if item.pubstatus == 'wp' %}
@@ -43,44 +43,4 @@ nav_order: 2
     {% endif %}
   {% endfor %}
 </ul>
-</div>
-
-<!-- <div id="research">
-<ul class="ul-research">
-  {% assign research_sorted = site.research | sort:"pubdate" | reverse %}
-  {% for item in research_sorted %}{% if item.pubstatus == 'wp' %}
-    <li>
-      <b><a href="{{ item.url }}">{{ item.title }}</a></b>
-      {{ item.journal }}
-      {% if item.coauthors %}
-        <br/>With
-        {% assign coauthors = item.coauthors | join: ',' | strip | split: ', ' %}
-        {% assign last = coauthors | last %}
-        {% for author in coauthors %}
-          {% assign authordata = site.data.coauthors[author] %}
-          {% if author != last %}
-            {% if authordata.webpage %}
-              <a href="{{ authordata.webpage }}">{{ author }}</a>,
-            {% else %}
-              {{ author | append:',' }}
-            {% endif %}
-          {% else %}
-          {% if coauthors.size > 1 %}
-            and
-          {% endif %}
-            {% if authordata.webpage %}
-              <a href="{{ authordata.webpage }}">{{ author }}</a>
-            {% else %}
-              {{ author }}
-            {% endif %}
-          {% endif %}
-        {% endfor %}
-      {% endif %}
-    </li>
-    {% endif %}{% endfor %}
-</ul>
-</div> -->
-
-
-
-
+<!-- </div> -->
