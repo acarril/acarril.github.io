@@ -46,9 +46,6 @@ aux_links_new_tab: false
 # Includes
 include: ["_pages"]
 
-
-search_enabled: false
-
 # Compress html
 compress_html:
   blanklines: true # needed to render Mathjax correctly
