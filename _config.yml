@@ -43,6 +43,10 @@ aux_links:
 # Makes Aux links open in a new tab. Default is false
 aux_links_new_tab: false
 
+# Enable or disable the site search
+# Supports true (default) or false
+search_enabled: true
+
 # Includes
 include: ["_pages"]
 
