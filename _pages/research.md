@@ -7,7 +7,7 @@ nav_order: 2
 
 ## Publications
 
-<div id="research">
+<div>
   Something.
 </div>
 
