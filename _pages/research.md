@@ -7,9 +7,8 @@ nav_order: 2
 
 ## Publications
 
-<div id="research">
-Lala
-  <!-- <ul class="ul-research">
+<!-- <div id="research">
+  <ul class="ul-research">
     {% for item in site.research %}{% if item.pubstatus == 'published' %}
       <li>
         <b><a href="{{ item.url }}">{{ item.title }}</a></b>
@@ -18,8 +17,8 @@ Lala
         <br/>{{ item.abstract }}
       </li>
     {% endif %}{% endfor %}
-  </ul> -->
-</div>
+  </ul>
+</div> -->
 
 
 <!-- ## Working papers & work in progress
