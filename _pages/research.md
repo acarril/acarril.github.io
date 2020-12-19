@@ -21,7 +21,7 @@ nav_order: 2
 </div>
 
 
-## Working papers & work in progress
+<!-- ## Working papers & work in progress
 
 <div id="research">
 <ul class="ul-research">
@@ -43,4 +43,4 @@ nav_order: 2
     {% endif %}
   {% endfor %}
 </ul>
-</div>
+</div> -->
