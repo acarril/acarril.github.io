@@ -23,7 +23,7 @@ nav_order: 2
 
 ## Working papers & work in progress
 
-<!-- <div id="research"> -->
+<div id="research">
 <ul class="ul-research">
   {% assign research_sorted = site.research | sort:"pubdate" | reverse %}
   {% for item in research_sorted %}{% if item.pubstatus == 'wp' %}
@@ -43,4 +43,4 @@ nav_order: 2
     {% endif %}
   {% endfor %}
 </ul>
-<!-- </div> -->
+</div>
