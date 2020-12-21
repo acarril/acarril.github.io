@@ -31,7 +31,9 @@ github_username:  acarril
 # e.g, UA-1234567-89
 ga_tracking: UA-54241026-2
 
+# Color scheme (customs are defined in _sass/color_schemes/)
 color_scheme: myblu
+
 # Build settings
 # theme: "just-the-docs"
 remote_theme: pmarsceill/just-the-docs
@@ -72,6 +74,9 @@ defaults:
     values:
       layout: research
 
+exclude:
+  - backup
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
@@ -92,5 +97,3 @@ defaults:
 #   - vendor/gems/
 #   - vendor/ruby/
 
-exclude:
-  - backup
