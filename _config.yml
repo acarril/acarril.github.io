@@ -27,6 +27,9 @@ url: "https://acarril.github.io" # the base hostname & protocol for your site, e
 twitter_username: acarrilr
 github_username:  acarril
 
+# Google Analytics Tracking (optional)
+# e.g, UA-1234567-89
+ga_tracking: UA-54241026-2
 
 color_scheme: myblu
 # Build settings
