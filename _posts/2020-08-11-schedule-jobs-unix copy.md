@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Using `cron` to schedule jobs in Linux and OSX
+draft: true
 ---
 
 Recently I've discovered the power of [cron](https://man7.org/linux/man-pages/man8/cron.8.html), a job scheduler that allows you to run scripts or other programs periodically, at fixed times or intervals. In this post I explain how to set it up, and go into the little tricks I found along the way.
