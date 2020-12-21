@@ -52,6 +52,10 @@ aux_links_new_tab: false
 # Supports true (default) or false
 search_enabled: true
 
+# Footer last edited timestamp
+last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter
+last_edit_time_format: "%b %e, %Y" # uses ruby's time format: https://ruby-doc.org/stdlib-2.7.0/libdoc/time/rdoc/Time.html
+
 # Includes
 include: ["_pages"]
 
