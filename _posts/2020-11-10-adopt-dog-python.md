@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Adopting a dog using Python
+draft: true
 ---
 
 For a long time my wife and I wanted to adopt a dog, and during this summer we did so.
