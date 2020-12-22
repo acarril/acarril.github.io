@@ -10,6 +10,8 @@ However, it was surprisingly hard to accomplish in the US, maybe partly because 
 After the approval process is over, you still need to be constantly paying attention to "the right" puppy to show up, and that's where Python comes in.
 {: .fs-6 .fw-300 }
 
+![](/assets/images/cali_andI.jpg)
+
 # Welcome to the U.S. of A.
 
 Adopting a dog in the US is not easy.
@@ -235,4 +237,5 @@ This is exactly what I needed for `pup-notify.py`, which runs in less than half 
 Even though executing it is as simple as typing `python3 ~/bin/pup-notifier.py`, I wanted to automate the job.
 One possible solution was to do it via Python, either via `time.sleep` or via the `schedule` library (or others, like `gevent`).
 However, these solutions require that the program will be continuously running, which seemed a bit inelegant.
+
 
