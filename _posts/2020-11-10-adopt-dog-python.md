@@ -2,7 +2,7 @@
 layout: post
 title: Adopting a dog using Python
 draft: false
-last_modified_date: 2020-12-20
+last_modified_date: 2020-12-23
 ---
 
 For a long time my wife and I wanted to adopt a dog, and during this summer we did so.
@@ -232,10 +232,42 @@ sys.stdout.write(date_time + ' Run with updates!\n')
 
 ## Running the script periodically with `cron`
 
-Recently I've discovered the power of [cron](https://man7.org/linux/man-pages/man8/cron.8.html), a job scheduler that allows you to run scripts or other programs periodically, at fixed times or intervals.
-This is exactly what I needed for `pup-notify.py`, which runs in less than half a second, but I wanted it to run every 10 minutes.
-Even though executing it is as simple as typing `python3 ~/bin/pup-notifier.py`, I wanted to automate the job.
+Recently I discovered the power of [cron](https://man7.org/linux/man-pages/man8/cron.8.html), a job scheduler that allows you to run scripts or other programs periodically, at fixed times or intervals.
+This is exactly what I needed for `pup-notify.py`, where the script itself runs in less than half a second, but I want to execute it every 10 minutes.
 One possible solution was to do it via Python, either via `time.sleep` or via the `schedule` library (or others, like `gevent`).
 However, these solutions require that the program will be continuously running, which seemed a bit inelegant.
+It also doesn't resume automatically if, for any reason, the Python process halts (e.g. if I restart my machine).
 
+Using `cron` is very simple with the aid of `crontab`, which is a utility program to maintain lists of tasks that are run by `cron` itself.
+You can add, modify or remove (i.e. edit) tasks by running
+```bash
+crontab -e
+```
+This will open up a (probably) empty text file where you can write lines describing different jobs and their schedules.
+You then have to 
+```bash
+*/10 * * * *  cd ~/Repos/pup-notifier && /usr/local/bin/python3 pup-notifier.py >> ~/Repos/pup-notifier/cronOUT.txt 2>> ~/Repos/pup-notifier/cronERR.txt
+```
 
+Lets break this expression down.
+The first part with five asterisks is a *cron schedule expression*, which is basically a way of writing down the details of a scheduled task.
+For example,
+```bash
+# At 04:05 on Sunday
+5 4 * * sun
+
+# At 22:00 on every day-of-week from Monday through Friday
+0 22 * * 1-5
+
+# At every 30th minute on every day-of-week from Saturday through Sunday
+*/30 * * * 6-7
+```
+You can play with these expressions in [`crontab guru`](https://crontab.guru/), which breaks down how to build them and interprets any input in natural language (which is what I used for these examples).
+For my particular application, I wanted the program to run every ten minutes, so the cron schedule expression is
+```bash
+*/10 * * * *
+```
+
+That's the only tricky part.
+The rest of the line is a series of shell commands that run the script, defining a text file (`cronOUT.txt`) that contains the output, and a second one (`cronERR.txt`) to log any errors.
+This made it easy to check whether the script was running successfully or not.
