@@ -5,7 +5,10 @@ permalink: /research
 nav_order: 2
 ---
 
-## Publications
+# Research
+
+### Publications
+
 <div class="research">
   <ul class="ul-research">
     {% for item in site.research %}{% if item.pubstatus == 'published' %}
@@ -19,7 +22,7 @@ nav_order: 2
   </ul>
 </div>
 
-## Work in progress
+### Work in progress
 
 <div class="research">
   <ul class="ul-research">
