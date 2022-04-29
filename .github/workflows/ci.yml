@@ -32,4 +32,3 @@ jobs:
     - name: npm install, (no build), and test
       run: |
         npm install
-        npm test
