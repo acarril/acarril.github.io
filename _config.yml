@@ -26,6 +26,7 @@ baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://acarril.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: acarrilr
 github_username:  acarril
+github: [metadata]
 
 # Google Analytics Tracking (optional)
 # e.g, UA-1234567-89
