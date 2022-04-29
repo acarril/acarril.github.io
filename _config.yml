@@ -27,6 +27,7 @@ url: "https://acarril.github.io" # the base hostname & protocol for your site, e
 twitter_username: acarrilr
 github_username:  acarril
 github: [metadata]
+repository: acarril/acarril.github.io
 
 # Google Analytics Tracking (optional)
 # e.g, UA-1234567-89
