@@ -1,10 +1,10 @@
 ---
 title: Schedule Optimization and Teacher Allocation Frictions
 pubstatus: wp
-pubdate: 2020-10-01
+date: 2020-10-01
 coauthors:
 abstract: |
-    Teacher allocation ---both within and across schools--- is a major source of inefficiency in school districts.
+    Teacher allocation—both within and across schools—is a major source of inefficiency in school districts.
     The school teachers market is particular because teachers cannot freely supply any number of labor hours, because they also have to fit each school's schedule.
     These schedules are determined via a costly process which is inflexible and produces sub-optimal results.
     In this paper I investigate how inflexible scheduling of labor hours is an important source of frictions in the school market, which leads to inefficient assignment of teachers across school districts.
