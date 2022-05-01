@@ -15,10 +15,35 @@ div.research ul {
 	list-style: none;
 }
 
-div.research li {
-	margin-bottom: 15px;
+// div.research br {
+//     margin: 10px 0;
+// }
+
+div.research li + li {
+    margin-top: 30px
 }
 
 div.research li:before {
 	content: ">";
+}
+
+div.research h3 {
+    line-height: 1.75;
+}
+
+div.research h3 + p {
+    margin-bottom: 0px;
+}
+
+div.research p {
+    margin-top: 0px;
+}
+
+.outer {
+    margin: 0 auto;
+}
+
+.inner {
+    margin-left: 30px;
+    // background-color: orange;
 }
