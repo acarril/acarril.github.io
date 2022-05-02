@@ -11,7 +11,7 @@ nav_order: 1
 I'm Alvaro Carril, a PhD student at the Economics Department of Princeton University.
 {: .fs-6 .fw-300 }
 
-<img src="/assets/images/acarril-princeton.jpg" class="wrapped-float rounded">
+<img src="/assets/images/acarril-princeton.jpg" onmouseover="this.src='assets/images/broccoli.jpg';" onmouseout="this.src='/assets/images/acarril-princeton.jpg';" class="wrapped-float rounded"/>
 
 My main (research) interests revolve around reducing inequalities and improving the efficiency of markets that are heavily influenced ---or controlled--- by the public sector.
 I'm particularly interested in studying the relationship between education and labor markets.
