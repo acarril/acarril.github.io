@@ -1,7 +1,8 @@
 ---
-title: Credit Constraints and Distortions in College-Major Choice
+title: "Information Frictions in Higher Education Loans: Evidence From Colombia"
 pubstatus: wp
-date: 2019-11-01
+date: 2021-11-06
 coauthors:
-abstract: 'I investigate the role that credit constraint and loan repayment schedules play in the college-major decision of students in Colombia.'
+abstract: |
+    I investigate the extent to which various information frictions affect higher education decisions in Colombia, employing an informational <i>chatbot</i> developed in partnership with the Colombian Institute for the Promotion of Higher Education.
 ---
