@@ -10,6 +10,8 @@ hugo.darwin
 hugo.linux
 # Temporary lock file while building
 /.hugo_build.lock
+# Theme submodules
+themes/*
 
 ### Misc
 .DS_Store
