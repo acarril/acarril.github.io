@@ -2,8 +2,7 @@
 title: "About"
 ---
 
-Your about page content goes here. You can use Markdown formatting to style the content as needed.
+I'm a fifth-year [PhD student in Economics at Princeton](https://irs.princeton.edu/people/alvaro-carril). I study the role that information plays in the decisions of people and firms.
 
-This is a second paragraph.
-
-This is a first paragraph.
+Most of my work is on the topic of education, and how the right information at the right time can help people make better educational decisions.
+I've done much of this work with the team at [ConsiliumBots](https://www.consiliumbots.com/), a non-profit that uses technology to help people make informed decisions.
