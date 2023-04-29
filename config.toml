@@ -18,7 +18,7 @@ pygmentsUseClasses = true
     name = "posts"
     title = "posts"
     url = "/"
-    weight = 10
+    weight = 30
 
   [[menu.main]]
     identifier = "about"
@@ -26,6 +26,13 @@ pygmentsUseClasses = true
     title = "about"
     url = "/about/"
     weight = 20
+
+  [[menu.main]]
+    identifier = "research"
+    name = "research"
+    title = "research"
+    url = "/research/"
+    weight = 10
 
 [permalinks]
   posts = "/:title/"
