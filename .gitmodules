@@ -1,4 +1,0 @@
-[submodule "themes/etch-academic"]
-	path = themes/etch-academic
-	url = https://github.com/acarril/etch-academic.git
-    ignore = all
