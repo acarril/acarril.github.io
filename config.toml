@@ -7,36 +7,43 @@ pygmentsCodeFences = true
 pygmentsUseClasses = true
 
 [params]
-  description = "Your site description"
-  copyright = "Álvaro Carril — Content licensed under GNU GPL-3.0-only"
-  dark = "off"
-  highlight = true
+    description = "Your site description"
+    copyright = "Álvaro Carril — Content licensed under GNU GPL-3.0-only"
+    dark = "off"
+    highlight = true
 
 [menu]
-  [[menu.main]]
-    identifier = "posts"
-    name = "posts"
-    title = "posts"
-    url = "/"
-    weight = 30
+    [[menu.main]]
+        identifier = "cv"
+        name = "cv"
+        title = "cv"
+        url = "https://www.dropbox.com/s/oow36pf0wyevnc4/CV_acarril.pdf?raw=1"
+        weight = 30
 
-  [[menu.main]]
-    identifier = "about"
-    name = "about"
-    title = "about"
-    url = "/about/"
-    weight = 20
+    [[menu.main]]
+        identifier = "about"
+        name = "about"
+        title = "about"
+        url = "/about/"
+        weight = 20
 
-  [[menu.main]]
-    identifier = "research"
-    name = "research"
-    title = "research"
-    url = "/research/"
-    weight = 10
+    [[menu.main]]
+        identifier = "setup"
+        name = "setup"
+        title = "My Setup"
+        url = "/setup"
+        weight = 40
+
+    [[menu.main]]
+        identifier = "research"
+        name = "research"
+        title = "research"
+        url = "/research/"
+        weight = 10
 
 [permalinks]
-  posts = "/:title/"
+    posts = "/:title/"
 
 [markup.goldmark.renderer]
-  # Allows HTML in Markdown
-  unsafe = true
+    # Allows HTML in Markdown
+    unsafe = true
