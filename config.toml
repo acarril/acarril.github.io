@@ -12,6 +12,7 @@ pygmentsUseClasses = true
     copyright = "Álvaro Carril — Content licensed under GNU GPL-3.0-only"
     dark = "off"
     highlight = true
+    aboutExcerptSentences = 2
 
 [menu]
     [[menu.main]]
