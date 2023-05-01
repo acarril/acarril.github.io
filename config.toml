@@ -3,6 +3,7 @@ title = "Álvaro Carril"
 theme = "etch-academic"
 languageCode = "en-US"
 enableInlineShortcodes = true
+enableGitInfo = true
 pygmentsCodeFences = true
 pygmentsUseClasses = true
 
