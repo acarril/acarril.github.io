@@ -18,6 +18,4 @@ series = ["my-setup"]
 aliases = ["migrate-from-jekyl"]
 +++
 
-# Foo
-
-Bar.
+Coming soon...

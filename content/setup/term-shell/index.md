@@ -114,7 +114,7 @@ brew install zsh-autosuggestions
 
 Then, at the end of your `~/.zshrc` file:
 ```zsh
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zs
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 ```
 
 ### Syntax Highlighting
@@ -128,5 +128,5 @@ brew install zsh-syntax-highlighting
 
 Then, at the end of your `~/.zshrc` file:
 ```zsh
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ```
