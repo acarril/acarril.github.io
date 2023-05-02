@@ -19,3 +19,5 @@ aliases = ["migrate-from-jekyl"]
 +++
 
 Coming soon...
+
+{{< figure src="images/hold_on.jpg" >}}
