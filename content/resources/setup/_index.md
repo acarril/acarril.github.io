@@ -1,5 +1,7 @@
 +++
 title = "My setup"
+description = "setuuuoz"
+type = "setup"
 +++
 
 

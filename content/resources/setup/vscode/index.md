@@ -1,7 +1,7 @@
 +++
 author = "Álvaro Carril"
 title = "VS Code"
-date = "2023-01-26"
+date = "2022-12-16"
 lastmod = "2023-01-26"
 description = "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
 tags = [
