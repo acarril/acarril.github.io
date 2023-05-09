@@ -3,6 +3,7 @@ author = "Álvaro Carril"
 title = "Julia"
 date = "2022-12-16"
 lastmod = "2022-12-23"
+draft = true
 description = "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
 tags = [
     "markdown",
