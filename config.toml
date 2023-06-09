@@ -13,6 +13,7 @@ pygmentsUseClasses = true
     dark = "off"
     highlight = true
     aboutExcerptSentences = 2
+    google_analytics = "G-3F4R1K00EF"
 
 [menu]
     [[menu.main]]
