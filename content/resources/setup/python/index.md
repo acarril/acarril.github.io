@@ -98,6 +98,11 @@ pyenv install --list | sed 's/^  //' | grep '^\d' | grep --invert-match 'dev\|a\
 pyenv install $(pyenv install --list | sed 's/^  //' | grep '^\d' | grep --invert-match 'dev\|a\|b' | tail -1)
 ```
 
+If you know which version of Python you want (say, 3.9), then you can omit the revision and `pyenv` will resolve the request to the latest available revision:
+```sh
+pyenv install 3.9   # installs 3.9.16
+```
+
 Keep in mind that you can always add or remove versions, so this decision is not final.
 To uninstall a version, simply use `pyenv uninstall <version>`. See [here](https://github.com/pyenv/pyenv#uninstalling-python-versions) for more info.
 
@@ -114,16 +119,58 @@ The output I get after running this command in my local machine is above. Notice
 
 We can change the global default version by running `pyenv global <version>`, where `<version>` is any of the ones listed when running `pyenv versions`. For example, I can switch my global default version to 3.6.13 by running
 ```sh
-pyenv global 3.6.13
+pyenv global 3.6.13    # just an example
 ```
 I can check that this worked by running `pyenv version` again, or simply by initializing the Python REPL with `python`. See output below.
 
 ![pyenv-global](https://user-images.githubusercontent.com/9773292/145111077-eb8d1bc8-aa32-4677-a77e-bef6eb3846dc.png)
 
 If you only need one Python version for all your projects, and you'd prefer it wasn't the system default (as you should), then having a single global version should work just fine.
-<!-- Up next, we'll walk through how to set up projects that need different Python versions and environments. -->
-<!-- 
-## Understanding the modern Python setup
+Up next, we'll walk through how to set up projects that need different Python versions and environments.
+
+## Project-specific Python environments
+
+In many instances we want to be able to create project-specific Python environments for our projects.
+That is, we want to 
+1. use a specific Python version (say, 3.9.16), and
+2. have project-specific dependencies (libraries).
+
+In order to fix ideas, suppose we want to create a new project ("`foo`") located in `~/foo`.
+
+### Local Python version
+
+Defining a local Python version enables easy switching to the Python required by a particular project.
+We can define a _local_ Python version using `pyenv local <version>` inside the project's root directory:
+```sh
+cd ~/foo
+pyenv local 3.9.16
+```
+This will create a `.python-version` file inside `~/foo`, and every Python call issued inside `foo` will use the version defined here, taking precedence over the global version.
+IDEs like VSCode will automatically detect this file and set the Python version accordingly.
+
+### Virtual environments
+
+Virtual environments permit project-specific dependencies.
+That is, a virtual environment allow us to install libraries which are tied to a specific project.
+This is great because different projects might have different, potentially conflicting dependencies.
+<!-- Any time you're working on a Python project that uses external dependencies that you’re installing with `pip`, it's best to first create a virtual environment. -->
+
+We can **create a virtual environment** for our `foo` project by running
+```sh
+cd ~/foo
+python -m venv .venv
+```
+This will create a virtual environment inside `~/foo`, which is really just a directory named `.venv` (or anything else, really) where the project libraries are installed.
+Because of this, we can **delete a virtual environment** by simply removing this directory (`rm -rf .venv`; be careful with `rm -rf`!).
+
+Finally, we need to **activate the virtual environment** prior to using it.
+In Unix, this is done with
+```sh
+cd ~/foo
+source .venv/bin/activate
+```
+
+<!-- ### Understanding the modern Python setup
 
 This is completely optional, but probably worth knowing. The pyramid below depicts the resolution order for which Python gets used when you call `python` in your terminal.
 
@@ -131,11 +178,12 @@ This is completely optional, but probably worth knowing. The pyramid below depic
 
 From bottom to top,
 1. **System Python** is the one that comes bundled with macOS, and likely to be version 2.7.something. _You never wnat to use or touch or remove System Python_.
-2. 
+2. -->
 
 # References
 
 1. https://opensource.com/article/19/6/python-virtual-environments-mac
 2. https://www.freecodecamp.org/news/python-version-on-mac-update/
 3. https://stackoverflow.com/questions/29687140/install-latest-python-version-with-pyenv
-4. https://stackoverflow.com/questions/41573587/what-is-the-difference-between-venv-pyvenv-pyenv-virtualenv-virtualenvwrappe -->
+4. https://stackoverflow.com/questions/41573587/what-is-the-difference-between-venv-pyvenv-pyenv-virtualenv-virtualenvwrappe 
+5. https://realpython.com/intro-to-pyenv/
