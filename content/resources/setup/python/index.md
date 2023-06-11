@@ -101,7 +101,7 @@ pyenv install $(pyenv install --list | sed 's/^  //' | grep '^\d' | grep --inver
 Keep in mind that you can always add or remove versions, so this decision is not final.
 To uninstall a version, simply use `pyenv uninstall <version>`. See [here](https://github.com/pyenv/pyenv#uninstalling-python-versions) for more info.
 
-### Set up global Python default
+### Set up a global Python version
 
 Now that Python 3 is installed via `pyenv`, we need to set it as a global (i.e. system default) version.
 You can check out the available Python versions in your machine with
@@ -118,10 +118,7 @@ pyenv global 3.6.13
 ```
 I can check that this worked by running `pyenv version` again, or simply by initializing the Python REPL with `python`. See output below.
 
-<img width="825" alt="image" src="https://user-images.githubusercontent.com/9773292/145111077-eb8d1bc8-aa32-4677-a77e-bef6eb3846dc.png">
-
-If you don't need different versions of Python for different projects, having a single global version that is not the system default might be enough for you.
-In the next sections we go through setting up projects that utilize different versions and environments.
+![pyenv-global](https://user-images.githubusercontent.com/9773292/145111077-eb8d1bc8-aa32-4677-a77e-bef6eb3846dc.png)
 
 If you only need one Python version for all your projects, and you'd prefer it wasn't the system default (as you should), then having a single global version should work just fine.
 <!-- Up next, we'll walk through how to set up projects that need different Python versions and environments. -->
