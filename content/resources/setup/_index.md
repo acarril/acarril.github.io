@@ -1,7 +1,8 @@
 +++
 title = "My setup"
-description = "setuuuoz"
+description = "setup"
 type = "setup"
+weight = 1
 +++
 
 
