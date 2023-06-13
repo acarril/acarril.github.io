@@ -58,22 +58,25 @@ In order to be able to launch Stata you'll need to add the installation director
     ```bash
     source ~/.bashrc
     ```
+3. At this point you can also delete the temporary installation folder:
+    ```bash
+    rm -r ~/Downloads/statainstall
+    ```
 
+
+### Running Stata
 
 After adding the install directory to yout path, you should be able to run the appropriate version of Stata from the terminal, e.g.:
-    ```bash
-    xstata-mp
-    ```
+```bash
+xstata-mp
+```
 This launches the X-window (GUI based) version of Stata MP. You can also run Stata directly within the terminal with
-    ```bash
-    stata-mp
-    ```
+```bash
+stata-mp
+```
 
 Obviously you'll need to substitute `mp` for whatever version you have a license for.
-At this point you can also delete the temporary installation folder:
-```bash
-rm -r ~/Downloads/statainstall
-```
+
 
 ## Updating
 
@@ -83,7 +86,7 @@ If you have an internet connection you can simply run `update query` to check au
 However, if you have an "alternative" license you'll want to do a manual update (i.e. without internet access).
 
 You may run into permissions errors while attempting an update: after running `update query` (online updating) or `update db` (manual, offline updating) you can get something like
-```
+```bash
 cannot write in directory /usr/local/stata15/.tmp
 r(603);
 ```
@@ -134,7 +137,7 @@ sudo gedit /usr/share/applications/stata14.desktop
 
 In this newly-created file just copy and paste the following, obviously adjusting it if you have a different version or flavor of Stata:
 
-```
+```bash
 [Desktop Entry]
 Version=14.2
 Terminal=false
