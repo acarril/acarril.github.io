@@ -10,15 +10,20 @@ Properly installing Stata in Linux is surprisingly cumbersome, and I've found th
 {{< toc >}}
 
 I have installed Stata in many Linux systems, but this guide was originally written for Ubuntu 16.04.
-Having said that, I've checked that it works in many other Ubuntu-based and Arch-based distros, including Ubuntu 20.10.
-Originally this was written for Stata 14, but I've tested versions 13 through 17.
-You should already have a tarball (a file with `.tar.gz` extension) with the appropriate installation files for your operating system, and you'll need root privileges in your system for some steps.
+Having said that, I've checked that it works in many other Ubuntu-based and Arch-based distros, up to Ubuntu 22.10.
+This guide was originally written for Stata 14, so many references mention that version (e.g. `mkdir /usr/local/stata14`).
+Evidently, you should change those references to your version of Stata.
+The methods mentioned here have been tested with versions 13 through 17.
+
+## Prerequisites
+- You should already have a tarball (a file with `.tar.gz` extension) with the appropriate installation files for your operating system, and 
+- you'll need root privileges in your system for some steps.
 
 ## Installation
 
 ### Install script
 
-1. Change directory to wherever you have the `.tar.gz` file (e.g. the Downloads folder). There, create a temporary folder to store the installation files (e.g. `statainstall`), and extract the installation files to that folder.
+1. Change directory to wherever you have the `.tar.gz` file (e.g. the Downloads folder, `~/Downloads`). There, create a temporary folder to store the installation files (e.g. `statainstall`), and extract the installation files to that folder.
     ```bash
     cd ~/Downloads
     mkdir statainstall
@@ -31,48 +36,60 @@ You should already have a tarball (a file with `.tar.gz` extension) with the app
     cd /usr/local/stata14
     ```
 
-3. Run the install script.
+3. From the installation directory, run the install script included in the installation files. Follow the install instructions until completed.
     ```bash
     sudo ~/Downloads/statainstall/install
     ```
 
 ### License
 
-In order you configure the license file you just need to run `./stinit` (you'll need root privileges to write the file). Be sure to have the serial number, code and authorization. No need to disconnect from the interwebz here, even if you have an "alternative" license ;) (this might have changed for Stata 18).
+In order you configure the license file you just need to run `./stinit` (you'll need root privileges to write the file). Be sure to have the serial number, code and authorization. No need to disconnect from the interwebz here, even if you have an "alternative" license ;).
 
 Run
 ```bash
 sudo ./stinit
 ```
 
+At this point you can also delete the temporary installation folder:
+```bash
+rm -r ~/Downloads/statainstall
+```
+
 ### Add directory to path
 
-In order to be able to launch Stata you'll need to add the installation directory to the system path.
+It is more convenient to run Stata just by typing `stata` (or `xstata` for the X-window version) in the terminal, instead of having to type the full path to the executable (e.g. `/usr/local/stata14/xstata-mp`).
+In order do this, you'll need to add the installation directory to the system path.
 
 1. Add one line at the end of your `.bashrc` file (or equivalent, depending on your shell) to add Stata to the system path.
     ```bash
     echo export PATH="/usr/local/stata14:$PATH" >> ~/.bashrc
     ```
 
-2. You need to source your `.bashrc` so that the changes are effective (or you can also restart your terminal):
+2. You need to source your `.bashrc` so that the changes are effective.
     ```bash
     source ~/.bashrc
     ```
-3. At this point you can also delete the temporary installation folder:
-    ```bash
-    rm -r ~/Downloads/statainstall
-    ```
+    (You can also just restart your terminal.)
 
 
 ### Running Stata
 
-After adding the install directory to yout path, you should be able to run the appropriate version of Stata from the terminal, e.g.:
+After adding the install directory to your path, you should be able to run the program directly.
+Stata can be run in two ways: the X-window version (GUI based) and the terminal version:
+```bash
+# GUI version
+xstata
+
+# CLI version
+stata
+```
+
+![Stata GUI vs CLI](images/stata_gui_cli.png)
+
+Additionally, you can add `-<edition>` to the call, where `<edition>` is the [Stata edition](https://www.stata.com/products/which-stata-is-right-for-me/) you have a license for.
+For example, I have a license for Stata MP, so I can run the X-window version with
 ```bash
 xstata-mp
-```
-This launches the X-window (GUI based) version of Stata MP. You can also run Stata directly within the terminal with
-```bash
-stata-mp
 ```
 
 Obviously you'll need to substitute `mp` for whatever version you have a license for.
