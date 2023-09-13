@@ -9,6 +9,9 @@
 - title: Dealing with misfits in random treatment assignment
   info: "Stata Journal 17, no. 3 (2017): 652-67 | [[Article]](https://journals.sagepub.com/doi/abs/10.1177/1536867X1701700307)"
   pub_url: https://journals.sagepub.com/doi/abs/10.1177/1536867X1701700307
+  abstract: "
+  In this article, I discuss the _misfits_ problem, a practical issue that arises in random treatment assignment whenever observations cannot be neatly distributed among treatments. I also introduce the `randtreat` command, which performs random assignment of unequal treatment fractions and provides several methods to deal with misfits.
+  "
 
 - title: Schedule Optimization and Teacher Allocation Frictions
   coauthors: "[Alejando Robinson-Cortés](https://www.robinson-cortes.com/)"
