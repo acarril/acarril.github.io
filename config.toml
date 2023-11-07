@@ -17,29 +17,29 @@ pygmentsUseClasses = true
 
 [menu]
     [[menu.main]]
-        identifier = "cv"
-        name = "cv"
-        title = "cv"
-        url = "https://www.dropbox.com/s/oow36pf0wyevnc4/CV_acarril.pdf?raw=1"
+        identifier = "resume"
+        name = "Resume"
+        title = "resume"
+        url = "https://www.dropbox.com/scl/fi/dywdi3kj9fh4ujwzkii2l/resume.pdf?rlkey=6rtauniriwww3nj5ugox1yw2n&dl=0&raw=1"
         weight = 40
 
     [[menu.main]]
         identifier = "about"
-        name = "about"
+        name = "About"
         title = "about"
         url = "/about/"
         weight = 30
 
     [[menu.main]]
         identifier = "resources"
-        name = "resources"
+        name = "Resources"
         title = "Resources"
         url = "/resources"
         weight = 20
 
     [[menu.main]]
         identifier = "research"
-        name = "research"
+        name = "Research"
         title = "research"
         url = "/research/"
         weight = 10
