@@ -21,7 +21,7 @@ pygmentsUseClasses = true
         identifier = "resume"
         name = "Resume"
         title = "resume"
-        url = "https://www.dropbox.com/scl/fi/dywdi3kj9fh4ujwzkii2l/resume.pdf?rlkey=6rtauniriwww3nj5ugox1yw2n&dl=0&raw=1"
+        url = "resume.pdf"
         weight = 40
 
     [[menu.main]]
