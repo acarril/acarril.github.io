@@ -31,12 +31,12 @@ pygmentsUseClasses = true
         url = "/about/"
         weight = 30
 
-    [[menu.main]]
-        identifier = "resources"
-        name = "Resources"
-        title = "Resources"
-        url = "/resources"
-        weight = 20
+#    [[menu.main]]
+#        identifier = "resources"
+#        name = "Resources"
+#        title = "Resources"
+#        url = "/resources"
+#        weight = 20
 
     [[menu.main]]
         identifier = "research"
