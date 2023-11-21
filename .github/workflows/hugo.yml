@@ -47,7 +47,9 @@ jobs:
           submodules: recursive
       
       - name: Initialize Hugo Modules
-        run: hugo mod init github.com/acarril/acarril.github.io
+        run: |
+          hugo mod init github.com/acarril/acarril.github.io
+          hugo mod get -u ./...
 
       - name: Setup Pages
         id: pages
