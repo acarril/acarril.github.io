@@ -1,5 +1,6 @@
 ---
 title: "About"
+description: "I am a sixth-year PhD student in economics at Princeton, a Social Data Science graduate fellow, and a research affiliate at ConsiliumBots. I am also a consultant for the IDB Education Sector."
 ---
 
 I am a sixth-year PhD student in economics at [Princeton](https://irs.princeton.edu/people/alvaro-carril), a [Social Data Science](https://ddss.princeton.edu/people/graduate-fellows-social-data-science) graduate fellow, and a research affiliate at [ConsiliumBots](https://www.consiliumbots.com/team).
