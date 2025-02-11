@@ -3,7 +3,9 @@ title: "About"
 description: "I am a sixth-year PhD student in economics at Princeton, a Social Data Science graduate fellow, and a research affiliate at ConsiliumBots. I am also a consultant for the IDB Education Sector."
 ---
 
-I'm an economist and data scientist passionate about leveraging technology to illuminate complex decision-making processes. With a background spanning academia, consulting, and policy, I now apply my expertise at [Revelio Labs](https://www.reveliolabs.com/), where I analyze high-frequency micro-data to uncover insights into the labor market.
+I am a lecturer in statistics and econometrics at the Princeton School of Public and International Affairs.
+I am interested in using tools from economics, data science and machine learning to understand complex decision-making processes.
+With a background spanning academia, consulting, and policy, I now apply my expertise at [Revelio Labs](https://www.reveliolabs.com/), where I analyze high-frequency micro-data to uncover insights into the labor market.
 
 I hold a PhD in economics from [Princeton]([https://irs.princeton.edu/people/alvaro-carril](https://irs.princeton.edu/events/2023/alvaro-carril-princeton-university)), where I was also a [Social Data Science](https://ddss.princeton.edu/people/graduate-fellows-social-data-science) graduate fellow.
 In parallel to my graduate studies, I was also a research affiliate and project manager at [ConsiliumBots](https://www.consiliumbots.com/team).
