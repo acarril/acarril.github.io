@@ -41,7 +41,7 @@ jobs:
         run: sudo snap install dart-sass-embedded
       
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
           submodules: recursive
