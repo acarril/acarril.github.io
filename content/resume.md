@@ -1,8 +1,9 @@
 ---
-title: "Resume"
+title: "CV"
+url: "/cv"
 ---
 
-<a href="/resume.pdf" download>download &#x2913;</a>
+<a href="/carril_cv.pdf" download>download &#x2913;</a>
 <br>
 
-{{< pdf_reader "/resume.pdf" >}}
+{{< pdf_reader "/carril_cv.pdf" >}}

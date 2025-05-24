@@ -28,10 +28,10 @@ pygmentsUseClasses = true
 
 [menu]
     [[menu.main]]
-        identifier = "resume"
-        name = "Resume"
-        title = "resume"
-        url = "/resume"
+        identifier = "cv"
+        name = "CV"
+        title = "CV"
+        url = "/cv"
         weight = 40
 
     [[menu.main]]
