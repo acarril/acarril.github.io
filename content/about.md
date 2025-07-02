@@ -4,7 +4,7 @@ description: "Economist and data scientist at Mercado Libre"
 ---
 
 I am an economist and data scientist at [Mercado Libre](https://investor.mercadolibre.com/about-meli).
-Prior to joining Mercado Libre, I was a lecturer in statistics and econometrics at the [Princeton School of Public and International Affairs](https://spia.princeton.edu/). 
+Prior to this position, I was a lecturer in statistics and econometrics at the [Princeton School of Public and International Affairs](https://spia.princeton.edu/). 
 My research applies quantitative methods, drawing from econometrics, statistics, and machine learning, to better understand the decisions of people and firms.
 
 I hold a PhD in economics from [Princeton](https://irs.princeton.edu/people/alvaro-carril), where I was also a [Social Data Science](https://ddss.princeton.edu/people/graduate-fellows-social-data-science) graduate fellow.
