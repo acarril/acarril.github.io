@@ -2,4 +2,4 @@
 description: "Data Scientist / PhD in Economics"
 ---
 
-You can reach me at acarril@princeton.edu.
+You can reach me at hello@alvarocarril.com.
