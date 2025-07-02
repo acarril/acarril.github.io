@@ -1,6 +1,6 @@
 ---
 title: "About"
-description: "Lecturer in statistics and econometrics at the Princeton School of Public and International Affairs."
+description: "Economist and data scientist at Mercado Libre"
 ---
 
 I am an economist and data scientist at [Mercado Libre](https://investor.mercadolibre.com/about-meli).
