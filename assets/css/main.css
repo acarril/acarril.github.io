@@ -45,7 +45,6 @@ header#banner nav {
 header#banner nav ul {
     list-style-type: none;
     font-size: 1.05em;
-    /* text-transform: lowercase; */
     margin: 0;
     padding: 0;
 }
@@ -89,7 +88,6 @@ main#content h6 {
 }
 
 main#content h3 {
-    font-size: 19px;
     font-size: 1.9rem;
 }
 
@@ -122,10 +120,9 @@ main#content abbr {
     cursor: help;
 }
 
-/* index.html styles */
+/* Post list styles */
 main#content ul#posts {
     list-style-type: none;
-    font-size: 16px;
     font-size: 1.6rem;
     margin-top: 16px;
     padding: 0;
@@ -154,7 +151,7 @@ main#content ul#posts li a:hover small {
     color: inherit;
 }
 
-/* research/list.html styles */
+/* Research page styles */
 main#content #papers .paper-title {
     margin-bottom: 0.5rem;
 }
@@ -191,10 +188,9 @@ main#content #papers .abstract {
     transition: max-height 0.3s ease-in-out;
 }
 
-/* single.html styles */
+/* Page content styles */
 main#content header#post-header h1 {
     display: block;
-    font-size: 23px;
     font-size: 2.3rem;
     font-weight: 600;
     line-height: 1.15;
@@ -312,8 +308,6 @@ main#content code {
 main#content pre {
     display: block;
     overflow-x: auto;
-    /* font-size: 14px; */
-    /* font-size: 1.4rem; */
     white-space: pre;
     margin: 20px 0;
     padding: 1.5rem 1.5rem;
@@ -336,7 +330,6 @@ main#content .pdf-reader {
 }
 
 footer#footer {
-    font-size: 14px;
     font-size: 1.4rem;
     font-weight: 400;
     color: #b3b3b3;
@@ -350,7 +343,7 @@ footer#footer {
 }
 
 .header-left {
-    flex-grow: 1; /* Ensures social icons stay on the left */
+    flex-grow: 1;
 }
 
 .header-right {
@@ -360,7 +353,7 @@ footer#footer {
 .header-content:before {
     content: '';
     position: absolute;
-    top: 0%;
+    top: 0;
     width: 100%;
     height: 100%;
     background-color: #E0F2FD;
@@ -372,14 +365,14 @@ footer#footer {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 0px 20px;
+    padding: 0 20px;
 }
 
 .landing-page-content {
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-gap: 5rem;
-    padding: 0rem;
+    padding: 0;
 }
 
 .image-content {
@@ -395,7 +388,7 @@ main#content .profile-image {
     width: 100%;
     height: auto;
     display: block;
-    margin: 0px;
+    margin: 0;
 }
 
 @media (max-width: 767px) {
@@ -458,7 +451,7 @@ main#content .bottom-image {
     bottom: 0;
     width: 30%;
     height: auto;
-    max-width: 200px; /* Set the maximum width */
+    max-width: 200px;
 }
 
 .social-icons {
@@ -475,7 +468,7 @@ main#content .bottom-image {
 }
 
 .social-icons li {
-    margin-left: 10px; /* Spacing between icons */
+    margin-left: 10px;
     font-size: larger;
 }
 
@@ -484,5 +477,5 @@ main#content .bottom-image {
 }
 
 .social-icon:hover {
-    filter: brightness(80%) invert(1)
+    filter: brightness(80%) invert(1);
 }
