@@ -1,15 +1,6 @@
-{{ $filePath := "content/about.md" }}
-{{ $fileContent := $filePath | readFile | replaceRE "^---[\\s\\S]+?---" "" | safeHTML }}
-{{ $nSentences := (default 2 .Site.Params.aboutExcerptSentences) }}
-
-{{/* Splitting content by newline */}}
-{{ $fileContent := split $fileContent "\n" }}
-
-{{/* Limit the array/slice,  start from 2nd item then grab all first 3 item */}}
-{{ $fileContent := first $nSentences (after 2 $fileContent) }} <!-- There are newlines at the beginning. -->
-
-{{/* Delimit by newline */}}
-{{ $fileContent := delimit $fileContent "\n" }}
-
-{{ $markdownExcerpt := markdownify $fileContent }}
-{{ safeHTML $markdownExcerpt }}
+{{ $lineCount := default 2 .Site.Params.aboutExcerptLines }}
+{{ with .Site.GetPage "/about" }}
+    {{ $lines := split (strings.TrimSpace .RawContent) "\n" }}
+    {{ $excerpt := delimit (first $lineCount $lines) "\n" }}
+    {{ .RenderString (dict "display" "block") $excerpt }}
+{{ end }}
