@@ -6,6 +6,10 @@ on:
   push:
     branches: ["main"]
 
+  # Validates changes before they reach the deployment branch
+  pull_request:
+    branches: ["main"]
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -30,7 +34,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       HUGO_VERSION: 0.120.4 # Pin your Hugo version for reproducible builds
-      # NODE_VERSION: '18' # Optional: Define if you need a specific Node.js version globally
 
     steps:
       - name: Checkout repository
@@ -45,21 +48,9 @@ jobs:
           hugo-version: ${{ env.HUGO_VERSION }}
           extended: true # Installs the extended version of Hugo (includes Dart Sass)
 
-      # Conditionally setup Node.js and install dependencies if a lock file is present
-      - name: Setup Node.js
-        if: hashFiles('package-lock.json', 'npm-shrinkwrap.json') != ''
-        uses: actions/setup-node@v4
-        with:
-          # node-version: ${{ env.NODE_VERSION }} # Or specify version directly, e.g., '18.x'
-          node-version-file: '.nvmrc' # Recommended: use a .nvmrc file to specify Node version
-          cache: 'npm' # Caches npm dependencies for faster builds
-
-      - name: Install Node.js dependencies
-        if: hashFiles('package-lock.json', 'npm-shrinkwrap.json') != ''
-        run: npm ci # Use 'ci' for cleaner, faster, and more reliable installs in CI
-
       - name: Setup Pages
         id: pages
+        if: github.event_name != 'pull_request'
         uses: actions/configure-pages@v5
 
       - name: Build with Hugo
@@ -68,14 +59,16 @@ jobs:
         run: |
           hugo \
             --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
+            --baseURL "${{ steps.pages.outputs.base_url || 'https://acarril.github.io' }}/"
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3 # Specifically for GitHub Pages
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v4 # Specifically for GitHub Pages
         with:
           path: ./public # Path to the public directory Hugo builds to
 
   deploy:
+    if: github.event_name != 'pull_request'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
