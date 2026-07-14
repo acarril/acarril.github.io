@@ -1,0 +1,74 @@
+assets/css/main.css
+  s_98e921f5182e72::t_30d7d3845bc377 1-327,329-334,336-343,345-365,367-370,372-375,377-439
+  s_98e921f5182e72::t_56c6554f3361c3 328,335,344,366,371,376
+layouts/index.html
+  s_98e921f5182e72::t_30d7d3845bc377 1-18,20-22
+  s_98e921f5182e72::t_56c6554f3361c3 19
+layouts/partials/about_excerpt.html
+  s_98e921f5182e72::t_30d7d3845bc377 1-15
+assets/css/media.css
+  s_98e921f5182e72::t_30d7d3845bc377 1-66
+layouts/404.html
+  s_98e921f5182e72::t_30d7d3845bc377 1-10
+layouts/partials/footer.html
+  s_98e921f5182e72::t_30d7d3845bc377 1-3
+layouts/partials/head.html
+  s_98e921f5182e72::t_30d7d3845bc377 1-43
+layouts/partials/icon.html
+  s_98e921f5182e72::t_30d7d3845bc377 1-6
+layouts/partials/header.html
+  s_98e921f5182e72::t_30d7d3845bc377 1-27
+layouts/partials/posts.html
+  s_98e921f5182e72::t_30d7d3845bc377 1-16
+LICENSES/etch-academic.txt
+  s_98e921f5182e72::t_30d7d3845bc377 1-20
+README.md
+  s_98e921f5182e72::t_fbbdfd17f92531 14,17,34-40
+.gitignore
+  s_98e921f5182e72::t_5545941f4d4b6a 14
+assets/css/dark.css
+  s_98e921f5182e72::t_30d7d3845bc377 1-53
+layouts/_default/list.html
+  s_98e921f5182e72::t_30d7d3845bc377 1-3
+layouts/partials/analytics.html
+  s_98e921f5182e72::t_30d7d3845bc377 1-9
+layouts/_default/li_posts.html
+  s_98e921f5182e72::t_30d7d3845bc377 1-6
+i18n/en.toml
+  s_98e921f5182e72::t_30d7d3845bc377 1-19
+layouts/resources/list.html
+  s_98e921f5182e72::t_30d7d3845bc377 1-6
+layouts/shortcodes/pdf_reader.html
+  s_98e921f5182e72::t_30d7d3845bc377 1
+layouts/setup/list.html
+  s_98e921f5182e72::t_30d7d3845bc377 1-3
+layouts/research/list.html
+  s_98e921f5182e72::t_30d7d3845bc377 1-38,40-74
+  s_98e921f5182e72::t_56c6554f3361c3 39
+layouts/shortcodes/toc.html
+  s_98e921f5182e72::t_30d7d3845bc377 1-4
+layouts/_default/baseof.html
+  s_98e921f5182e72::t_30d7d3845bc377 1-11
+layouts/_default/taxonomy.html
+  s_98e921f5182e72::t_30d7d3845bc377 1-8
+.github/workflows/hugo.yml
+  s_98e921f5182e72::t_de08863dcb74b6 42
+layouts/_default/single.html
+  s_98e921f5182e72::t_30d7d3845bc377 1-17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.14",
+  "base_commit_sha": "11b6b27152e854f8c03a16f385f1a875d1967087",
+  "prompts": {},
+  "sessions": {
+    "s_98e921f5182e72": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f5cec-a478-7c01-ad2d-8c06dbcadc5b",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Alvaro Carril <alvaro.carrilrubio@mercadolibre.cl>"
+    }
+  }
+}
