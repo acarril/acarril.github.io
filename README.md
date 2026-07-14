@@ -11,17 +11,11 @@ GitHub Actions validates pull requests and deploys pushes to `main`.
 
 ## Local setup
 
-Clone the repository with its theme submodule:
+Clone the repository:
 
 ```sh
-git clone --recurse-submodules git@github.com:acarril/acarril.github.io.git
+git clone git@github.com:acarril/acarril.github.io.git
 cd acarril.github.io
-```
-
-For an existing checkout, initialize or update the pinned theme with:
-
-```sh
-git submodule update --init --recursive
 ```
 
 Start the development server:
@@ -37,3 +31,10 @@ hugo --minify
 ```
 
 Generated files are written to `public/` and are not tracked by Git.
+
+## Theme provenance
+
+The site layouts and styles derive from [Etch](https://github.com/LukasJoswiak/etch)
+by Lukas Joswiak, adapted through the
+[`etch-academic` fork](https://github.com/acarril/etch-academic). They are
+licensed under the MIT license in [`LICENSES/etch-academic.txt`](LICENSES/etch-academic.txt).

@@ -1,0 +1,6 @@
+{{ $iconName := .icon_name | lower }}
+{{ $iconURL := .url }}
+<a href="{{ $iconURL }}" target="_blank" class="social-icon">
+    {{ $context := dict "vendor" "bootstrap" "name" $iconName "color" "dimgray" }}
+    {{ partial "icons/icon" $context }}
+</a>

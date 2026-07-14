@@ -1,6 +1,5 @@
 baseURL = "https://acarril.github.io"
 title = "Álvaro Carril"
-theme = "etch-academic"
 locale = "en-US"
 enableGitInfo = true
 

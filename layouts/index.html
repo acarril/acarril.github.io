@@ -1,0 +1,22 @@
+{{ define "main" }}
+<article>
+    <header id="post-header">
+        {{ if eq .RelPermalink "/" }}
+            <!-- <h1 style="visibility:hidden;">&nbsp;</h1> -->
+        {{ end }}
+    </header>
+    <div class="landing-page-content">
+        <div class="text-content">
+            {{- partial "about_excerpt.html" . -}}
+            {{ .Content }}
+        </div>
+        <div class="image-offset">
+            <div class="image-content image-accent">
+                <div class="image-wrapper">
+                    <img src="{{ .Site.Params.profile_image | absURL }}" alt="headshot" class="profile-image">
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+{{ end }}

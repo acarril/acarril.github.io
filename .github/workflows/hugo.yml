@@ -39,8 +39,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v7
         with:
-          fetch-depth: 0          # Fetches all history for .GitInfo, .Lastmod, etc.
-          submodules: recursive   # Checkout submodules (e.g., themes)
+          fetch-depth: 0 # Fetches all history for .GitInfo, .Lastmod, etc.
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3

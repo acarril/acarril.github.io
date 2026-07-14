@@ -1,0 +1,27 @@
+<header id="banner">
+    <div class="header-content">
+        <div class="header-inner">
+            <div class="header-left">
+                <h2><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h2>
+                <nav>
+                    <ul>
+                        {{ range .Site.Menus.main.ByWeight -}}
+                        <li>
+                            {{ .Pre }}<a href="{{ .URL }}" title="{{ .Title }}">{{- .Name -}}</a>{{ .Post }}
+                        </li>
+                        {{- end }}
+                    </ul>
+                </nav>
+            </div>
+            <div class="header-right">
+                <div class="social-icons">
+                    <ul>
+                        {{ range .Site.Params.social }}
+                            <li>{{ partial "icon.html" . }}</li>
+                        {{ end }}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
