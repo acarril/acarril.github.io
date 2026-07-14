@@ -1,0 +1,19 @@
+.github/workflows/hugo.yml
+  s_98e921f5182e72::t_1b98267833ef77 40,54,66,81
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.14",
+  "base_commit_sha": "e025e6f540d640b9b0a78c42c8fb217fddb3a742",
+  "prompts": {},
+  "sessions": {
+    "s_98e921f5182e72": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f5cec-a478-7c01-ad2d-8c06dbcadc5b",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Alvaro Carril <alvaro.carrilrubio@mercadolibre.cl>"
+    }
+  }
+}
