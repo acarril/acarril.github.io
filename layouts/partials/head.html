@@ -9,9 +9,9 @@
     {{ else }}
         <meta name="description" content="{{ .Site.Params.description }}">
     {{ end }}
-    {{ printf `<link rel="shortcut icon" href="%s">` ("favicon.ico" | absURL) | safeHTML }}
+    <link rel="shortcut icon" href="{{ "favicon.ico" | absURL }}">
     {{ with .OutputFormats.Get "rss" -}}
-        {{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+        <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ $.Site.Title }}">
     {{ end -}}
 
     {{ $resources := slice -}}
@@ -25,9 +25,9 @@
     {{ end -}}
 
     {{ $css := $resources | resources.Concat "css/style.css" | minify }}
-    {{ printf `<link rel="stylesheet" href="%s">` $css.RelPermalink | safeHTML }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 
-    <link rel="canonical" href="{{ .Permalink }}" />
+    <link rel="canonical" href="{{ .Permalink }}">
     <title>
         {{ if .Title }}
             {{ index (split .Site.Title " ") 0 }} ~ {{ .Title }}
