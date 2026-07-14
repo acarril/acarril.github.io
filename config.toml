@@ -2,10 +2,7 @@ baseURL = "https://acarril.github.io"
 title = "Álvaro Carril"
 theme = "etch-academic"
 locale = "en-US"
-enableInlineShortcodes = true
 enableGitInfo = true
-pygmentsCodeFences = true
-pygmentsUseClasses = true
 
 [params]
     description = "every one and every zero"
@@ -15,8 +12,6 @@ pygmentsUseClasses = true
     aboutExcerptSentences = 5
     google_analytics = "G-3F4R1K00EF"
     profile_image = "img/09_headshot.jpg"
-    github = "https://github.com/acarril"
-    linkedin = "https://www.linkedin.com/in/alvaro-carril/"
 
     [[params.social]]
     icon_name = "github"
@@ -58,8 +53,11 @@ pygmentsUseClasses = true
 [permalinks]
     posts = "/:title/"
 
+[markup.highlight]
+    noClasses = false
+
 [markup.goldmark.renderer]
-    # Allows HTML in Markdown
+    # Required by existing raw HTML in Markdown content.
     unsafe = true
 
 [module]
