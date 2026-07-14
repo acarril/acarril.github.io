@@ -7,7 +7,7 @@ GitHub Actions validates pull requests and deploys pushes to `main`.
 
 - Git
 - Go 1.20 or newer, required by the Bootstrap icons Hugo module
-- Hugo 0.120.4 extended, matching the version pinned in CI
+- Hugo 0.164.0 extended, matching the version pinned in CI
 
 ## Local setup
 

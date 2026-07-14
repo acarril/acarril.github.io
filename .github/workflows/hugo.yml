@@ -33,7 +33,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.120.4 # Pin your Hugo version for reproducible builds
+      HUGO_VERSION: 0.164.0 # Pin your Hugo version for reproducible builds
 
     steps:
       - name: Checkout repository
