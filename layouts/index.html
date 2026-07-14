@@ -1,10 +1,5 @@
 {{ define "main" }}
 <article>
-    <header id="post-header">
-        {{ if eq .RelPermalink "/" }}
-            <!-- <h1 style="visibility:hidden;">&nbsp;</h1> -->
-        {{ end }}
-    </header>
     <div class="landing-page-content">
         <div class="text-content">
             {{- partial "about_excerpt.html" . -}}

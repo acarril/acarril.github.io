@@ -113,6 +113,11 @@ main#content hr {
     background: #d8d8d8;
 }
 
+main#content hr.content-spacer {
+    height: 0;
+    visibility: hidden;
+}
+
 main#content abbr {
     cursor: help;
 }
@@ -321,6 +326,13 @@ main#content pre code {
 
 main#content .footnotes {
     font-size: 0.9em;
+}
+
+main#content .pdf-reader {
+    width: 100%;
+    max-height: 75vh;
+    min-height: 25vh;
+    aspect-ratio: 0.7;
 }
 
 footer#footer {
