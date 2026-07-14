@@ -6,7 +6,6 @@ enableGitInfo = true
 [params]
     description = "every one and every zero"
     copyright = "Álvaro Carril — Content licensed under GNU GPL-3.0-only"
-    dark = "off"
     highlight = true
     aboutExcerptSentences = 5
     google_analytics = "G-3F4R1K00EF"
