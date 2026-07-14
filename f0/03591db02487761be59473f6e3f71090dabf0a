@@ -1,0 +1,23 @@
+assets/css/main.css
+  s_98e921f5182e72::t_efb2225ae5dbae 123,154,191
+  s_98e921f5182e72::t_0ade963d2cba8b 346,356,368,375,391,454,471,480
+assets/css/media.css
+  s_98e921f5182e72::t_efb2225ae5dbae 20
+  s_98e921f5182e72::t_0ade963d2cba8b 48
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "f003591db02487761be59473f6e3f71090dabf0a",
+  "prompts": {},
+  "sessions": {
+    "s_98e921f5182e72": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f5cec-a478-7c01-ad2d-8c06dbcadc5b",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Alvaro Carril <alvaro.carrilrubio@mercadolibre.cl>"
+    }
+  }
+}
