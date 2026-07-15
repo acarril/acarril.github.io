@@ -46,7 +46,3 @@ enableGitInfo = true
 
 [markup.highlight]
     noClasses = false
-
-[markup.goldmark.renderer]
-    # Required by existing raw HTML in Markdown content.
-    unsafe = true

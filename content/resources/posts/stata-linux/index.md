@@ -212,7 +212,8 @@ Exec=/usr/local/stata14/xstata-mp -q projmanag "%f"
     sudo gedit /usr/share/mime/packages/application-x-stata.xml
     ```
     Then copy the following inside this newly created file, and save.
-    <script src="https://gist.github.com/acarril/d8894997454653f3d7ffed01695934dd.js?file=application-x-stata.xml"></script>
+
+    {{< gist_embed id="d8894997454653f3d7ffed01695934dd" file="application-x-stata.xml" >}}
 
 5. Finally, update the mime and desktop databases so that changes take effect.
     ```bash
