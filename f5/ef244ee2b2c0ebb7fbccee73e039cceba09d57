@@ -1,0 +1,30 @@
+layouts/shortcodes/gist_embed.html
+  s_98e921f5182e72::t_011536ba25becd 1
+content/about.md
+  s_98e921f5182e72::t_c5ee0b8b8024f2 16-17
+layouts/shortcodes/sup.html
+  s_98e921f5182e72::t_011536ba25becd 1
+content/resources/posts/stata-linux/index.md
+  s_98e921f5182e72::t_c5ee0b8b8024f2 216
+  s_98e921f5182e72::t_011536ba25becd 215
+content/resume.md
+  s_98e921f5182e72::t_c5ee0b8b8024f2 6,8
+layouts/shortcodes/cv_download.html
+  s_98e921f5182e72::t_011536ba25becd 1-2
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "f5ef244ee2b2c0ebb7fbccee73e039cceba09d57",
+  "prompts": {},
+  "sessions": {
+    "s_98e921f5182e72": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f5cec-a478-7c01-ad2d-8c06dbcadc5b",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Alvaro Carril <alvaro.carrilrubio@mercadolibre.cl>"
+    }
+  }
+}
